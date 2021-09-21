@@ -1,0 +1,4 @@
+///$tab Exit Script
+drop table QVD_Vaccination;
+
+Exit Script;

@@ -1,0 +1,48 @@
+///$tab Main
+//
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='DD-MM-YY';
+SET TimestampFormat='DD-MM-YY h:mm:ss[.fff] TT';
+
+// 20201208   0=Monday, 6=Sunday
+//SET FirstWeekDay=6;
+SET FirstWeekDay=6;
+
+
+SET BrokenWeeks=0;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+//SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+//Set HidePrefix 	= '%';
+// Set HidePrefix = 'Sel_';
+
+NullAsValue URL_Plan, URL_Rollout;
+Set NullValue 	= '';
+//
+$(Must_Include=lib://QData\0_Generic\01_Config\Generic_Paths.txt);    
+$(Must_Include=lib://QData\0_Generic\01_Config\Qlik_Include_MasterCalendar.txt);
+$(Must_Include=lib://QData\2_Projects\22_CoronaVirus\01_Config\22_CoronaVirus_Paths.txt);    // OJO
+//
+
+// including project configuration file
+// Let vProject= '22_CoronaVirus';
+// Let vProjectFolder=vG_Projects&'\'&vProject&'\01_Config\'&vProject&'_Paths.txt';
+// $(Must_Include=$(vG_Connection)$(vProjectFolder));   
+//	
+    
+// used to differenciate the load of QVDs, some QVDs are loaded when it's a public version some are only loaded when it is a restricted version
+Let vAppName = DocumentTitle();
+//
+// end
