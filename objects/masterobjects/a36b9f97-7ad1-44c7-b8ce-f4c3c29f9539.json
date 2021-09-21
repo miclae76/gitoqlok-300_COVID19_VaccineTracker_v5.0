@@ -33,6 +33,11 @@
         "cId": "PBsYdgh"
       },
       {
+        "value": "THIRD",
+        "label": "Uptake of one additional vaccine dose",
+        "cId": "eUfpKQ"
+      },
+      {
         "value": "NFIRST",
         "label": "Number of first doses administered",
         "cId": "BpjYh"
@@ -41,6 +46,11 @@
         "value": "NSECOND",
         "label": "Number of full vaccinations administered",
         "cId": "jKuzmjE"
+      },
+      {
+        "value": "NTHIRD",
+        "label": "Number of additional doses administered",
+        "cId": "UsgeJp"
       }
     ],
     "min": 0,
