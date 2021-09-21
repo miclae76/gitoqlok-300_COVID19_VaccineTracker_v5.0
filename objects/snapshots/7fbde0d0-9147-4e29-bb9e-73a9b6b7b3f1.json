@@ -1,0 +1,146 @@
+{
+  "qInfo": {
+    "qId": "7fbde0d0-9147-4e29-bb9e-73a9b6b7b3f1",
+    "qType": "snapshot"
+  },
+  "qMetaDef": {
+    "title": "Period: 31/12/2019 to 07/02/2020",
+    "description": "",
+    "annotation": ""
+  },
+  "creationDate": "2020-02-07T12:30:01.254Z",
+  "qMeta": {
+    "privileges": [
+      "read",
+      "update",
+      "delete",
+      "exportdata"
+    ]
+  },
+  "qSelectionInfo": {},
+  "qHyperCube": {
+    "qSize": {
+      "qcx": 1,
+      "qcy": 1
+    },
+    "qDimensionInfo": [],
+    "qMeasureInfo": [
+      {
+        "qFallbackTitle": "Cases",
+        "qApprMaxGlyphCount": 6,
+        "qCardinal": 0,
+        "qSortIndicator": "D",
+        "qNumFormat": {
+          "qType": "F",
+          "qnDec": 2,
+          "qUseThou": 0,
+          "qFmt": "#,##0",
+          "qDec": ".",
+          "qThou": ","
+        },
+        "qMin": 31530,
+        "qMax": 31530,
+        "qAttrExprInfo": [],
+        "qAttrDimInfo": [],
+        "qLibraryId": "TZukbT",
+        "qTrendLines": [],
+        "coloring": {},
+        "autoSort": true,
+        "cId": "bzEkJUT",
+        "numFormatFromTemplate": true,
+        "measureAxis": {
+          "min": 0,
+          "max": 100
+        },
+        "conditionalColoring": {
+          "useConditionalColoring": false,
+          "singleColor": 3,
+          "paletteSingleColor": {
+            "index": 6
+          },
+          "segments": {
+            "limits": [],
+            "paletteColors": [
+              {
+                "index": 6
+              }
+            ]
+          }
+        },
+        "isCustomFormatted": false
+      }
+    ],
+    "qEffectiveInterColumnSortOrder": [
+      0
+    ],
+    "qGrandTotalRow": [
+      {
+        "qText": "31,530",
+        "qNum": 31530,
+        "qElemNumber": -1,
+        "qState": "X",
+        "qIsTotalCell": true
+      }
+    ],
+    "qDataPages": [
+      {
+        "qMatrix": [
+          [
+            {
+              "qText": "31,530",
+              "qNum": 31530,
+              "qElemNumber": 0,
+              "qState": "L"
+            }
+          ]
+        ],
+        "qTails": [],
+        "qArea": {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 1,
+          "qHeight": 1
+        }
+      }
+    ],
+    "qPivotDataPages": [],
+    "qStackedDataPages": [],
+    "qMode": "S",
+    "qNoOfLeftDims": -1,
+    "qTreeNodesOnDim": [],
+    "qColumnOrder": []
+  },
+  "showTitles": true,
+  "title": "Period: 31/12/2019 to 07/02/2020",
+  "subtitle": "",
+  "footnote": "",
+  "showDetails": false,
+  "showMeasureTitle": true,
+  "textAlign": "center",
+  "fontSize": "M",
+  "useLink": false,
+  "sheetLink": "",
+  "openUrlInNewTab": true,
+  "visualization": "kpi",
+  "snapshotData": {
+    "object": {
+      "size": {
+        "w": 352,
+        "h": 110
+      }
+    },
+    "rtl": false,
+    "isZoomed": false,
+    "elementRatio": 0.22847541221410958,
+    "parent": {
+      "h": 771.818,
+      "w": 1745.45
+    }
+  },
+  "visualizationType": "kpi",
+  "sourceObjectId": "MsckXN",
+  "sheetId": "f39d623d-aca7-4774-94ff-797627843323",
+  "timestamp": 1581078601234,
+  "isClone": false,
+  "supportExport": true
+}

@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.FLU_Season",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

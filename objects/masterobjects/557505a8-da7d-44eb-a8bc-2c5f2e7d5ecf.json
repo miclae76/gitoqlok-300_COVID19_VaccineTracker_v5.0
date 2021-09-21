@@ -1,0 +1,283 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "557505a8-da7d-44eb-a8bc-2c5f2e7d5ecf",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "TG - N. KPI TEXT",
+      "description": "",
+      "tags": []
+    },
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "visualization": "widget",
+    "qHyperCubeDef": {
+      "qDimensions": [
+        {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "=ValueList(\r\n$(=pick(match(v_ViewTargetGroup, 'HCW', '80', 'LTCF'), \n\tchr(39)&'Number of first doses administered HCW' & chr(39) & ',' & chr(39) &'Number of full vaccination administered HCW' & chr(39),\n    chr(39)&'Number of first doses administered 80+' & chr(39) & ',' & chr(39) &'Number of full vaccination administered 80+' & chr(39),\n    chr(39)&'Number of first doses administered LTCF' & chr(39) & ',' & chr(39) &'Number of full vaccination administered LTCF' & chr(39)\n)))"
+            ],
+            "qFieldLabels": [
+              ""
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": true,
+            "cId": "hnhxzsY",
+            "othersLabel": "Others"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        }
+      ],
+      "qMeasures": [
+        {
+          "qDef": {
+            "qLabel": "KPI",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "=pick(match(ValueList(\r\n$(=pick(match(v_ViewTargetGroup, 'HCW', '80', 'LTCF'), \n\tchr(39)&'Number of first doses administered HCW' & chr(39) & ',' & chr(39) &'Number of full vaccination administered HCW' & chr(39),\n    chr(39)&'Number of first doses administered 80+' & chr(39) & ',' & chr(39) &'Number of full vaccination administered 80+' & chr(39),\n    chr(39)&'Number of first doses administered LTCF' & chr(39) & ',' & chr(39) &'Number of full vaccination administered LTCF' & chr(39)\n))), \n'Number of first doses administered HCW', \n'Number of full vaccination administered HCW', \n'Number of first doses administered 80+', \n'Number of full vaccination administered 80+',\n'Number of first doses administered LTCF', \n'Number of full vaccination administered LTCF'\n), \nsum({<[Member State]=>} Dose1st_HCW),\nsum({<[Member State]=>} Dose2nd_HCW),\nsum({<[Member State]=>} Dose1st_80),\nsum({<[Member State]=>} Dose2nd_80),\nsum({<[Member State]=>} Dose1st_LTCF),\nsum({<[Member State]=>} Dose2nd_LTCF)\n)\n\n\n\n\n/*\nPick(match(valuelist('Cumulative Uptake first dose HCW', 'Cumulative Uptake full vaccination HCW'), 'Cumulative Uptake first dose HCW', 'Cumulative Uptake full vaccination HCW'),\n\tmedian({<[Member State]=,[MemberState_]={\"EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])),\n    median({<[Member State]=,[MemberState_]={\"EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake2nd_HCW_Cumul={\">0\"}>} Uptake2nd_HCW), [Member State]))\n)\n*/\n\n//{<[Member State]=-{\"Iceland\"}>}",
+            "qNumFormat": {
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "#,##0",
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "dmgcRs",
+            "numFormatFromTemplate": true,
+            "isCustomFormatted": false
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "Footer",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "=pick(match(ValueList(\r\n$(=pick(match(v_ViewTargetGroup, 'HCW', '80', 'LTCF'), \n\tchr(39)&'Number of first doses administered HCW' & chr(39) & ',' & chr(39) &'Number of full vaccination administered HCW' & chr(39),\n    chr(39)&'Number of first doses administered 80+' & chr(39) & ',' & chr(39) &'Number of full vaccination administered 80+' & chr(39),\n    chr(39)&'Number of first doses administered LTCF' & chr(39) & ',' & chr(39) &'Number of full vaccination administered LTCF' & chr(39)\n))), \n'Number of first doses administered HCW', \n'Number of full vaccination administered HCW', \n'Number of first doses administered 80+', \n'Number of full vaccination administered 80+',\n'Number of first doses administered LTCF', \n'Number of full vaccination administered LTCF'\n), \n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_HCW)>0\"}>} [Member State]) & ' reporting countries',\n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_HCW)>0\"}>} [Member State]) & ' reporting countries',\n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_80)>0\"}>} [Member State]) & ' reporting countries',\n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_80)>0\"}>} [Member State]) & ' reporting countries',\n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n'Total from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n)\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "xQxaEu",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "Tooltip",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "=pick(match(ValueList(\r\n$(=pick(match(v_ViewTargetGroup, 'HCW', '80', 'LTCF'), \n\tchr(39)&'Number of first doses administered HCW' & chr(39) & ',' & chr(39) &'Number of full vaccination administered HCW' & chr(39),\n    chr(39)&'Number of first doses administered 80+' & chr(39) & ',' & chr(39) &'Number of full vaccination administered 80+' & chr(39),\n    chr(39)&'Number of first doses administered LTCF' & chr(39) & ',' & chr(39) &'Number of full vaccination administered LTCF' & chr(39)\n))), \n'Number of first doses administered HCW', \n'Number of full vaccination administered HCW', \n'Number of first doses administered 80+', \n'Number of full vaccination administered 80+',\n'Number of first doses administered LTCF', \n'Number of full vaccination administered LTCF'\n),\nconcat(distinct {<[Member State]=-{\"Iceland\"}, [Member State]={\"=sum({<[Member State]=, [Member State]=-{'Iceland'}>} Uptake1st_HCW)>0\"}>}  [Member State], ', '),\nconcat(distinct {<[Member State]=-{\"Iceland\"}, [Member State]={\"=sum({<[Member State]=, [Member State]=-{'Iceland'}>} Uptake2nd_HCW)>0\"}>}  [Member State], ', '),\nconcat(distinct {<[Member State]=, [Member State]={\"=sum({<[Member State]=>} Uptake1st_80)>0\"}>} [Member State], ', '),\nconcat(distinct {<[Member State]=, [Member State]={\"=sum({<[Member State]=>} Uptake2nd_80)>0\"}>} [Member State], ', '),\nconcat(distinct {<[Member State]=-{\"Iceland\"}, [Member State]={\"=sum({<[Member State]=, [Member State]=-{'Iceland'}>} Uptake1st_LTCF)>0\"}>}  [Member State], ', '),\nconcat(distinct {<[Member State]=-{\"Iceland\"}, [Member State]={\"=sum({<[Member State]=, [Member State]=-{'Iceland'}>} Uptake2nd_LTCF)>0\"}>}  [Member State], ', ')\n)",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "abpqwp",
+            "numFormatFromTemplate": true
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 10,
+          "qHeight": 100
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [],
+      "qExpansionState": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
+    },
+    "templateId": "7291bb07-9264-4242-a3c6-fc21e1674dc5",
+    "widgetMeta": {
+      "libid": "ECDC-Widgets",
+      "name": "VaccineTracker - KPI Text"
+    },
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

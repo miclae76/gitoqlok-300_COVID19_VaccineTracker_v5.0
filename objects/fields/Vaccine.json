@@ -1,0 +1,12 @@
+{
+  "qName": "Vaccine",
+  "qTags": [
+    "$ascii",
+    "$text",
+    "$key"
+  ],
+  "qSrcTables": [
+    "Vaccination",
+    "Product"
+  ]
+}

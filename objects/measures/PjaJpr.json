@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "PjaJpr",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - Uptake at least one dose (%)",
+    "qDef": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]) )  \n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Uptake at least one dose (%)'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#62bb46",
+        "index": 1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - Uptake at least one dose (%)",
+    "description": "",
+    "tags": []
+  }
+}

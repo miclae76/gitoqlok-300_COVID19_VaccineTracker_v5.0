@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "0cdad3b4-7be6-4a2f-95f0-eb26c9d1774b",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_DateFormat_Error",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0"
+}

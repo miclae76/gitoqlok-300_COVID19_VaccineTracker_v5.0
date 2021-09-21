@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.QuarterEnd",
+  "qTags": [
+    "$numeric",
+    "$timestamp"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

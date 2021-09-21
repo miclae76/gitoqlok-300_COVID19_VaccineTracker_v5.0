@@ -1,0 +1,15 @@
+{
+  "qName": "Member State",
+  "qTags": [
+    "$ascii",
+    "$text",
+    "$key"
+  ],
+  "qSrcTables": [
+    "Vaccination",
+    "URLs",
+    "MemberState_Group",
+    "EU27_EEA",
+    "NoteOnDataXLS"
+  ]
+}

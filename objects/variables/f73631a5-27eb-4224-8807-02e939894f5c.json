@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "f73631a5-27eb-4224-8807-02e939894f5c",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_0321QVDDim",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\032_Source\\0321_Dimensions\\",
+  "qIsScriptCreated": true
+}

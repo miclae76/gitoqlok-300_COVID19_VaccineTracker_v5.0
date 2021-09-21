@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "c39a28f5-f532-4a62-aaf7-51556c034cf2",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Rank_Attack",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

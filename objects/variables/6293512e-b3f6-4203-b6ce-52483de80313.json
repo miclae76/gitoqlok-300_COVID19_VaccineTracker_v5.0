@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "6293512e-b3f6-4203-b6ce-52483de80313",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_0314QVDDW",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\031_Raw\\0314_Datawarehouse\\",
+  "qIsScriptCreated": true
+}

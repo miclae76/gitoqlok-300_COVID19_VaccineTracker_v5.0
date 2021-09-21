@@ -1,0 +1,9 @@
+{
+  "qName": "Notes on data by country",
+  "qTags": [
+    "$text"
+  ],
+  "qSrcTables": [
+    "NoteOnDataXLS"
+  ]
+}

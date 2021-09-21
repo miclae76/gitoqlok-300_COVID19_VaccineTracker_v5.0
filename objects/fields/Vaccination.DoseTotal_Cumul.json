@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.DoseTotal_Cumul",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Vaccination_Cumulative"
+  ]
+}

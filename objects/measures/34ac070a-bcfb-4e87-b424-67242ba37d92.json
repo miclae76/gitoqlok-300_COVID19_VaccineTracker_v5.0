@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "34ac070a-bcfb-4e87-b424-67242ba37d92",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - # Doses Unknown",
+    "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(DoseUnk_80),\n    sum(DoseUnk_HCW),\n    sum(DoseUnk_LTCF)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Unspecified doses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#b1b1b1",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG - # Doses Unknown",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "77682969-1e59-4bd9-ad0f-064c6505efbb",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_PeriodTitle",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": " to ",
+  "tags": []
+}

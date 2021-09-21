@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "b6ef2da0-e477-4cb4-8803-1f82aa1c6167",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Today",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "44234.380532407",
+  "tags": []
+}

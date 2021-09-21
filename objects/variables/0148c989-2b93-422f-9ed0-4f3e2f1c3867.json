@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "0148c989-2b93-422f-9ed0-4f3e2f1c3867",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Select_YearWeek",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

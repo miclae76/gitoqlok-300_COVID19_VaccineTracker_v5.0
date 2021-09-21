@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "PbQzrmW",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - Uptake Not vaccinated",
+    "qDef": "1-rangemin(1, rangemax(median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE={\">0\"}>} Uptake1st_AGE), [Age Group], [Member State])), median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Not vaccinated'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e6e7e8",
+        "index": 20
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - Uptake Not vaccinated",
+    "description": "",
+    "tags": []
+  }
+}

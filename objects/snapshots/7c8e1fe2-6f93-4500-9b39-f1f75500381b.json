@@ -1,0 +1,81 @@
+{
+  "qInfo": {
+    "qId": "7c8e1fe2-6f93-4500-9b39-f1f75500381b",
+    "qType": "snapshot"
+  },
+  "qMetaDef": {
+    "title": "WIDGET LasWeeks",
+    "description": "",
+    "annotation": ""
+  },
+  "creationDate": "2020-11-23T18:37:21.665Z",
+  "qMeta": {
+    "privileges": [
+      "read",
+      "update",
+      "delete",
+      "exportdata"
+    ]
+  },
+  "qSelectionInfo": {},
+  "showTitles": true,
+  "title": "WIDGET LasWeeks",
+  "subtitle": "",
+  "footnote": "",
+  "showDetails": false,
+  "visualization": "widget",
+  "qHyperCube": {
+    "qSize": {
+      "qcx": 0,
+      "qcy": 0
+    },
+    "qDimensionInfo": [],
+    "qMeasureInfo": [],
+    "qEffectiveInterColumnSortOrder": [],
+    "qGrandTotalRow": [],
+    "qDataPages": [
+      {
+        "qMatrix": [],
+        "qTails": [],
+        "qArea": {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 0,
+          "qHeight": 0
+        }
+      }
+    ],
+    "qPivotDataPages": [],
+    "qStackedDataPages": [],
+    "qMode": "S",
+    "qNoOfLeftDims": -1,
+    "qTreeNodesOnDim": [],
+    "qColumnOrder": []
+  },
+  "templateId": "baa6125f-84bf-4009-8d93-6e193bf49710",
+  "widgetMeta": {
+    "libid": "ECDC-Widgets",
+    "name": "COVID-19 Last weeks"
+  },
+  "labelExpression": "Last weeks",
+  "masterVersion": 0.96,
+  "snapshotData": {
+    "object": {
+      "size": {
+        "w": 102,
+        "h": 80
+      }
+    },
+    "rtl": false,
+    "parent": {
+      "h": 545,
+      "w": 1366
+    }
+  },
+  "visualizationType": "widget",
+  "sourceObjectId": "hNDberY",
+  "sheetId": "e9a00119-3e17-4efe-be8b-5720b2de506f",
+  "timestamp": 1606156641527,
+  "isClone": false,
+  "supportExport": true
+}

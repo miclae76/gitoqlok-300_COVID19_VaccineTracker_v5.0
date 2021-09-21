@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "gFGr",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - Uptake or N.",
+    "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)+sum({1} 0)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_80)+sum({1} 0)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)+sum({1} 0)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)+sum({1} 0)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)+sum({1} 0)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)+sum({1} 0)),'0.0%;-0.0%;Not reported'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80)+sum({1} 0),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_80)+sum({1} 0),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_HCW)+sum({1} 0),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_HCW)+sum({1} 0),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_LTCF)+sum({1} 0),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_LTCF)+sum({1} 0),'#,##0;-#,##0;Not reported')\n)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "TG - Uptake or N.",
+    "description": "",
+    "tags": []
+  }
+}

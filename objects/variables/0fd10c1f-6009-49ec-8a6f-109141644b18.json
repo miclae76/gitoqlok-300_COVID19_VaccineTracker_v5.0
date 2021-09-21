@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "0fd10c1f-6009-49ec-8a6f-109141644b18",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_ViewUptake",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "NPROP",
+  "tags": []
+}

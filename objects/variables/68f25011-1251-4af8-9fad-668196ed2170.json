@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "68f25011-1251-4af8-9fad-668196ed2170",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_0323QVDGeo",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\032_Source\\0323_Geometries\\",
+  "qIsScriptCreated": true
+}

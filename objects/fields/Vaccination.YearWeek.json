@@ -1,0 +1,14 @@
+{
+  "qName": "Vaccination.YearWeek",
+  "qTags": [
+    "$ascii",
+    "$text",
+    "$date",
+    "$key"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination",
+    "Vaccination",
+    "$OFMap Vaccination.YearWeek"
+  ]
+}

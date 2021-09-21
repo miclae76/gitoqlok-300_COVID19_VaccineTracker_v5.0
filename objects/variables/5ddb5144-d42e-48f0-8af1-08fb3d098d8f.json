@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "5ddb5144-d42e-48f0-8af1-08fb3d098d8f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_EI_Chart_Title",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "  worldwide",
+  "tags": []
+}

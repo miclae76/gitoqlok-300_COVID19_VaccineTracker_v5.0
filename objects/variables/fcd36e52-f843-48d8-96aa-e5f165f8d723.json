@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "fcd36e52-f843-48d8-96aa-e5f165f8d723",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Sel_Days",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "7"
+}

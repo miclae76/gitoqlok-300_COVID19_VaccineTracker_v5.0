@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "501f8922-d8ff-4915-a4c8-1bd186eeb57a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Transmission_Dim",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

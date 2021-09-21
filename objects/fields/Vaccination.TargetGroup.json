@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.TargetGroup",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

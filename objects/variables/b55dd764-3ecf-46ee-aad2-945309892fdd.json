@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "b55dd764-3ecf-46ee-aad2-945309892fdd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_EI_Cumulative_Cases",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF($(vl_Sel_Grouped_Detail)=0\r\n\t,Aggr(RANGESUM(ABOVE(   SUM(  NumOfConfCases), 0, ROWNO()) ), (TimeCodeNUM , NUMERIC ASCENDING))\n\t,Aggr(RANGESUM(ABOVE(   SUM(  NumOfConfCases), 0, ROWNO()) ), CountryName,(TimeCodeNUM , NUMERIC ASCENDING))\n)",
+  "tags": []
+}

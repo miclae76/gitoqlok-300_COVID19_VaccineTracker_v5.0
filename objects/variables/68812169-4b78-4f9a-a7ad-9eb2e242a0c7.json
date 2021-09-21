@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "68812169-4b78-4f9a-a7ad-9eb2e242a0c7",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_KPI_Attack_Tables",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "(RANGESUM(Above(TOTAL SUM(NumOfConfCases),0,Rowno(total)) ) / SUM(distinct EI_Population) ) * 100000",
+  "tags": []
+}

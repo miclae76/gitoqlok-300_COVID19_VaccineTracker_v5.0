@@ -1,0 +1,10 @@
+{
+  "qName": "_Flag_WeekToReport",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

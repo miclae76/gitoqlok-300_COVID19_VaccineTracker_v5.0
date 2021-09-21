@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "9de30814-f1e6-44b3-bc85-40978f1f4525",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Sel_Grouped_Detail",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "1",
+  "tags": []
+}

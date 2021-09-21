@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c7f52cdf-4c26-4db7-8ce5-96c7ee2f9846",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Step",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "1",
+  "tags": []
+}

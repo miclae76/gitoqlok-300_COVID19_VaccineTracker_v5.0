@@ -1,0 +1,365 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "9a25d582-9294-40b0-bb05-2bc78858c8bc",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "DOSES -  N. Cumulative Vaccine distributed",
+      "description": "",
+      "tags": []
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [
+        {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "Vaccination.YearWeek"
+            ],
+            "qFieldLabels": [
+              ""
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {
+                  "qv": "[Doses distributed]"
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "MPgwGY",
+            "othersLabel": "Others"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        },
+        {
+          "qLibraryId": "e3de8207-2736-44e7-8d3d-9535818dc8bf",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qSortByExpression": -1,
+                "qExpression": {
+                  "qv": "[Doses distributed]"
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "WjnwaTQ",
+            "othersLabel": "Others"
+          },
+          "qNullSuppression": true,
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [
+            {
+              "qExpression": "Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}Aggr(RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) * Count([$(=Replace(GetObjectField(1),']',']]'))]) > 0,  (　pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n  SUM(DosesDistributed),\n  SUM(DoseTotal_ALLP)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}0), 0), 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending))))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "DOSES - N. CUM - DIST or ADMIN",
+              "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n 'Doses distributed',\n 'Doses administered'\n)",
+              "cId": "BWxAKmF",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              },
+              "isCustomFormatted": false
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        }
+      ],
+      "qMeasures": [
+        {
+          "qDef": {
+            "qLabel": "DOSES - N. CUM - DIST or ADMIN",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}Aggr(RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) * Count([$(=Replace(GetObjectField(1),']',']]'))]) > 0,  (　pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n  SUM(DosesDistributed),\n  SUM(DoseTotal_ALLP)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}0), 0), 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending))))",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n 'Doses distributed',\n 'Doses administered'\n)",
+            "autoSort": true,
+            "cId": "FpHQ",
+            "numFormatFromTemplate": true,
+            "isCustomFormatted": false,
+            "modifiers": [
+              {
+                "type": "accumulation",
+                "disabled": false,
+                "accumulationDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "fullAccumulation": true,
+                "steps": 6,
+                "outputExpression": "Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}Aggr(RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) * Count([$(=Replace(GetObjectField(1),']',']]'))]) > 0,  (　pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n  SUM(DosesDistributed),\n  SUM(DoseTotal_ALLP)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}0), 0), 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending))))",
+                "base": {
+                  "qDef": "",
+                  "qLibraryId": "mtVrm",
+                  "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n 'Doses distributed',\n 'Doses administered'\n)"
+                }
+              }
+            ],
+            "base": {
+              "qDef": "",
+              "qLibraryId": "mtVrm",
+              "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n 'Doses distributed',\n 'Doses administered'\n)"
+            },
+            "coloring": {}
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        0,
+        1,
+        2
+      ],
+      "qSuppressMissing": true,
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 17,
+          "qHeight": 500
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "K",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qAlwaysFullyExpanded": true,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [
+        0,
+        1,
+        2
+      ],
+      "qExpansionState": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
+    },
+    "refLine": {
+      "refLines": [],
+      "dimRefLines": []
+    },
+    "showTitles": true,
+    "title": {
+      "qStringExpression": {
+        "qExpr": "=pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'),\r\n'Cumulative number of vaccine doses distributed to ' &v_EU27_EEA_Title,\n'Cumulative number of vaccine doses distributed to ' &v_EU27_EEA_Title,\n'Cumulative number of vaccine doses administered to ' &v_EU27_EEA_Title\n) & ' by product as of ' & date(ReloadTime(), 'YYYY-MM-DD')"
+      }
+    },
+    "subtitle": {
+      "qStringExpression": {
+        "qExpr": "='by reporting week '&v_Text_Preliminary"
+      }
+    },
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "showDisclaimer": true,
+    "components": [],
+    "barGrouping": {
+      "grouping": "stacked"
+    },
+    "orientation": "vertical",
+    "scrollbar": "none",
+    "scrollStartPos": 1,
+    "gridLine": {
+      "auto": true,
+      "spacing": 2
+    },
+    "dataPoint": {
+      "showLabels": false,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
+    },
+    "color": {
+      "auto": true,
+      "mode": "primary",
+      "formatting": {
+        "numFormatFromTemplate": true
+      },
+      "useBaseColors": "off",
+      "paletteColor": {
+        "index": 6
+      },
+      "useDimColVal": true,
+      "useMeasureGradient": true,
+      "persistent": true,
+      "expressionIsColor": true,
+      "expressionLabel": "",
+      "measureScheme": "sg",
+      "reverseScheme": false,
+      "dimensionScheme": "12",
+      "autoMinMax": true,
+      "measureMin": 0,
+      "measureMax": 10
+    },
+    "legend": {
+      "show": true,
+      "dock": "top",
+      "showTitle": false
+    },
+    "dimensionAxis": {
+      "continuousAuto": true,
+      "show": "labels",
+      "label": "auto",
+      "dock": "near",
+      "axisDisplayMode": "auto",
+      "maxVisibleItems": 10
+    },
+    "preferContinuousAxis": true,
+    "measureAxis": {
+      "show": "labels",
+      "dock": "near",
+      "spacing": 1,
+      "autoMinMax": true,
+      "minMax": "min",
+      "min": 0,
+      "max": 10
+    },
+    "tooltip": {
+      "auto": false,
+      "hideBasic": true,
+      "data": {},
+      "title": "",
+      "description": ""
+    },
+    "visualization": "barchart",
+    "version": "1.6.0",
+    "showMiniChartForContinuousAxis": true,
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

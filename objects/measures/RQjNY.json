@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "RQjNY",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - # Full vaccination",
+    "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose2nd_80),\n    sum(Dose2nd_HCW),\n    sum(Dose2nd_LTCF)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Full vaccinations'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#458d34",
+        "index": 11
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG - # Full vaccination",
+    "description": "",
+    "tags": []
+  }
+}

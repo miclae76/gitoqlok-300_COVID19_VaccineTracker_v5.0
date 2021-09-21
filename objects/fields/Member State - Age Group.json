@@ -1,0 +1,10 @@
+{
+  "qName": "Member State - Age Group",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

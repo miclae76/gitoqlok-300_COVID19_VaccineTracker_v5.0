@@ -1,0 +1,161 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "8c993fc2-a4a7-4684-8e40-ea9db6cbdbc6",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "CONTAINER - N. Doses Distributed",
+      "description": "",
+      "tags": []
+    },
+    "alternatives": [
+      {
+        "masterItem": "2f2c02fd-b7a9-407d-85b0-8cf72ff3298a~DOSES - N. Vaccine doses distributed",
+        "width": "100%",
+        "height": "55%",
+        "style": "",
+        "border": {
+          "switch": false,
+          "width": "1px",
+          "color": {
+            "index": -1,
+            "color": "#595959"
+          },
+          "style": "solid",
+          "radius": "0px"
+        },
+        "background": {
+          "switch": false
+        },
+        "cId": "TRBGPk"
+      },
+      {
+        "masterItem": "9a25d582-9294-40b0-bb05-2bc78858c8bc~DOSES -  N. Cumulative Vaccine distributed",
+        "width": "100%",
+        "height": "45%",
+        "style": "",
+        "border": {
+          "switch": false,
+          "width": "1px",
+          "color": {
+            "index": -1,
+            "color": "#595959"
+          },
+          "style": "solid",
+          "radius": "0px"
+        },
+        "background": {
+          "switch": false
+        },
+        "cId": "VAsNL"
+      }
+    ],
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "prop": {
+      "background": {
+        "switch": false,
+        "switchfxpick": false,
+        "color": {
+          "index": -1,
+          "color": "#fff"
+        },
+        "colorfx": "",
+        "cssswitch": false,
+        "css": "",
+        "pictureswitch": false,
+        "picture": ""
+      },
+      "customcss": {
+        "switch": false,
+        "css": ""
+      }
+    },
+    "mobile": {
+      "switch": false
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [],
+      "qMeasures": [],
+      "qInterColumnSortOrder": [],
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 10,
+          "qHeight": 50
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [],
+      "qExpansionState": [],
+      "customErrorMessage": {
+        "calcCond": ""
+      },
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
+    },
+    "visualization": "grouped_container",
+    "version": "1.0.1",
+    "extensionMeta": {
+      "translationKey": "",
+      "icon": "box",
+      "iconChar": "puzzle",
+      "isLibraryItem": true,
+      "visible": true,
+      "name": "Grouped Container",
+      "description": "This extension will help you to group Qlik objects within a visual container.\nVersion: 1.0.1",
+      "template": "grouped_container",
+      "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+      "isThirdParty": true,
+      "type": "visualization",
+      "version": "1.0.1",
+      "preview": "grouped.png",
+      "keywords": "qlik-sense, visualization",
+      "author": "Dennis Jaskowiak",
+      "homepage": "",
+      "license": "MIT",
+      "repository": "",
+      "dependencies": {
+        "qlik-sense": ">=5.5.x"
+      },
+      "previewIconURL": "https://nvdqlkse/extensions/grouped_container/grouped.png"
+    },
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

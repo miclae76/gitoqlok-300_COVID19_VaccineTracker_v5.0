@@ -1,0 +1,7 @@
+{
+  "qName": "DosesDistributed_Cumul",
+  "qTags": [],
+  "qSrcTables": [
+    "Vaccination_Cumulative"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.CalQuarter",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

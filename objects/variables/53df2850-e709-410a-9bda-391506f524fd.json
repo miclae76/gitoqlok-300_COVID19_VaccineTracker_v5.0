@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "53df2850-e709-410a-9bda-391506f524fd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Dim_Week",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "[Notification Week]\r\n\n//TimeCode_withdata\n\n//IF( LEFT(UPPER(Sel_Notification_week),3)='CUM',DATE(TimeCode),EI_Year_Week)\n\n\n//TimeCode\n\n//=IF(MAX(Sel_Days)>7,EI_WeekStart,EI_Year_Week)\n",
+  "tags": []
+}

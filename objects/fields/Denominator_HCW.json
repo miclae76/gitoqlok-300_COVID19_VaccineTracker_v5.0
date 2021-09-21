@@ -1,0 +1,10 @@
+{
+  "qName": "Denominator_HCW",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Vaccination_Cumulative"
+  ]
+}

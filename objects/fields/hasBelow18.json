@@ -1,0 +1,10 @@
+{
+  "qName": "hasBelow18",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Filter_Country_has_below_18"
+  ]
+}

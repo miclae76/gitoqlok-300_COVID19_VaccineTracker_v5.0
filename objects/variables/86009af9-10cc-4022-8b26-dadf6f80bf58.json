@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "86009af9-10cc-4022-8b26-dadf6f80bf58",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_0322QVDDisease",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\032_Source\\0322_Diseases\\",
+  "qIsScriptCreated": true
+}

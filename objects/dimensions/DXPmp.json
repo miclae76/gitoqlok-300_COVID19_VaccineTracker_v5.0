@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DXPmp",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Member State - Age Group"
+    ],
+    "qFieldLabels": [
+      "Member State - Age Group"
+    ],
+    "title": "Member State - Age Group",
+    "coloring": {
+      "changeHash": "0.462874084962996"
+    }
+  },
+  "qMetaDef": {
+    "title": "Member State - Age Group",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "6ad5f0c5-875a-4d7d-97de-8378bf07cfe3",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_NumberOfCases_Selected_Period",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "SUM({<\r\nEI_WeekStartNUM={\">=$(=vl_MAX_WeekStartNUM - $(vl_Days_Previous))<=$(=vl_MAX_WeekStartNUM)    \"} \n,EI_Year_MonthName_Week=\n>}  NumOfConfCases)",
+  "tags": []
+}

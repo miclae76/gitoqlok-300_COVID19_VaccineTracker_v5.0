@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "9a5c74d3-5736-434c-873b-bd9d70391cb0",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_EI_Charts_Label",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF( $(vl_Sel_Grouped_Detail)=1\t\r\n\t\t,IF(GetSelectedCount(CountryName)=5\t\t,'Top 5'\n\t\t,IF(GetSelectedCount(%Flag_EU_EEA)=1\t,'Countries ('  & Count(distinct  {<CountryName={\"=SUM(NumOfConfCases)>0\"}>}  CountryName) & ')'\n\t\t,IF(GetSelectedCount(Continent)>0\t\t,'Countries ('  & Count(distinct  {<CountryName={\"=SUM(NumOfConfCases)>0\"}>}  CountryName) & ')'\n\t\t,IF(GetSelectedCount(CountryName)>0 \t,'Countries ('  & Count(distinct  {<CountryName={\"=SUM(NumOfConfCases)>0\"}>}  CountryName) & ')'\n        \t\t\t\t\t\t\t\t\t\t,'Countries ('  & Count(distinct  {<CountryName={\"=SUM(NumOfConfCases)>0\"}>}  CountryName) & ')'\n            ))))\n\t,IF( $(vl_Sel_Grouped_Detail)=0\n\t\t,IF(GetSelectedCount(%Flag_EU_EEA)=1\t,'EU/EEA'\n\t\t,IF(GetSelectedCount(Continent)>0\t\t,'Continent'\n\t\t,IF(GetSelectedCount(CountryName)>0 \t,'Countries (' & Count(distinct  {<CountryName={\"=SUM(NumOfConfCases)>0\"}>}  CountryName) & ')'\n        \t,'Worldwide'\n))))\n)",
+  "tags": []
+}

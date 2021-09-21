@@ -1,0 +1,24 @@
+[
+  {
+    "qProperty": {
+      "qInfo": {
+        "qId": "9b53e7ac-572d-4303-a8cb-0645eca64a27",
+        "qType": "appprops"
+      },
+      "qMetaDef": {},
+      "sheetTitleBgColor": {
+        "color": "#478184",
+        "index": 16
+      },
+      "sheetTitleGradientColor": "",
+      "sheetTitleColor": "#ffffff",
+      "sheetLogoThumbnail": {
+        "qStaticContentUrlDef": {}
+      },
+      "sheetLogoPosition": "",
+      "rtl": false,
+      "theme": "ecdc-covid-19"
+    },
+    "qChildren": []
+  }
+]

@@ -1,0 +1,548 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "952b47d3-ae7e-4c4f-90b9-dcb9f92580c2",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "ALL - Uptake All countries",
+      "description": "",
+      "tags": []
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [
+        {
+          "qLibraryId": "JvfaJtS",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": true,
+            "cId": "cDXQPm",
+            "othersLabel": "Others"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [
+            {
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "cId": "kpADgb",
+              "autoSort": true,
+              "id": "customTooltipTitle"
+            },
+            {
+              "qLibraryId": "PjaJpr",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "wpUvAyf",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "bnzfJzX",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "HRpjarP",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          }
+        }
+      ],
+      "qMeasures": [
+        {
+          "qLibraryId": "xHLFuQt",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "jPmeyGy",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
+            "styling": [
+              {
+                "key": "line",
+                "style": {
+                  "lineThickness": 1
+                }
+              }
+            ]
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "PjaJpr",
+          "qDef": {
+            "qLabel": "TG - Uptake at least one dose (%)",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Uptake at least one dose (%)'",
+            "autoSort": true,
+            "cId": "QmAem",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "xHLFuQt",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "JrhPdW",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "bnzfJzX",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "NudFngM",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "qSuppressZero": true,
+      "qSuppressMissing": true,
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 17,
+          "qHeight": 500
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qAlwaysFullyExpanded": true,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [],
+      "qExpansionState": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
+    },
+    "refLine": {
+      "refLines": [
+        {
+          "show": {
+            "qValueExpression": {
+              "qExpr": "0\r\n/*\n=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\n \trangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"} , Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80_Cumul), [Vaccination.YearWeek]))), 1)), \n    \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW_Cumul), [Vaccination.YearWeek]))), 1)),   \n        \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF_Cumul), [Vaccination.YearWeek]))), 1))\n)>0.8\n*/"
+            }
+          },
+          "label": "Target",
+          "showLabel": true,
+          "refLineExpr": {
+            "value": 0.8,
+            "label": "0.8"
+          },
+          "showValue": true,
+          "paletteColor": {
+            "index": -1,
+            "color": "#6f6f6f"
+          },
+          "style": {
+            "lineThickness": 2,
+            "lineType": "8 4"
+          },
+          "coloredBackground": false,
+          "cId": "dnmYRQ"
+        },
+        {
+          "show": {
+            "qValueExpression": {
+              "qExpr": "0"
+            }
+          },
+          "label": "Target",
+          "showLabel": false,
+          "refLineExpr": {
+            "value": 0.7,
+            "label": "0.7"
+          },
+          "showValue": true,
+          "paletteColor": {
+            "index": -1,
+            "color": "#989a9c"
+          },
+          "style": {
+            "lineThickness": 2,
+            "lineType": "8 4"
+          },
+          "coloredBackground": false,
+          "cId": "DUvEhb"
+        }
+      ],
+      "dimRefLines": []
+    },
+    "showTitles": true,
+    "title": {
+      "qStringExpression": {
+        "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and full vaccination '& SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+      }
+    },
+    "subtitle": {
+      "qStringExpression": {
+        "qExpr": "='by reporting week (data for the current week are preliminary)'"
+      }
+    },
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "showDisclaimer": true,
+    "components": [
+      {
+        "key": "line",
+        "style": {
+          "dataPointSize": 3,
+          "lineThickness": 3,
+          "lineType": "solid",
+          "lineCurve": "linear"
+        }
+      }
+    ],
+    "lineType": "line",
+    "stackedArea": false,
+    "separateStacking": true,
+    "orientation": "horizontal",
+    "scrollbar": "bar",
+    "scrollStartPos": 1,
+    "nullMode": "gap",
+    "dataPoint": {
+      "show": true,
+      "showLabels": true
+    },
+    "gridLine": {
+      "auto": false,
+      "spacing": 0
+    },
+    "color": {
+      "auto": true,
+      "mode": "byMeasure",
+      "formatting": {
+        "numFormatFromTemplate": true,
+        "quarantine": {
+          "qNumFormat": {},
+          "isCustomFormatted": false
+        },
+        "qNumFormat": null
+      },
+      "useBaseColors": "off",
+      "paletteColor": {
+        "index": 6
+      },
+      "useDimColVal": true,
+      "useMeasureGradient": true,
+      "persistent": true,
+      "expressionIsColor": true,
+      "expressionLabel": "",
+      "measureScheme": "sg",
+      "reverseScheme": false,
+      "dimensionScheme": "12",
+      "autoMinMax": true,
+      "measureMin": 0,
+      "measureMax": 10,
+      "colorExpression": "'#62bb46'",
+      "altLabel": "BLWsdY",
+      "byMeasureDef": {
+        "label": "BLWsdY",
+        "key": "BLWsdY",
+        "type": "libraryItem"
+      }
+    },
+    "legend": {
+      "show": true,
+      "dock": "top",
+      "showTitle": false
+    },
+    "dimensionAxis": {
+      "continuousAuto": false,
+      "show": "labels",
+      "label": "auto",
+      "dock": "near",
+      "axisDisplayMode": "auto",
+      "maxVisibleItems": 10
+    },
+    "preferContinuousAxis": false,
+    "measureAxis": {
+      "show": "labels",
+      "dock": "near",
+      "spacing": 0.5,
+      "autoMinMax": false,
+      "minMax": "max",
+      "min": 0,
+      "max": {
+        "qValueExpression": {
+          "qExpr": "1/*=pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND'),      \r\n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake1st_ALL), [Member State])) > 0.7, 1, 0.7) ,        \n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake2nd_ALL), [Member State])) > 0.7, 1, 0.7)     \t \n)*/\n\n"
+        }
+      },
+      "logarithmic": false
+    },
+    "tooltip": {
+      "auto": false,
+      "hideBasic": true,
+      "title": "",
+      "description": ""
+    },
+    "visualization": "linechart",
+    "version": "1.5.0",
+    "showMiniChartForContinuousAxis": true,
+    "masterVersion": 0.96,
+    "qLayoutExclude": {
+      "quarantine": {}
+    }
+  },
+  "qChildren": []
+}

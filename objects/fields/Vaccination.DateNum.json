@@ -1,0 +1,12 @@
+{
+  "qName": "Vaccination.DateNum",
+  "qTags": [
+    "$numeric",
+    "$integer",
+    "$timestamp",
+    "$date"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

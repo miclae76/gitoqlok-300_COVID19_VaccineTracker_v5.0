@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "2b7ea173-2670-4903-a7aa-22730b8d0ba2",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Transmission_Lastreported",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

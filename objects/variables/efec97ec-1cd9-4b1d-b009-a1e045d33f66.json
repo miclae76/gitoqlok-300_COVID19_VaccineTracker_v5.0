@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "efec97ec-1cd9-4b1d-b009-a1e045d33f66",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vSQLReportingCountryString",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "'BE', 'DE', 'ES', 'FI', 'FR', 'IT', 'SE', 'UK'"
+}

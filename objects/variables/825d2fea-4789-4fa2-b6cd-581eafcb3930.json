@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "825d2fea-4789-4fa2-b6cd-581eafcb3930",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG.InitialDateOverview",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "31-01-21"
+}

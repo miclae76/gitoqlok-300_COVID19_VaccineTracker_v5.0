@@ -1,0 +1,12 @@
+{
+  "qName": "%Key_Cumul_KPI",
+  "qTags": [
+    "$numeric",
+    "$integer",
+    "$key"
+  ],
+  "qSrcTables": [
+    "Vaccination",
+    "Vaccination_Cumulative"
+  ]
+}

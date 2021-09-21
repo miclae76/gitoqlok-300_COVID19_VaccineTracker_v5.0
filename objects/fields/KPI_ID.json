@@ -1,0 +1,10 @@
+{
+  "qName": "KPI_ID",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "KPI"
+  ]
+}

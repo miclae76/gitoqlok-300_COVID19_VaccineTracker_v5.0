@@ -1,0 +1,105 @@
+{
+  "qInfo": {
+    "qId": "b39e73c6-d270-42a9-8a8b-1034e2adce46",
+    "qType": "snapshot"
+  },
+  "qMetaDef": {
+    "title": "",
+    "description": "",
+    "annotation": ""
+  },
+  "creationDate": "2020-03-27T17:42:00.788Z",
+  "qMeta": {
+    "privileges": [
+      "read",
+      "update",
+      "delete",
+      "exportdata"
+    ]
+  },
+  "qSelectionInfo": {},
+  "qHyperCube": {
+    "qSize": {
+      "qcx": 1,
+      "qcy": 1
+    },
+    "qDimensionInfo": [],
+    "qMeasureInfo": [
+      {
+        "qFallbackTitle": "=Concat(DISTINCT Aggr(If(Sum(NumOfCases) > 0, CountryName), CountryName), ', ')\r\n\n//CONCAT(distinct(Aggr(SUM(NumOfCases), CountryName))",
+        "qApprMaxGlyphCount": 55,
+        "qCardinal": 0,
+        "qSortIndicator": "D",
+        "qNumFormat": {
+          "qType": "U",
+          "qnDec": 0,
+          "qUseThou": 0
+        },
+        "qMin": "NaN",
+        "qMax": "NaN",
+        "qIsAutoFormat": true,
+        "qAttrExprInfo": [],
+        "qAttrDimInfo": [],
+        "qTrendLines": [],
+        "autoSort": true,
+        "cId": "pUpPqdb",
+        "numFormatFromTemplate": true
+      }
+    ],
+    "qEffectiveInterColumnSortOrder": [
+      0
+    ],
+    "qGrandTotalRow": [
+      {
+        "qText": "France, Germany, Italy, Spain, United States of America",
+        "qNum": "NaN",
+        "qElemNumber": -1,
+        "qState": "X",
+        "qIsTotalCell": true
+      }
+    ],
+    "qDataPages": [],
+    "qPivotDataPages": [],
+    "qStackedDataPages": [],
+    "qMode": "S",
+    "qNoOfLeftDims": -1,
+    "qTreeNodesOnDim": [],
+    "qColumnOrder": []
+  },
+  "showTitles": false,
+  "title": "",
+  "subtitle": "",
+  "footnote": "",
+  "showDetails": false,
+  "responsive": "all",
+  "markdown": "=[](pUpPqdb)",
+  "images": [],
+  "background": {
+    "isUsed": false,
+    "size": "auto",
+    "position": "topLeft",
+    "url": {}
+  },
+  "visualization": "text-image",
+  "snapshotData": {
+    "object": {
+      "size": {
+        "w": 743,
+        "h": 84
+      }
+    },
+    "rtl": false,
+    "scrollTopPercent": 0,
+    "verticalScrollWidth": -0.08699999999998909,
+    "parent": {
+      "h": 614.444,
+      "w": 1517.78
+    }
+  },
+  "visualizationType": "text-image",
+  "sourceObjectId": "GsbEjf",
+  "sheetId": "754b5994-fa95-4f1d-a481-50aae38a8680",
+  "timestamp": 1585330920754,
+  "isClone": false,
+  "supportExport": true
+}

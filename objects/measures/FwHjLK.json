@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "FwHjLK",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - N. Administered Current",
+    "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n      sum({<[Member State]=>} Dose1st_80),\n      sum({<[Member State]=>} Dose2nd_80),\n      sum({<[Member State]=>} Dose1st_HCW),\n      sum({<[Member State]=>} Dose2nd_HCW),\n      sum({<[Member State]=>} Dose1st_LTCF),\n      sum({<[Member State]=>} Dose2nd_LTCF)\n    )\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n'Number of first doses administered - 80 years old and above',\n'Number of full vaccination dose administered - 80 years old and above',\n'Number of first doses administered - Healthcare Workers',\n'Number of full vaccination dose administered - Healthcare Workers',\n'Number of first doses administered - LTCF residents',\n'Number of full vaccination dose administered - LTCF residents',\n)",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0;-#,##0;-",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "TG - N. Administered Current",
+    "description": "",
+    "tags": []
+  }
+}

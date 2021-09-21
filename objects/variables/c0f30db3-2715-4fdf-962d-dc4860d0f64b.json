@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c0f30db3-2715-4fdf-962d-dc4860d0f64b",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_SUM_NumberOfCases_EU",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "SUM({1<\r\nEI_WeekStartNUM={\">=$(=vl_MAX_WeekStartNUM - $(vl_Days_Previous))<=$(=vl_MAX_WeekStartNUM)\"} \n,EI_WeekStart=\n,TimeCode=\n,[%Flag_EU_EEA]={1}\n>}  NumOfConfCases)",
+  "tags": []
+}

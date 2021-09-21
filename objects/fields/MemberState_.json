@@ -1,0 +1,10 @@
+{
+  "qName": "MemberState_",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "MemberState_Group"
+  ]
+}

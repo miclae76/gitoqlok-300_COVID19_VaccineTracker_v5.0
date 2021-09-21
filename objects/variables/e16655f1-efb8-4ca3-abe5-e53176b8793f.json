@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "e16655f1-efb8-4ca3-abe5-e53176b8793f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Countries_with_cases",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

@@ -1,0 +1,10 @@
+{
+  "qName": "Product_",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Product"
+  ]
+}

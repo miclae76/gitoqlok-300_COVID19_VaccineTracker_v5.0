@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "f1f327ab-97b3-4e20-a061-9b73cebcc2c6",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_MAX_EI_YearWeek",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

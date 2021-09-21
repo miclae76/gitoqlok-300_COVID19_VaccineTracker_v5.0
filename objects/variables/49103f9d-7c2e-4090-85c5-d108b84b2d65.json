@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "49103f9d-7c2e-4090-85c5-d108b84b2d65",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_22_042Subroutines",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2_Projects\\22_CoronaVirus\\04_ScriptComponents\\042_Subroutines",
+  "qIsScriptCreated": true
+}

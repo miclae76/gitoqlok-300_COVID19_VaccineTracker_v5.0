@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "bbab5dfc-d58c-44fb-9add-23fe41f493d4",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Text_Preliminary",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "(data for current week are preliminary)",
+  "tags": []
+}

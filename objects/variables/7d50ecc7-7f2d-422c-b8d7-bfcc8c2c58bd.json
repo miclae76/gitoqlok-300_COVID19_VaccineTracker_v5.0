@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "7d50ecc7-7f2d-422c-b8d7-bfcc8c2c58bd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_LastModifiedTime",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

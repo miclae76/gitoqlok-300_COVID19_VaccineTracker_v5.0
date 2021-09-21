@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "BmruRj",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "H",
+    "qFieldDefs": [
+      "Completeness.Country",
+      "Completeness.TargetGroup"
+    ],
+    "qFieldLabels": [],
+    "title": "Country > Target Group",
+    "coloring": {
+      "changeHash": "0.7699230254598468",
+      "colorMapRef": "BmruRj"
+    }
+  },
+  "qMetaDef": {
+    "title": "Country > Target Group",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "641beb60-19e9-4831-b875-be3f5d14a9e2",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "KPI bar ALL - Uptake full vaccination",
+    "qDef": "pick(match(ValueList('At least one dose', 'Full vaccination'), 'At least one dose', 'Full vaccination'),\r\n\t'',\n\tsum({<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.Denominator])\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "'Uptake full vaccination'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#458d34",
+        "index": 11
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "KPI bar ALL - Uptake full vaccination",
+    "description": "",
+    "tags": []
+  }
+}

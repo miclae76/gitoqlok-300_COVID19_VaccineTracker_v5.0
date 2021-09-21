@@ -1,0 +1,361 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "2d241d40-fcd6-4c86-af07-0435d3ede1e2",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "Doses distributed per inhabitants by country",
+      "description": "",
+      "tags": []
+    },
+    "qHyperCubeDef": {
+      "qDimensions": [
+        {
+          "qLibraryId": "CSfmAQ",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByAscii": 1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "THjnfu",
+            "othersLabel": "Others"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "$$hashKey": "object:7707"
+        }
+      ],
+      "qMeasures": [
+        {
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "sum({<[Member State]=>}DosesDistributed_per100Inh)*100\r\n",
+            "qNumFormat": {
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "#,##0.0;#,##0.0;",
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Doses distributed per 100 inhabitants'\r\n",
+            "autoSort": false,
+            "cId": "YbgPVA",
+            "numFormatFromTemplate": false,
+            "isCustomFormatted": false
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [
+            {
+              "qExpression": "$(v_CountryColorBrushing_Blue('#6bbabf'))",
+              "qAttribute": true,
+              "id": "colorByExpression"
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        }
+      ],
+      "qInterColumnSortOrder": [
+        0,
+        1
+      ],
+      "qSuppressMissing": true,
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 17,
+          "qHeight": 500
+        }
+      ],
+      "qReductionMode": "N",
+      "qMode": "S",
+      "qPseudoDimPos": -1,
+      "qNoOfLeftDims": -1,
+      "qAlwaysFullyExpanded": true,
+      "qMaxStackedCells": 5000,
+      "qCalcCond": {},
+      "qTitle": {},
+      "qCalcCondition": {
+        "qCond": {},
+        "qMsg": {}
+      },
+      "qColumnOrder": [
+        0,
+        1,
+        2
+      ],
+      "qExpansionState": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
+    },
+    "refLine": {
+      "refLines": [],
+      "dimRefLines": []
+    },
+    "showTitles": true,
+    "title": {
+      "qStringExpression": {
+        "qExpr": "=pick(match(v_ViewDistribution, 'PER', 'TOTAL'),\r\n'Number of vaccine doses distributed to '& v_EU27_EEA_Title & ' per hundred inhabitants' & ' as of ',\n'Number of vaccine doses distributed to '& v_EU27_EEA_Title  & ' as of ')\n& date(ReloadTime(), 'YYYY-MM-DD')\n"
+      }
+    },
+    "subtitle": {
+      "qStringExpression": {
+        "qExpr": "='Product(s) : '& if(GetSelectedCount(Vaccine)=0, 'All', concat(distinct Vaccine, ', '))"
+      }
+    },
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "showDisclaimer": true,
+    "components": [
+      {
+        "key": "bar",
+        "style": {
+          "width": 0.87,
+          "strokeColor": {
+            "index": -1,
+            "color": "#FFFFFF"
+          },
+          "strokeWidth": "none"
+        }
+      }
+    ],
+    "barGrouping": {
+      "grouping": "stacked"
+    },
+    "orientation": "horizontal",
+    "scrollbar": "none",
+    "scrollStartPos": 0,
+    "gridLine": {
+      "auto": false,
+      "spacing": 0
+    },
+    "dataPoint": {
+      "showLabels": true,
+      "showSegmentLabels": false,
+      "showTotalLabels": true
+    },
+    "color": {
+      "auto": false,
+      "mode": "byExpression",
+      "formatting": {
+        "numFormatFromTemplate": true
+      },
+      "useBaseColors": "off",
+      "paletteColor": {
+        "index": 1,
+        "color": "#62bb46"
+      },
+      "useDimColVal": true,
+      "useMeasureGradient": true,
+      "persistent": true,
+      "expressionIsColor": true,
+      "expressionLabel": "",
+      "measureScheme": "sg",
+      "reverseScheme": false,
+      "dimensionScheme": "12",
+      "autoMinMax": true,
+      "measureMin": 0,
+      "measureMax": 10,
+      "colorExpression": "$(v_CountryColorBrushing_Blue('#6bbabf'))",
+      "altLabel": "Vaccine",
+      "byDimDef": {
+        "label": "Vaccine",
+        "key": "Vaccine",
+        "type": "expression",
+        "activeDimensionIndex": 1
+      }
+    },
+    "legend": {
+      "show": true,
+      "dock": "auto",
+      "showTitle": true
+    },
+    "dimensionAxis": {
+      "continuousAuto": true,
+      "show": "labels",
+      "label": "auto",
+      "dock": "near",
+      "axisDisplayMode": "max",
+      "maxVisibleItems": 10
+    },
+    "preferContinuousAxis": true,
+    "measureAxis": {
+      "show": "none",
+      "dock": "near",
+      "spacing": 2,
+      "autoMinMax": true,
+      "minMax": "min",
+      "min": 0,
+      "max": 10
+    },
+    "tooltip": {
+      "auto": true,
+      "hideBasic": false,
+      "data": {}
+    },
+    "visualization": "barchart",
+    "version": "1.6.0",
+    "showMiniChartForContinuousAxis": true,
+    "isRecommended": true,
+    "qLayoutExclude": {
+      "disabled": {},
+      "quarantine": {}
+    },
+    "recommendation": {
+      "analysis": {
+        "analysis": "rank",
+        "msrs": [
+          {
+            "expr": "=Sum([Vaccination.DoseFirst])",
+            "cType": "eField",
+            "field": "Vaccination.DoseFirst",
+            "fieldStats": {
+              "dataType": "integer",
+              "valueRange": {
+                "min": 130,
+                "max": 2320002
+              },
+              "classification": [
+                "measure"
+              ]
+            }
+          }
+        ],
+        "dims": [
+          {
+            "expr": "[Vaccination.RegionMnemonic]",
+            "cType": "eField",
+            "field": "Vaccination.RegionMnemonic",
+            "fieldStats": {
+              "distinctCount": 23,
+              "dataType": "string"
+            }
+          }
+        ],
+        "analysisGroup": "rank",
+        "titleTemplate": [
+          {
+            "msgId": "cao.chart.rank.2.title",
+            "msgParams": {
+              "$$1": 1,
+              "$$2": 0
+            }
+          }
+        ]
+      },
+      "options": {},
+      "isExtendedAnalysis": false,
+      "matchRecord": {
+        "analysisPrecedentId": "P-Rank",
+        "matches": [
+          {
+            "slot": "$$1",
+            "slotRole": "dimension",
+            "field": "Vaccination.RegionMnemonic"
+          },
+          {
+            "slot": "$$2",
+            "slotRole": "measure",
+            "field": "Vaccination.DoseFirst",
+            "aggr": "Sum"
+          }
+        ],
+        "precedentStats": {
+          "matchedFields": 0,
+          "uniquePrecedents": 0
+        }
+      },
+      "relevance": 1,
+      "analysisIntentRelevance": 0.09000000000000001
+    },
+    "masterVersion": 0.96
+  },
+  "qChildren": []
+}

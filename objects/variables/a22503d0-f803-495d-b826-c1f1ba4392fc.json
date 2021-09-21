@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "a22503d0-f803-495d-b826-c1f1ba4392fc",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_EU_EEA",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

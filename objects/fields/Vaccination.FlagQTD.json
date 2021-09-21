@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.FlagQTD",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "7b284afd-7311-4bc2-a87d-4c6406a3973e",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "KPI bar ALL - Population not vaccinated",
+    "qDef": "1-pick(match(ValueList('At least one dose', 'Full vaccination'), 'At least one dose', 'Full vaccination'),\r\n\tsum({<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.Denominator]),\n\tsum({<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"ALL\"}, [Member State]=>} [Vaccination.Denominator])\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Not vaccinated'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e6e7e8",
+        "index": 20
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "KPI bar ALL - Population not vaccinated",
+    "description": "",
+    "tags": []
+  }
+}

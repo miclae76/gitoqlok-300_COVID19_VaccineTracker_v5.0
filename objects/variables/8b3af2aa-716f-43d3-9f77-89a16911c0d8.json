@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "8b3af2aa-716f-43d3-9f77-89a16911c0d8",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.ReloadDate",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "=date(ReloadTime(), 'YYYY-MM-DD')",
+  "tags": []
+}

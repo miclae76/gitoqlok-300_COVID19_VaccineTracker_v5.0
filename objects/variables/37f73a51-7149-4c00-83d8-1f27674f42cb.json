@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "37f73a51-7149-4c00-83d8-1f27674f42cb",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.KPI_Administered_Cum",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "=num(sum({1<EU27_EEA=P(EU27_EEA)>} DoseTotal_ALLP), '#,##0')",
+  "tags": []
+}

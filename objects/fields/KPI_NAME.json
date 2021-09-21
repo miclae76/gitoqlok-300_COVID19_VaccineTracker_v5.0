@@ -1,0 +1,10 @@
+{
+  "qName": "KPI_NAME",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "KPI"
+  ]
+}

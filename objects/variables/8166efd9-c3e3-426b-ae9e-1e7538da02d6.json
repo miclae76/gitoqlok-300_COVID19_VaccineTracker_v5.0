@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "8166efd9-c3e3-426b-ae9e-1e7538da02d6",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vAux1",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0"
+}

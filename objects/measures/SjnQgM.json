@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "SjnQgM",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - Uptake Current",
+    "qDef": "rangemin(1, \r\n    pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\n      sum({<[Member State]=>}Uptake1st_80),\n      sum({<[Member State]=>}Uptake2nd_80),\n      sum({<[Member State]=>} Uptake1st_HCW),\n      sum({<[Member State]=>} Uptake2nd_HCW),\n      sum({<[Member State]=>} Uptake1st_LTCF),\n      sum({<[Member State]=>} Uptake2nd_LTCF)\n    )\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n'Uptake at least one dose (%) - 80 years old and above',\n'Uptake full vaccination (%) - 80 years old and above',\n'Uptake at least one dose (%) - Healthcare Workers',\n'Uptake full vaccination (%) - Healthcare Workers',\n'Uptake at least one dose (%) - LTCF residents',\n'Uptake full vaccination (%) - LTCF residents',\n)",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%;-0.0%;Not Reported",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "TG - Uptake Current",
+    "description": "Uptake at least one dose or full vaccination for select target group",
+    "tags": [
+      "TARGET_GROUP"
+    ]
+  }
+}

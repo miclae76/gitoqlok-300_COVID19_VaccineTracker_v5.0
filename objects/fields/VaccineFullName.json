@@ -1,0 +1,9 @@
+{
+  "qName": "VaccineFullName",
+  "qTags": [
+    "$text"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "qName": "SW_ADULTS_POP",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "D_BUTTON_ALL_ALLP"
+  ]
+}

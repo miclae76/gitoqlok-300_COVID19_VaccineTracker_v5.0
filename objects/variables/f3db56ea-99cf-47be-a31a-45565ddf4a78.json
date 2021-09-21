@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "f3db56ea-99cf-47be-a31a-45565ddf4a78",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_KPI_AttackRate_Colors",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "RGB(124,23,15)",
+  "tags": []
+}

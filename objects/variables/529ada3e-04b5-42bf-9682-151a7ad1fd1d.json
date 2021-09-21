@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "529ada3e-04b5-42bf-9682-151a7ad1fd1d",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vCloseContactFirstDate",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "<Missing>"
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "f5cd375a-b4fc-4668-b167-200c54a7612e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_22_0311QVDRaw",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2_Projects\\22_CoronaVirus\\03_Qvd\\031_Raw",
+  "qIsScriptCreated": true
+}

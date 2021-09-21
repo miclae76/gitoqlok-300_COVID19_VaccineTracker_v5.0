@@ -1,0 +1,9 @@
+{
+  "qName": "UptakeTotal_LTCF",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

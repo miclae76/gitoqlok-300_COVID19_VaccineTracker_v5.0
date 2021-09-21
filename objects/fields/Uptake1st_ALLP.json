@@ -1,0 +1,9 @@
+{
+  "qName": "Uptake1st_ALLP",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

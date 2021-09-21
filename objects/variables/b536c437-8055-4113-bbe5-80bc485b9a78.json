@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "b536c437-8055-4113-bbe5-80bc485b9a78",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_052WBProcessedF",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\05_StagingArea\\052_WB_ProcessedFiles\\",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,4159 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "2a48e879-eaa5-4925-9480-967aca1bf36f",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "TARGET GROUP",
+      "description": ""
+    },
+    "rank": 11.375,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "WFpPPp",
+        "type": "qlik-variable-input",
+        "col": 5,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 20.833333333333336,
+          "width": 16.666666666666664,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "PRNkhv",
+        "type": "map",
+        "col": 0,
+        "row": 1,
+        "colspan": 7,
+        "rowspan": 7,
+        "bounds": {
+          "y": 8.333333333333332,
+          "x": 0,
+          "width": 29.166666666666668,
+          "height": 58.333333333333336
+        }
+      },
+      {
+        "name": "mHPPFP",
+        "type": "qlik-variable-input",
+        "col": 0,
+        "row": 0,
+        "colspan": 5,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 20.833333333333336,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "FxUJst",
+        "type": "container",
+        "col": 12,
+        "row": 2,
+        "colspan": 8,
+        "rowspan": 6,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 50,
+          "width": 33.33333333333333,
+          "height": 50
+        }
+      },
+      {
+        "name": "zyeYuJ",
+        "type": "widget",
+        "col": 12,
+        "row": 0,
+        "colspan": 8,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 33.33333333333333,
+          "height": 16.666666666666664
+        }
+      },
+      {
+        "name": "UdPen",
+        "type": "container",
+        "col": 20,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
+          "height": 16.666666666666664
+        }
+      },
+      {
+        "name": "cpmpPC",
+        "type": "container",
+        "col": 20,
+        "row": 2,
+        "colspan": 4,
+        "rowspan": 6,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
+          "height": 50
+        }
+      },
+      {
+        "name": "KGNPN",
+        "type": "container",
+        "col": 12,
+        "row": 8,
+        "colspan": 8,
+        "rowspan": 1,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 50,
+          "width": 33.33333333333333,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "ttTJveu",
+        "type": "table",
+        "col": 12,
+        "row": 9,
+        "colspan": 8,
+        "rowspan": 3,
+        "bounds": {
+          "y": 75,
+          "x": 50,
+          "width": 33.33333333333333,
+          "height": 25
+        }
+      },
+      {
+        "name": "bSjUGX",
+        "type": "barchart",
+        "col": 7,
+        "row": 1,
+        "colspan": 5,
+        "rowspan": 7,
+        "bounds": {
+          "y": 8.333333333333332,
+          "x": 29.166666666666668,
+          "width": 20.833333333333336,
+          "height": 58.333333333333336
+        }
+      },
+      {
+        "name": "FxSttDN",
+        "type": "table",
+        "col": 0,
+        "row": 8,
+        "colspan": 4,
+        "rowspan": 4,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 0,
+          "width": 16.666666666666664,
+          "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "JELeNP",
+        "type": "SimpleFieldSelect",
+        "col": 9,
+        "row": 0,
+        "colspan": 3,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 37.5,
+          "width": 12.5,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "HppR",
+        "type": "linechart",
+        "col": 4,
+        "row": 8,
+        "colspan": 8,
+        "rowspan": 4,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 16.666666666666664,
+          "width": 33.33333333333333,
+          "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "HgepjM",
+        "type": "table",
+        "col": 20,
+        "row": 8,
+        "colspan": 4,
+        "rowspan": 4,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
+          "height": 33.33333333333333
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST",
+      "extendable": true,
+      "sheetMode": "RESPONSIVE"
+    },
+    "height": 100
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "WFpPPp",
+          "qType": "qlik-variable-input"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "variableName": "v_ViewTargetGroup",
+        "render": "s",
+        "buttonMode": "rowfill",
+        "updateondrag": false,
+        "valueType": "x",
+        "dynamicvalues": "",
+        "alternatives": [
+          {
+            "value": "80",
+            "label": "+80 years old age group",
+            "cId": "wAHZfvC"
+          },
+          {
+            "value": "HCW",
+            "label": "Healthcare workers",
+            "cId": "Atqzf"
+          },
+          {
+            "value": "LTCF",
+            "label": "LTCF residents",
+            "cId": "wZyLw"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "qlik-variable-input",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=\"v_ViewTargetGroup\""
+          }
+        },
+        "style": "qlik",
+        "version": "6.14.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "control",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable input",
+          "description": "A control that assigns a value to a variable.\nVersion: 6.14.0",
+          "template": "qlik-variable-input",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "type": "visualization",
+          "version": "6.14.0",
+          "preview": "preview.png",
+          "keywords": "qlik-sense, visualization",
+          "author": "Erik Wetterberg upper88.com",
+          "homepage": "https://github.com/erikwett/qsVariable",
+          "license": "MIT",
+          "repository": "",
+          "dependencies": {
+            "qlik-sense": ">=5.5.x"
+          },
+          "contributors": [
+            "Brett Farley contextbi.com"
+          ],
+          "bundle": {
+            "id": "qlik-dashboard-bundle",
+            "name": "Qlik Dashboard bundle",
+            "description": "This is a set of supported objects that will facilitate dashboard creation in Qlik Sense: A date picker, a variable input, a demand-reporting button and a share button. These can be used in addition to the objects found under \"Charts\".\n\nFor limitations and support conditions, see the documentation."
+          },
+          "installer": "QlikExtensionBundler",
+          "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "PRNkhv",
+          "qType": "map"
+        },
+        "qMetaDef": {
+          "title": "TESSy - Cases reported",
+          "description": "",
+          "tags": []
+        },
+        "gaLayers": [
+          {
+            "type": "PointLayer",
+            "locationOrLatitude": {
+              "key": "CSfmAQ",
+              "label": "",
+              "type": "libraryItem"
+            },
+            "locationDefault": "CSfmAQ",
+            "locationNamesAuto": true,
+            "locationType": "",
+            "locationCountry": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin1": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin2": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "maxObjects": 4000,
+            "showLayer": true,
+            "hideCalcCond": true,
+            "exclFromAutozoom": false,
+            "layerSelectionsDisabled": false,
+            "color": {
+              "outline": {
+                "index": -1,
+                "color": "#7b7a78"
+              },
+              "outlineOpacity": 1,
+              "opacity": 1,
+              "auto": false,
+              "mode": "byExpression",
+              "paletteColor": {
+                "index": 6,
+                "color": "#ffffff"
+              },
+              "measureScheme": "sg",
+              "dimensionScheme": "12",
+              "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+              "expressionIsColor": true,
+              "measureMin": 0,
+              "measureMax": 10,
+              "useBaseColors": "dimension",
+              "useDimColVal": false,
+              "useMeasureGradient": false
+            },
+            "displayLegend": "auto",
+            "showSizeLegend": true,
+            "showToolTip": true,
+            "showInAllLevels": true,
+            "zoomRange": [
+              0,
+              20
+            ],
+            "showPopUp": "custom",
+            "displayUnselected": false,
+            "label": {
+              "show": false,
+              "expression": {
+                "key": "CSfmAQ",
+                "label": "",
+                "type": "libraryItem"
+              },
+              "position": "TOP",
+              "showInAllLevels": true,
+              "visibleRange": [
+                0,
+                20
+              ]
+            },
+            "drillDown": {
+              "auto": true,
+              "showLevel0": true,
+              "showLevel1": true,
+              "showLevel2": true,
+              "showLevel3": true,
+              "showLevel4": true,
+              "showLevel5": true,
+              "showLevel6": true,
+              "showLevel7": true
+            },
+            "qHyperCubeDef": {
+              "qDimensions": [
+                {
+                  "qLibraryId": "CSfmAQ",
+                  "qDef": {
+                    "qGrouping": "N",
+                    "qFieldDefs": [],
+                    "qFieldLabels": [],
+                    "qSortCriterias": [
+                      {
+                        "qSortByNumeric": 1,
+                        "qSortByAscii": 1,
+                        "qSortByLoadOrder": 1,
+                        "qExpression": {}
+                      }
+                    ],
+                    "qNumberPresentations": [],
+                    "qActiveField": 0,
+                    "autoSort": true,
+                    "cId": "cVmXqG"
+                  },
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {},
+                    "qOtherLimit": {},
+                    "qOtherLimitMode": "OTHER_GT_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qOtherLabel": {},
+                  "qTotalLabel": {},
+                  "qCalcCond": {},
+                  "qAttributeExpressions": [
+                    {
+                      "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),[TG - # Dose First administered],[TG - # Full vaccination])",
+                      "qNumFormat": {
+                        "qType": "F",
+                        "qnDec": 2,
+                        "qUseThou": 0,
+                        "qFmt": "#,##0",
+                        "qDec": ".",
+                        "qThou": ","
+                      },
+                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')",
+                      "cId": "NTDUyu",
+                      "autoSort": true,
+                      "id": "customTooltipExpression",
+                      "isCustomFormatted": false
+                    },
+                    {
+                      "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                      "id": "colorByExpression"
+                    }
+                  ],
+                  "qAttributeDimensions": [],
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  }
+                }
+              ],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [
+                0
+              ],
+              "qInitialDataFetch": [
+                {
+                  "qLeft": 0,
+                  "qTop": 0,
+                  "qWidth": 1,
+                  "qHeight": 0
+                }
+              ],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {
+                "qv": "=left('$(v_ViewUptake)', 1) = 'N'"
+              },
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "=left('$(v_ViewUptake)', 1) = 'N'"
+                },
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qLayoutExclude": {
+                "qHyperCubeDef": {
+                  "qDimensions": [],
+                  "qMeasures": [],
+                  "qInterColumnSortOrder": [],
+                  "qInitialDataFetch": [],
+                  "qReductionMode": "N",
+                  "qMode": "S",
+                  "qPseudoDimPos": -1,
+                  "qNoOfLeftDims": -1,
+                  "qMaxStackedCells": 5000,
+                  "qCalcCond": {},
+                  "qTitle": {},
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  },
+                  "qColumnOrder": [],
+                  "qExpansionState": []
+                }
+              }
+            },
+            "tooltip": {
+              "auto": true,
+              "title": "",
+              "description": "",
+              "hideBasic": true
+            },
+            "size": {
+              "radiusMin": 1,
+              "radiusMax": 24,
+              "radiusValueMin": 0,
+              "radiusValueMax": 1000000,
+              "autoRadiusValueRange": true,
+              "expression": {
+                "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
+                "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
+                "type": "expression",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qDec": ".",
+                  "qThou": ",",
+                  "qFmt": ""
+                },
+                "isCustomFormatted": false
+              },
+              "label": {
+                "qStringExpression": {
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccination administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')"
+                }
+              },
+              "slider": [
+                1,
+                34
+              ],
+              "sliderSingle": 16,
+              "shape": "points",
+              "formatting": {
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qDec": ".",
+                  "qThou": ",",
+                  "qFmt": ""
+                },
+                "isCustomFormatted": false
+              }
+            },
+            "cId": "mmEQMpR",
+            "id": "mmEQMpR",
+            "qLayoutExclude": {
+              "quarantine": {}
+            }
+          },
+          {
+            "type": "AreaLayer",
+            "locationOrLatitude": {
+              "label": "",
+              "key": "CSfmAQ",
+              "type": "libraryItem"
+            },
+            "locationDefault": "CSfmAQ",
+            "locationNamesAuto": true,
+            "locationType": "",
+            "locationCountry": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin1": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin2": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "maxObjects": 1000,
+            "showLayer": true,
+            "hideCalcCond": true,
+            "exclFromAutozoom": false,
+            "layerSelectionsDisabled": false,
+            "color": {
+              "outline": {
+                "index": -1,
+                "color": "#7b7a78"
+              },
+              "outlineOpacity": 1,
+              "opacity": 1,
+              "auto": false,
+              "mode": "byMeasure",
+              "paletteColor": {
+                "index": -1,
+                "color": "#E7E7B9"
+              },
+              "measureScheme": "sgg-green",
+              "dimensionScheme": "12",
+              "colorExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW'),\r\nsum(Uptake1st_80),\nsum(Uptake2nd_80),\nsum(Uptake1st_HCW),\nsum(Uptake2nd_HCW)\n)\n",
+              "expressionIsColor": true,
+              "measureMin": 0,
+              "measureMax": 10,
+              "useDimColVal": false,
+              "useMeasureGradient": false,
+              "byMeasureDef": {
+                "label": "==pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n'Uptake at least one dose +80 years old',\n'Uptake full vaccination +80 years old',\n'Uptake at least one dose Healthcare workers',\n'Uptake full vaccination Healthcare workers',\n'Uptake at least one dose LTCF',\n'Uptake full vaccination LTCF',\n)",
+                "key": "SjnQgM",
+                "type": "libraryItem"
+              },
+              "altLabel": {
+                "qStringExpression": {
+                  "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n'Uptake at least one dose +80 years old',\n'Uptake full vaccination +80 years old',\n'Uptake at least one dose Healthcare workers',\n'Uptake full vaccination Healthcare workers',\n'Uptake at least one dose LTCF',\n'Uptake full vaccination LTCF',\n)"
+                }
+              },
+              "useBaseColors": "dimension",
+              "formatting": {
+                "qNumFormat": null,
+                "numFormatFromTemplate": false,
+                "quarantine": {
+                  "qNumFormat": {
+                    "qType": "F",
+                    "qnDec": 2,
+                    "qDec": ".",
+                    "qThou": ",",
+                    "qFmt": "0.0%;-0.0%;Not reported"
+                  },
+                  "isCustomFormatted": false
+                }
+              },
+              "reverseScheme": false
+            },
+            "displayLegend": "auto",
+            "showSizeLegend": true,
+            "showToolTip": true,
+            "showInAllLevels": true,
+            "zoomRange": [
+              0,
+              20
+            ],
+            "showPopUp": true,
+            "displayUnselected": false,
+            "label": {
+              "show": false,
+              "expression": {
+                "key": "CSfmAQ",
+                "label": "",
+                "type": "libraryItem"
+              },
+              "position": "TOP",
+              "showInAllLevels": true,
+              "visibleRange": [
+                0,
+                20
+              ]
+            },
+            "drillDown": {
+              "auto": true,
+              "showLevel0": true,
+              "showLevel1": true,
+              "showLevel2": true,
+              "showLevel3": true,
+              "showLevel4": true,
+              "showLevel5": true,
+              "showLevel6": true,
+              "showLevel7": true
+            },
+            "qHyperCubeDef": {
+              "qDimensions": [
+                {
+                  "qLibraryId": "CSfmAQ",
+                  "qDef": {
+                    "qGrouping": "N",
+                    "qFieldDefs": [],
+                    "qFieldLabels": [],
+                    "qSortCriterias": [
+                      {
+                        "qSortByNumeric": 1,
+                        "qSortByAscii": 1,
+                        "qSortByLoadOrder": 1,
+                        "qExpression": {}
+                      }
+                    ],
+                    "qNumberPresentations": [],
+                    "qActiveField": 0,
+                    "autoSort": true,
+                    "cId": "peHxL"
+                  },
+                  "qNullSuppression": true,
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {},
+                    "qOtherLimit": {},
+                    "qOtherLimitMode": "OTHER_GT_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qOtherLabel": {},
+                  "qTotalLabel": {},
+                  "qCalcCond": {},
+                  "qAttributeExpressions": [
+                    {
+                      "qLibraryId": "SjnQgM",
+                      "id": "colorByAlternative",
+                      "matchMeasure": -1,
+                      "colorMapRef": "SjnQgM"
+                    }
+                  ],
+                  "qAttributeDimensions": [],
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  }
+                }
+              ],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [
+                0
+              ],
+              "qInitialDataFetch": [
+                {
+                  "qLeft": 0,
+                  "qTop": 0,
+                  "qWidth": 1,
+                  "qHeight": 0
+                }
+              ],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {
+                "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+              },
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                },
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qLayoutExclude": {
+                "qHyperCubeDef": {
+                  "qDimensions": [],
+                  "qMeasures": [],
+                  "qInterColumnSortOrder": [],
+                  "qInitialDataFetch": [],
+                  "qReductionMode": "N",
+                  "qMode": "S",
+                  "qPseudoDimPos": -1,
+                  "qNoOfLeftDims": -1,
+                  "qMaxStackedCells": 5000,
+                  "qCalcCond": {},
+                  "qTitle": {},
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  },
+                  "qColumnOrder": [],
+                  "qExpansionState": []
+                }
+              }
+            },
+            "tooltip": {
+              "auto": true
+            },
+            "cId": "ABqQtWF",
+            "id": "ABqQtWF",
+            "qLayoutExclude": {
+              "quarantine": {}
+            }
+          },
+          {
+            "type": "GeodataLayer",
+            "locationOrLatitude": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationDefault": "",
+            "locationNamesAuto": true,
+            "locationType": "",
+            "locationCountry": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin1": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "locationAdmin2": {
+              "key": "",
+              "label": "",
+              "type": ""
+            },
+            "maxObjects": 1000,
+            "showLayer": true,
+            "hideCalcCond": false,
+            "exclFromAutozoom": false,
+            "color": {
+              "outline": {
+                "index": -1,
+                "color": "#7b7a78"
+              },
+              "outlineOpacity": 1,
+              "opacity": 1,
+              "auto": true,
+              "mode": "primary",
+              "paletteColor": {
+                "index": 6,
+                "color": "#4477aa"
+              },
+              "measureScheme": "sg",
+              "dimensionScheme": "12",
+              "colorExpression": "",
+              "expressionIsColor": true,
+              "measureMin": 0,
+              "measureMax": 10
+            },
+            "displayLegend": "none",
+            "showSizeLegend": true,
+            "showToolTip": true,
+            "showInAllLevels": false,
+            "zoomRange": [
+              3,
+              6
+            ],
+            "showPopUp": true,
+            "displayUnselected": false,
+            "label": {
+              "show": false,
+              "expression": {
+                "key": "",
+                "label": "",
+                "type": ""
+              },
+              "position": "TOP",
+              "showInAllLevels": true,
+              "visibleRange": [
+                0,
+                20
+              ]
+            },
+            "drillDown": {
+              "auto": true,
+              "showLevel0": true,
+              "showLevel1": true,
+              "showLevel2": true,
+              "showLevel3": true,
+              "showLevel4": true,
+              "showLevel5": true,
+              "showLevel6": true,
+              "showLevel7": true
+            },
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [
+                {
+                  "qLeft": 0,
+                  "qTop": 0,
+                  "qWidth": 1,
+                  "qHeight": 0
+                }
+              ],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qLayoutExclude": {
+                "qHyperCubeDef": {
+                  "qDimensions": [],
+                  "qMeasures": [],
+                  "qInterColumnSortOrder": [],
+                  "qInitialDataFetch": [],
+                  "qReductionMode": "N",
+                  "qMode": "S",
+                  "qPseudoDimPos": -1,
+                  "qNoOfLeftDims": -1,
+                  "qMaxStackedCells": 5000,
+                  "qCalcCond": {},
+                  "qTitle": {},
+                  "qCalcCondition": {
+                    "qCond": {},
+                    "qMsg": {}
+                  },
+                  "qColumnOrder": [],
+                  "qExpansionState": []
+                }
+              }
+            },
+            "cId": "KdrxXg",
+            "id": "KdrxXg",
+            "title": "ECDC basemap",
+            "dataType": "tms",
+            "tms": {
+              "url": {
+                "qStringExpression": {
+                  "qExpr": "='https://gis.ecdc.europa.eu/public/rest/services/BaseMaps/EU_EEA_BaseMap_WebMerc/MapServer/tile/{z}/{y}/{x}'\r\n\n\n\n\n \n\n "
+                }
+              },
+              "attribution": "EuroGeographics © UN–FAO © Turkstat",
+              "auto": true,
+              "tileSize": 256,
+              "tileWidth": 40075016,
+              "tileHeight": 40075016,
+              "originLeft": -20037508,
+              "originTop": 20037508
+            },
+            "wms": {
+              "url": "https://",
+              "attribution": "",
+              "version": "1.1.0",
+              "selectedCrs": "EPSG:3857",
+              "selectedFormat": "PNG",
+              "hasWmsLoaded": false,
+              "viaServer": false,
+              "capabilities": {
+                "layers": [],
+                "transparent": true,
+                "crs": [
+                  "EPSG:3857"
+                ],
+                "formats": [
+                  "PNG"
+                ]
+              }
+            },
+            "image": {
+              "url": "",
+              "minX": 0,
+              "minY": 0,
+              "maxX": 5,
+              "maxY": 5,
+              "attribution": ""
+            }
+          }
+        ],
+        "mapSettings": {
+          "_layerType": "",
+          "baseMap": "empty",
+          "projection": "emptydegreemercator",
+          "mapLanguage": "auto",
+          "useImperialUnits": false,
+          "selectionType": "lasso",
+          "initialView": null,
+          "showLegend": true,
+          "sidebarAlignment": "bottom",
+          "showFindLocationButton": false,
+          "showScaleBar": false,
+          "zoomLimitSwitch": true,
+          "zoomLimit": {
+            "range": [
+              3,
+              6
+            ]
+          },
+          "panLimitSwitch": false,
+          "panLimits": null,
+          "showDebugInfo": false
+        },
+        "autoZoomOnSelection": true,
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Number of first doses administered to people aged 80 years and above in ',\n'Number of full vaccinations administered to people aged 80 years and above in ',\n'Number of first doses administered to healthcare workers in ',\n'Number of full vaccinations administered to healthcare workers in ',\n'Number of first doses administered to LTCF residents in ',\n'Number of full vaccinations administered to LTCF residents in '\n) \n& if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+          }
+        },
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "navigation": false,
+        "visualization": "map",
+        "gaVersion": 2,
+        "layers": [],
+        "qUndoExclude": {
+          "hashCode": 2006604954,
+          "gaLayers": [
+            {
+              "qHyperCubeDef": {
+                "qDimensions": [
+                  {
+                    "qLibraryId": "CSfmAQ",
+                    "qDef": {
+                      "qGrouping": "N",
+                      "qFieldDefs": [],
+                      "qFieldLabels": [],
+                      "qSortCriterias": [
+                        {
+                          "qSortByNumeric": 1,
+                          "qSortByAscii": 1,
+                          "qSortByLoadOrder": 1,
+                          "qExpression": {}
+                        }
+                      ],
+                      "qNumberPresentations": [],
+                      "qActiveField": 0,
+                      "autoSort": true,
+                      "cId": "cVmXqG"
+                    },
+                    "qOtherTotalSpec": {
+                      "qOtherMode": "OTHER_OFF",
+                      "qOtherCounted": {},
+                      "qOtherLimit": {},
+                      "qOtherLimitMode": "OTHER_GT_LIMIT",
+                      "qForceBadValueKeeping": true,
+                      "qApplyEvenWhenPossiblyWrongResult": true,
+                      "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                      "qTotalMode": "TOTAL_OFF",
+                      "qReferencedExpression": {}
+                    },
+                    "qOtherLabel": {},
+                    "qTotalLabel": {},
+                    "qCalcCond": {},
+                    "qAttributeExpressions": [
+                      {
+                        "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),[TG - # Dose First administered],[TG - # Full vaccination])",
+                        "qNumFormat": {
+                          "qType": "F",
+                          "qnDec": 2,
+                          "qUseThou": 0,
+                          "qFmt": "#,##0",
+                          "qDec": ".",
+                          "qThou": ","
+                        },
+                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')",
+                        "cId": "NTDUyu",
+                        "autoSort": true,
+                        "id": "customTooltipExpression",
+                        "isCustomFormatted": false
+                      },
+                      {
+                        "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                        "id": "colorByExpression"
+                      },
+                      {
+                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
+                        "qNumFormat": {
+                          "qType": "U",
+                          "qnDec": 2,
+                          "qUseThou": 0,
+                          "qDec": ".",
+                          "qThou": ","
+                        },
+                        "id": "size"
+                      }
+                    ],
+                    "qAttributeDimensions": [],
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    }
+                  }
+                ],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [
+                  0
+                ],
+                "qInitialDataFetch": [
+                  {
+                    "qLeft": 0,
+                    "qTop": 0,
+                    "qWidth": 1,
+                    "qHeight": 1000
+                  }
+                ],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {
+                  "qv": "=left('$(v_ViewUptake)', 1) = 'N'"
+                },
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {
+                    "qv": "=left('$(v_ViewUptake)', 1) = 'N'"
+                  },
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qLayoutExclude": {
+                  "qHyperCubeDef": {
+                    "qDimensions": [],
+                    "qMeasures": [],
+                    "qInterColumnSortOrder": [],
+                    "qInitialDataFetch": [],
+                    "qReductionMode": "N",
+                    "qMode": "S",
+                    "qPseudoDimPos": -1,
+                    "qNoOfLeftDims": -1,
+                    "qMaxStackedCells": 5000,
+                    "qCalcCond": {},
+                    "qTitle": {},
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    },
+                    "qColumnOrder": [],
+                    "qExpansionState": []
+                  }
+                }
+              },
+              "color": {
+                "outline": {
+                  "index": -1,
+                  "color": "#7b7a78"
+                },
+                "outlineOpacity": 1,
+                "opacity": 1,
+                "auto": false,
+                "mode": "byExpression",
+                "paletteColor": {
+                  "index": 6,
+                  "color": "#ffffff"
+                },
+                "measureScheme": "sg",
+                "dimensionScheme": "12",
+                "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                "expressionIsColor": true,
+                "measureMin": 0,
+                "measureMax": 10,
+                "useBaseColors": "dimension",
+                "useDimColVal": false,
+                "useMeasureGradient": false
+              },
+              "useDimLoc1": 0
+            },
+            {
+              "qHyperCubeDef": {
+                "qDimensions": [
+                  {
+                    "qLibraryId": "CSfmAQ",
+                    "qDef": {
+                      "qGrouping": "N",
+                      "qFieldDefs": [],
+                      "qFieldLabels": [],
+                      "qSortCriterias": [
+                        {
+                          "qSortByNumeric": 1,
+                          "qSortByAscii": 1,
+                          "qSortByLoadOrder": 1,
+                          "qExpression": {}
+                        }
+                      ],
+                      "qNumberPresentations": [],
+                      "qActiveField": 0,
+                      "autoSort": true,
+                      "cId": "peHxL"
+                    },
+                    "qNullSuppression": true,
+                    "qOtherTotalSpec": {
+                      "qOtherMode": "OTHER_OFF",
+                      "qOtherCounted": {},
+                      "qOtherLimit": {},
+                      "qOtherLimitMode": "OTHER_GT_LIMIT",
+                      "qForceBadValueKeeping": true,
+                      "qApplyEvenWhenPossiblyWrongResult": true,
+                      "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                      "qTotalMode": "TOTAL_OFF",
+                      "qReferencedExpression": {}
+                    },
+                    "qOtherLabel": {},
+                    "qTotalLabel": {},
+                    "qCalcCond": {},
+                    "qAttributeExpressions": [
+                      {
+                        "qLibraryId": "SjnQgM",
+                        "id": "colorByAlternative",
+                        "matchMeasure": -1,
+                        "colorMapRef": "SjnQgM"
+                      }
+                    ],
+                    "qAttributeDimensions": [],
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    }
+                  }
+                ],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [
+                  0
+                ],
+                "qInitialDataFetch": [
+                  {
+                    "qLeft": 0,
+                    "qTop": 0,
+                    "qWidth": 1,
+                    "qHeight": 1000
+                  }
+                ],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                },
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {
+                    "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                  },
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qLayoutExclude": {
+                  "qHyperCubeDef": {
+                    "qDimensions": [],
+                    "qMeasures": [],
+                    "qInterColumnSortOrder": [],
+                    "qInitialDataFetch": [],
+                    "qReductionMode": "N",
+                    "qMode": "S",
+                    "qPseudoDimPos": -1,
+                    "qNoOfLeftDims": -1,
+                    "qMaxStackedCells": 5000,
+                    "qCalcCond": {},
+                    "qTitle": {},
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    },
+                    "qColumnOrder": [],
+                    "qExpansionState": []
+                  }
+                }
+              },
+              "color": {
+                "outline": {
+                  "index": -1,
+                  "color": "#7b7a78"
+                },
+                "outlineOpacity": 1,
+                "opacity": 1,
+                "auto": false,
+                "mode": "byMeasure",
+                "paletteColor": {
+                  "index": -1,
+                  "color": "#E7E7B9"
+                },
+                "measureScheme": "sgg-green",
+                "dimensionScheme": "12",
+                "colorExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW'),\r\nsum(Uptake1st_80),\nsum(Uptake2nd_80),\nsum(Uptake1st_HCW),\nsum(Uptake2nd_HCW)\n)\n",
+                "expressionIsColor": true,
+                "measureMin": 0,
+                "measureMax": 10,
+                "useDimColVal": false,
+                "useMeasureGradient": false,
+                "byMeasureDef": {
+                  "label": "==pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n'Uptake at least one dose +80 years old',\n'Uptake full vaccination +80 years old',\n'Uptake at least one dose Healthcare workers',\n'Uptake full vaccination Healthcare workers',\n'Uptake at least one dose LTCF',\n'Uptake full vaccination LTCF',\n)",
+                  "key": "SjnQgM",
+                  "type": "libraryItem"
+                },
+                "altLabel": {
+                  "qStringExpression": {
+                    "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n'Uptake at least one dose +80 years old',\n'Uptake full vaccination +80 years old',\n'Uptake at least one dose Healthcare workers',\n'Uptake full vaccination Healthcare workers',\n'Uptake at least one dose LTCF',\n'Uptake full vaccination LTCF',\n)"
+                  }
+                },
+                "useBaseColors": "dimension",
+                "formatting": {
+                  "qNumFormat": null,
+                  "numFormatFromTemplate": false,
+                  "quarantine": {
+                    "qNumFormat": {
+                      "qType": "F",
+                      "qnDec": 2,
+                      "qDec": ".",
+                      "qThou": ",",
+                      "qFmt": "0.0%;-0.0%;Not reported"
+                    },
+                    "isCustomFormatted": false
+                  }
+                },
+                "reverseScheme": false
+              },
+              "useDimLoc1": 0
+            },
+            null
+          ]
+        },
+        "masterVersion": 0.96
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "mHPPFP",
+          "qType": "qlik-variable-input"
+        },
+        "qExtendsId": "a36b9f97-7ad1-44c7-b8ce-f4c3c29f9539",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "KGNPN",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "ab74b402-cc99-4554-8741-b3d37b6b059d",
+            "label": "Button Week Or Cumul",
+            "isMaster": true,
+            "cId": "jKUJmzv",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "left('$(v_ViewUptake)',1) = 'N'"
+              }
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "borders": "noBorder",
+        "showTabs": false,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": false,
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "5bfb3185-6ce7-4bd0-b636-2699ab1b8aec",
+              "qType": "qlik-variable-input"
+            },
+            "qExtendsId": "ab74b402-cc99-4554-8741-b3d37b6b059d",
+            "qMetaDef": {},
+            "visualization": "qlik-variable-input"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "zyeYuJ",
+          "qType": "widget"
+        },
+        "qExtendsId": "ba70a796-70a0-4672-8def-b61e7c4f05a5",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "cpmpPC",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "280acbc4-086f-4a77-b98c-1176800223cc",
+            "label": "Table Uptake  Current",
+            "isMaster": true,
+            "cId": "TGJjfGJ",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1) <> 'N' and  '$(v_ViewTargetGroup)' <> 'AGE'"
+              }
+            }
+          },
+          {
+            "refId": "a20a4312-4a24-40ec-b0f6-a7045fe83f5a",
+            "label": "TG - Table N. Administered Current",
+            "isMaster": true,
+            "cId": "GHmerM",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1) = 'N' and  '$(v_ViewTargetGroup)' <> 'AGE'"
+              }
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "borders": "auto",
+        "showTabs": false,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": false,
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "6fe6386f-eeff-49b3-89d6-535cef847573",
+              "qType": "table"
+            },
+            "qExtendsId": "280acbc4-086f-4a77-b98c-1176800223cc",
+            "qMetaDef": {},
+            "visualization": "table"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "57b4fb44-2f63-4e08-b101-3276c2cd5418",
+              "qType": "table"
+            },
+            "qExtendsId": "a20a4312-4a24-40ec-b0f6-a7045fe83f5a",
+            "qMetaDef": {},
+            "visualization": "table"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "FxUJst",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "b8dae74c-e34a-4ce3-910d-5f54069496fb",
+            "label": "Cum uptake (%) Target_Total",
+            "isMaster": true,
+            "cId": "VGdwHk",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=getselectedcount([Member State])=0 and left('$(v_ViewUptake)',1) <> 'N'"
+              }
+            }
+          },
+          {
+            "refId": "8a6769c2-a885-4806-bba5-1128417c19fb",
+            "label": "TG - Uptake Comparison",
+            "isMaster": true,
+            "cId": "UDxUPJ",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "GetSelectedCount([Member State]) = 1  and left('$(v_ViewUptake)',1) <> 'N'"
+              }
+            }
+          },
+          {
+            "refId": "c3683d75-9588-4a07-bb8e-6e859bc50c55",
+            "label": "TG - N. vaccine doses administered",
+            "isMaster": true,
+            "cId": "kNJh",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)',1) = 'N' and '$(v_WeeklyOrCumul)' = 'WEEK'"
+              }
+            }
+          },
+          {
+            "refId": "c1d10a93-3897-4bd2-bb72-9d9c1814fafc",
+            "label": "TG - Cumulative N of vaccine doses administered",
+            "isMaster": true,
+            "cId": "GmfRxcL",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)',1) = 'N' and '$(v_WeeklyOrCumul)' = 'CUM'"
+              }
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "borders": "noBorder",
+        "showTabs": false,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": false,
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "66433b7c-6bfa-46d1-a011-d027b825733a",
+              "qType": "linechart"
+            },
+            "qExtendsId": "b8dae74c-e34a-4ce3-910d-5f54069496fb",
+            "qMetaDef": {},
+            "visualization": "linechart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "ddc57d3b-137b-4289-abe0-0ced640a2a94",
+              "qType": "linechart"
+            },
+            "qExtendsId": "8a6769c2-a885-4806-bba5-1128417c19fb",
+            "qMetaDef": {},
+            "visualization": "linechart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "a56d10b7-428c-4d35-a251-f983a3c9fb29",
+              "qType": "barchart"
+            },
+            "qExtendsId": "c3683d75-9588-4a07-bb8e-6e859bc50c55",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "603f7ccd-90a4-47e6-9fa0-e016d862817b",
+              "qType": "barchart"
+            },
+            "qExtendsId": "c1d10a93-3897-4bd2-bb72-9d9c1814fafc",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "HppR",
+          "qType": "linechart"
+        },
+        "qExtendsId": "8a6769c2-a885-4806-bba5-1128417c19fb",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "UdPen",
+          "qType": "container"
+        },
+        "qMetaDef": {},
+        "children": [
+          {
+            "refId": "35a73d91-c252-4ee3-a9cd-f18556c12be1",
+            "label": "TG - Horiz. Bar Chart Uptake %",
+            "isMaster": true,
+            "cId": "DDJYQ",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1) <> 'N'"
+              }
+            }
+          },
+          {
+            "refId": "5cf0ca80-385c-4235-805b-1afceedec30b",
+            "label": "TG - Horiz. Bar Chart N administered",
+            "isMaster": true,
+            "cId": "mHmdVR",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1) = 'N'"
+              }
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "borders": "auto",
+        "showTabs": false,
+        "useDropdown": true,
+        "useScrollButton": true,
+        "showIcons": false,
+        "visualization": "container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "containerChildId": "/containerChildId",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "showCondition": "/showCondition"
+          }
+        },
+        "supportRefresh": false,
+        "hasExternalChildren": false
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "69feffa8-dc91-4d67-949e-f7b14b9e5ea7",
+              "qType": "barchart"
+            },
+            "qExtendsId": "35a73d91-c252-4ee3-a9cd-f18556c12be1",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "30accba3-ee1a-46ef-a004-3367c285f804",
+              "qType": "barchart"
+            },
+            "qExtendsId": "5cf0ca80-385c-4235-805b-1afceedec30b",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "ttTJveu",
+          "qType": "table"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "Vaccination.YearWeek"
+                ],
+                "qFieldLabels": [
+                  "Reporting week"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "SLbPxnN",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": ""
+                }
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "othersLabel": "Others"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qLibraryId": "BLWsdY",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "QmAem",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              },
+              "title": "TG - Uptake at least one dose (%)"
+            },
+            {
+              "qLibraryId": "SPPksbF",
+              "qDef": {
+                "qLabel": "Uptake full vaccination (%)",
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "NfjLet",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              },
+              "title": "TG - Uptake full vaccination (%)"
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Nbr. of first doses'",
+                "autoSort": true,
+                "cId": "eKpdfWT",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='WEEK'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Nbr. of full vaccinations'",
+                "autoSort": true,
+                "cId": "pzDWnjJ",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='WEEK'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "TG - # Dose First administered",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "None",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Cumulative nbr. of first doses'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "cId": "XKJZVP",
+                "modifiers": [
+                  {
+                    "type": "accumulation",
+                    "disabled": false,
+                    "accumulationDimension": 0,
+                    "crossAllDimensions": false,
+                    "showExcludedValues": true,
+                    "fullAccumulation": true,
+                    "steps": 6,
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                    "base": {
+                      "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                      "qLibraryId": "",
+                      "qLabelExpression": "='Cumulative nbr. of first doses'"
+                    }
+                  }
+                ],
+                "isCustomFormatted": false,
+                "base": {
+                  "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                  "qLibraryId": "",
+                  "qLabelExpression": "='Cumulative nbr. of first doses'"
+                }
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='CUM'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "TG - # Full vaccination",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "None",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Cumulative nbr. of full vaccinations'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "cId": "pdX",
+                "modifiers": [
+                  {
+                    "type": "accumulation",
+                    "disabled": false,
+                    "accumulationDimension": 0,
+                    "crossAllDimensions": false,
+                    "showExcludedValues": true,
+                    "fullAccumulation": true,
+                    "steps": 6,
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                    "base": {
+                      "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                      "qLibraryId": "",
+                      "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
+                    }
+                  }
+                ],
+                "isCustomFormatted": false,
+                "base": {
+                  "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                  "qLibraryId": "",
+                  "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
+                }
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='CUM'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "qSuppressZero": true,
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "qExpansionState": [],
+          "columnOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "columnWidths": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among LTCF residents in ',\n)\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+          }
+        },
+        "subtitle": {
+          "qStringExpression": {
+            "qExpr": "'by reporting week ' &v_Text_Preliminary"
+          }
+        },
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "components": [
+          {
+            "key": "line",
+            "style": {
+              "dataPointSize": 3,
+              "lineThickness": 3,
+              "lineType": "solid",
+              "lineCurve": "linear"
+            }
+          }
+        ],
+        "visualization": "table",
+        "search": {
+          "sorting": "auto"
+        },
+        "totals": {
+          "show": false,
+          "position": "noTotals",
+          "label": "Totals"
+        },
+        "scrolling": {
+          "horizontal": true,
+          "keepFirstColumnInView": false,
+          "keepFirstColumnInViewTouch": false
+        },
+        "multiline": {
+          "wrapTextInHeaders": true,
+          "wrapTextInCells": true
+        },
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "refLine": {
+              "refLines": [
+                {
+                  "show": {
+                    "qValueExpression": {
+                      "qExpr": "0\r\n/*\n=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\n \trangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"} , Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80_Cumul), [Vaccination.YearWeek]))), 1)), \n    \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW_Cumul), [Vaccination.YearWeek]))), 1)),   \n        \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF_Cumul), [Vaccination.YearWeek]))), 1))\n)>0.8\n*/"
+                    }
+                  },
+                  "label": "Target",
+                  "showLabel": true,
+                  "refLineExpr": {
+                    "value": 0.8,
+                    "label": "0.8"
+                  },
+                  "showValue": true,
+                  "paletteColor": {
+                    "index": -1,
+                    "color": "#6f6f6f"
+                  },
+                  "style": {
+                    "lineThickness": 2,
+                    "lineType": "8 4"
+                  },
+                  "coloredBackground": false,
+                  "cId": "dnmYRQ"
+                }
+              ],
+              "dimRefLines": []
+            },
+            "showDisclaimer": true,
+            "lineType": "line",
+            "stackedArea": false,
+            "separateStacking": true,
+            "orientation": "horizontal",
+            "scrollbar": "none",
+            "scrollStartPos": 1,
+            "nullMode": "gap",
+            "dataPoint": {
+              "show": true,
+              "showLabels": true
+            },
+            "gridLine": {
+              "auto": false,
+              "spacing": 0
+            },
+            "color": {
+              "auto": false,
+              "mode": "byMultiple",
+              "formatting": {
+                "numFormatFromTemplate": true,
+                "quarantine": {
+                  "qNumFormat": {},
+                  "isCustomFormatted": false
+                },
+                "qNumFormat": null
+              },
+              "useBaseColors": "measure",
+              "paletteColor": {
+                "index": 6
+              },
+              "useDimColVal": true,
+              "useMeasureGradient": true,
+              "persistent": true,
+              "expressionIsColor": true,
+              "expressionLabel": "",
+              "measureScheme": "sg",
+              "reverseScheme": false,
+              "dimensionScheme": "12",
+              "autoMinMax": true,
+              "measureMin": 0,
+              "measureMax": 10,
+              "colorExpression": "'#62bb46'",
+              "altLabel": "BLWsdY",
+              "byMeasureDef": {
+                "label": "BLWsdY",
+                "key": "BLWsdY",
+                "type": "libraryItem"
+              }
+            },
+            "legend": {
+              "show": true,
+              "dock": "bottom",
+              "showTitle": false
+            },
+            "dimensionAxis": {
+              "continuousAuto": true,
+              "show": "labels",
+              "label": "auto",
+              "dock": "near",
+              "axisDisplayMode": "max",
+              "maxVisibleItems": 10
+            },
+            "preferContinuousAxis": false,
+            "measureAxis": {
+              "show": "labels",
+              "dock": "near",
+              "spacing": 0.5,
+              "autoMinMax": false,
+              "minMax": "max",
+              "min": 0,
+              "max": {
+                "qValueExpression": {
+                  "qExpr": "=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\r\n\t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])) > 0.8, 1, 0.8), \n   \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State]))> 0.8, 1, 0.8)\n)\n\n"
+                }
+              },
+              "logarithmic": false
+            },
+            "tooltip": {
+              "auto": false,
+              "hideBasic": true,
+              "title": "",
+              "description": ""
+            },
+            "version": "1.5.0",
+            "showMiniChartForContinuousAxis": true,
+            "masterVersion": 0.96
+          },
+          "quarantine": {
+            "supportedAutoMinMax": {
+              "measureAxis.min": 0,
+              "measureAxis.max": {
+                "qValueExpression": {
+                  "qExpr": "=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\r\n\t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])) > 0.8, 1, 0.8), \n   \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State]))> 0.8, 1, 0.8)\n)\n\n"
+                }
+              }
+            }
+          }
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "bSjUGX",
+          "qType": "barchart"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qLibraryId": "CSfmAQ",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "THjnfu",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;Not reported'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;Not reported')\n)\n",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n'Uptake at least one dose',\n'Uptake full vaccination',\n'Nbr. first doses',\n'Nbr. full vaccinations'\n)",
+                  "cId": "ZmQrEbG",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;-'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;-')\n)\n\n",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'\n),\n'Uptake at least one dose (%) - 80 years old and above',\n'Uptake full vaccination (%) - 80 years old and above',\n'Uptake at least one dose (%) - Healthcare Workers',\n'Uptake full vaccination (%) - Healthcare Workers',\n'Uptake at least one dose (%) - LTCF residents',\n'Uptake full vaccination (%) - LTCF residents',\n'Cumulative number of first doses - 80 years old and above',\n'Cumulative number of full vaccinations - 80 years old and above',\n'Cumulative number of first doses - Healthcare Workers',\n'Cumulative number of full vaccinations - Healthcare Workers',\n'Cumulative number of first doses - LTCF residents',\n'Cumulative number of full vaccinations - LTCF residents',\n)",
+                "autoSort": true,
+                "cId": "PUFxgj",
+                "numFormatFromTemplate": false,
+                "isCustomFormatted": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "$(v_CountryColorBrushing('#62bb46'))",
+                  "qAttribute": true,
+                  "id": "colorByExpression"
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 17,
+              "qHeight": 500
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1,
+            2
+          ],
+          "qExpansionState": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "refLine": {
+          "refLines": [],
+          "dimRefLines": []
+        },
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF',\n),\n'Cumulative uptake (%) of at least one vaccine dose in people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination in people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose in healthcare workers in ',\n'Cumulative uptake (%) of full vaccination in healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Cumulative number of first doses in people aged 80 years and above in ',\n'Cumulative number of full vaccinations in people aged 80 years and above in ',\n'Cumulative number of first doses in healthcare workers in ',\n'Cumulative number of full vaccinations in healthcare workers in ',\n'Cumulative number of first doses among LTCF residents in ',\n'Cumulative number of full vaccinations among LTCF residents in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+          }
+        },
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDisclaimer": true,
+        "components": [
+          {
+            "key": "bar",
+            "style": {
+              "width": 0.84,
+              "strokeColor": {
+                "index": -1,
+                "color": "#205891"
+              },
+              "strokeWidth": "none"
+            }
+          }
+        ],
+        "barGrouping": {
+          "grouping": "grouped"
+        },
+        "orientation": "horizontal",
+        "scrollbar": "none",
+        "scrollStartPos": 0,
+        "gridLine": {
+          "auto": false,
+          "spacing": 0
+        },
+        "dataPoint": {
+          "showLabels": true,
+          "showSegmentLabels": false,
+          "showTotalLabels": true
+        },
+        "color": {
+          "auto": false,
+          "mode": "byExpression",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": 1,
+            "color": "#62bb46"
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": true,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
+        },
+        "legend": {
+          "show": true,
+          "dock": "auto",
+          "showTitle": true
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "auto",
+          "dock": "near",
+          "axisDisplayMode": "max",
+          "maxVisibleItems": 10
+        },
+        "preferContinuousAxis": true,
+        "measureAxis": {
+          "show": "none",
+          "dock": "near",
+          "spacing": 2,
+          "autoMinMax": false,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "data": {},
+          "title": "",
+          "description": ""
+        },
+        "visualization": "barchart",
+        "version": "1.6.0",
+        "showMiniChartForContinuousAxis": true,
+        "isRecommended": true,
+        "qLayoutExclude": {
+          "disabled": {},
+          "quarantine": {}
+        },
+        "recommendation": {
+          "analysis": {
+            "analysis": "rank",
+            "msrs": [
+              {
+                "expr": "=Sum([Vaccination.DoseFirst])",
+                "cType": "eField",
+                "field": "Vaccination.DoseFirst",
+                "fieldStats": {
+                  "dataType": "integer",
+                  "valueRange": {
+                    "min": 130,
+                    "max": 2320002
+                  },
+                  "classification": [
+                    "measure"
+                  ]
+                }
+              }
+            ],
+            "dims": [
+              {
+                "expr": "[Vaccination.RegionMnemonic]",
+                "cType": "eField",
+                "field": "Vaccination.RegionMnemonic",
+                "fieldStats": {
+                  "distinctCount": 23,
+                  "dataType": "string"
+                }
+              }
+            ],
+            "analysisGroup": "rank",
+            "titleTemplate": [
+              {
+                "msgId": "cao.chart.rank.2.title",
+                "msgParams": {
+                  "$$1": 1,
+                  "$$2": 0
+                }
+              }
+            ]
+          },
+          "options": {},
+          "isExtendedAnalysis": false,
+          "matchRecord": {
+            "analysisPrecedentId": "P-Rank",
+            "matches": [
+              {
+                "slot": "$$1",
+                "slotRole": "dimension",
+                "field": "Vaccination.RegionMnemonic"
+              },
+              {
+                "slot": "$$2",
+                "slotRole": "measure",
+                "field": "Vaccination.DoseFirst",
+                "aggr": "Sum"
+              }
+            ],
+            "precedentStats": {
+              "matchedFields": 0,
+              "uniquePrecedents": 0
+            }
+          },
+          "relevance": 1,
+          "analysisIntentRelevance": 0.09000000000000001
+        },
+        "masterVersion": 0.96
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "FxSttDN",
+          "qType": "table"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qLibraryId": "CSfmAQ",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "THjnfu",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": ""
+                }
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;Not reported'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;Not reported')\n)\n",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n'Uptake at least one dose',\n'Uptake full vaccination',\n'Nbr. first doses',\n'Nbr. full vaccinations'\n)",
+                  "cId": "ZmQrEbG",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "title": "Member State",
+              "othersLabel": "Others"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;-'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;-')\n)\n\n",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'\n),\n'Uptake at least one dose (%) - 80 years old and above',\n'Uptake full vaccination (%) - 80 years old and above',\n'Uptake at least one dose (%) - Healthcare Workers',\n'Uptake full vaccination (%) - Healthcare Workers',\n'Uptake at least one dose (%) - LTCF residents',\n'Uptake full vaccination (%) - LTCF residents',\n'Cumulative number of first doses - 80 years old and above',\n'Cumulative number of full vaccinations - 80 years old and above',\n'Cumulative number of first doses - Healthcare Workers',\n'Cumulative number of full vaccinations - Healthcare Workers',\n'Cumulative number of first doses - LTCF residents',\n'Cumulative number of full vaccinations - LTCF residents',\n)",
+                "autoSort": true,
+                "cId": "PUFxgj",
+                "numFormatFromTemplate": false,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1
+          ],
+          "qExpansionState": [],
+          "columnOrder": [
+            0,
+            1
+          ],
+          "columnWidths": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF',\n),\n'Cumulative uptake (%) of at least one vaccine dose in people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination in people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose in healthcare workers in ',\n'Cumulative uptake (%) of full vaccination in healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Cumulative number of first doses administered to people aged 80 years and above in ',\n'Cumulative number of full vaccinations administered to people aged 80 years and above in ',\n'Cumulative number of first doses administered to healthcare workers in ',\n'Cumulative number of full vaccinations administered to healthcare workers in ',\n'Cumulative number of first doses administered to LTCF residents in ',\n'Cumulative number of full vaccinations administered to LTCF residents in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+          }
+        },
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "components": [
+          {
+            "key": "bar",
+            "style": {
+              "width": 0.84,
+              "strokeColor": {
+                "index": -1,
+                "color": "#205891"
+              },
+              "strokeWidth": "none"
+            }
+          }
+        ],
+        "visualization": "table",
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "refLine": {
+              "refLines": [],
+              "dimRefLines": []
+            },
+            "showDisclaimer": true,
+            "barGrouping": {
+              "grouping": "grouped"
+            },
+            "orientation": "horizontal",
+            "scrollbar": "none",
+            "scrollStartPos": 0,
+            "gridLine": {
+              "auto": false,
+              "spacing": 0
+            },
+            "dataPoint": {
+              "showLabels": true,
+              "showSegmentLabels": false,
+              "showTotalLabels": true
+            },
+            "color": {
+              "auto": false,
+              "mode": "byExpression",
+              "formatting": {
+                "numFormatFromTemplate": true
+              },
+              "useBaseColors": "off",
+              "paletteColor": {
+                "index": 1,
+                "color": "#62bb46"
+              },
+              "useDimColVal": true,
+              "useMeasureGradient": true,
+              "persistent": true,
+              "expressionIsColor": true,
+              "expressionLabel": "",
+              "measureScheme": "sg",
+              "reverseScheme": false,
+              "dimensionScheme": "12",
+              "autoMinMax": true,
+              "measureMin": 0,
+              "measureMax": 10,
+              "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
+            },
+            "legend": {
+              "show": true,
+              "dock": "auto",
+              "showTitle": true
+            },
+            "dimensionAxis": {
+              "continuousAuto": true,
+              "show": "labels",
+              "label": "auto",
+              "dock": "near",
+              "axisDisplayMode": "max",
+              "maxVisibleItems": 10
+            },
+            "preferContinuousAxis": true,
+            "measureAxis": {
+              "show": "none",
+              "dock": "near",
+              "spacing": 2,
+              "autoMinMax": false,
+              "minMax": "min",
+              "min": 0,
+              "max": 10
+            },
+            "tooltip": {
+              "auto": true,
+              "hideBasic": false,
+              "data": {},
+              "title": "",
+              "description": ""
+            },
+            "version": "1.6.0",
+            "showMiniChartForContinuousAxis": true,
+            "isRecommended": true,
+            "recommendation": {
+              "analysis": {
+                "analysis": "rank",
+                "msrs": [
+                  {
+                    "expr": "=Sum([Vaccination.DoseFirst])",
+                    "cType": "eField",
+                    "field": "Vaccination.DoseFirst",
+                    "fieldStats": {
+                      "dataType": "integer",
+                      "valueRange": {
+                        "min": 130,
+                        "max": 2320002
+                      },
+                      "classification": [
+                        "measure"
+                      ]
+                    }
+                  }
+                ],
+                "dims": [
+                  {
+                    "expr": "[Vaccination.RegionMnemonic]",
+                    "cType": "eField",
+                    "field": "Vaccination.RegionMnemonic",
+                    "fieldStats": {
+                      "distinctCount": 23,
+                      "dataType": "string"
+                    }
+                  }
+                ],
+                "analysisGroup": "rank",
+                "titleTemplate": [
+                  {
+                    "msgId": "cao.chart.rank.2.title",
+                    "msgParams": {
+                      "$$1": 1,
+                      "$$2": 0
+                    }
+                  }
+                ]
+              },
+              "options": {},
+              "isExtendedAnalysis": false,
+              "matchRecord": {
+                "analysisPrecedentId": "P-Rank",
+                "matches": [
+                  {
+                    "slot": "$$1",
+                    "slotRole": "dimension",
+                    "field": "Vaccination.RegionMnemonic"
+                  },
+                  {
+                    "slot": "$$2",
+                    "slotRole": "measure",
+                    "field": "Vaccination.DoseFirst",
+                    "aggr": "Sum"
+                  }
+                ],
+                "precedentStats": {
+                  "matchedFields": 0,
+                  "uniquePrecedents": 0
+                }
+              },
+              "relevance": 1,
+              "analysisIntentRelevance": 0.09000000000000001
+            },
+            "masterVersion": 0.96
+          },
+          "quarantine": {
+            "supportedAutoMinMax": {
+              "measureAxis.min": 0,
+              "measureAxis.max": 10
+            }
+          }
+        },
+        "search": {
+          "sorting": "auto"
+        },
+        "totals": {
+          "show": false,
+          "position": "noTotals",
+          "label": "Totals"
+        },
+        "scrolling": {
+          "horizontal": true,
+          "keepFirstColumnInView": false,
+          "keepFirstColumnInViewTouch": false
+        },
+        "multiline": {
+          "wrapTextInHeaders": true,
+          "wrapTextInCells": true
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "JELeNP",
+          "qType": "SimpleFieldSelect"
+        },
+        "qMetaDef": {},
+        "qListObjectDef": {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "=aggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State])"
+            ],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByAscii": 1,
+                "qExpression": {
+                  "qv": " "
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0
+          },
+          "qFrequencyMode": "N",
+          "qShowAlternatives": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 1,
+              "qHeight": 10000
+            }
+          ],
+          "qExpressions": [],
+          "qSortByState": 0
+        },
+        "props": {
+          "dimensionIsVariable": false,
+          "variableIsDate": false,
+          "variableEmptyAlreadySelected": false,
+          "visualizationType": "dropdown",
+          "disableToggleMode": false,
+          "textareaonlytext": "",
+          "textareaonlyCSS": "height:100%;",
+          "textareaonlytext2": "",
+          "visInputFieldType": "text",
+          "visInputRangeSliderValuefield": false,
+          "visInputPlaceholdertxt": "",
+          "visInputNumberMin": "",
+          "visInputNumberMax": "",
+          "visInputNumberStep": "",
+          "dropdownValueForNoSelect": "All reporting countries",
+          "selectmultiselect": false,
+          "select2allowClear": false,
+          "select2enableSerach": true,
+          "select2hoverBGcolor": "",
+          "select2hoverFontcolor": "",
+          "contentpadding": "-",
+          "leftpadding": "-",
+          "bottompadding": "-",
+          "rightpadding": "-",
+          "toppadding": "4",
+          "custompadding": "",
+          "showHeader": true,
+          "headerSize": "-",
+          "headerBpadding": "-",
+          "headerTpadding": "-",
+          "elementpadding": 0,
+          "elementmargin": 0,
+          "addLUIclasses": true,
+          "fontsizeChange": "100",
+          "fixedfontsize": true,
+          "fixedfontsizevalue": 12,
+          "responsivefontsize": false,
+          "responsivefonttype": "vw",
+          "responsivefontvalue": 1,
+          "mobileRemoveZoom": true,
+          "removeFullScrnBtn": true,
+          "mobileCustomHeightCSS": "",
+          "hlistRoundedcorners": true,
+          "hlistMarginBetween": "1",
+          "hlistShowAsTable": false,
+          "displayFlexBox": false,
+          "displayFlexBoxWidth": "",
+          "elHeight": "",
+          "elWidth": "",
+          "useMaxHeight": false,
+          "textHAlign": "-",
+          "textVAlign": "-",
+          "removeYscroll": false,
+          "showXscroll": false,
+          "removeLabel": false,
+          "whitespacenowrap": false,
+          "mainobjectwidth": "",
+          "mouseenterWidthMult": "1",
+          "mouseenterHeightMult": "1",
+          "maxLimitvariable": "",
+          "dateformat": "d.m.yy",
+          "variableOptionsForValues": "",
+          "variableOptGroupStyle": "",
+          "varMultiselectAllow": false,
+          "varMultiselectSep": "|",
+          "variableNameForKey": "",
+          "variableOptionsForKeys": "",
+          "allwaysOneSelectedDefault": "",
+          "selectOnlyOne": false,
+          "selectAlsoThese": "",
+          "selectDefaultsOnlyOnce": false,
+          "clearFieldSelOnFirstLoad": false,
+          "clearFieldSelOnLeave": false,
+          "hidePassiveItems": false,
+          "hideItems": "",
+          "showOnlySelectedItems": false,
+          "showOnlySelectedItemsShowPossible": false,
+          "rightclikcmenu": true,
+          "rigthclickmenushowasicon": false,
+          "rightclikcmenu_selall": true,
+          "rightclikcmenu_clear": true,
+          "rightclikcmenu_reverse": true,
+          "rightclikcmenu_possible": true,
+          "rightclikcmenu_random": false,
+          "rightclikcmenu_defaults": true,
+          "rightclikcmenu_copy": true,
+          "hideFromSelectionsBar": false,
+          "hideFromSelectionRealField": "",
+          "enableoverlay": 0,
+          "overlaytext": "",
+          "overlaybgcolor": "#ababab",
+          "overlaytxtcss": "",
+          "overlaybgcss": "",
+          "exportenabled": false,
+          "enablesearch": true,
+          "searchExcelCopypaste": false,
+          "exportenableMultisearchWith": "",
+          "searchMethod": 0,
+          "searcHideClear": false,
+          "inlinelabeltext": "",
+          "inlinelabelSetinline": false,
+          "inlinelabelcss": "",
+          "helptext": "",
+          "helptextcss": "",
+          "hovertitletext": "",
+          "transparentBackground": true,
+          "specialBackgroundColor": "",
+          "noBorders": false,
+          "ownBordercolor": "",
+          "ownBordercolor2": "",
+          "color_stateS_bg": "",
+          "color_stateO_bg": "",
+          "color_stateA_bg": "",
+          "color_stateX_bg": "",
+          "color_stateS_fo": "",
+          "color_stateO_fo": "",
+          "color_stateA_fo": "",
+          "color_stateX_fo": "",
+          "color_border": "",
+          "color_hoverBG": "",
+          "color_hoverFont": "",
+          "customFontCSS": "",
+          "customFontFamilyCSS": "",
+          "customElementAttribute": "",
+          "customElementClass": "",
+          "customStyleCSS": "",
+          "customHoverCSS": "",
+          "preElemHtml": "",
+          "postElemHtml": "",
+          "enableGlobals": false,
+          "global_bgcolor": "",
+          "global_bgcss": "",
+          "global_bgcss2": "",
+          "global_bghtml": "",
+          "global_bghtmlcss": "",
+          "global_fontcolor": "",
+          "fontfamily_global": "",
+          "hideSheetTitle": false,
+          "removeSheetTitlePadding": false,
+          "sheetTitleFontSize": -1,
+          "sheetTitleheight": -1,
+          "sheetTitleExtraText": "",
+          "sheetTitleCSS": "",
+          "hidepivotTableSelectors": false,
+          "hideFieldsFromSelectionBar": "",
+          "clearAllSelOnFirstLoad": false,
+          "clearAllSelOnLeave": false,
+          "keepaliver": 0,
+          "global_customCSS": "",
+          "global_selectBGcolor": "",
+          "global_selectFontcolor": "",
+          "global_selectBordercolor": "",
+          "globsfs_stateS_bg": "",
+          "globsfs_stateO_bg": "",
+          "globsfs_stateA_bg": "",
+          "globsfs_stateX_bg": "",
+          "globsfs_stateS_fo": "",
+          "globsfs_stateO_fo": "",
+          "globsfs_stateA_fo": "",
+          "globsfs_stateX_fo": "",
+          "globsfs_border": "",
+          "globsfs_hoverBG": "",
+          "globsfs_hoverFontcolor": "",
+          "globsfs_leftpad": "",
+          "globsfs_bottompad": "",
+          "globsfs_rightpad": "",
+          "globsfs_toppad": "",
+          "globsfs_custompad": "",
+          "gremoveMobileZoom": false,
+          "ghideMobileSearch": 0,
+          "ghideMobileHeader": 0,
+          "ghideMobileFooter": 0,
+          "hideSelectionBar": false,
+          "selBarExtraText": "",
+          "selBarExtraTextcss": "",
+          "selBarExtraTextQlikStyle": false,
+          "hideInsightsButton": false,
+          "hideSelectionsTool": false,
+          "hideSmartSearchButton": false,
+          "hideGuiToolbar": false,
+          "toolbarheight": -1,
+          "toolbarTxt": "",
+          "hideToolbarCenter": false,
+          "hideToolbarCenterPerm": false,
+          "global_customselector": "",
+          "global_elementbgcolor": "",
+          "global_customObjCSS": "",
+          "global_cObjHeaderCSS": "",
+          "global_cObjHeaderTxtCSS": "",
+          "global_objAxisCSS": "",
+          "global_bordercolor": "",
+          "global_bordercolor2": "",
+          "global_borderwidth": "-",
+          "removeHeaderFromTextImageObjects": false,
+          "removeHeaderFromAllObjects": false,
+          "removeHeaderIfNoText": false,
+          "headerfontcolor_global": "",
+          "headerbgcolor_global": "",
+          "headerTpadding_global": "-",
+          "headerBpadding_global": "-",
+          "leftpadding_global": "-",
+          "rightpadding_global": "-"
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "visualization": "SimpleFieldSelect",
+        "variableValue": {},
+        "maxLimitvariableValue": {},
+        "version": "2.0.5",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "list",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "SimpleFieldSelect",
+          "description": "Field and variable selector for Qlik Sense",
+          "template": "SimpleFieldSelect",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "type": "visualization",
+          "version": "2.0.5",
+          "author": "Matti Punkeri / Oivalo Oy",
+          "homepage": "",
+          "keywords": "qlik-sense, visualization",
+          "license": "",
+          "preview": "RlogoSFS.png",
+          "repository": "",
+          "dependencies": {
+            "qlik-sense": ">=3.0.x"
+          },
+          "previewIconURL": "https://nvdqlkse/extensions/SimpleFieldSelect/RlogoSFS.png"
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "HgepjM",
+          "qType": "table"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if(aggr(only([_Flag_WeekToReport]),[Vaccination.YearWeek])=1, [Vaccination.YearWeek])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByAscii": -1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": false,
+                "cId": "aqbDRa",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": ""
+                }
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qLibraryId": "RpykZ",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "RqJgyM",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "quarantine": {
+                  "qNumFormat": {},
+                  "isCustomFormatted": false
+                }
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1
+          ],
+          "qExpansionState": [],
+          "columnOrder": [
+            0,
+            1
+          ],
+          "columnWidths": [
+            -1,
+            -1
+          ],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "search": {
+          "sorting": "auto"
+        },
+        "showTitles": true,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "components": [],
+        "totals": {
+          "show": true,
+          "position": "noTotals",
+          "label": "Totals"
+        },
+        "scrolling": {
+          "horizontal": true,
+          "keepFirstColumnInView": false,
+          "keepFirstColumnInViewTouch": false
+        },
+        "multiline": {
+          "wrapTextInHeaders": true,
+          "wrapTextInCells": true
+        },
+        "visualization": "table"
+      },
+      "qChildren": []
+    }
+  ]
+}

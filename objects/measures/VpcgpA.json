@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "VpcgpA",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Uptake first dose - ALL",
+    "qDef": "SUM({1}Uptake1st_ALL)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "'Uptake first dose (%)'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "coloring": {
+      "baseColor": {
+        "color": "#6bbabf",
+        "index": 3
+      }
+    },
+    "isCustomFormatted": false
+  },
+  "qMetaDef": {
+    "title": "Uptake first dose - ALL",
+    "description": "Uptake first dose",
+    "tags": []
+  }
+}

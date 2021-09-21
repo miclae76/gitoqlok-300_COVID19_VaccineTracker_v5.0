@@ -1,0 +1,9 @@
+{
+  "qName": "Vaccination.Uptake1st_Cumul",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination_Cumulative"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "46558c9c-8116-480d-bf07-a00ddd928d74",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_03Qvd",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\",
+  "qIsScriptCreated": true
+}

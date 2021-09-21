@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "0245d8df-7b4f-480d-91b9-6206b989a9f1",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_SubTitle_Short",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "  worldwide, by selected territory(ies)",
+  "tags": []
+}

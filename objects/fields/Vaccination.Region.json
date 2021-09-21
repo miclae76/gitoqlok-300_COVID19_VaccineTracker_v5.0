@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.Region",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

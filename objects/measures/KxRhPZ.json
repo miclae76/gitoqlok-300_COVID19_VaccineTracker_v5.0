@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "KxRhPZ",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Total doses administered - by Product",
+    "qDef": "SUM({1<[Member State]=P([Member State])>} DoseTotal_ALL)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Doses administered'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#62bb46",
+        "index": 1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Total doses administered - by Product",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "JPJtgUj",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - Uptake One Country Selected",
+    "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_80_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_80_Cumul) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_80_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_80_Cumul) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_HCW_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_HCW_Cumul) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_HCW_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_HCW_Cumul) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_LTCF_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake1st_LTCF_Cumul) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_LTCF_Cumul) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} Uptake2nd_LTCF_Cumul) ))    \n   \n  \n)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=[Member State]",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#62bb46",
+        "index": 1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG - Uptake One Country Selected",
+    "description": "",
+    "tags": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "15fb98b1-06be-4a8b-bc85-98e5b6730eca",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vpbRecordId",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "89772356"
+}

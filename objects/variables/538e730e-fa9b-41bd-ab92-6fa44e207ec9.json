@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "538e730e-fa9b-41bd-ab92-6fa44e207ec9",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Sel_Grouped_Worldwide",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "1",
+  "tags": []
+}

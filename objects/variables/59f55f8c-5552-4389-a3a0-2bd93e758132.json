@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "59f55f8c-5552-4389-a3a0-2bd93e758132",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vProjectFolder",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2_Projects\\22_CoronaVirus\\01_Config\\22_CoronaVirus_Paths.txt"
+}

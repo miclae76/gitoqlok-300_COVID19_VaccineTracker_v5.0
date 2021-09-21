@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.DayOfQuarter",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Calendar_Vaccination"
+  ]
+}

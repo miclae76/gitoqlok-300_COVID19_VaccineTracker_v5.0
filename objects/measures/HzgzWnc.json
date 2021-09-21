@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "HzgzWnc",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Proportion administered by Product",
+    "qDef": "sum(DoseTotal_ALL)/sum(total DoseTotal_ALL)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "'Administered'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#87c5c9",
+        "index": 17
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Proportion administered by Product",
+    "description": "",
+    "tags": []
+  }
+}

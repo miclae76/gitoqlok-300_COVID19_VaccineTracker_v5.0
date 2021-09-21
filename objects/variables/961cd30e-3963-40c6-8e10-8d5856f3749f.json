@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "961cd30e-3963-40c6-8e10-8d5856f3749f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vClinicalSymptoms",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "FEVER;COUGH;SBREATH"
+}

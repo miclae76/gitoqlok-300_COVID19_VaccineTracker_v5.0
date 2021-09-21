@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "1664a86a-20c8-48f3-8e2f-8a3eaf6fe707",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_WeeklyOrCumul",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CUM",
+  "tags": []
+}

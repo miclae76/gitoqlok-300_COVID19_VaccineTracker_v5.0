@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "a7fc4fba-7224-4657-9c7f-f5f871ce80fe",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_EI_csv_LastModifiedTime",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "30/11/2020 10:48:52 AM"
+}

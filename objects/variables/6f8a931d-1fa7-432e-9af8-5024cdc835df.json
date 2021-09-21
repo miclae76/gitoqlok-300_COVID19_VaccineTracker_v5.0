@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "6f8a931d-1fa7-432e-9af8-5024cdc835df",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_KPI_AttackRate_Range",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "(Aggr(RANGESUM(ABOVE(   SUM(  NumOfConfCases), 0, ROWNO()) ), CountryName,(TimeCodeNUM , NUMERIC ASCENDING)) )  \r\n/ SUM(distinct  {$<NumOfConfCases={\"=SUM(NumOfConfCases)>0\"} >} EI_Population) * 100000\n\n//  / SUM(distinct EI_Population) * 100000",
+  "tags": []
+}

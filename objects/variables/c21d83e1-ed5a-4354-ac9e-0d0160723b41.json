@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c21d83e1-ed5a-4354-ac9e-0d0160723b41",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Color_Transmission_Classification",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF((  TransmissionShortName_Map_2 )='Community'\t\t,RGB(124,23,15)\t\t// 7C170F\r\n,IF(( TransmissionShortName_Map_2 )='Clusters'\t\t,RGB(204,107,33)\t// cc6b21\n,IF(( TransmissionShortName_Map_2 )='Sporadic'\t\t,RGB(241,214,118)\t// f1d676\n,IF( (TransmissionShortName_Map_2 )='No cases'\t\t,RGB(124,189,196)\t// 7cbdc4\t\n,IF(( TransmissionShortName_Map_2 )='Unknown'\t\t,RGB(128,128,128)\t// 7F8080\n,IF(( TransmissionShortName_Map_2 )='Not reported'\t,RGB(199,199,199)\t// c7c7c7\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t,RGB(199,199,199)\n))))))\n",
+  "tags": []
+}

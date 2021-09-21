@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "225044d3-fbf5-49dc-bff6-b8a358938af0",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_ViewTargetGroup",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "80",
+  "tags": []
+}

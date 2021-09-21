@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "4da2b3c4-8638-436f-ae02-9d579ec20015",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Title_Sel_WeekNotificationRate",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF(GetPossibleCount(EI_Year_Week)=1,'7-day'\r\n,IF(GetPossibleCount(EI_Year_Week)=2,'14-day'\n,'cumulative'\n))",
+  "tags": []
+}

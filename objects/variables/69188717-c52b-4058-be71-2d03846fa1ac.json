@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "69188717-c52b-4058-be71-2d03846fa1ac",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_TimeCode_Default",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "='>= ($(vl_MAX_WeekStartNUM)-21) <= $(vl_MAX_WeekStartNUM)'",
+  "tags": []
+}

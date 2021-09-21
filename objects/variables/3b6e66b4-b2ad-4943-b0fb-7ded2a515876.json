@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "3b6e66b4-b2ad-4943-b0fb-7ded2a515876",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Attack_Ranges_Dim",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "aggr(if( GetSelectedCount(TimeCode)=7\r\n\t,IF (rangesum(sum({1}NumOfConfCases_Cumulative)) = 0, dual('Not reported', 10)\n\t,IF( sum(NumOfConfCases) = 0,  dual('No new cases', 9)\n\t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 <  10, dual('  <10', 2) \n  \t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 <  30, dual('  10-29.9', 3)  \n  \t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 <  60, dual('  30-59.9', 4)  \n  \t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 120, dual('  60-119.9', 5)\n  \t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 240, dual(' 120-239.9', 6)\n  \t,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 480, dual(' 240-479.9', 7)\n\t, dual('>=480', 8)  \n\t))))))))\n\n  ,if( GetSelectedCount(TimeCode)=14\n  ,(IF (rangesum(sum({1}NumOfConfCases_Cumulative)) = 0, dual('Not reported', 10)\n  ,IF( sum(NumOfConfCases) = 0,  dual('No new cases', 9) //#7DBEC5'\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 <  20, dual('  <20', 2)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 <  60, dual('  20-59.9', 3)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 120, dual('  60-119.9', 4)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 240, dual(' 120-239.9', 5)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 480, dual(' 240-479.9', 6)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 960, dual(' 480-959.9', 7)\n  ,dual('>=960', 8) //'#7c170f'\n\t)))))))))\n    \n,(IF( rangesum(sum({1}NumOfConfCases_Cumulative)) = 0, dual('Not reported', 10)\n  ,if (sum(NumOfConfCases) = 0, dual('No new cases', 9) //#7DBEC5'\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 20, dual('  0.01-19.9',2)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 60, dual('  20-59.9', 3)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 120,dual('  60-119.9', 4)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 240,dual(' 120-239.9', 5)\n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 480,dual(' 240-479.9', 6)  \n  ,IF( sum(NumOfConfCases) / sum(distinct EI_Population) * 100000 < 960,dual(' 480-959.9', 7)  \n  ,dual('>=960', 8)\n\t)))))))))\n    \n)), CountryName)\n\n\n\n\n",
+  "tags": []
+}

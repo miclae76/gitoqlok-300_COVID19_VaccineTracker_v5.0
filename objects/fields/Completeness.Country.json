@@ -1,0 +1,10 @@
+{
+  "qName": "Completeness.Country",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "DataCompleteness"
+  ]
+}

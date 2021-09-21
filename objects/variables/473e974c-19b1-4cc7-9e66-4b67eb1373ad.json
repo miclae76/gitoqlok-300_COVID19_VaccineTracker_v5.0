@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "473e974c-19b1-4cc7-9e66-4b67eb1373ad",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTitleGlobalOverview",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF(Sel_Cum=1 and GetSelectedCount(TimeCode)=0\r\n\t,MAXSTRING(Sel_Notification_week) & ' per 100 000 population weeks ' & RIGHT(MIN(EI_Week),2) & '-' & RIGHT(MAX(EI_Week),2)\n\t& ' (' & MIN(EI_WeekStart) & ' - ' & MAX(EI_WeekEnd) & ')'\n\n\t,MAXSTRING(Sel_Notification_week) & ' per 100 000 population at week ' & RIGHT(MAX(EI_Week),2)\n\t& ' (' & Date(MIN(EI_WeekStart)) & ' - ' & Date(MAX(EI_WeekEnd)) & ')'\n)\n\n\n/*\nif(TimeCode= Today(), '- Today', \n\tif(GetSelectedCount(TimeCode)=1, '('&TimeCode&')',\n    \t if(GetSelectedCount(TimeCode)=7 and max(TimeCode)>=Today()-1, '- Last 7 days', \n         \tif(GetSelectedCount(TimeCode)=14 and max(TimeCode)>=Today()-1, '- Last 14 days', ' ('&min(TimeCode)& ' - '&max(TimeCode)&')')\n            )))\n            \n\n\n\n\n",
+  "tags": []
+}

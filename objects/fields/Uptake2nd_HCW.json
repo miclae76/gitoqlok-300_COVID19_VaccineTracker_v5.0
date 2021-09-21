@@ -1,0 +1,9 @@
+{
+  "qName": "Uptake2nd_HCW",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

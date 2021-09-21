@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "889b54d7-9628-4dca-9f3a-d0f0920891f1",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Uptake second dose - Age Group",
+    "qDef": "Sum(Uptake2nd_AGE)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "'Uptake second dose (%)'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#87c5c9",
+        "index": 17
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Uptake second dose - Age Group",
+    "description": "Uptake second dose - Age Group",
+    "tags": []
+  }
+}

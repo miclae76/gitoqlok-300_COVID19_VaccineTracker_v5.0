@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "131f5560-0618-4e53-a960-daaa54d18724",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Max_YearWeek",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

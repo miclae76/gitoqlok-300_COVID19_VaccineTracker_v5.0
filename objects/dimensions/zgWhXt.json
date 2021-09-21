@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "zgWhXt",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(only({<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeek]), [Vaccination.YearWeek])"
+    ],
+    "qFieldLabels": [
+      "Aggr YearWeek Reported"
+    ],
+    "title": "Aggr YearWeek Reported",
+    "coloring": {
+      "changeHash": "0.8697811756149496",
+      "colorMapRef": "zgWhXt"
+    }
+  },
+  "qMetaDef": {
+    "title": "Aggr YearWeek Reported",
+    "description": "",
+    "tags": []
+  }
+}

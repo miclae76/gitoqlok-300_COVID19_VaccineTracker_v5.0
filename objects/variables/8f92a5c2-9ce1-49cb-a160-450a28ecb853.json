@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "8f92a5c2-9ce1-49cb-a160-450a28ecb853",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_Country_D1_02",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

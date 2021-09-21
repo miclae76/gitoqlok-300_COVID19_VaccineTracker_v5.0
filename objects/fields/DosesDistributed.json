@@ -1,0 +1,7 @@
+{
+  "qName": "DosesDistributed",
+  "qTags": [],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

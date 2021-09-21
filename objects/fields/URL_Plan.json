@@ -1,0 +1,10 @@
+{
+  "qName": "URL_Plan",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "URLs"
+  ]
+}

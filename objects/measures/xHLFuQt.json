@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "xHLFuQt",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Dummy for % Y-axis",
+    "qDef": "if([Vaccination.YearWeek]=maxstring(total [Vaccination.YearWeekReported]), 0, null())",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=' '",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0%;-0%;",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": false,
+    "coloring": {
+      "baseColor": {
+        "color": "#FFFFFF",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Dummy for % Y-axis",
+    "description": "",
+    "tags": []
+  }
+}

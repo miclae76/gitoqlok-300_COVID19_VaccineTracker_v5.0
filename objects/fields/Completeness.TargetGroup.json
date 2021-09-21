@@ -1,0 +1,10 @@
+{
+  "qName": "Completeness.TargetGroup",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "DataCompleteness"
+  ]
+}

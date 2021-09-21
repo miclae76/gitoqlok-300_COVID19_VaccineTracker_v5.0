@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "216ec80e-399d-4d3b-8221-bfa120c71da4",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vPatientSigns",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "<Missing>"
+}

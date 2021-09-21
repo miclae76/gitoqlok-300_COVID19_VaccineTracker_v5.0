@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "08cd92d5-54dd-4680-b562-dd4a0f985633",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vG_0324QVDWB",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0_Generic\\03_Qvd\\032_Source\\0324_Workbench\\",
+  "qIsScriptCreated": true
+}

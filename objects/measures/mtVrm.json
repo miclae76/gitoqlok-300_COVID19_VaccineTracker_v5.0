@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "mtVrm",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "DOSES - N. CUM - DIST or ADMIN",
+    "qDef": "pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n  SUM(DosesDistributed),\n  SUM(DoseTotal_ALLP)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'), \r\n 'Doses distributed',\n 'Doses administered'\n)",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "DOSES - N. CUM - DIST or ADMIN",
+    "description": "",
+    "tags": []
+  }
+}

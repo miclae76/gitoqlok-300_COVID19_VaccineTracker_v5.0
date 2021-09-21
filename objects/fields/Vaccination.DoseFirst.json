@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.DoseFirst",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

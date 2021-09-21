@@ -1,0 +1,10 @@
+{
+  "qName": "Vaccination.YearWeekReported",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

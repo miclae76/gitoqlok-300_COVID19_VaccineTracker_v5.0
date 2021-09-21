@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "c47bc42b-1b95-4793-b3a8-2dada658cc66",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Uptake second dose - ALL",
+    "qDef": "SUM({1}Uptake2nd_ALL)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "'Uptake second dose (%)'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "coloring": {
+      "baseColor": {
+        "color": "#6bbabf",
+        "index": 3
+      }
+    },
+    "isCustomFormatted": false
+  },
+  "qMetaDef": {
+    "title": "Uptake second dose - ALL",
+    "description": "Uptake second dose - ALL",
+    "tags": []
+  }
+}

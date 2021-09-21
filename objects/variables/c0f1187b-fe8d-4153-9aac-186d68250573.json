@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c0f1187b-fe8d-4153-9aac-186d68250573",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_CountryColorBrushing_Blue",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF(GetSelectedCount([Member State]) > 0,\n\tIF( MATCH([Member State], $(v_CountrySelections)) > 0, '#6bbabf', '#a3d1d4'), $1)",
+  "tags": []
+}

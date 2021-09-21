@@ -1,0 +1,10 @@
+{
+  "qName": "EU27_EEA",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "EU27_EEA"
+  ]
+}

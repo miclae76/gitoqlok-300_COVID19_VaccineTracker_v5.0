@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "31995920-201a-4814-9f49-c11a8bdce5c6",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vl_TransmissionCode_ShortTitle",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "IF(MINSTRING (TransmissionClassificationCode)='NO_CASES','No cases'\r\n,IF(MINSTRING(TransmissionClassificationCode)='SPORADIC','Sporadic cases'\n,IF(MINSTRING(TransmissionClassificationCode)='CLUSTERS','Clusters of cases'\n,IF(MINSTRING(TransmissionClassificationCode)='COMMUNITY','Community transmission'\n,IF(MINSTRING(TransmissionClassificationCode)='UNK','Unknown'\n)))))",
+  "tags": []
+}
