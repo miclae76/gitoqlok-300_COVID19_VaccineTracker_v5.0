@@ -8,6 +8,7 @@
   ],
   "qSrcTables": [
     "Calendar_Vaccination",
-    "Vaccination"
+    "Vaccination",
+    "$OFMap Vaccination.YearWeek"
   ]
 }
