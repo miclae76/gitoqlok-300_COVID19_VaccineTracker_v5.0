@@ -654,6 +654,11 @@
             "cId": "PBsYdgh"
           },
           {
+            "value": "THIRD",
+            "label": "Uptake of additional vaccine doses",
+            "cId": "sXGw"
+          },
+          {
             "value": "NFIRST",
             "label": "Number of first doses administered",
             "cId": "BpjYh"
@@ -667,6 +672,11 @@
             "value": "NPROP",
             "label": "Proportion of vaccine doses administered",
             "cId": "SzJTEuu"
+          },
+          {
+            "value": "NTHIRD",
+            "label": "Number of additional doses administered",
+            "cId": "WteJZb"
           }
         ],
         "min": 0,

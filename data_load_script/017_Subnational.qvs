@@ -1,5 +1,4 @@
 ///$tab 017_Subnational
-
 Qualify *; Unqualify Subnational_RegionCode, Vaccination.YearWeek;
 
 Region:

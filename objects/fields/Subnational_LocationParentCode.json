@@ -1,0 +1,10 @@
+{
+  "qName": "Subnational_LocationParentCode",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "SubnationalRegions_Shapes"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "qName": "SN_LocationType",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "SubnationalRegions_Shapes"
+  ]
+}

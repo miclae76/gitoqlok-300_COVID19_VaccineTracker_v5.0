@@ -1,0 +1,10 @@
+{
+  "qName": "Subnational_CountryCode",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "SubnationalRegions_Shapes"
+  ]
+}

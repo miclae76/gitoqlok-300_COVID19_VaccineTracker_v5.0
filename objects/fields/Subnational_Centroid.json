@@ -1,0 +1,10 @@
+{
+  "qName": "Subnational_Centroid",
+  "qTags": [
+    "$ascii",
+    "$text"
+  ],
+  "qSrcTables": [
+    "SubnationalRegions_Shapes"
+  ]
+}

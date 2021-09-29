@@ -1,0 +1,10 @@
+{
+  "qName": "Region.Vaccination.DoseSecond",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Region"
+  ]
+}

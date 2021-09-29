@@ -1,0 +1,10 @@
+{
+  "qName": "Region.Vaccination.Denominator",
+  "qTags": [
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Region"
+  ]
+}

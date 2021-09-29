@@ -1,0 +1,12 @@
+{
+  "qName": "Region.Vaccination.Reload_Date",
+  "qTags": [
+    "$numeric",
+    "$integer",
+    "$timestamp",
+    "$date"
+  ],
+  "qSrcTables": [
+    "Region"
+  ]
+}

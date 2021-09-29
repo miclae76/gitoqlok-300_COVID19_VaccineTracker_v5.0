@@ -1,0 +1,12 @@
+{
+  "qName": "Region.Vaccination.DoseFirstRefused",
+  "qTags": [
+    "$ascii",
+    "$text",
+    "$numeric",
+    "$integer"
+  ],
+  "qSrcTables": [
+    "Region"
+  ]
+}

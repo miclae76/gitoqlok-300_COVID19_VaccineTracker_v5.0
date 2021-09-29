@@ -1,0 +1,19 @@
+{
+  "qName": "Subnational_RegionCode",
+  "qTags": [
+    "$ascii",
+    "$text",
+    "$primarykey",
+    "$geoname",
+    "$relates_Shape_PLG_WKT_WGS84",
+    "$relates_Shape_PLG_WKT_LAEA",
+    "$relates_Centroid_PNT_WKT_WGS84",
+    "$relates_Centroid_PNT_WKT_LAEA",
+    "$relates_WKT",
+    "$key"
+  ],
+  "qSrcTables": [
+    "Region",
+    "SubnationalRegions_Shapes"
+  ]
+}

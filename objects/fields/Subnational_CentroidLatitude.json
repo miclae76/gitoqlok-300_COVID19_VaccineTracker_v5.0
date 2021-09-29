@@ -1,0 +1,9 @@
+{
+  "qName": "Subnational_CentroidLatitude",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "SubnationalRegions_Shapes"
+  ]
+}
