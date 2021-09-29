@@ -1,38 +1,6 @@
 ///$tab 010_LOAD_QVDs
 Calendar_Vaccination:
-LOAD
-    Vaccination.TimeCode,
-    Vaccination.DateNum,
-    Vaccination.DayNum,
-    Vaccination.Day,
-    Vaccination.DayName,
-    Vaccination.Weeknum,
-    Vaccination.MonthName,
-    Vaccination.MonthNum,
-    Vaccination.MonthStart,
-    Vaccination.MonthEnd,
-    Vaccination.YearNum,
-    Vaccination.Year,
-    Vaccination.YearMonth,
-    Vaccination.YearMonthID,
-    Vaccination.CalQuarter,
-    Vaccination.YearQuarterID,
-    Vaccination.YearWeek,
-    Vaccination.YearWeekID,
-    Vaccination.WeekYear,
-    Vaccination.WeekStart,
-    Vaccination.WeekEnd,
-    Vaccination.MonthYear,
-    Vaccination.QuarterStart,
-    Vaccination.QuarterEnd,
-    Vaccination.DayOfQuarter,
-    Vaccination.DayOfYear,
-    Vaccination.FLU_Season,
-    Vaccination.FlagYTD,
-    Vaccination.FlagQTD,
-    Vaccination.FlagMTD,
-    Vaccination.FlagWTD,
-    Vaccination.FlagWeekend
+LOAD *
 FROM [lib://QData/2_Projects/22_CoronaVirus/03_Qvd/032_Source/Calendar_Vaccination.qvd]
 (qvd);
 
