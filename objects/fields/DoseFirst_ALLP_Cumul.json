@@ -1,10 +1,10 @@
 {
-  "qName": "Vaccination.YearMonth",
+  "qName": "DoseFirst_ALLP_Cumul",
   "qTags": [
     "$numeric",
     "$integer"
   ],
   "qSrcTables": [
-    "Calendar_Vaccination"
+    "Vaccination_Cumulative"
   ]
 }

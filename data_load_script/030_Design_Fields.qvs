@@ -6,6 +6,7 @@ LOAD * INLINE [
     ALLP, in the total population, people, the total population
 ];
 
+// for the pivot with key figures
 KPI:
 LOAD * INLINE [KPI_GROUP, KPI_ID, KPI_NAME
 Total doses distributed and administered, 10, Total number of vaccine doses distributed by manufacturers to EU/EEA countries
@@ -23,4 +24,19 @@ Cumulative vaccine uptake in target groups*, 80, Cumulative uptake of at least o
 Cumulative vaccine uptake in target groups*, 90, Cumulative uptake of full vaccination among healthcare workers
 Cumulative vaccine uptake in target groups*, 100, Cumulative uptake of at least one vaccine dose among residents of long-term care facilities
 Cumulative vaccine uptake in target groups*, 110, Cumulative uptake of full vaccination among residents of long-term care facilities
+];
+
+// for the country summary KPI
+TABLE_KPI:
+LOAD * INLINE [T_KPI_GROUP, T_KPI_ID, T_KPI_NAME
+, 1, Reporting Week
+, 2, Total doses administered
+Total population, 10, N. with at least one dose
+Total population, 20, N. full vaccinations 
+Total population, 30,Uptake at least one dose (%)
+Total population, 40,Uptake full vaccination (%)
+Adults (18+), 100, N. with at least one dose
+Adults (18+), 200, N. full vaccinations 
+Adults (18+), 300, Uptake at least one dose (%)
+Adults (18+), 400, Uptake full vaccination (%)
 ];

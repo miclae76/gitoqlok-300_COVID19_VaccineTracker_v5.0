@@ -1,10 +1,10 @@
 {
-  "qName": "Region.Vaccination.DoseUnk",
+  "qName": "Vaccination.YearWeekNUM",
   "qTags": [
     "$numeric",
     "$integer"
   ],
   "qSrcTables": [
-    "Region"
+    "Vaccination"
   ]
 }

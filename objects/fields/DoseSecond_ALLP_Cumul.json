@@ -1,10 +1,10 @@
 {
-  "qName": "Region.Vaccination.Denominator",
+  "qName": "DoseSecond_ALLP_Cumul",
   "qTags": [
     "$numeric",
     "$integer"
   ],
   "qSrcTables": [
-    "Region"
+    "Vaccination_Cumulative"
   ]
 }

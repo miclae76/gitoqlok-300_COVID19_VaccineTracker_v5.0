@@ -3,11 +3,9 @@
   "qTags": [
     "$ascii",
     "$text",
-    "$date",
-    "$key"
+    "$date"
   ],
   "qSrcTables": [
-    "Calendar_Vaccination",
     "Vaccination"
   ]
 }

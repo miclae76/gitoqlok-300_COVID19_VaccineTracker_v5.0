@@ -1,4 +1,5 @@
 ///$tab 017_Subnational
+/*
 Qualify *; Unqualify Subnational_RegionCode, Vaccination.YearWeek;
 
 Region:
@@ -11,3 +12,5 @@ unqualify *;
 
 SubnationalRegions_Shapes: 	
 LOAD * FROM $(vG_Connection)$(vG_22_032QVDSource)\SubnationalRegions_Shapes.qvd (qvd) where exists(Subnational_LocationParentCode);
+
+*/

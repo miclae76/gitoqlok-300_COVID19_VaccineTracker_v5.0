@@ -1,10 +1,12 @@
 ///$tab 010_LOAD_QVDs
+/*
 Calendar_Vaccination:
-LOAD *
+LOAD *, num(PurgeChar([Vaccination.YearWeek], '-W')) AS Vaccination.YearWeekNUM
 FROM [lib://QData/2_Projects/22_CoronaVirus/03_Qvd/032_Source/Calendar_Vaccination.qvd]
 (qvd);
-
+*/
 Tag Vaccination.YearWeek With '$date';
+
 
 //LOAD *
 //FROM $(vG_Connection)$(vG_22_032QVDSource)\Calendar_Vaccination.qvd (qvd);  
@@ -120,7 +122,7 @@ Resident QVD_Vaccination
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 group by 
  Vaccination.ReportingCountry 
- ;//  Vaccination.TargetGroup;
+;//  Vaccination.TargetGroup;
    
 
     
@@ -179,7 +181,8 @@ WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
 LEFT JOIN (temp_vaccination)
 LOAD 
 	Vaccination.ReportingCountry, 
-    Vaccination.LastReportedWeek  
+    Vaccination.LastReportedWeek,
+    AutoNumber(Vaccination.LastReportedWeek) AS Vaccination.LastReportedWeekID
 Resident Last_ReportedWeek;
 Drop table Last_ReportedWeek;
 
@@ -309,6 +312,8 @@ LOAD
 LOAD  
 	Vaccination.RecordId,
     Vaccination.DateUsedForStatisticsISO AS Vaccination.YearWeek,
+    num(PurgeChar(Vaccination.DateUsedForStatisticsISO , '-W')) AS Vaccination.YearWeekNUM,
+    Vaccination.LastReportedWeek,
     if(Vaccination.DateUsedForStatisticsISO > Vaccination.LastReportedWeek, null(), 1) AS _Flag_WeekToReport, 
     if(Vaccination.DateUsedForStatisticsISO <= Vaccination.LastReportedWeek, Vaccination.DateUsedForStatisticsISO, null()) AS Vaccination.YearWeekReported,
     Vaccination.ReportingCountry,

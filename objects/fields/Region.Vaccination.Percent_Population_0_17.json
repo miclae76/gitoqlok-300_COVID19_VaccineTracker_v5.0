@@ -1,9 +1,0 @@
-{
-  "qName": "Region.Vaccination.Percent_Population_0_17",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Region"
-  ]
-}

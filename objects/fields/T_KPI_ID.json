@@ -1,10 +1,10 @@
 {
-  "qName": "Vaccination.FlagMTD",
+  "qName": "T_KPI_ID",
   "qTags": [
     "$numeric",
     "$integer"
   ],
   "qSrcTables": [
-    "Calendar_Vaccination"
+    "TABLE_KPI"
   ]
 }

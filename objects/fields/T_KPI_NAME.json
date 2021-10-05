@@ -1,10 +1,10 @@
 {
-  "qName": "Region.Vaccination.LocationCode",
+  "qName": "T_KPI_NAME",
   "qTags": [
     "$ascii",
     "$text"
   ],
   "qSrcTables": [
-    "Region"
+    "TABLE_KPI"
   ]
 }
