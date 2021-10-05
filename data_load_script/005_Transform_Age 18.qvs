@@ -165,7 +165,7 @@ group by
 LOAD *
 Resident temp_QVD_Vaccination
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
-AND match(Vaccination.TargetGroup, 'ALL', 'Age<18') > 0;
+AND match(Vaccination.TargetGroup, 'ALL', 'Age<18', 'AgeUNK') > 0;
 
 
 Concatenate(QVD_Vaccination)

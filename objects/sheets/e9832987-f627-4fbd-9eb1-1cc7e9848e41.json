@@ -2681,7 +2681,7 @@
                 "qLabel": "Uptake first dose",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul]), '0.0%')\r\n  ",
+                "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul])), '0.0%')\r\n  ",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -2806,7 +2806,7 @@
                 "qLabel": "Uptake full vaccination",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%')",
+                "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul])), '0.0%')",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
