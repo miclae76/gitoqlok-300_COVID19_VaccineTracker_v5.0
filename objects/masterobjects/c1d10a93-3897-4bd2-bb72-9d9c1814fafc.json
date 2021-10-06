@@ -66,7 +66,7 @@
             "qLabel": "TG - # Dose First administered",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose1st_80),\n    sum(Dose1st_HCW),\n    sum(Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose1st_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -75,7 +75,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='First dose'",
+            "qLabelExpression": "='First doses'",
             "autoSort": true,
             "cId": "LpDxjgm",
             "numFormatFromTemplate": true,
@@ -88,7 +88,7 @@
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose1st_80),\n    sum(Dose1st_HCW),\n    sum(Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose1st_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                 "base": {
                   "qDef": "",
                   "qLibraryId": "pTkELg",
@@ -159,7 +159,7 @@
             "qLabel": "TG - # Full vaccination",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose2nd_80),\n    sum(Dose2nd_HCW),\n    sum(Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -168,7 +168,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccination'",
+            "qLabelExpression": "='Full vaccinations'",
             "autoSort": true,
             "numFormatFromTemplate": true,
             "cId": "BTmzSJ",
@@ -192,7 +192,7 @@
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose2nd_80),\n    sum(Dose2nd_HCW),\n    sum(Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                 "base": {
                   "qDef": "",
                   "qLibraryId": "RQjNY",
@@ -252,7 +252,7 @@
             "qLabel": "TG - # Doses Unknown",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(DoseUnk_80),\n    sum(DoseUnk_HCW),\n    sum(DoseUnk_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseUnk_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -278,7 +278,7 @@
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(DoseUnk_80),\n    sum(DoseUnk_HCW),\n    sum(DoseUnk_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseUnk_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                 "base": {
                   "qDef": "",
                   "qLibraryId": "34ac070a-bcfb-4e87-b424-67242ba37d92",
@@ -390,7 +390,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), \r\n'Cumulative number of vaccine doses administered to people aged 80 years and above in ',\n'Cumulative number of vaccine doses administered to healthcare workers in ',\n'Cumulative number of vaccine doses administered to LTCF Residents in '\n)\n&if(GetSelectedCount([Member State])=1, [Member State], v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \r\n'Cumulative number of vaccine doses administered to people aged 80 years and above in ',\n'Cumulative number of vaccine doses administered to people aged 70 years and above in ',\n'Cumulative number of vaccine doses administered to people aged 60 years and above in ',\n'Cumulative number of vaccine doses administered to people aged 50 years and above in ',\n'Cumulative number of vaccine doses administered to healthcare workers in ',\n'Cumulative number of vaccine doses administered to LTCF Residents in '\n)\n&if(GetSelectedCount([Member State])=1, [Member State], v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

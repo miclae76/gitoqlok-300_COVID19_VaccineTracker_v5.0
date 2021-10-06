@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "TG - # Full vaccination",
-    "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum(Dose2nd_80),\n    sum(Dose2nd_HCW),\n    sum(Dose2nd_LTCF)\n)",
+    "qDef": "sum([Dose2nd_$(v_ViewTargetGroup)])\r\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,

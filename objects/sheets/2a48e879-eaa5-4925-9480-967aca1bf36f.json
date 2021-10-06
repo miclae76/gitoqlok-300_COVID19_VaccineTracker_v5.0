@@ -91,26 +91,26 @@
         "col": 20,
         "row": 0,
         "colspan": 4,
-        "rowspan": 2,
+        "rowspan": 5,
         "bounds": {
           "y": 0,
           "x": 83.33333333333334,
           "width": 16.666666666666664,
-          "height": 16.666666666666664
+          "height": 41.66666666666667
         }
       },
       {
         "name": "cpmpPC",
         "type": "container",
         "col": 20,
-        "row": 2,
+        "row": 5,
         "colspan": 4,
-        "rowspan": 6,
+        "rowspan": 7,
         "bounds": {
-          "y": 16.666666666666664,
+          "y": 41.66666666666667,
           "x": 83.33333333333334,
           "width": 16.666666666666664,
-          "height": 50
+          "height": 58.333333333333336
         }
       },
       {
@@ -160,12 +160,12 @@
         "type": "table",
         "col": 0,
         "row": 8,
-        "colspan": 4,
+        "colspan": 7,
         "rowspan": 4,
         "bounds": {
           "y": 66.66666666666666,
           "x": 0,
-          "width": 16.666666666666664,
+          "width": 29.166666666666668,
           "height": 33.33333333333333
         }
       },
@@ -181,34 +181,6 @@
           "x": 37.5,
           "width": 12.5,
           "height": 8.333333333333332
-        }
-      },
-      {
-        "name": "HppR",
-        "type": "linechart",
-        "col": 4,
-        "row": 8,
-        "colspan": 8,
-        "rowspan": 4,
-        "bounds": {
-          "y": 66.66666666666666,
-          "x": 16.666666666666664,
-          "width": 33.33333333333333,
-          "height": 33.33333333333333
-        }
-      },
-      {
-        "name": "HgepjM",
-        "type": "table",
-        "col": 20,
-        "row": 8,
-        "colspan": 4,
-        "rowspan": 4,
-        "bounds": {
-          "y": 66.66666666666666,
-          "x": 83.33333333333334,
-          "width": 16.666666666666664,
-          "height": 33.33333333333333
         }
       }
     ],
@@ -250,6 +222,21 @@
             "value": "80",
             "label": "+80 years old age group",
             "cId": "wAHZfvC"
+          },
+          {
+            "value": "70",
+            "label": "+70 years old age group",
+            "cId": "ZEbthBd"
+          },
+          {
+            "value": "60",
+            "label": "+60 years old age group",
+            "cId": "mfMUvJa"
+          },
+          {
+            "value": "50",
+            "label": "+50  years old age group",
+            "cId": "wkBmRqd"
           },
           {
             "value": "HCW",
@@ -538,8 +525,8 @@
               "radiusValueMax": 1000000,
               "autoRadiusValueRange": true,
               "expression": {
-                "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
-                "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
+                "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
+                "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
                 "type": "expression",
                 "qNumFormat": {
                   "qType": "U",
@@ -552,7 +539,7 @@
               },
               "label": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccination administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')"
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) \r\n& ' in '  &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50',  'HCW', 'LTCF'), '80+', '70+', '60+', '50+', 'HCW', 'LTCF')"
                 }
               },
               "slider": [
@@ -1007,7 +994,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Number of first doses administered to people aged 80 years and above in ',\n'Number of full vaccinations administered to people aged 80 years and above in ',\n'Number of first doses administered to healthcare workers in ',\n'Number of full vaccinations administered to healthcare workers in ',\n'Number of first doses administered to LTCF residents in ',\n'Number of full vaccinations administered to LTCF residents in '\n) \n& if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1019,7 +1006,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 2006604954,
+          "hashCode": 700883086,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1079,7 +1066,7 @@
                         "id": "colorByExpression"
                       },
                       {
-                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose1st_80),\n    sum({1}Dose1st_HCW),\n    sum({1}Dose1st_LTCF)\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n\tsum({1}Dose2nd_80),\n    sum({1}Dose2nd_HCW),\n    sum({1}Dose2nd_LTCF)\n)\n)",
+                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
                         "qNumFormat": {
                           "qType": "U",
                           "qnDec": 2,
@@ -1325,8 +1312,7 @@
                 "reverseScheme": false
               },
               "useDimLoc1": 0
-            },
-            null
+            }
           ]
         },
         "masterVersion": 0.96
@@ -1623,17 +1609,6 @@
           "qChildren": []
         }
       ]
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "HppR",
-          "qType": "linechart"
-        },
-        "qExtendsId": "8a6769c2-a885-4806-bba5-1128417c19fb",
-        "qMetaDef": {}
-      },
-      "qChildren": []
     },
     {
       "qProperty": {
@@ -2874,7 +2849,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;-'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;-')\n)\n\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -2989,7 +2964,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF',\n),\n'Cumulative uptake (%) of at least one vaccine dose in people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination in people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose in healthcare workers in ',\n'Cumulative uptake (%) of full vaccination in healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Cumulative number of first doses in people aged 80 years and above in ',\n'Cumulative number of full vaccinations in people aged 80 years and above in ',\n'Cumulative number of first doses in healthcare workers in ',\n'Cumulative number of full vaccinations in healthcare workers in ',\n'Cumulative number of first doses among LTCF residents in ',\n'Cumulative number of full vaccinations among LTCF residents in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3249,7 +3224,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;-'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;-'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;-'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;-')\n)\n\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n//Uptake\t\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -3418,7 +3393,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF',\n),\n'Cumulative uptake (%) of at least one vaccine dose in people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination in people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose in healthcare workers in ',\n'Cumulative uptake (%) of full vaccination in healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n\n'Cumulative number of first doses administered to people aged 80 years and above in ',\n'Cumulative number of full vaccinations administered to people aged 80 years and above in ',\n'Cumulative number of first doses administered to healthcare workers in ',\n'Cumulative number of full vaccinations administered to healthcare workers in ',\n'Cumulative number of first doses administered to LTCF residents in ',\n'Cumulative number of full vaccinations administered to LTCF residents in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3891,267 +3866,6 @@
           },
           "previewIconURL": "https://nvdqlkse/extensions/SimpleFieldSelect/RlogoSFS.png"
         }
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "HgepjM",
-          "qType": "table"
-        },
-        "qMetaDef": {},
-        "qHyperCubeDef": {
-          "qDimensions": [
-            {
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [
-                  "=if(aggr(only([_Flag_WeekToReport]),[Vaccination.YearWeek])=1, [Vaccination.YearWeek])"
-                ],
-                "qFieldLabels": [
-                  ""
-                ],
-                "qSortCriterias": [
-                  {
-                    "qSortByAscii": -1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": false,
-                "cId": "aqbDRa",
-                "othersLabel": "Others",
-                "textAlign": {
-                  "auto": true,
-                  "align": "left"
-                },
-                "representation": {
-                  "type": "text",
-                  "urlPosition": "dimension",
-                  "urlLabel": "",
-                  "linkUrl": ""
-                }
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {
-                  "qv": "10"
-                },
-                "qOtherLimit": {
-                  "qv": "0"
-                },
-                "qOtherLimitMode": "OTHER_GE_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_OFF",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {
-                "qv": "Others"
-              },
-              "qTotalLabel": {},
-              "qCalcCond": {},
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              }
-            }
-          ],
-          "qMeasures": [
-            {
-              "qLibraryId": "RpykZ",
-              "qDef": {
-                "qTags": [],
-                "qGrouping": "N",
-                "qAggrFunc": "Expr",
-                "qAccumulate": 0,
-                "qActiveExpression": 0,
-                "qExpressions": [],
-                "autoSort": true,
-                "cId": "RqJgyM",
-                "numFormatFromTemplate": true,
-                "textAlign": {
-                  "auto": true,
-                  "align": "left"
-                },
-                "representation": {
-                  "type": "text",
-                  "indicator": {
-                    "showTextValues": true,
-                    "applySegmentColors": false,
-                    "position": "right"
-                  },
-                  "miniChart": {
-                    "type": "sparkline",
-                    "colors": {
-                      "main": {
-                        "index": 1
-                      },
-                      "max": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "min": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "first": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "last": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "positive": {
-                        "index": 1
-                      },
-                      "negative": {
-                        "index": 10,
-                        "color": "#f93f17"
-                      }
-                    },
-                    "showDots": true,
-                    "yAxis": {
-                      "scale": "local",
-                      "position": "auto"
-                    }
-                  }
-                },
-                "conditionalColoring": {
-                  "segments": {
-                    "limits": [],
-                    "paletteColors": [
-                      {
-                        "index": 6,
-                        "icon": "dot"
-                      }
-                    ]
-                  }
-                },
-                "quarantine": {
-                  "qNumFormat": {},
-                  "isCustomFormatted": false
-                }
-              },
-              "qSortBy": {
-                "qSortByNumeric": -1,
-                "qSortByLoadOrder": 1,
-                "qExpression": {}
-              },
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCond": {},
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              },
-              "qTrendLines": [],
-              "qMiniChartDef": {
-                "qSortBy": {
-                  "qExpression": {}
-                },
-                "qOtherTotalSpec": {
-                  "qOtherMode": "OTHER_OFF",
-                  "qOtherCounted": {},
-                  "qOtherLimit": {},
-                  "qOtherLimitMode": "OTHER_GT_LIMIT",
-                  "qSuppressOther": true,
-                  "qForceBadValueKeeping": true,
-                  "qApplyEvenWhenPossiblyWrongResult": true,
-                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                  "qTotalMode": "TOTAL_OFF",
-                  "qReferencedExpression": {}
-                },
-                "qMaxNumberPoints": -1,
-                "qAttributeExpressions": [],
-                "qNullSuppression": true
-              }
-            }
-          ],
-          "qInterColumnSortOrder": [
-            0,
-            1
-          ],
-          "qSuppressMissing": true,
-          "qInitialDataFetch": [],
-          "qReductionMode": "N",
-          "qMode": "S",
-          "qPseudoDimPos": -1,
-          "qNoOfLeftDims": -1,
-          "qMaxStackedCells": 5000,
-          "qCalcCond": {},
-          "qTitle": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qColumnOrder": [
-            0,
-            1
-          ],
-          "qExpansionState": [],
-          "columnOrder": [
-            0,
-            1
-          ],
-          "columnWidths": [
-            -1,
-            -1
-          ],
-          "qLayoutExclude": {
-            "qHyperCubeDef": {
-              "qDimensions": [],
-              "qMeasures": [],
-              "qInterColumnSortOrder": [],
-              "qInitialDataFetch": [],
-              "qReductionMode": "N",
-              "qMode": "S",
-              "qPseudoDimPos": -1,
-              "qNoOfLeftDims": -1,
-              "qMaxStackedCells": 5000,
-              "qCalcCond": {},
-              "qTitle": {},
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              },
-              "qColumnOrder": [],
-              "qExpansionState": []
-            }
-          }
-        },
-        "search": {
-          "sorting": "auto"
-        },
-        "showTitles": true,
-        "title": "",
-        "subtitle": "",
-        "footnote": "",
-        "disableNavMenu": false,
-        "showDetails": false,
-        "components": [],
-        "totals": {
-          "show": true,
-          "position": "noTotals",
-          "label": "Totals"
-        },
-        "scrolling": {
-          "horizontal": true,
-          "keepFirstColumnInView": false,
-          "keepFirstColumnInViewTouch": false
-        },
-        "multiline": {
-          "wrapTextInHeaders": true,
-          "wrapTextInCells": true
-        },
-        "visualization": "table"
       },
       "qChildren": []
     }

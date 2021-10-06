@@ -1,0 +1,9 @@
+{
+  "qName": "UptakeTotal_60",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

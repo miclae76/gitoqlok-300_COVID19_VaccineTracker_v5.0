@@ -35,6 +35,9 @@ LOAD * INLINE [
     Age60_69, 60-69 years
     Age70_79, 70-79 years
     Age80+,	80+ years
+    Age70+, 70+ years
+    Age60+, 60+ years
+    Age50+, 50+ years
 ];
 
 Map_Population_Group:
@@ -124,8 +127,7 @@ group by
  Vaccination.ReportingCountry 
 ;//  Vaccination.TargetGroup;
    
-
-    
+  
     
 
 Last_Denominator:
@@ -148,9 +150,9 @@ group by
 	Vaccination.ReportingCountry, 
     Vaccination.TargetGroup;
 
+
 // Cartesian Product to generate all the reported week for country that have not reported for the last available week 
 // then we can accumulate until max week
-
 temp_vaccination:
 LOAD distinct
 	Vaccination.ReportingCountry,
@@ -161,7 +163,10 @@ LOAD distinct
 //FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 Resident QVD_Vaccination
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region] 
- ;// and (Vaccination.ReportingCountry&'|'&[Vaccination.TargetGroup] <> 'CY|Age80+') ; //and [Vaccination.Denominator] <> '<Missing>';
+and WildMatch([Vaccination.TargetGroup], '1_*') = 0   // filter age 60+/60- because recompute afterwards section (010)
+;// and (Vaccination.ReportingCountry&'|'&[Vaccination.TargetGroup] <> 'CY|Age80+') ; //and [Vaccination.Denominator] <> '<Missing>';
+
+
 
 LEFT JOIN (temp_vaccination)
 LOAD 
@@ -210,10 +215,11 @@ LOAD
 Resident QVD_Vaccination
 //FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+and WildMatch([Vaccination.TargetGroup], '1_*') = 0   // filter age 60+/60- because recompute afterwards section (010)
 	//and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'CY|Age*') = 0
     //and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SK|Age*') = 0
     //and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'BE|ALL') = 0
-    ;// and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SE|HCW*') = 0;
+;// and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SE|HCW*') = 0;
 
 Vaccination:
 LOAD 
@@ -247,6 +253,30 @@ LOAD
     if ( Vaccination.TargetGroup = 'Age80+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_80,
     if ( Vaccination.TargetGroup = 'Age80+', [Vaccination.DoseUnk])					as DoseUnk_80,
     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.UptakeTotal)				as UptakeTotal_80, 
+    
+    // Dose administered and Uptake for people age 70+
+    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake1st)					as Uptake1st_70,
+    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake2nd)					as Uptake2nd_70,
+    if ( Vaccination.TargetGroup = 'Age70+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_70,
+    if ( Vaccination.TargetGroup = 'Age70+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_70,
+    if ( Vaccination.TargetGroup = 'Age70+', [Vaccination.DoseUnk])					as DoseUnk_70,
+    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.UptakeTotal)				as UptakeTotal_70, 
+    
+    // Dose administered and Uptake for people age 60+
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st)					as Uptake1st_60,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd)					as Uptake2nd_60,
+    if ( Vaccination.TargetGroup = 'Age60+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_60,
+    if ( Vaccination.TargetGroup = 'Age60+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_60,
+    if ( Vaccination.TargetGroup = 'Age60+', [Vaccination.DoseUnk])					as DoseUnk_60,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal)				as UptakeTotal_60, 
+    
+    // Dose administered and Uptake for people age 50+
+    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st)					as Uptake1st_50,
+    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake2nd)					as Uptake2nd_50,
+    if ( Vaccination.TargetGroup = 'Age50+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_50,
+    if ( Vaccination.TargetGroup = 'Age50+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_50,
+    if ( Vaccination.TargetGroup = 'Age50+', [Vaccination.DoseUnk])					as DoseUnk_50,
+    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.UptakeTotal)				as UptakeTotal_50, 
     
     
     // Doses adminsitered and Uptake for Target Group = Health Care Workers
