@@ -52,7 +52,92 @@
           },
           "qTotalLabel": {},
           "qCalcCond": {},
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose1st_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\r\n",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "TG - # Dose First administered",
+              "qLabelExpression": "='First doses'",
+              "cId": "FKJjs",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "TG - # Full vaccination",
+              "qLabelExpression": "='Full vaccinations'",
+              "cId": "NTjMK",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              },
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseAdd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "TG - # Dose Additional",
+              "qLabelExpression": "='Additional doses'",
+              "cId": "fQRep",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              },
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseUnk_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "TG - # Doses Unknown",
+              "qLabelExpression": "='Unspecified doses'",
+              "cId": "hMSED",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              },
+              "isCustomFormatted": false
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCondition": {
             "qCond": {},
@@ -249,6 +334,91 @@
         },
         {
           "qDef": {
+            "qLabel": "TG - # Dose Additional",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseAdd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Additional doses'",
+            "autoSort": true,
+            "cId": "fHpsyP",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
+            "modifiers": [
+              {
+                "type": "accumulation",
+                "disabled": false,
+                "accumulationDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "fullAccumulation": true,
+                "steps": 6,
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseAdd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "base": {
+                  "qDef": "",
+                  "qLibraryId": "1155b736-dd2e-45ba-9c52-b6d462087efc",
+                  "qLabel": "",
+                  "qLabelExpression": ""
+                }
+              }
+            ],
+            "base": {
+              "qDef": "",
+              "qLibraryId": "1155b736-dd2e-45ba-9c52-b6d462087efc",
+              "qLabel": "",
+              "qLabelExpression": ""
+            },
+            "coloring": {
+              "baseColor": {
+                "color": "#c0d236",
+                "index": 4
+              }
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
             "qLabel": "TG - # Doses Unknown",
             "qTags": [],
             "qGrouping": "N",
@@ -337,7 +507,8 @@
         0,
         1,
         2,
-        3
+        3,
+        4
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [
@@ -475,9 +646,11 @@
       "max": 10
     },
     "tooltip": {
-      "auto": true,
-      "hideBasic": false,
-      "data": {}
+      "auto": false,
+      "hideBasic": true,
+      "data": {},
+      "title": "",
+      "description": ""
     },
     "visualization": "barchart",
     "version": "1.6.0",

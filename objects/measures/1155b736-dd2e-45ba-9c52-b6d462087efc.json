@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "1155b736-dd2e-45ba-9c52-b6d462087efc",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - # Dose Additional",
+    "qDef": "sum([DoseAdd_$(v_ViewTargetGroup)])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Additional doses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#c0d236",
+        "index": 4
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG - # Dose Additional",
+    "description": "",
+    "tags": []
+  }
+}

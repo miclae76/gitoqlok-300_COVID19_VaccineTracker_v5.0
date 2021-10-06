@@ -1,0 +1,9 @@
+{
+  "qName": "DoseAdd_LTCF",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}

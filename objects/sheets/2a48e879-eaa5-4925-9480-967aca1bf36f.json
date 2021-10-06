@@ -86,20 +86,6 @@
         }
       },
       {
-        "name": "UdPen",
-        "type": "container",
-        "col": 20,
-        "row": 0,
-        "colspan": 4,
-        "rowspan": 5,
-        "bounds": {
-          "y": 0,
-          "x": 83.33333333333334,
-          "width": 16.666666666666664,
-          "height": 41.66666666666667
-        }
-      },
-      {
         "name": "cpmpPC",
         "type": "container",
         "col": 20,
@@ -354,7 +340,7 @@
               },
               "measureScheme": "sg",
               "dimensionScheme": "12",
-              "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+              "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
               "expressionIsColor": true,
               "measureMin": 0,
               "measureMax": 10,
@@ -450,7 +436,7 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                      "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
                       "id": "colorByExpression"
                     }
                   ],
@@ -525,8 +511,8 @@
               "radiusValueMax": 1000000,
               "autoRadiusValueRange": true,
               "expression": {
-                "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
-                "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
+                "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\nsum({1} [DoseAdd_$(v_ViewTargetGroup)])\n)",
+                "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\nsum({1} [DoseAdd_$(v_ViewTargetGroup)])\n)",
                 "type": "expression",
                 "qNumFormat": {
                   "qType": "U",
@@ -539,7 +525,7 @@
               },
               "label": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) \r\n& ' in '  &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50',  'HCW', 'LTCF'), '80+', '70+', '60+', '50+', 'HCW', 'LTCF')"
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses administered' ) \r\n& ' in '  &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50',  'HCW', 'LTCF'), '80+', '70+', '60+', '50+', 'HCW', 'LTCF')"
                 }
               },
               "slider": [
@@ -994,7 +980,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1006,7 +992,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 700883086,
+          "hashCode": 600087596,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1062,11 +1048,11 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                        "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
                         "id": "colorByExpression"
                       },
                       {
-                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\n)",
+                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\nsum({1} [DoseAdd_$(v_ViewTargetGroup)])\n)",
                         "qNumFormat": {
                           "qType": "U",
                           "qnDec": 2,
@@ -1150,7 +1136,7 @@
                 },
                 "measureScheme": "sg",
                 "dimensionScheme": "12",
-                "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND'), '#62bb46', '#458d34')",
+                "colorExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
                 "expressionIsColor": true,
                 "measureMin": 0,
                 "measureMax": 10,
@@ -1312,7 +1298,8 @@
                 "reverseScheme": false
               },
               "useDimLoc1": 0
-            }
+            },
+            null
           ]
         },
         "masterVersion": 0.96
@@ -1603,88 +1590,6 @@
               "qType": "barchart"
             },
             "qExtendsId": "c1d10a93-3897-4bd2-bb72-9d9c1814fafc",
-            "qMetaDef": {},
-            "visualization": "barchart"
-          },
-          "qChildren": []
-        }
-      ]
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "UdPen",
-          "qType": "container"
-        },
-        "qMetaDef": {},
-        "children": [
-          {
-            "refId": "35a73d91-c252-4ee3-a9cd-f18556c12be1",
-            "label": "TG - Horiz. Bar Chart Uptake %",
-            "isMaster": true,
-            "cId": "DDJYQ",
-            "condition": {
-              "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1) <> 'N'"
-              }
-            }
-          },
-          {
-            "refId": "5cf0ca80-385c-4235-805b-1afceedec30b",
-            "label": "TG - Horiz. Bar Chart N administered",
-            "isMaster": true,
-            "cId": "mHmdVR",
-            "condition": {
-              "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1) = 'N'"
-              }
-            }
-          }
-        ],
-        "showTitles": false,
-        "title": "",
-        "subtitle": "",
-        "footnote": "",
-        "disableNavMenu": false,
-        "showDetails": false,
-        "borders": "auto",
-        "showTabs": false,
-        "useDropdown": true,
-        "useScrollButton": true,
-        "showIcons": false,
-        "visualization": "container",
-        "qChildListDef": {
-          "qData": {
-            "visualization": "/visualization",
-            "containerChildId": "/containerChildId",
-            "qExtendsId": "/qExtendsId",
-            "title": "/title",
-            "showCondition": "/showCondition"
-          }
-        },
-        "supportRefresh": false,
-        "hasExternalChildren": false
-      },
-      "qChildren": [
-        {
-          "qProperty": {
-            "qInfo": {
-              "qId": "69feffa8-dc91-4d67-949e-f7b14b9e5ea7",
-              "qType": "barchart"
-            },
-            "qExtendsId": "35a73d91-c252-4ee3-a9cd-f18556c12be1",
-            "qMetaDef": {},
-            "visualization": "barchart"
-          },
-          "qChildren": []
-        },
-        {
-          "qProperty": {
-            "qInfo": {
-              "qId": "30accba3-ee1a-46ef-a004-3367c285f804",
-              "qType": "barchart"
-            },
-            "qExtendsId": "5cf0ca80-385c-4235-805b-1afceedec30b",
             "qMetaDef": {},
             "visualization": "barchart"
           },
@@ -2000,7 +1905,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -2118,7 +2023,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose2nd_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -2234,10 +2139,128 @@
             },
             {
               "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Nbr. of additional doses'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false,
+                "cId": "GsDtYF"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='WEEK'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
                 "qLabel": "TG - # Dose First administered",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -2322,9 +2345,9 @@
                     "showExcludedValues": true,
                     "fullAccumulation": true,
                     "steps": 6,
-                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                     "base": {
-                      "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
                       "qLibraryId": "",
                       "qLabelExpression": "='Cumulative nbr. of first doses'"
                     }
@@ -2332,7 +2355,7 @@
                 ],
                 "isCustomFormatted": false,
                 "base": {
-                  "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
+                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
                   "qLibraryId": "",
                   "qLabelExpression": "='Cumulative nbr. of first doses'"
                 }
@@ -2378,7 +2401,7 @@
                 "qLabel": "TG - # Full vaccination",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -2463,9 +2486,9 @@
                     "showExcludedValues": true,
                     "fullAccumulation": true,
                     "steps": 6,
-                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
                     "base": {
-                      "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
                       "qLibraryId": "",
                       "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
                     }
@@ -2473,10 +2496,151 @@
                 ],
                 "isCustomFormatted": false,
                 "base": {
-                  "qDef": "pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
+                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
                   "qLibraryId": "",
                   "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
                 }
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) = 'N' and v_WeeklyOrCumul='CUM'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "TG - # Full vaccination",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "#,##0",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "None",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Cumulative nbr. of additonal doses'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "modifiers": [
+                  {
+                    "type": "accumulation",
+                    "disabled": false,
+                    "accumulationDimension": 0,
+                    "crossAllDimensions": false,
+                    "showExcludedValues": true,
+                    "fullAccumulation": true,
+                    "steps": 6,
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                    "base": {
+                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
+                      "qLibraryId": "",
+                      "qLabelExpression": "='Cumulative nbr. of additonal doses'"
+                    }
+                  }
+                ],
+                "isCustomFormatted": false,
+                "base": {
+                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
+                  "qLibraryId": "",
+                  "qLabelExpression": "='Cumulative nbr. of additonal doses'"
+                },
+                "cId": "DsAagD"
               },
               "qSortBy": {
                 "qSortByNumeric": -1,
@@ -2521,8 +2685,10 @@
             2,
             3,
             4,
-            5,
-            6
+            6,
+            7,
+            8,
+            5
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
@@ -2553,7 +2719,9 @@
             3,
             4,
             5,
-            6
+            6,
+            7,
+            8
           ],
           "qExpansionState": [],
           "columnOrder": [
@@ -2563,13 +2731,20 @@
             3,
             4,
             5,
-            6
+            6,
+            7,
+            8
           ],
           "columnWidths": [
             -1,
             -1,
             -1,
-            -1
+            -1,
+            -1,
+            null,
+            -1,
+            null,
+            null
           ],
           "qLayoutExclude": {
             "qHyperCubeDef": {
@@ -2596,7 +2771,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'),\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among LTCF residents in ',\n)\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to people aged 70 years and above in ',\n' of first doses and full vaccinations administered to people aged 60 years and above in ',\n' of first doses and full vaccinations administered to people aged 50 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 70 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 60 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 50 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among LTCF residents in ',\n)\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": {
@@ -2849,7 +3024,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -2873,7 +3048,7 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "$(v_CountryColorBrushing('#62bb46'))",
+                  "qExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing('#c8df51')),  $(v_CountryColorBrushing('#62bb46')))",
                   "qAttribute": true,
                   "id": "colorByExpression"
                 }
@@ -2964,7 +3139,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND','NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among ',\n'Cumulative number of additional doses among ',\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3022,7 +3197,7 @@
           "autoMinMax": true,
           "measureMin": 0,
           "measureMax": 10,
-          "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
+          "colorExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing('#c8df51')),  $(v_CountryColorBrushing('#62bb46')))"
         },
         "legend": {
           "show": true,
@@ -3224,7 +3399,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n//Uptake\t\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -3236,7 +3411,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'\n),\n'Uptake at least one dose (%) - 80 years old and above',\n'Uptake full vaccination (%) - 80 years old and above',\n'Uptake at least one dose (%) - Healthcare Workers',\n'Uptake full vaccination (%) - Healthcare Workers',\n'Uptake at least one dose (%) - LTCF residents',\n'Uptake full vaccination (%) - LTCF residents',\n'Cumulative number of first doses - 80 years old and above',\n'Cumulative number of full vaccinations - 80 years old and above',\n'Cumulative number of first doses - Healthcare Workers',\n'Cumulative number of full vaccinations - Healthcare Workers',\n'Cumulative number of first doses - LTCF residents',\n'Cumulative number of full vaccinations - LTCF residents',\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
                 "autoSort": true,
                 "cId": "PUFxgj",
                 "numFormatFromTemplate": false,
@@ -3393,7 +3568,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",

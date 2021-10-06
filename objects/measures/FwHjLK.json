@@ -5,11 +5,11 @@
   },
   "qMeasure": {
     "qLabel": "TG - N. Administered Current",
-    "qDef": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n      sum({<[Member State]=>} Dose1st_80),\n      sum({<[Member State]=>} Dose2nd_80),\n      sum({<[Member State]=>} Dose1st_HCW),\n      sum({<[Member State]=>} Dose2nd_HCW),\n      sum({<[Member State]=>} Dose1st_LTCF),\n      sum({<[Member State]=>} Dose2nd_LTCF)\n    )\n",
+    "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n\tsum({<[Member State]=>} [Dose1st_$(v_ViewTargetGroup)]),\n\tsum({<[Member State]=>} [Dose2nd_$(v_ViewTargetGroup)]),\n    sum({<[Member State]=>} [DoseAdd_$(v_ViewTargetGroup)]),\n)\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\r\n'Number of first doses administered - 80 years old and above',\n'Number of full vaccination dose administered - 80 years old and above',\n'Number of first doses administered - Healthcare Workers',\n'Number of full vaccination dose administered - Healthcare Workers',\n'Number of first doses administered - LTCF residents',\n'Number of full vaccination dose administered - LTCF residents',\n)",
+    "qLabelExpression": "=pick(match(v_ViewUptake , 'NFIRST', 'NSECOND', 'NADD'), 'Number of first doses administered - ', 'Number of full vaccination dose administered - ', 'Number of additional doses administered - ' ) \r\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)",
     "qNumFormat": {
       "qType": "F",
       "qnDec": 2,

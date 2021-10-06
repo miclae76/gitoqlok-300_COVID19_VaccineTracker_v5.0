@@ -1,0 +1,9 @@
+{
+  "qName": "Vaccination.DoseAdd",
+  "qTags": [
+    "$numeric"
+  ],
+  "qSrcTables": [
+    "Vaccination"
+  ]
+}
