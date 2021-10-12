@@ -1,7 +1,8 @@
 {
   "qName": "DoseAdd_HCW",
   "qTags": [
-    "$numeric"
+    "$numeric",
+    "$integer"
   ],
   "qSrcTables": [
     "Vaccination"

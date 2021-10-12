@@ -1,15 +1,15 @@
 {
   "qInfo": {
-    "qId": "mGHY",
+    "qId": "52bbdc75-b880-48eb-9a94-3bb953caa695",
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "AGE - N. Full vaccination",
-    "qDef": "rangemax(0, Sum(Dose2nd_AGE)-[AGE - N. Additional doses])",
+    "qLabel": "AGE - N. Additional doses",
+    "qDef": "Sum(DoseAdd_AGE)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccinations'",
+    "qLabelExpression": "='Additional doses'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
@@ -18,13 +18,13 @@
     "numFormatFromTemplate": true,
     "coloring": {
       "baseColor": {
-        "color": "#458d34",
-        "index": 11
+        "color": "#c0d236",
+        "index": 4
       }
     }
   },
   "qMetaDef": {
-    "title": "AGE - N. Full vaccination",
+    "title": "AGE - N. Additional doses",
     "description": "",
     "tags": []
   }

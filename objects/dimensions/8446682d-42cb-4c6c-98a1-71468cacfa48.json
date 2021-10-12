@@ -1,44 +1,34 @@
 {
   "qInfo": {
-    "qId": "hfptEf",
+    "qId": "8446682d-42cb-4c6c-98a1-71468cacfa48",
     "qType": "dimension"
   },
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "Age Group"
+      "=if([_Flag_FilterAgeBelow18] =0, [Age Group])"
     ],
     "qFieldLabels": [
-      "Age Group"
+      "Age Group  <18 filtered out"
     ],
-    "title": "Age Group",
+    "qLabelExpression": "='Age Group'",
+    "title": "Age Group  <18 filtered out",
     "coloring": {
-      "changeHash": "0.08660652591554441",
-      "colorMapRef": "hfptEf"
+      "changeHash": "0.4884351405098397",
+      "colorMapRef": "8446682d-42cb-4c6c-98a1-71468cacfa48"
     }
   },
   "qMetaDef": {
-    "title": "Age Group",
+    "title": "Age Group  <18 filtered out",
     "description": "",
     "tags": []
   },
   "_ColorMapModel": {
     "qInfo": {
-      "qId": "ColorMapModel_hfptEf",
+      "qId": "ColorMapModel_8446682d-42cb-4c6c-98a1-71468cacfa48",
       "qType": "ColorMap"
     },
-    "qMeta": {
-      "title": "",
-      "description": "",
-      "createdDate": "2021-09-21T13:06:15.524Z",
-      "modifiedDate": "2021-09-21T13:06:15.524Z",
-      "published": false,
-      "publishTime": "1753-01-01T00:00:00.000Z",
-      "approved": false,
-      "qSize": -1,
-      "sourceObject": "",
-      "draftObject": ""
-    },
+    "qMeta": {},
     "colorMap": {
       "colors": [
         {
@@ -88,34 +78,6 @@
           "baseColor": {
             "color": "#5ca0a5",
             "index": -1
-          }
-        },
-        {
-          "value": "0-4 years",
-          "baseColor": {
-            "color": "#bededf",
-            "index": 19
-          }
-        },
-        {
-          "value": "5-9 years",
-          "baseColor": {
-            "color": "#a3d1d4",
-            "index": 18
-          }
-        },
-        {
-          "value": "10-14 years",
-          "baseColor": {
-            "color": "#87c5c9",
-            "index": 17
-          }
-        },
-        {
-          "value": "15-17 years",
-          "baseColor": {
-            "color": "#478184",
-            "index": 16
           }
         }
       ],

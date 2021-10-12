@@ -165,7 +165,7 @@
               "isCustomFormatted": false
             },
             {
-              "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
+              "qLibraryId": "rRJdg",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -175,7 +175,55 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "cId": "pnJvF",
+              "cId": "zAKsPm",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "YTRnB",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "VfYzpA",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "Xbee",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "dPPUej",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "rmGepv",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "cQXwTf",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -244,26 +292,195 @@
           }
         },
         {
-          "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
+          "qLibraryId": "rmGepv",
           "qDef": {
+            "qLabel": "0-4 years",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "vpGXUjP",
-            "numFormatFromTemplate": true,
+            "numFormatFromTemplate": false,
+            "cId": "sHpJU",
             "quarantine": {
               "qNumFormat": {
                 "qType": "U",
-                "qnDec": 10,
+                "qnDec": 2,
                 "qUseThou": 0,
                 "qFmt": "",
-                "qDec": "",
-                "qThou": ""
+                "qDec": ".",
+                "qThou": ","
               },
-              "isCustomFormatted": false
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "Xbee",
+          "qDef": {
+            "qLabel": "5-9 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "cId": "DhRv",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "YTRnB",
+          "qDef": {
+            "qLabel": "10-14 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "cId": "KzsXAJ",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "rRJdg",
+          "qDef": {
+            "qLabel": "15-17 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "cId": "KJpzxmw",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
             }
           },
           "qSortBy": {
@@ -644,7 +861,10 @@
         5,
         6,
         7,
-        8
+        8,
+        9,
+        10,
+        11
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -729,14 +949,10 @@
     },
     "subtitle": {
       "qStringExpression": {
-        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries*, ')\r\n&'by reporting week '&v_Text_Preliminary"
+        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries, ')\r\n&'by reporting week '&v_Text_Preliminary"
       }
     },
-    "footnote": {
-      "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=0, '(*) For the age group <18 years data are available from '& \r\ncount(distinct {<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0.01\"}, [Age Group]={\"*<18*\"} >} [Member State])  &\n' countries.', '')\n\n"
-      }
-    },
+    "footnote": "",
     "disableNavMenu": false,
     "showDetails": false,
     "showDisclaimer": true,

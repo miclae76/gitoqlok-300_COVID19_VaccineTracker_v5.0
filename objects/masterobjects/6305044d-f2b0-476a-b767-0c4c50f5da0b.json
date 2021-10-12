@@ -12,13 +12,14 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "hfptEf",
+          "qLibraryId": "8446682d-42cb-4c6c-98a1-71468cacfa48",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
             "qFieldLabels": [],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": -1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -27,7 +28,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": false,
-            "cId": "JZcxA",
+            "cId": "BFTkSk",
             "othersLabel": "Others"
           },
           "qNullSuppression": true,
@@ -135,12 +136,64 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          },
-          "title": "Age Group",
-          "othersLabel": "Others"
+          }
         }
       ],
       "qMeasures": [
+        {
+          "qLibraryId": "52bbdc75-b880-48eb-9a94-3bb953caa695",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "zQPUGeS",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [
+            {
+              "qExpression": "'#62bb46'",
+              "qAttribute": true,
+              "id": "colorByExpression"
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
         {
           "qLibraryId": "mGHY",
           "qDef": {
@@ -170,13 +223,7 @@
             "qSortByLoadOrder": 1,
             "qExpression": {}
           },
-          "qAttributeExpressions": [
-            {
-              "qExpression": "'#62bb46'",
-              "qAttribute": true,
-              "id": "colorByExpression"
-            }
-          ],
+          "qAttributeExpressions": [],
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
@@ -369,7 +416,8 @@
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,

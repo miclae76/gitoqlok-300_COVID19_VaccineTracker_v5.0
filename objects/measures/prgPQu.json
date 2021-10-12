@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "AGE - Uptake Full Vaccination",
-    "qDef": "if(GetSelectedCount([Member State]), \r\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">0\"}>} Uptake2nd_AGE), [Age Group], [Member State])))\n)",
+    "qDef": "if(GetSelectedCount([Member State]), \r\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State])))\n)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,

@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Additional doses",
+    "qDef": "sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Additional doses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#c0d236",
+        "index": 4
+      }
+    },
+    "isCustomFormatted": false
+  },
+  "qMetaDef": {
+    "title": "ALL - # Additional doses",
+    "description": "",
+    "tags": []
+  }
+}

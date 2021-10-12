@@ -87,6 +87,22 @@
               "isCustomFormatted": false
             },
             {
+              "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "dnGJF",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
               "qLibraryId": "8331b4f3-a5d4-4620-aee5-c8b987ff827b",
               "qAttribute": true,
               "qNumFormat": {
@@ -279,6 +295,54 @@
           "$$hashKey": "object:56642"
         },
         {
+          "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "PjpHmku",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
           "qLibraryId": "8331b4f3-a5d4-4620-aee5-c8b987ff827b",
           "qDef": {
             "qTags": [],
@@ -331,7 +395,8 @@
         0,
         1,
         2,
-        3
+        3,
+        4
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [

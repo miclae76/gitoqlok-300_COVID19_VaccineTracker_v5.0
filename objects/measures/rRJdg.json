@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "rRJdg",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "15-17 years",
+    "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n\ndual(if([Vaccination.YearWeekReported]=MaxString(total {<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}>}  [Vaccination.YearWeekReported]),\n    \tnum(median({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"*15-17*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"*15-17*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])))\n,dual(if([Vaccination.YearWeek]=MaxString(total {<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}>}  [Vaccination.YearWeek]),\n    \tnum(median({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"*15-17*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"*15-17*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek]))) \n)\n\n/*\npick(match(v_ViewUptake, 'FIRST', 'SECOND'),\n\ndual(if([Vaccination.YearWeek]=MaxString(total {<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}>}  [Vaccination.YearWeek]),\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"18*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"18*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])))\n,dual(if([Vaccination.YearWeek]=MaxString(total {<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}>}  [Vaccination.YearWeek]),\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"18*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"18*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek]))) \n)\n*/\n            \n            \n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": false,
+    "coloring": {
+      "baseColor": {
+        "color": "#478184",
+        "index": 16
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "15-17 years",
+    "description": "",
+    "tags": []
+  }
+}

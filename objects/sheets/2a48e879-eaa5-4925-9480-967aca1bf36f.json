@@ -1600,6 +1600,742 @@
     {
       "qProperty": {
         "qInfo": {
+          "qId": "JELeNP",
+          "qType": "SimpleFieldSelect"
+        },
+        "qMetaDef": {},
+        "qListObjectDef": {
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [
+              "=aggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State])"
+            ],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByAscii": 1,
+                "qExpression": {
+                  "qv": " "
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0
+          },
+          "qFrequencyMode": "N",
+          "qShowAlternatives": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 1,
+              "qHeight": 10000
+            }
+          ],
+          "qExpressions": [],
+          "qSortByState": 0
+        },
+        "props": {
+          "dimensionIsVariable": false,
+          "variableIsDate": false,
+          "variableEmptyAlreadySelected": false,
+          "visualizationType": "dropdown",
+          "disableToggleMode": false,
+          "textareaonlytext": "",
+          "textareaonlyCSS": "height:100%;",
+          "textareaonlytext2": "",
+          "visInputFieldType": "text",
+          "visInputRangeSliderValuefield": false,
+          "visInputPlaceholdertxt": "",
+          "visInputNumberMin": "",
+          "visInputNumberMax": "",
+          "visInputNumberStep": "",
+          "dropdownValueForNoSelect": "All reporting countries",
+          "selectmultiselect": false,
+          "select2allowClear": false,
+          "select2enableSerach": true,
+          "select2hoverBGcolor": "",
+          "select2hoverFontcolor": "",
+          "contentpadding": "-",
+          "leftpadding": "-",
+          "bottompadding": "-",
+          "rightpadding": "-",
+          "toppadding": "4",
+          "custompadding": "",
+          "showHeader": true,
+          "headerSize": "-",
+          "headerBpadding": "-",
+          "headerTpadding": "-",
+          "elementpadding": 0,
+          "elementmargin": 0,
+          "addLUIclasses": true,
+          "fontsizeChange": "100",
+          "fixedfontsize": true,
+          "fixedfontsizevalue": 12,
+          "responsivefontsize": false,
+          "responsivefonttype": "vw",
+          "responsivefontvalue": 1,
+          "mobileRemoveZoom": true,
+          "removeFullScrnBtn": true,
+          "mobileCustomHeightCSS": "",
+          "hlistRoundedcorners": true,
+          "hlistMarginBetween": "1",
+          "hlistShowAsTable": false,
+          "displayFlexBox": false,
+          "displayFlexBoxWidth": "",
+          "elHeight": "",
+          "elWidth": "",
+          "useMaxHeight": false,
+          "textHAlign": "-",
+          "textVAlign": "-",
+          "removeYscroll": false,
+          "showXscroll": false,
+          "removeLabel": false,
+          "whitespacenowrap": false,
+          "mainobjectwidth": "",
+          "mouseenterWidthMult": "1",
+          "mouseenterHeightMult": "1",
+          "maxLimitvariable": "",
+          "dateformat": "d.m.yy",
+          "variableOptionsForValues": "",
+          "variableOptGroupStyle": "",
+          "varMultiselectAllow": false,
+          "varMultiselectSep": "|",
+          "variableNameForKey": "",
+          "variableOptionsForKeys": "",
+          "allwaysOneSelectedDefault": "",
+          "selectOnlyOne": false,
+          "selectAlsoThese": "",
+          "selectDefaultsOnlyOnce": false,
+          "clearFieldSelOnFirstLoad": false,
+          "clearFieldSelOnLeave": false,
+          "hidePassiveItems": false,
+          "hideItems": "",
+          "showOnlySelectedItems": false,
+          "showOnlySelectedItemsShowPossible": false,
+          "rightclikcmenu": true,
+          "rigthclickmenushowasicon": false,
+          "rightclikcmenu_selall": true,
+          "rightclikcmenu_clear": true,
+          "rightclikcmenu_reverse": true,
+          "rightclikcmenu_possible": true,
+          "rightclikcmenu_random": false,
+          "rightclikcmenu_defaults": true,
+          "rightclikcmenu_copy": true,
+          "hideFromSelectionsBar": false,
+          "hideFromSelectionRealField": "",
+          "enableoverlay": 0,
+          "overlaytext": "",
+          "overlaybgcolor": "#ababab",
+          "overlaytxtcss": "",
+          "overlaybgcss": "",
+          "exportenabled": false,
+          "enablesearch": true,
+          "searchExcelCopypaste": false,
+          "exportenableMultisearchWith": "",
+          "searchMethod": 0,
+          "searcHideClear": false,
+          "inlinelabeltext": "",
+          "inlinelabelSetinline": false,
+          "inlinelabelcss": "",
+          "helptext": "",
+          "helptextcss": "",
+          "hovertitletext": "",
+          "transparentBackground": true,
+          "specialBackgroundColor": "",
+          "noBorders": false,
+          "ownBordercolor": "",
+          "ownBordercolor2": "",
+          "color_stateS_bg": "",
+          "color_stateO_bg": "",
+          "color_stateA_bg": "",
+          "color_stateX_bg": "",
+          "color_stateS_fo": "",
+          "color_stateO_fo": "",
+          "color_stateA_fo": "",
+          "color_stateX_fo": "",
+          "color_border": "",
+          "color_hoverBG": "",
+          "color_hoverFont": "",
+          "customFontCSS": "",
+          "customFontFamilyCSS": "",
+          "customElementAttribute": "",
+          "customElementClass": "",
+          "customStyleCSS": "",
+          "customHoverCSS": "",
+          "preElemHtml": "",
+          "postElemHtml": "",
+          "enableGlobals": false,
+          "global_bgcolor": "",
+          "global_bgcss": "",
+          "global_bgcss2": "",
+          "global_bghtml": "",
+          "global_bghtmlcss": "",
+          "global_fontcolor": "",
+          "fontfamily_global": "",
+          "hideSheetTitle": false,
+          "removeSheetTitlePadding": false,
+          "sheetTitleFontSize": -1,
+          "sheetTitleheight": -1,
+          "sheetTitleExtraText": "",
+          "sheetTitleCSS": "",
+          "hidepivotTableSelectors": false,
+          "hideFieldsFromSelectionBar": "",
+          "clearAllSelOnFirstLoad": false,
+          "clearAllSelOnLeave": false,
+          "keepaliver": 0,
+          "global_customCSS": "",
+          "global_selectBGcolor": "",
+          "global_selectFontcolor": "",
+          "global_selectBordercolor": "",
+          "globsfs_stateS_bg": "",
+          "globsfs_stateO_bg": "",
+          "globsfs_stateA_bg": "",
+          "globsfs_stateX_bg": "",
+          "globsfs_stateS_fo": "",
+          "globsfs_stateO_fo": "",
+          "globsfs_stateA_fo": "",
+          "globsfs_stateX_fo": "",
+          "globsfs_border": "",
+          "globsfs_hoverBG": "",
+          "globsfs_hoverFontcolor": "",
+          "globsfs_leftpad": "",
+          "globsfs_bottompad": "",
+          "globsfs_rightpad": "",
+          "globsfs_toppad": "",
+          "globsfs_custompad": "",
+          "gremoveMobileZoom": false,
+          "ghideMobileSearch": 0,
+          "ghideMobileHeader": 0,
+          "ghideMobileFooter": 0,
+          "hideSelectionBar": false,
+          "selBarExtraText": "",
+          "selBarExtraTextcss": "",
+          "selBarExtraTextQlikStyle": false,
+          "hideInsightsButton": false,
+          "hideSelectionsTool": false,
+          "hideSmartSearchButton": false,
+          "hideGuiToolbar": false,
+          "toolbarheight": -1,
+          "toolbarTxt": "",
+          "hideToolbarCenter": false,
+          "hideToolbarCenterPerm": false,
+          "global_customselector": "",
+          "global_elementbgcolor": "",
+          "global_customObjCSS": "",
+          "global_cObjHeaderCSS": "",
+          "global_cObjHeaderTxtCSS": "",
+          "global_objAxisCSS": "",
+          "global_bordercolor": "",
+          "global_bordercolor2": "",
+          "global_borderwidth": "-",
+          "removeHeaderFromTextImageObjects": false,
+          "removeHeaderFromAllObjects": false,
+          "removeHeaderIfNoText": false,
+          "headerfontcolor_global": "",
+          "headerbgcolor_global": "",
+          "headerTpadding_global": "-",
+          "headerBpadding_global": "-",
+          "leftpadding_global": "-",
+          "rightpadding_global": "-"
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "visualization": "SimpleFieldSelect",
+        "variableValue": {},
+        "maxLimitvariableValue": {},
+        "version": "2.0.5",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "list",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "SimpleFieldSelect",
+          "description": "Field and variable selector for Qlik Sense",
+          "template": "SimpleFieldSelect",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "type": "visualization",
+          "version": "2.0.5",
+          "author": "Matti Punkeri / Oivalo Oy",
+          "homepage": "",
+          "keywords": "qlik-sense, visualization",
+          "license": "",
+          "preview": "RlogoSFS.png",
+          "repository": "",
+          "dependencies": {
+            "qlik-sense": ">=3.0.x"
+          },
+          "previewIconURL": "https://nvdqlkse/extensions/SimpleFieldSelect/RlogoSFS.png"
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "FxSttDN",
+          "qType": "table"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qLibraryId": "CSfmAQ",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "THjnfu",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": ""
+                }
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;Not reported'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;Not reported')\n)\n",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n'Uptake at least one dose',\n'Uptake full vaccination',\n'Nbr. first doses',\n'Nbr. full vaccinations'\n)",
+                  "cId": "ZmQrEbG",
+                  "autoSort": true,
+                  "id": "customTooltipExpression",
+                  "isCustomFormatted": true
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "title": "Member State",
+              "othersLabel": "Others"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
+                "autoSort": true,
+                "cId": "PUFxgj",
+                "numFormatFromTemplate": false,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [
+            0,
+            1
+          ],
+          "qExpansionState": [],
+          "columnOrder": [
+            0,
+            1
+          ],
+          "columnWidths": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+          }
+        },
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "components": [
+          {
+            "key": "bar",
+            "style": {
+              "width": 0.84,
+              "strokeColor": {
+                "index": -1,
+                "color": "#205891"
+              },
+              "strokeWidth": "none"
+            }
+          }
+        ],
+        "visualization": "table",
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "refLine": {
+              "refLines": [],
+              "dimRefLines": []
+            },
+            "showDisclaimer": true,
+            "barGrouping": {
+              "grouping": "grouped"
+            },
+            "orientation": "horizontal",
+            "scrollbar": "none",
+            "scrollStartPos": 0,
+            "gridLine": {
+              "auto": false,
+              "spacing": 0
+            },
+            "dataPoint": {
+              "showLabels": true,
+              "showSegmentLabels": false,
+              "showTotalLabels": true
+            },
+            "color": {
+              "auto": false,
+              "mode": "byExpression",
+              "formatting": {
+                "numFormatFromTemplate": true
+              },
+              "useBaseColors": "off",
+              "paletteColor": {
+                "index": 1,
+                "color": "#62bb46"
+              },
+              "useDimColVal": true,
+              "useMeasureGradient": true,
+              "persistent": true,
+              "expressionIsColor": true,
+              "expressionLabel": "",
+              "measureScheme": "sg",
+              "reverseScheme": false,
+              "dimensionScheme": "12",
+              "autoMinMax": true,
+              "measureMin": 0,
+              "measureMax": 10,
+              "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
+            },
+            "legend": {
+              "show": true,
+              "dock": "auto",
+              "showTitle": true
+            },
+            "dimensionAxis": {
+              "continuousAuto": true,
+              "show": "labels",
+              "label": "auto",
+              "dock": "near",
+              "axisDisplayMode": "max",
+              "maxVisibleItems": 10
+            },
+            "preferContinuousAxis": true,
+            "measureAxis": {
+              "show": "none",
+              "dock": "near",
+              "spacing": 2,
+              "autoMinMax": false,
+              "minMax": "min",
+              "min": 0,
+              "max": 10
+            },
+            "tooltip": {
+              "auto": true,
+              "hideBasic": false,
+              "data": {},
+              "title": "",
+              "description": ""
+            },
+            "version": "1.6.0",
+            "showMiniChartForContinuousAxis": true,
+            "isRecommended": true,
+            "recommendation": {
+              "analysis": {
+                "analysis": "rank",
+                "msrs": [
+                  {
+                    "expr": "=Sum([Vaccination.DoseFirst])",
+                    "cType": "eField",
+                    "field": "Vaccination.DoseFirst",
+                    "fieldStats": {
+                      "dataType": "integer",
+                      "valueRange": {
+                        "min": 130,
+                        "max": 2320002
+                      },
+                      "classification": [
+                        "measure"
+                      ]
+                    }
+                  }
+                ],
+                "dims": [
+                  {
+                    "expr": "[Vaccination.RegionMnemonic]",
+                    "cType": "eField",
+                    "field": "Vaccination.RegionMnemonic",
+                    "fieldStats": {
+                      "distinctCount": 23,
+                      "dataType": "string"
+                    }
+                  }
+                ],
+                "analysisGroup": "rank",
+                "titleTemplate": [
+                  {
+                    "msgId": "cao.chart.rank.2.title",
+                    "msgParams": {
+                      "$$1": 1,
+                      "$$2": 0
+                    }
+                  }
+                ]
+              },
+              "options": {},
+              "isExtendedAnalysis": false,
+              "matchRecord": {
+                "analysisPrecedentId": "P-Rank",
+                "matches": [
+                  {
+                    "slot": "$$1",
+                    "slotRole": "dimension",
+                    "field": "Vaccination.RegionMnemonic"
+                  },
+                  {
+                    "slot": "$$2",
+                    "slotRole": "measure",
+                    "field": "Vaccination.DoseFirst",
+                    "aggr": "Sum"
+                  }
+                ],
+                "precedentStats": {
+                  "matchedFields": 0,
+                  "uniquePrecedents": 0
+                }
+              },
+              "relevance": 1,
+              "analysisIntentRelevance": 0.09000000000000001
+            },
+            "masterVersion": 0.96
+          },
+          "quarantine": {
+            "supportedAutoMinMax": {
+              "measureAxis.min": 0,
+              "measureAxis.max": 10
+            }
+          }
+        },
+        "search": {
+          "sorting": "auto"
+        },
+        "totals": {
+          "show": false,
+          "position": "noTotals",
+          "label": "Totals"
+        },
+        "scrolling": {
+          "horizontal": true,
+          "keepFirstColumnInView": false,
+          "keepFirstColumnInViewTouch": false
+        },
+        "multiline": {
+          "wrapTextInHeaders": true,
+          "wrapTextInCells": true
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
           "qId": "ttTJveu",
           "qType": "table"
         },
@@ -3048,7 +3784,7 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing('#c8df51')),  $(v_CountryColorBrushing('#62bb46')))",
+                  "qExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing_Add('#c0d236')),  $(v_CountryColorBrushing('#62bb46')))",
                   "qAttribute": true,
                   "id": "colorByExpression"
                 }
@@ -3197,7 +3933,7 @@
           "autoMinMax": true,
           "measureMin": 0,
           "measureMax": 10,
-          "colorExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing('#c8df51')),  $(v_CountryColorBrushing('#62bb46')))"
+          "colorExpression": "if(v_ViewUptake='NADD', $(v_CountryColorBrushing_Add('#c0d236')),  $(v_CountryColorBrushing('#62bb46')))"
         },
         "legend": {
           "show": true,
@@ -3305,742 +4041,6 @@
           "analysisIntentRelevance": 0.09000000000000001
         },
         "masterVersion": 0.96
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "FxSttDN",
-          "qType": "table"
-        },
-        "qMetaDef": {},
-        "qHyperCubeDef": {
-          "qDimensions": [
-            {
-              "qLibraryId": "CSfmAQ",
-              "qDef": {
-                "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
-                "qSortCriterias": [
-                  {
-                    "qSortByNumeric": 1,
-                    "qSortByAscii": 1,
-                    "qSortByLoadOrder": 1,
-                    "qExpression": {}
-                  }
-                ],
-                "qNumberPresentations": [],
-                "qActiveField": 0,
-                "autoSort": true,
-                "cId": "THjnfu",
-                "othersLabel": "Others",
-                "textAlign": {
-                  "auto": true,
-                  "align": "left"
-                },
-                "representation": {
-                  "type": "text",
-                  "urlPosition": "dimension",
-                  "urlLabel": "",
-                  "linkUrl": ""
-                }
-              },
-              "qOtherTotalSpec": {
-                "qOtherMode": "OTHER_OFF",
-                "qOtherCounted": {
-                  "qv": "10"
-                },
-                "qOtherLimit": {
-                  "qv": "0"
-                },
-                "qOtherLimitMode": "OTHER_GE_LIMIT",
-                "qForceBadValueKeeping": true,
-                "qApplyEvenWhenPossiblyWrongResult": true,
-                "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                "qTotalMode": "TOTAL_OFF",
-                "qReferencedExpression": {}
-              },
-              "qOtherLabel": {
-                "qv": "Others"
-              },
-              "qTotalLabel": {},
-              "qCalcCond": {},
-              "qAttributeExpressions": [
-                {
-                  "qExpression": "pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, \r\n'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF', \n'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'),\n\t//Uptake\t\n      num(rangemin(1,sum({1} Uptake1st_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_80)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_HCW)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake1st_LTCF)),'0.0%;-0.0%;Not reported'),\n      num(rangemin(1,sum({1} Uptake2nd_LTCF)),'0.0%;-0.0%;Not reported'),    \t\n\t//Doses\n      num(sum({1} Dose1st_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_80),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_HCW),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose1st_LTCF),'#,##0;-#,##0;Not reported'),\n      num(sum({1} Dose2nd_LTCF),'#,##0;-#,##0;Not reported')\n)\n",
-                  "qAttribute": true,
-                  "qNumFormat": {
-                    "qType": "U",
-                    "qnDec": 2,
-                    "qUseThou": 0,
-                    "qDec": ".",
-                    "qThou": ","
-                  },
-                  "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n'Uptake at least one dose',\n'Uptake full vaccination',\n'Nbr. first doses',\n'Nbr. full vaccinations'\n)",
-                  "cId": "ZmQrEbG",
-                  "autoSort": true,
-                  "id": "customTooltipExpression",
-                  "isCustomFormatted": true
-                }
-              ],
-              "qAttributeDimensions": [],
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              },
-              "title": "Member State",
-              "othersLabel": "Others"
-            }
-          ],
-          "qMeasures": [
-            {
-              "qDef": {
-                "qTags": [],
-                "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
-                "qNumFormat": {
-                  "qType": "U",
-                  "qnDec": 2,
-                  "qUseThou": 0,
-                  "qDec": ".",
-                  "qThou": ","
-                },
-                "qAggrFunc": "Expr",
-                "qAccumulate": 0,
-                "qActiveExpression": 0,
-                "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
-                "autoSort": true,
-                "cId": "PUFxgj",
-                "numFormatFromTemplate": false,
-                "textAlign": {
-                  "auto": true,
-                  "align": "left"
-                },
-                "representation": {
-                  "type": "text",
-                  "indicator": {
-                    "showTextValues": true,
-                    "applySegmentColors": false,
-                    "position": "right"
-                  },
-                  "miniChart": {
-                    "type": "sparkline",
-                    "colors": {
-                      "main": {
-                        "index": 1
-                      },
-                      "max": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "min": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "first": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "last": {
-                        "index": 0,
-                        "color": "none"
-                      },
-                      "positive": {
-                        "index": 1
-                      },
-                      "negative": {
-                        "index": 10,
-                        "color": "#f93f17"
-                      }
-                    },
-                    "showDots": true,
-                    "yAxis": {
-                      "scale": "local",
-                      "position": "auto"
-                    }
-                  }
-                },
-                "conditionalColoring": {
-                  "segments": {
-                    "limits": [],
-                    "paletteColors": [
-                      {
-                        "index": 6,
-                        "icon": "dot"
-                      }
-                    ]
-                  }
-                },
-                "isCustomFormatted": true
-              },
-              "qSortBy": {
-                "qSortByNumeric": -1,
-                "qSortByLoadOrder": 1,
-                "qExpression": {}
-              },
-              "qAttributeExpressions": [],
-              "qAttributeDimensions": [],
-              "qCalcCond": {},
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              },
-              "qTrendLines": [],
-              "qMiniChartDef": {
-                "qSortBy": {
-                  "qExpression": {}
-                },
-                "qOtherTotalSpec": {
-                  "qOtherMode": "OTHER_OFF",
-                  "qOtherCounted": {},
-                  "qOtherLimit": {},
-                  "qOtherLimitMode": "OTHER_GT_LIMIT",
-                  "qForceBadValueKeeping": true,
-                  "qApplyEvenWhenPossiblyWrongResult": true,
-                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                  "qTotalMode": "TOTAL_OFF",
-                  "qReferencedExpression": {}
-                },
-                "qMaxNumberPoints": -1,
-                "qAttributeExpressions": []
-              }
-            }
-          ],
-          "qInterColumnSortOrder": [
-            0,
-            1
-          ],
-          "qSuppressMissing": true,
-          "qInitialDataFetch": [
-            {
-              "qLeft": 0,
-              "qTop": 0,
-              "qWidth": 0,
-              "qHeight": 0
-            }
-          ],
-          "qReductionMode": "N",
-          "qMode": "S",
-          "qPseudoDimPos": -1,
-          "qNoOfLeftDims": -1,
-          "qMaxStackedCells": 5000,
-          "qCalcCond": {},
-          "qTitle": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qColumnOrder": [
-            0,
-            1
-          ],
-          "qExpansionState": [],
-          "columnOrder": [
-            0,
-            1
-          ],
-          "columnWidths": [],
-          "qLayoutExclude": {
-            "qHyperCubeDef": {
-              "qDimensions": [],
-              "qMeasures": [],
-              "qInterColumnSortOrder": [],
-              "qInitialDataFetch": [],
-              "qReductionMode": "N",
-              "qMode": "S",
-              "qPseudoDimPos": -1,
-              "qNoOfLeftDims": -1,
-              "qMaxStackedCells": 5000,
-              "qCalcCond": {},
-              "qTitle": {},
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
-              },
-              "qColumnOrder": [],
-              "qExpansionState": []
-            }
-          }
-        },
-        "showTitles": true,
-        "title": {
-          "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
-          }
-        },
-        "subtitle": "",
-        "footnote": "",
-        "disableNavMenu": false,
-        "showDetails": false,
-        "components": [
-          {
-            "key": "bar",
-            "style": {
-              "width": 0.84,
-              "strokeColor": {
-                "index": -1,
-                "color": "#205891"
-              },
-              "strokeWidth": "none"
-            }
-          }
-        ],
-        "visualization": "table",
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": "",
-            "refLine": {
-              "refLines": [],
-              "dimRefLines": []
-            },
-            "showDisclaimer": true,
-            "barGrouping": {
-              "grouping": "grouped"
-            },
-            "orientation": "horizontal",
-            "scrollbar": "none",
-            "scrollStartPos": 0,
-            "gridLine": {
-              "auto": false,
-              "spacing": 0
-            },
-            "dataPoint": {
-              "showLabels": true,
-              "showSegmentLabels": false,
-              "showTotalLabels": true
-            },
-            "color": {
-              "auto": false,
-              "mode": "byExpression",
-              "formatting": {
-                "numFormatFromTemplate": true
-              },
-              "useBaseColors": "off",
-              "paletteColor": {
-                "index": 1,
-                "color": "#62bb46"
-              },
-              "useDimColVal": true,
-              "useMeasureGradient": true,
-              "persistent": true,
-              "expressionIsColor": true,
-              "expressionLabel": "",
-              "measureScheme": "sg",
-              "reverseScheme": false,
-              "dimensionScheme": "12",
-              "autoMinMax": true,
-              "measureMin": 0,
-              "measureMax": 10,
-              "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
-            },
-            "legend": {
-              "show": true,
-              "dock": "auto",
-              "showTitle": true
-            },
-            "dimensionAxis": {
-              "continuousAuto": true,
-              "show": "labels",
-              "label": "auto",
-              "dock": "near",
-              "axisDisplayMode": "max",
-              "maxVisibleItems": 10
-            },
-            "preferContinuousAxis": true,
-            "measureAxis": {
-              "show": "none",
-              "dock": "near",
-              "spacing": 2,
-              "autoMinMax": false,
-              "minMax": "min",
-              "min": 0,
-              "max": 10
-            },
-            "tooltip": {
-              "auto": true,
-              "hideBasic": false,
-              "data": {},
-              "title": "",
-              "description": ""
-            },
-            "version": "1.6.0",
-            "showMiniChartForContinuousAxis": true,
-            "isRecommended": true,
-            "recommendation": {
-              "analysis": {
-                "analysis": "rank",
-                "msrs": [
-                  {
-                    "expr": "=Sum([Vaccination.DoseFirst])",
-                    "cType": "eField",
-                    "field": "Vaccination.DoseFirst",
-                    "fieldStats": {
-                      "dataType": "integer",
-                      "valueRange": {
-                        "min": 130,
-                        "max": 2320002
-                      },
-                      "classification": [
-                        "measure"
-                      ]
-                    }
-                  }
-                ],
-                "dims": [
-                  {
-                    "expr": "[Vaccination.RegionMnemonic]",
-                    "cType": "eField",
-                    "field": "Vaccination.RegionMnemonic",
-                    "fieldStats": {
-                      "distinctCount": 23,
-                      "dataType": "string"
-                    }
-                  }
-                ],
-                "analysisGroup": "rank",
-                "titleTemplate": [
-                  {
-                    "msgId": "cao.chart.rank.2.title",
-                    "msgParams": {
-                      "$$1": 1,
-                      "$$2": 0
-                    }
-                  }
-                ]
-              },
-              "options": {},
-              "isExtendedAnalysis": false,
-              "matchRecord": {
-                "analysisPrecedentId": "P-Rank",
-                "matches": [
-                  {
-                    "slot": "$$1",
-                    "slotRole": "dimension",
-                    "field": "Vaccination.RegionMnemonic"
-                  },
-                  {
-                    "slot": "$$2",
-                    "slotRole": "measure",
-                    "field": "Vaccination.DoseFirst",
-                    "aggr": "Sum"
-                  }
-                ],
-                "precedentStats": {
-                  "matchedFields": 0,
-                  "uniquePrecedents": 0
-                }
-              },
-              "relevance": 1,
-              "analysisIntentRelevance": 0.09000000000000001
-            },
-            "masterVersion": 0.96
-          },
-          "quarantine": {
-            "supportedAutoMinMax": {
-              "measureAxis.min": 0,
-              "measureAxis.max": 10
-            }
-          }
-        },
-        "search": {
-          "sorting": "auto"
-        },
-        "totals": {
-          "show": false,
-          "position": "noTotals",
-          "label": "Totals"
-        },
-        "scrolling": {
-          "horizontal": true,
-          "keepFirstColumnInView": false,
-          "keepFirstColumnInViewTouch": false
-        },
-        "multiline": {
-          "wrapTextInHeaders": true,
-          "wrapTextInCells": true
-        }
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "JELeNP",
-          "qType": "SimpleFieldSelect"
-        },
-        "qMetaDef": {},
-        "qListObjectDef": {
-          "qDef": {
-            "qGrouping": "N",
-            "qFieldDefs": [
-              "=aggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State])"
-            ],
-            "qFieldLabels": [],
-            "qSortCriterias": [
-              {
-                "qSortByAscii": 1,
-                "qExpression": {
-                  "qv": " "
-                }
-              }
-            ],
-            "qNumberPresentations": [],
-            "qActiveField": 0
-          },
-          "qFrequencyMode": "N",
-          "qShowAlternatives": true,
-          "qInitialDataFetch": [
-            {
-              "qLeft": 0,
-              "qTop": 0,
-              "qWidth": 1,
-              "qHeight": 10000
-            }
-          ],
-          "qExpressions": [],
-          "qSortByState": 0
-        },
-        "props": {
-          "dimensionIsVariable": false,
-          "variableIsDate": false,
-          "variableEmptyAlreadySelected": false,
-          "visualizationType": "dropdown",
-          "disableToggleMode": false,
-          "textareaonlytext": "",
-          "textareaonlyCSS": "height:100%;",
-          "textareaonlytext2": "",
-          "visInputFieldType": "text",
-          "visInputRangeSliderValuefield": false,
-          "visInputPlaceholdertxt": "",
-          "visInputNumberMin": "",
-          "visInputNumberMax": "",
-          "visInputNumberStep": "",
-          "dropdownValueForNoSelect": "All reporting countries",
-          "selectmultiselect": false,
-          "select2allowClear": false,
-          "select2enableSerach": true,
-          "select2hoverBGcolor": "",
-          "select2hoverFontcolor": "",
-          "contentpadding": "-",
-          "leftpadding": "-",
-          "bottompadding": "-",
-          "rightpadding": "-",
-          "toppadding": "4",
-          "custompadding": "",
-          "showHeader": true,
-          "headerSize": "-",
-          "headerBpadding": "-",
-          "headerTpadding": "-",
-          "elementpadding": 0,
-          "elementmargin": 0,
-          "addLUIclasses": true,
-          "fontsizeChange": "100",
-          "fixedfontsize": true,
-          "fixedfontsizevalue": 12,
-          "responsivefontsize": false,
-          "responsivefonttype": "vw",
-          "responsivefontvalue": 1,
-          "mobileRemoveZoom": true,
-          "removeFullScrnBtn": true,
-          "mobileCustomHeightCSS": "",
-          "hlistRoundedcorners": true,
-          "hlistMarginBetween": "1",
-          "hlistShowAsTable": false,
-          "displayFlexBox": false,
-          "displayFlexBoxWidth": "",
-          "elHeight": "",
-          "elWidth": "",
-          "useMaxHeight": false,
-          "textHAlign": "-",
-          "textVAlign": "-",
-          "removeYscroll": false,
-          "showXscroll": false,
-          "removeLabel": false,
-          "whitespacenowrap": false,
-          "mainobjectwidth": "",
-          "mouseenterWidthMult": "1",
-          "mouseenterHeightMult": "1",
-          "maxLimitvariable": "",
-          "dateformat": "d.m.yy",
-          "variableOptionsForValues": "",
-          "variableOptGroupStyle": "",
-          "varMultiselectAllow": false,
-          "varMultiselectSep": "|",
-          "variableNameForKey": "",
-          "variableOptionsForKeys": "",
-          "allwaysOneSelectedDefault": "",
-          "selectOnlyOne": false,
-          "selectAlsoThese": "",
-          "selectDefaultsOnlyOnce": false,
-          "clearFieldSelOnFirstLoad": false,
-          "clearFieldSelOnLeave": false,
-          "hidePassiveItems": false,
-          "hideItems": "",
-          "showOnlySelectedItems": false,
-          "showOnlySelectedItemsShowPossible": false,
-          "rightclikcmenu": true,
-          "rigthclickmenushowasicon": false,
-          "rightclikcmenu_selall": true,
-          "rightclikcmenu_clear": true,
-          "rightclikcmenu_reverse": true,
-          "rightclikcmenu_possible": true,
-          "rightclikcmenu_random": false,
-          "rightclikcmenu_defaults": true,
-          "rightclikcmenu_copy": true,
-          "hideFromSelectionsBar": false,
-          "hideFromSelectionRealField": "",
-          "enableoverlay": 0,
-          "overlaytext": "",
-          "overlaybgcolor": "#ababab",
-          "overlaytxtcss": "",
-          "overlaybgcss": "",
-          "exportenabled": false,
-          "enablesearch": true,
-          "searchExcelCopypaste": false,
-          "exportenableMultisearchWith": "",
-          "searchMethod": 0,
-          "searcHideClear": false,
-          "inlinelabeltext": "",
-          "inlinelabelSetinline": false,
-          "inlinelabelcss": "",
-          "helptext": "",
-          "helptextcss": "",
-          "hovertitletext": "",
-          "transparentBackground": true,
-          "specialBackgroundColor": "",
-          "noBorders": false,
-          "ownBordercolor": "",
-          "ownBordercolor2": "",
-          "color_stateS_bg": "",
-          "color_stateO_bg": "",
-          "color_stateA_bg": "",
-          "color_stateX_bg": "",
-          "color_stateS_fo": "",
-          "color_stateO_fo": "",
-          "color_stateA_fo": "",
-          "color_stateX_fo": "",
-          "color_border": "",
-          "color_hoverBG": "",
-          "color_hoverFont": "",
-          "customFontCSS": "",
-          "customFontFamilyCSS": "",
-          "customElementAttribute": "",
-          "customElementClass": "",
-          "customStyleCSS": "",
-          "customHoverCSS": "",
-          "preElemHtml": "",
-          "postElemHtml": "",
-          "enableGlobals": false,
-          "global_bgcolor": "",
-          "global_bgcss": "",
-          "global_bgcss2": "",
-          "global_bghtml": "",
-          "global_bghtmlcss": "",
-          "global_fontcolor": "",
-          "fontfamily_global": "",
-          "hideSheetTitle": false,
-          "removeSheetTitlePadding": false,
-          "sheetTitleFontSize": -1,
-          "sheetTitleheight": -1,
-          "sheetTitleExtraText": "",
-          "sheetTitleCSS": "",
-          "hidepivotTableSelectors": false,
-          "hideFieldsFromSelectionBar": "",
-          "clearAllSelOnFirstLoad": false,
-          "clearAllSelOnLeave": false,
-          "keepaliver": 0,
-          "global_customCSS": "",
-          "global_selectBGcolor": "",
-          "global_selectFontcolor": "",
-          "global_selectBordercolor": "",
-          "globsfs_stateS_bg": "",
-          "globsfs_stateO_bg": "",
-          "globsfs_stateA_bg": "",
-          "globsfs_stateX_bg": "",
-          "globsfs_stateS_fo": "",
-          "globsfs_stateO_fo": "",
-          "globsfs_stateA_fo": "",
-          "globsfs_stateX_fo": "",
-          "globsfs_border": "",
-          "globsfs_hoverBG": "",
-          "globsfs_hoverFontcolor": "",
-          "globsfs_leftpad": "",
-          "globsfs_bottompad": "",
-          "globsfs_rightpad": "",
-          "globsfs_toppad": "",
-          "globsfs_custompad": "",
-          "gremoveMobileZoom": false,
-          "ghideMobileSearch": 0,
-          "ghideMobileHeader": 0,
-          "ghideMobileFooter": 0,
-          "hideSelectionBar": false,
-          "selBarExtraText": "",
-          "selBarExtraTextcss": "",
-          "selBarExtraTextQlikStyle": false,
-          "hideInsightsButton": false,
-          "hideSelectionsTool": false,
-          "hideSmartSearchButton": false,
-          "hideGuiToolbar": false,
-          "toolbarheight": -1,
-          "toolbarTxt": "",
-          "hideToolbarCenter": false,
-          "hideToolbarCenterPerm": false,
-          "global_customselector": "",
-          "global_elementbgcolor": "",
-          "global_customObjCSS": "",
-          "global_cObjHeaderCSS": "",
-          "global_cObjHeaderTxtCSS": "",
-          "global_objAxisCSS": "",
-          "global_bordercolor": "",
-          "global_bordercolor2": "",
-          "global_borderwidth": "-",
-          "removeHeaderFromTextImageObjects": false,
-          "removeHeaderFromAllObjects": false,
-          "removeHeaderIfNoText": false,
-          "headerfontcolor_global": "",
-          "headerbgcolor_global": "",
-          "headerTpadding_global": "-",
-          "headerBpadding_global": "-",
-          "leftpadding_global": "-",
-          "rightpadding_global": "-"
-        },
-        "showTitles": false,
-        "title": "",
-        "subtitle": "",
-        "footnote": "",
-        "disableNavMenu": false,
-        "showDetails": false,
-        "visualization": "SimpleFieldSelect",
-        "variableValue": {},
-        "maxLimitvariableValue": {},
-        "version": "2.0.5",
-        "extensionMeta": {
-          "translationKey": "",
-          "icon": "list",
-          "iconChar": "puzzle",
-          "isLibraryItem": true,
-          "visible": true,
-          "name": "SimpleFieldSelect",
-          "description": "Field and variable selector for Qlik Sense",
-          "template": "SimpleFieldSelect",
-          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
-          "isThirdParty": true,
-          "type": "visualization",
-          "version": "2.0.5",
-          "author": "Matti Punkeri / Oivalo Oy",
-          "homepage": "",
-          "keywords": "qlik-sense, visualization",
-          "license": "",
-          "preview": "RlogoSFS.png",
-          "repository": "",
-          "dependencies": {
-            "qlik-sense": ">=3.0.x"
-          },
-          "previewIconURL": "https://nvdqlkse/extensions/SimpleFieldSelect/RlogoSFS.png"
-        }
       },
       "qChildren": []
     }

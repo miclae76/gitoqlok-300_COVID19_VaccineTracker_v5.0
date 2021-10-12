@@ -56,7 +56,8 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "$$hashKey": "object:70823"
         },
         {
           "qLibraryId": "hfptEf",
@@ -75,7 +76,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "GJKpThZ",
+            "cId": "BmzUvbe",
             "othersLabel": "Others"
           },
           "qOtherTotalSpec": {
@@ -140,7 +141,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": " (　Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
+            "qDef": " (　Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -161,12 +162,12 @@
                 "type": "normalization",
                 "disabled": false,
                 "primaryDimension": 0,
-                "outputExpression": " (　Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
+                "outputExpression": " (　Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
                 "dimensionalScope": 0,
                 "selectionScope": 0,
                 "field": "Age Group",
                 "base": {
-                  "qDef": "Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE) ",
+                  "qDef": "Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE) ",
                   "qLibraryId": "",
                   "qLabel": "",
                   "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')"
@@ -175,7 +176,7 @@
             ],
             "isCustomFormatted": false,
             "base": {
-              "qDef": "Sum({< [Age Group]=, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE) ",
+              "qDef": "Sum({< [Age Group]=, [_Flag_FilterAgeBelow18]={\"0\"}, [Population Group]=, [Vaccination.YearWeek]=>}DoseTotal_AGE) ",
               "qLibraryId": "",
               "qLabel": "",
               "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')"
@@ -325,9 +326,9 @@
       "autoMinMax": true,
       "measureMin": 0,
       "measureMax": 10,
-      "altLabel": "hfptEf",
+      "altLabel": "Age Group  <18 filtered out",
       "byDimDef": {
-        "label": "hfptEf",
+        "label": "Age Group  <18 filtered out",
         "key": "hfptEf",
         "type": "libraryItem"
       }

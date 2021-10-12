@@ -1,37 +1,36 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "f1c00845-d74c-465a-9e38-1ba5f171ad1d",
+      "qId": "bfeaaaa7-e282-40b5-8830-bf0704eda5e9",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "AGE - Progress Uptake (%)",
+      "title": "ALL - Uptake Add  One Country",
       "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "8446682d-42cb-4c6c-98a1-71468cacfa48",
+          "qLibraryId": "JvfaJtS",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
             "qFieldLabels": [],
             "qSortCriterias": [
               {
-                "qSortByNumeric": -1,
-                "qSortByAscii": -1,
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
               }
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": false,
-            "cId": "nDW",
+            "autoSort": true,
+            "cId": "cDXQPm",
             "othersLabel": "Others"
           },
-          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -65,18 +64,7 @@
               "id": "customTooltipTitle"
             },
             {
-              "qLibraryId": "prgPQu",
-              "qAttribute": true,
-              "cId": "ebFduJu",
-              "autoSort": true,
-              "id": "customTooltipExpression",
-              "quarantine": {
-                "qNumFormat": {},
-                "isCustomFormatted": false
-              }
-            },
-            {
-              "qExpression": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE={\">0\"}>} Uptake1st_AGE), [Age Group], [Member State])))",
+              "qExpression": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]) )  \n\n",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -86,27 +74,30 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - Uptake First Dose",
-              "qLabelExpression": "='At least one dose'",
-              "cId": "BugRBvj",
+              "qLabel": "ALL - Uptake at least one dose (%)",
+              "qLabelExpression": "='Uptake at least one dose (%)'",
+              "cId": "wpUvAyf",
               "autoSort": true,
               "id": "customTooltipExpression",
-              "quarantine": {
-                "qNumFormat": {},
-                "isCustomFormatted": false
-              },
               "isCustomFormatted": false
             },
             {
-              "qLibraryId": "PbQzrmW",
+              "qExpression": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]) )  \n",
               "qAttribute": true,
-              "cId": "SzNgxV",
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "ALL - Uptake Full Vaccination",
+              "qLabelExpression": "='Uptake full vaccination'",
+              "cId": "HRpjarP",
               "autoSort": true,
               "id": "customTooltipExpression",
-              "quarantine": {
-                "qNumFormat": {},
-                "isCustomFormatted": false
-              }
+              "isCustomFormatted": false
             }
           ],
           "qAttributeDimensions": [],
@@ -118,7 +109,7 @@
       ],
       "qMeasures": [
         {
-          "qLibraryId": "prgPQu",
+          "qLibraryId": "xHLFuQt",
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
@@ -126,12 +117,20 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "pLVnj",
+            "cId": "jPmeyGy",
             "numFormatFromTemplate": true,
             "quarantine": {
               "qNumFormat": {},
               "isCustomFormatted": false
-            }
+            },
+            "styling": [
+              {
+                "key": "line",
+                "style": {
+                  "lineThickness": 1
+                }
+              }
+            ]
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -166,65 +165,17 @@
           }
         },
         {
-          "qLibraryId": "zqvF",
+          "qLibraryId": "yxUAxF",
           "qDef": {
+            "qLabel": "ALL - Uptake at least one dose (%)",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
+            "qLabelExpression": "='Uptake at least one dose (%)'",
             "autoSort": true,
-            "cId": "qKBWuJj",
-            "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qLibraryId": "PbQzrmW",
-          "qDef": {
-            "qLabel": "AGE - N. Not vaccinated",
-            "qTags": [],
-            "qGrouping": "N",
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "qLabelExpression": "='Not vaccinated'",
-            "autoSort": true,
-            "cId": "JxpBp",
+            "cId": "QmAem",
             "numFormatFromTemplate": true,
             "quarantine": {
               "qNumFormat": {
@@ -235,6 +186,54 @@
                 "qDec": ".",
                 "qThou": ","
               },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "xHLFuQt",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "JrhPdW",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
               "isCustomFormatted": false
             }
           },
@@ -268,15 +267,72 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "eBWKUb",
+          "qDef": {
+            "qLabel": "ALL - Uptake Full Vaccination",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Uptake full vaccination'",
+            "autoSort": true,
+            "cId": "NudFngM",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
           },
-          "$$hashKey": "object:33601"
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
         }
       ],
       "qInterColumnSortOrder": [
         0,
         1,
         2,
-        3
+        3,
+        4
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -329,14 +385,14 @@
         {
           "show": {
             "qValueExpression": {
-              "qExpr": "0"
+              "qExpr": "0\r\n/*\n=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\n \trangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"} , Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80_Cumul), [Vaccination.YearWeek]))), 1)), \n    \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW_Cumul), [Vaccination.YearWeek]))), 1)),   \n        \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF_Cumul), [Vaccination.YearWeek]))), 1))\n)>0.8\n*/"
             }
           },
           "label": "Target",
           "showLabel": true,
           "refLineExpr": {
-            "value": 0.7,
-            "label": "0.7"
+            "value": 0.8,
+            "label": "0.8"
           },
           "showValue": true,
           "paletteColor": {
@@ -349,6 +405,30 @@
           },
           "coloredBackground": false,
           "cId": "dnmYRQ"
+        },
+        {
+          "show": {
+            "qValueExpression": {
+              "qExpr": "0"
+            }
+          },
+          "label": "Target",
+          "showLabel": false,
+          "refLineExpr": {
+            "value": 0.7,
+            "label": "0.7"
+          },
+          "showValue": true,
+          "paletteColor": {
+            "index": -1,
+            "color": "#989a9c"
+          },
+          "style": {
+            "lineThickness": 2,
+            "lineType": "8 4"
+          },
+          "coloredBackground": false,
+          "cId": "DUvEhb"
         }
       ],
       "dimRefLines": []
@@ -356,16 +436,16 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\n'Cumulative uptake (%) of at least one dose and full vaccination by age group in ' \n& [Member State]\n,\n'Median cumulative uptake (%) of at least one dose and full vaccination by age group in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and full vaccination '& SW_ADULTS_POP_LABEL & ' in '\r\n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
       }
     },
     "subtitle": {
       "qStringExpression": {
-        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries', '')\r\n"
+        "qExpr": "='by reporting week (data for the current week are preliminary)'"
       }
     },
     "footnote": "",
-    "disableNavMenu": true,
+    "disableNavMenu": false,
     "showDetails": false,
     "showDisclaimer": true,
     "components": [
@@ -379,25 +459,24 @@
         }
       }
     ],
-    "barGrouping": {
-      "grouping": "stacked"
-    },
+    "lineType": "line",
+    "stackedArea": false,
+    "separateStacking": true,
     "orientation": "horizontal",
-    "scrollbar": "none",
+    "scrollbar": "bar",
     "scrollStartPos": 1,
+    "nullMode": "gap",
+    "dataPoint": {
+      "show": true,
+      "showLabels": true
+    },
     "gridLine": {
       "auto": false,
       "spacing": 0
     },
-    "dataPoint": {
-      "showLabels": false,
-      "showSegmentLabels": false,
-      "showTotalLabels": false,
-      "show": true
-    },
     "color": {
-      "auto": false,
-      "mode": "byMultiple",
+      "auto": true,
+      "mode": "byMeasure",
       "formatting": {
         "numFormatFromTemplate": true,
         "quarantine": {
@@ -406,7 +485,7 @@
         },
         "qNumFormat": null
       },
-      "useBaseColors": "measure",
+      "useBaseColors": "off",
       "paletteColor": {
         "index": 6
       },
@@ -431,15 +510,15 @@
     },
     "legend": {
       "show": true,
-      "dock": "bottom",
+      "dock": "top",
       "showTitle": false
     },
     "dimensionAxis": {
-      "continuousAuto": true,
+      "continuousAuto": false,
       "show": "labels",
       "label": "auto",
       "dock": "near",
-      "axisDisplayMode": "max",
+      "axisDisplayMode": "auto",
       "maxVisibleItems": 10
     },
     "preferContinuousAxis": false,
@@ -447,38 +526,29 @@
       "show": "labels",
       "dock": "near",
       "spacing": 0.5,
-      "autoMinMax": true,
+      "autoMinMax": false,
       "minMax": "max",
       "min": 0,
       "max": {
         "qValueExpression": {
-          "qExpr": "=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\r\n\t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])) > 0.8, 1, 0.8), \n   \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State]))> 0.8, 1, 0.8)\n)\n\n"
+          "qExpr": "1/*=pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND'),      \r\n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake1st_ALL), [Member State])) > 0.7, 1, 0.7) ,        \n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake2nd_ALL), [Member State])) > 0.7, 1, 0.7)     \t \n)*/\n\n"
         }
       },
       "logarithmic": false
     },
     "tooltip": {
-      "auto": false,
+      "auto": true,
       "hideBasic": true,
-      "data": {},
       "title": "",
       "description": ""
     },
-    "visualization": "barchart",
+    "visualization": "linechart",
     "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
+    "masterVersion": 0.96,
     "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "nullMode": "gap",
-        "masterVersion": 0.96
-      },
       "quarantine": {}
-    },
-    "masterVersion": 0.96
+    }
   },
   "qChildren": []
 }
