@@ -3429,12 +3429,8 @@
           "spacing": 1,
           "autoMinMax": false,
           "minMax": "minMax",
-          "min": -0.001,
-          "max": {
-            "qValueExpression": {
-              "qExpr": "=round(max({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake1st_ALL_Cumul), 0.01)+0.1"
-            }
-          }
+          "min": 0.2,
+          "max": 1.2
         },
         "yAxis": {
           "show": "all",
@@ -3442,12 +3438,8 @@
           "spacing": 1,
           "autoMinMax": false,
           "minMax": "minMax",
-          "min": -0.0001,
-          "max": {
-            "qValueExpression": {
-              "qExpr": "=round(max({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake2nd_ALL_Cumul), 0.01)+0.02"
-            }
-          }
+          "min": 0.2,
+          "max": 1.2
         },
         "tooltip": {
           "auto": true,

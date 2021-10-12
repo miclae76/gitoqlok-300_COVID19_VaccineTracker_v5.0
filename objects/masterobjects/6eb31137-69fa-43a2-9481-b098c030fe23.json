@@ -103,7 +103,7 @@
           "qCalcCond": {},
           "qAttributeExpressions": [
             {
-              "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-')\n)",
+              "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-'),\n        num(sum(DoseAdd_AGE), '#,##0;-#,##0;-'),\n)",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -143,7 +143,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-')\n)",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -252,7 +252,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in  ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in  ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in ',\n'Number of additional doses administered by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in ',\n'Number of additional doses administered by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n\n"
       }
     },
     "subtitle": {

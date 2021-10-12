@@ -65,23 +65,7 @@
               "id": "customTooltipTitle"
             },
             {
-              "qLibraryId": "mGHY",
-              "qAttribute": true,
-              "qNumFormat": {
-                "qType": "F",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "#,##0",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "cId": "xjqvvH",
-              "autoSort": true,
-              "id": "customTooltipExpression",
-              "isCustomFormatted": false
-            },
-            {
-              "qExpression": "rangemax(0, Sum(Dose1st_AGE))",
+              "qExpression": "Sum(Dose1st_AGE)",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -99,7 +83,7 @@
               "isCustomFormatted": false
             },
             {
-              "qLibraryId": "4e381e23-78f7-484f-b5c9-9f610d884bfd",
+              "qExpression": "Sum(Dose2nd_AGE)",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -109,6 +93,44 @@
                 "qDec": ".",
                 "qThou": ","
               },
+              "qLabel": "AGE - N. Full vaccination",
+              "qLabelExpression": "='Full vaccinations'",
+              "cId": "xjqvvH",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "Sum(DoseAdd_AGE)",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "AGE - N. Additional doses",
+              "qLabelExpression": "='Additional doses'",
+              "cId": "VKrnjf",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "Sum(DoseUnk_AGE)",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "AGE - N. Doses Unknown",
+              "qLabelExpression": "='Unspecified doses'",
               "cId": "SPHZF",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -251,28 +273,23 @@
           }
         },
         {
-          "qLibraryId": "UVSz",
           "qDef": {
-            "qLabel": "First dose",
+            "qLabel": "AGE - N. First dose",
             "qTags": [],
             "qGrouping": "N",
+            "qDef": "dual(Sum(Dose1st_AGE), rangemax(0, Sum(Dose1st_AGE)-sum(Dose2nd_AGE)))",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 10,
+              "qUseThou": 0
+            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
+            "qLabelExpression": "='First doses'",
             "autoSort": true,
             "cId": "KHPvj",
-            "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 10,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": "",
-                "qThou": ""
-              },
-              "isCustomFormatted": false
-            }
+            "numFormatFromTemplate": true
           },
           "qSortBy": {
             "qSortByNumeric": -1,

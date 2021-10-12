@@ -3713,7 +3713,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": " (　Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
+                "qDef": " (　Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -3734,12 +3734,12 @@
                     "type": "normalization",
                     "disabled": false,
                     "primaryDimension": 0,
-                    "outputExpression": " (　Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
+                    "outputExpression": " (　Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE)　) / Sum( Total<[$(=Replace(GetObjectField(0),']',']]'))]> Aggr(  (　Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE)　) , [$(=Replace(GetObjectField(0),']',']]'))], [$(=Replace(GetObjectField(1),']',']]'))]))",
                     "dimensionalScope": 0,
                     "selectionScope": 0,
                     "field": "Age Group",
                     "base": {
-                      "qDef": "Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE) ",
+                      "qDef": "Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE) ",
                       "qLibraryId": "",
                       "qLabelExpression": "='Proportion of doses'"
                     }
@@ -3747,7 +3747,7 @@
                 ],
                 "isCustomFormatted": false,
                 "base": {
-                  "qDef": "Sum({<[Member State]=$::[Member State]>} DoseTotal_AGE) ",
+                  "qDef": "Sum({<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} DoseTotal_AGE) ",
                   "qLibraryId": "",
                   "qLabelExpression": "='Proportion of doses'"
                 }
@@ -3852,7 +3852,7 @@
         },
         "subtitle": {
           "qStringExpression": {
-            "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries, ')\r\n&'by reporting week '&v_Text_Preliminary"
+            "qExpr": "='by reporting week '&v_Text_Preliminary"
           }
         },
         "footnote": "",
