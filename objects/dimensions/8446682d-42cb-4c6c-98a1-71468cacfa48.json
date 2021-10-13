@@ -28,7 +28,18 @@
       "qId": "ColorMapModel_8446682d-42cb-4c6c-98a1-71468cacfa48",
       "qType": "ColorMap"
     },
-    "qMeta": {},
+    "qMeta": {
+      "title": "",
+      "description": "",
+      "createdDate": "2021-10-12T10:13:04.103Z",
+      "modifiedDate": "2021-10-12T10:13:04.103Z",
+      "published": false,
+      "publishTime": "1753-01-01T00:00:00.000Z",
+      "approved": false,
+      "qSize": -1,
+      "sourceObject": "",
+      "draftObject": ""
+    },
     "colorMap": {
       "colors": [
         {
