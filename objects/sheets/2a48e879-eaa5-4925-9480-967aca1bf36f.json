@@ -2511,7 +2511,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N'"
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N' and GetSelectedCount([Member State]) = 0"
                 },
                 "qMsg": {}
               },
@@ -2626,7 +2626,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N'"
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N' and GetSelectedCount([Member State]) = 0"
                 },
                 "qMsg": {}
               },
@@ -3427,6 +3427,240 @@
                 "qAttributeExpressions": [],
                 "qNullSuppression": true
               }
+            },
+            {
+              "qLibraryId": "JPJtgUj",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "htPJg",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N' and GetSelectedCount([Member State]) = 1"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qLibraryId": "RpykZ",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "CBXjM",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N' and GetSelectedCount([Member State]) = 1"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
             }
           ],
           "qInterColumnSortOrder": [
@@ -3438,7 +3672,9 @@
             6,
             7,
             8,
-            5
+            5,
+            10,
+            9
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
@@ -3471,7 +3707,9 @@
             5,
             6,
             7,
-            8
+            8,
+            9,
+            10
           ],
           "qExpansionState": [],
           "columnOrder": [
@@ -3483,7 +3721,9 @@
             5,
             6,
             7,
-            8
+            8,
+            9,
+            10
           ],
           "columnWidths": [
             -1,
@@ -3494,7 +3734,9 @@
             null,
             -1,
             null,
-            null
+            null,
+            -1,
+            -1
           ],
           "qLayoutExclude": {
             "qHyperCubeDef": {
@@ -3521,7 +3763,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to people aged 70 years and above in ',\n' of first doses and full vaccinations administered to people aged 60 years and above in ',\n' of first doses and full vaccinations administered to people aged 50 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 70 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 60 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 50 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among LTCF residents in ',\n)\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to people aged 70 years and above in ',\n' of first doses and full vaccinations administered to people aged 60 years and above in ',\n' of first doses and full vaccinations administered to people aged 50 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_70', 'SECOND_70', 'FIRST_60', 'SECOND_60', 'FIRST_50', 'SECOND_50', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\n'Cumulative uptake (%) of at least one vaccine dose among people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 70 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 70 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 50 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 50 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in '\n) \n)\n& if(GetSelectedCount([Member State])=1, [Member State] & ' vs. ' & v_EU27_EEA_Title,   v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n \n\n"
           }
         },
         "subtitle": {
@@ -3785,7 +4027,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup , 'FIRST_80', 'SECOND_80', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF',\r\n 'NFIRST_80', 'NSECOND_80', 'NFIRST_HCW', 'NSECOND_HCW', 'NFIRST_LTCF', 'NSECOND_LTCF'\n),\n'Uptake at least one dose (%) - 80 years old and above',\n'Uptake full vaccination (%) - 80 years old and above',\n'Uptake at least one dose (%) - Healthcare Workers',\n'Uptake full vaccination (%) - Healthcare Workers',\n'Uptake at least one dose (%) - LTCF residents',\n'Uptake full vaccination (%) - LTCF residents',\n'Cumulative number of first doses - 80 years old and above',\n'Cumulative number of full vaccinations - 80 years old and above',\n'Cumulative number of first doses - Healthcare Workers',\n'Cumulative number of full vaccinations - Healthcare Workers',\n'Cumulative number of first doses - LTCF residents',\n'Cumulative number of full vaccinations - LTCF residents',\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
                 "autoSort": true,
                 "cId": "PUFxgj",
                 "numFormatFromTemplate": false,

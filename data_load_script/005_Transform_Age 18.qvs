@@ -8,7 +8,7 @@ LOAD
     Population_00_17
 FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_Population_00_17.qvd
 (qvd);
-
+ 
 
 
 Filter_Country_has_below_18:

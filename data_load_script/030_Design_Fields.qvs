@@ -12,18 +12,12 @@ LOAD * INLINE [KPI_GROUP, KPI_ID, KPI_NAME
 Total doses distributed and administered, 10, Total number of vaccine doses distributed by manufacturers to EU/EEA countries
 Total doses distributed and administered, 20, Median number of vaccine doses distributed by manufacturers to EU/EEA countries per hundred inhabitants
 Total doses distributed and administered, 30, Total number of vaccine doses administered
-Cumulative vaccine uptake, 40, Cumulative uptake of at least one vaccine dose among adults aged 18 years and above
+Cumulative vaccine uptake, 40, Cumulative uptake of full vaccination in the total population
 Cumulative vaccine uptake, 50, Cumulative uptake of full vaccination among adults aged 18 years and above
-Cumulative vaccine uptake, 51, Cumulative uptake of at least one vaccine dose in the total population
-Cumulative vaccine uptake, 52, Cumulative uptake of full vaccination in the total population
-Cumulative vaccine uptake, 53, Cumulative uptake of at least one vaccine dose among children below 18 years
-Cumulative vaccine uptake, 54, Cumulative uptake of full vaccination among children below 18 years
-Cumulative vaccine uptake in target groups*, 60, Cumulative uptake of at least one vaccine dose among persons aged 80 years and above
-Cumulative vaccine uptake in target groups*, 70, Cumulative uptake of full vaccination among persons aged 80 years and above
-Cumulative vaccine uptake in target groups*, 80, Cumulative uptake of at least one vaccine dose among healthcare workers
-Cumulative vaccine uptake in target groups*, 90, Cumulative uptake of full vaccination among healthcare workers
-Cumulative vaccine uptake in target groups*, 100, Cumulative uptake of at least one vaccine dose among residents of long-term care facilities
-Cumulative vaccine uptake in target groups*, 110, Cumulative uptake of full vaccination among residents of long-term care facilities
+Cumulative vaccine uptake, 60, Cumulative uptake of full vaccination among children below 18 years*
+Cumulative vaccine uptake, 70, Cumulative uptake of full vaccination among persons aged 60 years and above*
+Cumulative vaccine uptake, 80, Cumulative uptake of full vaccination among healthcare workers*
+Cumulative vaccine uptake, 90, Cumulative uptake of full vaccination among residents of long-term care facilities*
 ];
 
 // for the country summary KPI

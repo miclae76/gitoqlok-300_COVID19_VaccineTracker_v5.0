@@ -1,5 +1,7 @@
 ///$tab 010_Transform_50+_60+_70+
 // Populate 50+, 60+, 70+ target groups base on accumulation of age groups 
+// QVD_Vaccination:
+// LOAD * Inline [Vaccination.RecordId];
 
 //70+
 Concatenate(QVD_Vaccination)
@@ -38,6 +40,8 @@ FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND match(Vaccination.TargetGroup, 'Age70_79', 'Age80+') > 0
 ;
+
+
 
 
 //60+

@@ -5377,7 +5377,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  &  'with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n\n"
+                  "=ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  &  ' with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n\n"
                 ],
                 "qFieldLabels": [
                   ""
@@ -5429,7 +5429,7 @@
                 "qLabel": "KPI",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "=pick(match(ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  &  'with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n, \n'Number of '& SW_ADULTS_POP_LABEL_KPI &' with at least one dose in EU', \n'Number of '& SW_ADULTS_POP_LABEL_KPI &' with at least one dose in EU/EEA' , \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL &' in EU', \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL &' in EU/EEA')\n, \nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])\n \n)\n\n",
+                "qDef": "=pick(match(ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n, \n'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU', \n'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA', \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU', \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA')\n, \nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])\n \n)\n\n",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -5503,7 +5503,28 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
         },
         "showTitles": false,
         "title": "",
