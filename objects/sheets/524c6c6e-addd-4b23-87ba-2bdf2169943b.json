@@ -103,14 +103,14 @@
         "name": "QamwhpW",
         "type": "table",
         "col": 17,
-        "row": 7,
+        "row": 6,
         "colspan": 7,
-        "rowspan": 5,
+        "rowspan": 6,
         "bounds": {
-          "y": 58.333333333333336,
+          "y": 50,
           "x": 70.83333333333334,
           "width": 29.166666666666668,
-          "height": 41.66666666666667
+          "height": 50
         }
       }
     ],
@@ -596,7 +596,7 @@
             "qExpr": "='Key figures of the COVID-19 vaccine rollout in ' & v_EU27_EEA_Title\r\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
-        "subtitle": "",
+        "subtitle": "Data for the current week is preliminary",
         "footnote": "(*) Median among reporting countries",
         "disableNavMenu": true,
         "showDetails": false,
@@ -1619,7 +1619,7 @@
             "qExpr": "='Key figures of the COVID-19 vaccine rollout in ' & v_EU27_EEA_Title\r\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
-        "subtitle": "",
+        "subtitle": "Data for the current week is preliminary",
         "footnote": "(*) Median among reporting countries",
         "disableNavMenu": true,
         "showDetails": false,
@@ -2312,7 +2312,7 @@
             "qExpr": "='Key figures of the COVID-19 vaccine rollout in ' & v_EU27_EEA_Title & ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
-        "subtitle": "",
+        "subtitle": "Data for the current week is preliminary",
         "footnote": "",
         "disableNavMenu": false,
         "showDetails": false,
@@ -3614,7 +3614,7 @@
             "qExpr": "='Key figures of the COVID-19 vaccine rollout in ' & v_EU27_EEA_Title & ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
-        "subtitle": "",
+        "subtitle": "Data for the current week is preliminary",
         "footnote": "",
         "disableNavMenu": false,
         "showDetails": false,
