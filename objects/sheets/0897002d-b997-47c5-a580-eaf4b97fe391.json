@@ -907,10 +907,10 @@
               "imageComponents": []
             },
             "size": {
-              "radiusMin": 5,
-              "radiusMax": 28,
+              "radiusMin": 2,
+              "radiusMax": 32,
               "radiusValueMin": 0,
-              "radiusValueMax": 1,
+              "radiusValueMax": 1000000,
               "autoRadiusValueRange": true,
               "expression": {
                 "label": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)])\n)",
@@ -931,8 +931,8 @@
                 }
               },
               "slider": [
-                10,
-                38
+                4,
+                41
               ],
               "sliderSingle": 16,
               "shape": "points",
@@ -1454,7 +1454,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -834246923,
+          "hashCode": -2035142700,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1507,7 +1507,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
                         "cId": "pKBajp",
                         "autoSort": true,
                         "id": "customTooltipExpression",

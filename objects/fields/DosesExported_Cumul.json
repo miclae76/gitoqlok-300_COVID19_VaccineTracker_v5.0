@@ -1,0 +1,7 @@
+{
+  "qName": "DosesExported_Cumul",
+  "qTags": [],
+  "qSrcTables": [
+    "Vaccination_Cumulative"
+  ]
+}

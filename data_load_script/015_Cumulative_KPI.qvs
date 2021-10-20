@@ -75,9 +75,13 @@ LOAD
     // Doses Distributed to Countries (absolute and per 100 Inhabitants)
     if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.NumberDosesReceived_Cumul > 0,  
     	 Vaccination.NumberDosesReceived_Cumul, '<Missing>') 								as DosesDistributed_Cumul,
-         
+            
     if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.NumberDosesReceived_Cumul > 0,   
-    	 Vaccination.NumberDosesReceived_Cumul, '<Missing>') / [Vaccination.Denominator]					as DosesDistributed_per100Inh_Cumul
+    	 Vaccination.NumberDosesReceived_Cumul, '<Missing>') / [Vaccination.Denominator]	as DosesDistributed_per100Inh_Cumul,
+         
+     // Doses exported
+    if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported_Cumul > 0,  
+    	 Vaccination.NumberDosesExported_Cumul, '<Missing>') 								as DosesExported_Cumul,
 ;
 LOAD 
 	*,
@@ -104,6 +108,10 @@ LOAD
     IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
         AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.NumberDosesReceived_Cumul') , Vaccination.NumberDosesReceived), alt(Vaccination.NumberDosesReceived, 0)) as Vaccination.NumberDosesReceived_Cumul,
+    
+      IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.NumberDosesExported_Cumul') , Vaccination.NumberDosesExported), alt(Vaccination.NumberDosesExported, 0)) as Vaccination.NumberDosesExported_Cumul,
     
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 

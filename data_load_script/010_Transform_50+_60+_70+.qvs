@@ -9,7 +9,7 @@ LOAD
     'VIRTUAL' AS Vaccination.RecordId,
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
-    sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
     sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
     sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
@@ -23,7 +23,8 @@ LOAD
     Vaccination.CountryName,
     //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
     sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
-    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
@@ -50,7 +51,7 @@ LOAD
     'VIRTUAL' AS Vaccination.RecordId,
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
-    sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
     sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
     sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
@@ -64,7 +65,8 @@ LOAD
     Vaccination.CountryName,
     //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
     sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
-    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
@@ -88,7 +90,7 @@ LOAD
     'VIRTUAL' AS Vaccination.RecordId,
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
-    sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
     sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
     sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
@@ -102,7 +104,8 @@ LOAD
     Vaccination.CountryName,
     //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
     sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
-    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,

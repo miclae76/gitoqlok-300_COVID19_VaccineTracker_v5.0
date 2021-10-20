@@ -178,9 +178,11 @@ LOAD
     Vaccination.DateUsedForStatisticsISO, 
     Vaccination.ReportingCountry,
     Vaccination.NumberDosesReceived,
+    Vaccination.NumberDosesExported,
     Vaccination.DoseFirst,
     Vaccination.DoseFirstRefused,
     Vaccination.DoseSecond,
+    Vaccination.DoseAdditional1,
     Vaccination.DoseUnk,
     Vaccination.Region,
     Vaccination.TargetGroup,
@@ -304,8 +306,14 @@ LOAD
   	  Vaccination.NumberDosesReceived, '<Missing>') / [Vaccination.Population] 		as DosesDistributed_per100Inh,
       
     if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.DoseTotal > 0,   
-  	  Vaccination.DoseTotal, '<Missing>') / Vaccination.Denominator 				as DosesAdministered_per100Inh  
-    //	 Vaccination.NumberDosesReceived, '<Missing>') / Vaccination.Denominator_Original					as DosesDistributed_per100Inh
+  	  Vaccination.DoseTotal, '<Missing>') / Vaccination.Denominator 				as DosesAdministered_per100Inh,
+      
+    // Doses Exported
+    // Doses Distributed to Countries (absolute and per 100 Inhabitants)
+    if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported > 0,   
+    	 Vaccination.NumberDosesExported, '<Missing>')								as DoseExported
+   
+   
 ;
 LOAD 
 	*,
@@ -317,8 +325,8 @@ LOAD
 // 20210416
 //	rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk)	as Vaccination.DoseTotal,
 	IF(Vaccination.VaccineTreatmentDoses = 1
-   	,rangesum( Vaccination.DoseFirst, Vaccination.DoseUnk)
-	,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk) ) as Vaccination.DoseTotal, // count(only once for single dose vaccine
+   	,rangesum( Vaccination.DoseFirst, Vaccination.DoseUnk, Vaccination.DoseAdd)
+	,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) as Vaccination.DoseTotal, // count(only once for single dose vaccine
 
 
     // Uptake = #Doses divided by denominator given by Target Group
@@ -340,10 +348,11 @@ LOAD
   //   if(Vaccination.ReportingCountry = 'NL', 0, Vaccination.Denominator) AS [Vaccination.Denominator], // 20210409 - Netherlands to reported Doses UNK only , set 0 to remove from denominator total EU uptake.
   //   Vaccination.Denominator 											 AS Vaccination.Denominator_Original, // because we need to compute doses per inhabitants for NL altough unknow reported
     Vaccination.NumberDosesReceived,
+    [Vaccination.NumberDosesExported],
     [Vaccination.DoseFirstRefused],
     Vaccination.DoseFirst,
     Vaccination.DoseSecond,  
-    if( Vaccination.DateUsedForStatisticsISO > '2021-W30', Vaccination.DoseFirst * floor(1 + rand()*2), 0) AS Vaccination.DoseAdd,
+    Vaccination.DoseAdditional1 AS Vaccination.DoseAdd,
     Vaccination.DoseUnk,
     Vaccination.Region,
     Vaccination.TargetGroup,
