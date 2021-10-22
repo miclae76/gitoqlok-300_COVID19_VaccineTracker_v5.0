@@ -3311,12 +3311,12 @@
               "refLineExpr": {
                 "value": {
                   "qValueExpression": {
-                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}Uptake1st_ALL), [Member State]))\r\n"
+                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}[Uptake1st_$(=SW_ADULTS_POP)]), [Member State]))\r\n"
                   }
                 },
                 "label": {
                   "qStringExpression": {
-                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}Uptake1st_ALL), [Member State]))\r\n"
+                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}[Uptake1st_$(=SW_ADULTS_POP)]), [Member State]))\r\n"
                   }
                 }
               },
@@ -3345,12 +3345,12 @@
               "refLineExpr": {
                 "value": {
                   "qValueExpression": {
-                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}Uptake2nd_ALL), [Member State]))\r\n\n"
+                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}[Uptake2nd_$(=SW_ADULTS_POP)]), [Member State]))\r\n\n"
                   }
                 },
                 "label": {
                   "qStringExpression": {
-                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}Uptake2nd_ALL), [Member State]))\r\n\n"
+                    "qExpr": "=median({<[Member State]=, EU27_EEA=P(EU27_EEA)>} aggr(sum({<[Member State]=, EU27_EEA=P(EU27_EEA)>}[Uptake2nd_$(=SW_ADULTS_POP)]), [Member State]))\r\n\n"
                   }
                 }
               },

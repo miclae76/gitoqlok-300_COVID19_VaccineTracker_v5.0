@@ -434,7 +434,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),[TG - # Dose First administered],[TG - # Full vaccination])",
+                      "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),[TG - # Dose First administered],[TG - # Full vaccination], [TG - # Dose Additional])",
                       "qNumFormat": {
                         "qType": "F",
                         "qnDec": 2,
@@ -443,7 +443,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')",
+                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses' ) & ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
                       "cId": "NTDUyu",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -535,7 +535,8 @@
                   "qThou": ",",
                   "qFmt": ""
                 },
-                "isCustomFormatted": false
+                "isCustomFormatted": false,
+                "numFormatFromTemplate": false
               },
               "label": {
                 "qStringExpression": {
@@ -556,7 +557,8 @@
                   "qThou": ",",
                   "qFmt": ""
                 },
-                "isCustomFormatted": false
+                "isCustomFormatted": false,
+                "numFormatFromTemplate": false
               }
             },
             "cId": "mmEQMpR",
@@ -1006,7 +1008,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 600087596,
+          "hashCode": -780566591,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1046,7 +1048,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),[TG - # Dose First administered],[TG - # Full vaccination])",
+                        "qExpression": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),[TG - # Dose First administered],[TG - # Full vaccination], [TG - # Dose Additional])",
                         "qNumFormat": {
                           "qType": "F",
                           "qnDec": 2,
@@ -1055,7 +1057,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'N. first doses administered', 'N. full vaccinations administered' ) & ' in '  &pick(match(v_ViewTargetGroup, '80', 'HCW', 'LTCF'), '80+', 'HCW', 'LTCF')",
+                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses' ) & ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
                         "cId": "NTDUyu",
                         "autoSort": true,
                         "id": "customTooltipExpression",

@@ -636,7 +636,7 @@
       "showTitle": false
     },
     "dimensionAxis": {
-      "continuousAuto": true,
+      "continuousAuto": false,
       "show": "labels",
       "label": "tilted",
       "dock": "near",
