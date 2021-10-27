@@ -5,7 +5,7 @@
       "qType": "sheet"
     },
     "qMetaDef": {
-      "title": "For Metadata",
+      "title": "DEPRECATED - For Metadata",
       "description": "Add obvjects to retrieve medata from obj inside container"
     },
     "rank": 16,

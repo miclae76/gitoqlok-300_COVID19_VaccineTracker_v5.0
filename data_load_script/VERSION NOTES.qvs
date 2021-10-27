@@ -1,6 +1,6 @@
 ///$tab VERSION NOTES
 /********************* VERSION NOTES  ****************
-Version 5.0 - Initial Realeas - Additional doses + Doses exported
+Version 5.0 - Initial Realeas - Additional doses + Doses exported + Target Groups 70+, 60+, 50+
 Version 4.2 - Patch 20211013 - Cap Uptake to 100% in Age groups - Table Views
 Version 4.2 - Patch 20211007 - Issue with DK Age<18 group
 Version 4.2 - Patch 20211005 - Add AgeUNK to doses All Population - Uptake capped 100% Country Profile

@@ -1186,7 +1186,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "getselectedcount([Member State])=1"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],

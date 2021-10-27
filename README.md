@@ -13,14 +13,13 @@ TARGET GROUP|
 DEPRECATED - V1.0|
 KPI  Summary|
 Country Disclaimers|
-For Metadata|Add obvjects to retrieve medata from obj inside container
+DEPRECATED - For Metadata|Add obvjects to retrieve medata from obj inside container
 DOSES BY PRODUCT|
 Country Subnational Uptake|
 Data Completeness|
 My new sheet|
 Sandbox|
 Country Profiles|
-My new sheet (1)|
 AGE GROUP|
 
 
