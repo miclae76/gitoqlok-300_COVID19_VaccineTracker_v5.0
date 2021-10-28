@@ -48,7 +48,7 @@ LOAD * INLINE [
     ALLP, Total population
     ALL, Adults 18+
     Age<18, Children below 18
-    Age80+,	Adults 80+
+    Age60+,	Adults 60+
     LTCF, LTCF residents
    	HCW, Healthcare workers
 ];
