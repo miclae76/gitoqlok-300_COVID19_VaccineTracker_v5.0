@@ -1,8 +1,6 @@
 {
   "qName": "Uptake2nd_50",
-  "qTags": [
-    "$numeric"
-  ],
+  "qTags": [],
   "qSrcTables": [
     "Vaccination"
   ]

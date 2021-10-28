@@ -1,9 +1,6 @@
 {
   "qName": "DoseAdd_70",
-  "qTags": [
-    "$numeric",
-    "$integer"
-  ],
+  "qTags": [],
   "qSrcTables": [
     "Vaccination"
   ]

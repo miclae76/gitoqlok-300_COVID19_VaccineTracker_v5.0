@@ -219,24 +219,9 @@
         "dynamicvalues": "",
         "alternatives": [
           {
-            "value": "80",
-            "label": "+80 years old age group",
-            "cId": "wAHZfvC"
-          },
-          {
-            "value": "70",
-            "label": "+70 years old age group",
-            "cId": "ZEbthBd"
-          },
-          {
             "value": "60",
             "label": "+60 years old age group",
             "cId": "mfMUvJa"
-          },
-          {
-            "value": "50",
-            "label": "+50  years old age group",
-            "cId": "wkBmRqd"
           },
           {
             "value": "HCW",

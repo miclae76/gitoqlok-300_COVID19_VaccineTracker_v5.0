@@ -1,8 +1,6 @@
 {
   "qName": "UptakeTotal_50_Cumul",
-  "qTags": [
-    "$numeric"
-  ],
+  "qTags": [],
   "qSrcTables": [
     "Vaccination_Cumulative"
   ]

@@ -113,7 +113,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')",
+              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. full vaccination', 'Nbr. additional doses')",
               "cId": "CKepXSj",
               "autoSort": true,
               "id": "customTooltipExpression",

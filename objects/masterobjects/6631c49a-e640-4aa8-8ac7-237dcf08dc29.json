@@ -100,7 +100,7 @@
           "qCalcCond": {},
           "qAttributeExpressions": [
             {
-              "qExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
+              "qExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum(DoseAdd_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -110,7 +110,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')",
+              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. full vaccination', 'Nbr. additional doses')",
               "cId": "dMLR",
               "autoSort": true,
               "id": "customTooltipExpression",

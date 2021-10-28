@@ -69,7 +69,7 @@
               "id": "customTooltipTitle"
             },
             {
-              "qLibraryId": "BEhxck",
+              "qLibraryId": "BDhJgJ",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -79,39 +79,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "cId": "jXHPkG",
-              "autoSort": true,
-              "id": "customTooltipExpression",
-              "isCustomFormatted": false
-            },
-            {
-              "qLibraryId": "JwwTut",
-              "qAttribute": true,
-              "qNumFormat": {
-                "qType": "F",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "0.0%",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "cId": "SXvJXJp",
-              "autoSort": true,
-              "id": "customTooltipExpression",
-              "isCustomFormatted": false
-            },
-            {
-              "qLibraryId": "yBdqt",
-              "qAttribute": true,
-              "qNumFormat": {
-                "qType": "F",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "0.0%",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "cId": "ytpM",
+              "cId": "cTVwn",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -684,9 +652,9 @@
           }
         },
         {
-          "qLibraryId": "yBdqt",
+          "qLibraryId": "BDhJgJ",
           "qDef": {
-            "qLabel": "60-69 years",
+            "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
@@ -694,119 +662,7 @@
             "qExpressions": [],
             "autoSort": true,
             "numFormatFromTemplate": true,
-            "cId": "DNjH",
-            "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qLibraryId": "JwwTut",
-          "qDef": {
-            "qLabel": "70-79 years",
-            "qTags": [],
-            "qGrouping": "N",
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "autoSort": true,
-            "numFormatFromTemplate": true,
-            "cId": "fRCKD",
-            "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qLibraryId": "BEhxck",
-          "qDef": {
-            "qLabel": "80+ years",
-            "qTags": [],
-            "qGrouping": "N",
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "autoSort": true,
-            "numFormatFromTemplate": true,
-            "cId": "YKAfn",
+            "cId": "fjqYm",
             "quarantine": {
               "qNumFormat": {
                 "qType": "U",
@@ -862,9 +718,7 @@
         6,
         7,
         8,
-        9,
-        10,
-        11
+        9
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,

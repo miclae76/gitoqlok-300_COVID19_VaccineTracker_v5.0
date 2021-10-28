@@ -4,6 +4,7 @@
 // LOAD * Inline [Vaccination.RecordId];
 
 //70+
+/*
 Concatenate(QVD_Vaccination)
 LOAD
     'VIRTUAL' AS Vaccination.RecordId,
@@ -41,7 +42,7 @@ FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND match(Vaccination.TargetGroup, 'Age70_79', 'Age80+') > 0
 ;
-
+*/
 
 
 
@@ -85,6 +86,7 @@ AND match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0
 ;
 
 //50+
+/*
 Concatenate(QVD_Vaccination)
 LOAD
     'VIRTUAL' AS Vaccination.RecordId,
@@ -122,3 +124,4 @@ FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND match(Vaccination.TargetGroup, 'Age50_59', 'Age60_69', 'Age70_79', 'Age80+') > 0
 ;
+*/

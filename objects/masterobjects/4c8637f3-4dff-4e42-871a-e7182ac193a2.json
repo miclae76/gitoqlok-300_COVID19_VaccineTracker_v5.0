@@ -929,7 +929,7 @@
         },
         {
           "qDef": {
-            "qLabel": "60-69 years",
+            "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"60*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"60*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n            \n     ",
@@ -1133,7 +1133,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)<>'N'"
             },
             "qMsg": {}
           },
@@ -1248,7 +1248,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)<>'N'"
             },
             "qMsg": {}
           },
@@ -2411,7 +2411,7 @@
         },
         {
           "qDef": {
-            "qLabel": "60-69 years",
+            "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
@@ -2501,7 +2501,7 @@
                 "base": {
                   "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
                   "qLibraryId": "",
-                  "qLabel": "60-69 years",
+                  "qLabel": "60+ years",
                   "qAggrFunc": "Expr"
                 }
               }
@@ -2509,7 +2509,7 @@
             "base": {
               "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
               "qLibraryId": "",
-              "qLabel": "60-69 years",
+              "qLabel": "60+ years",
               "qAggrFunc": "Expr"
             },
             "isCustomFormatted": false,
@@ -2667,7 +2667,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
             },
             "qMsg": {}
           },
@@ -2809,7 +2809,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
             },
             "qMsg": {}
           },
@@ -3651,7 +3651,7 @@
         },
         {
           "qDef": {
-            "qLabel": "60-69 years",
+            "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
@@ -3851,7 +3851,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'WEEK'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'WEEK'"
             },
             "qMsg": {}
           },
@@ -3965,7 +3965,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'WEEK'"
+              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'WEEK'"
             },
             "qMsg": {}
           },
@@ -4449,7 +4449,7 @@
         },
         {
           "qDef": {
-            "qLabel": "60-69 years",
+            "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "num( Sum({< [Age Group]={\"60*\"}>}DoseTotal_AGE) / sum(Total <[Vaccination.YearWeek]> DoseTotal_AGE), '0.0%;-0.0%;-')\r\n",
@@ -4649,7 +4649,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "='$(v_ViewUptake)' = 'NPROP'  "
+              "qv": "0//='$(v_ViewUptake)' = 'NPROP'"
             },
             "qMsg": {}
           },
@@ -4763,7 +4763,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "='$(v_ViewUptake)' = 'NPROP'  "
+              "qv": "0//='$(v_ViewUptake)' = 'NPROP'"
             },
             "qMsg": {}
           },
