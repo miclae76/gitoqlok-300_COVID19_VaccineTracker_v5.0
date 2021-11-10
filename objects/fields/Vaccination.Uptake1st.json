@@ -1,9 +1,0 @@
-{
-  "qName": "Vaccination.Uptake1st",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}

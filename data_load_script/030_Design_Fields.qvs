@@ -9,8 +9,8 @@ LOAD * INLINE [
 // for the pivot with key figures
 KPI:
 LOAD * INLINE [KPI_GROUP, KPI_ID, KPI_NAME
-Total doses distributed and administered, 10, Total number of vaccine doses distributed by manufacturers to EU/EEA countries
-Total doses distributed and administered, 20, Number of vaccine doses distributed by manufacturers to EU/EEA countries per hundred inhabitants*
+Total doses distributed and administered, 10, Total number of vaccine doses distributed by manufactures to countries
+Total doses distributed and administered, 20, Number of vaccine doses distributed by manufactures to countries per hundred inhabitants*
 Total doses distributed and administered, 30, Total number of vaccine doses administered
 Cumulative vaccine uptake, 40, Cumulative uptake of full vaccination in the total population
 Cumulative vaccine uptake, 50, Cumulative uptake of full vaccination among adults aged 18 years and above

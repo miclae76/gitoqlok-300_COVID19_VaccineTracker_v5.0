@@ -1,9 +1,0 @@
-{
-  "qName": "Uptake2nd_HCW_Cumul",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination_Cumulative"
-  ]
-}

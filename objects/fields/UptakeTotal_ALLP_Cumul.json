@@ -1,9 +1,0 @@
-{
-  "qName": "UptakeTotal_ALLP_Cumul",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination_Cumulative"
-  ]
-}

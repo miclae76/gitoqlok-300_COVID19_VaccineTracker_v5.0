@@ -1,7 +1,0 @@
-{
-  "qName": "Vaccination.RecordId",
-  "qTags": [],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}

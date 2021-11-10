@@ -1,9 +1,0 @@
-{
-  "qName": "URL_Rollout",
-  "qTags": [
-    "$text"
-  ],
-  "qSrcTables": [
-    "URLs"
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "qName": "UptakeTotal_AGE",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}

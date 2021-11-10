@@ -1,7 +1,0 @@
-{
-  "qName": "Vaccination.NumberDosesReceived",
-  "qTags": [],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}

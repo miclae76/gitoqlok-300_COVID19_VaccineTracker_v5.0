@@ -1,9 +1,0 @@
-{
-  "qName": "Uptake2nd_LTCF_Cumul",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination_Cumulative"
-  ]
-}

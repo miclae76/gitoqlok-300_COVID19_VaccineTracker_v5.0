@@ -1,9 +1,0 @@
-{
-  "qName": "DosesDistributed_per100Inh_Cumul",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination_Cumulative"
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "qName": "DosesDistributed_per100Inh",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}

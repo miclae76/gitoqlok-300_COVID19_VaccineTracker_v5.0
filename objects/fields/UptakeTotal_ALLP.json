@@ -1,9 +1,0 @@
-{
-  "qName": "UptakeTotal_ALLP",
-  "qTags": [
-    "$numeric"
-  ],
-  "qSrcTables": [
-    "Vaccination"
-  ]
-}
