@@ -94,6 +94,22 @@
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "ef54c47c-c44f-4089-a4ae-df7079944234",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "hHGdayU",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
             }
           ],
           "qAttributeDimensions": [],
@@ -241,24 +257,27 @@
           }
         },
         {
-          "qLibraryId": "xHLFuQt",
+          "qLibraryId": "SPPksbF",
           "qDef": {
+            "qLabel": "Uptake full vaccination (%)",
             "qTags": [],
             "qGrouping": "N",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "tEtxF",
+            "cId": "NfjLet",
             "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
-            }
+            "isCustomFormatted": true
           },
           "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
             "qExpression": {}
           },
           "qAttributeExpressions": [],
@@ -289,27 +308,24 @@
           }
         },
         {
-          "qLibraryId": "SPPksbF",
+          "qLibraryId": "ef54c47c-c44f-4089-a4ae-df7079944234",
           "qDef": {
-            "qLabel": "Uptake full vaccination (%)",
             "qTags": [],
             "qGrouping": "N",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "NfjLet",
+            "cId": "hDYEHMP",
             "numFormatFromTemplate": true,
-            "isCustomFormatted": true
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
           },
           "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
             "qExpression": {}
           },
           "qAttributeExpressions": [],
@@ -363,11 +379,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": " '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": " '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+        },
+        "qMsg": {
+          "qv": "No data available"
+        }
       },
       "qColumnOrder": [],
       "qExpansionState": [],
@@ -391,6 +413,9 @@
           "qColumnOrder": [],
           "qExpansionState": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "No data available"
       }
     },
     "refLine": {
@@ -425,7 +450,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 70 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 60 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among people aged 50 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose and full vaccination among LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among people aged 70 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among people aged 60 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among people aged 50 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional doses among LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

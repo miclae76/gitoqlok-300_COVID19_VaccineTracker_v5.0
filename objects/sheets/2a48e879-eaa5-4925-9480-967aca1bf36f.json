@@ -734,14 +734,16 @@
               "qNoOfLeftDims": -1,
               "qMaxStackedCells": 5000,
               "qCalcCond": {
-                "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
               },
               "qTitle": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                 },
-                "qMsg": {}
+                "qMsg": {
+                  "qv": "No data available"
+                }
               },
               "qColumnOrder": [],
               "qExpansionState": [],
@@ -765,6 +767,9 @@
                   "qColumnOrder": [],
                   "qExpansionState": []
                 }
+              },
+              "customErrorMessage": {
+                "calcCond": "No data available"
               }
             },
             "tooltip": {
@@ -981,7 +986,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= if('$(v_ViewUptake)|$(v_ViewTargetGroup)' ='ADD|HCW' or '$(v_ViewUptake)|$(v_ViewTargetGroup)' = 'ADD|LTCF', 'No data available',\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional doses among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n)"
           }
         },
         "subtitle": "",
@@ -993,7 +998,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -780566591,
+          "hashCode": 968754187,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1217,14 +1222,16 @@
                 "qNoOfLeftDims": -1,
                 "qMaxStackedCells": 5000,
                 "qCalcCond": {
-                  "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                 },
                 "qTitle": {},
                 "qCalcCondition": {
                   "qCond": {
-                    "qv": "=left('$(v_ViewUptake)',1) <> 'N'"
+                    "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                   },
-                  "qMsg": {}
+                  "qMsg": {
+                    "qv": "No data available"
+                  }
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
@@ -1248,6 +1255,9 @@
                     "qColumnOrder": [],
                     "qExpansionState": []
                   }
+                },
+                "customErrorMessage": {
+                  "calcCond": "No data available"
                 }
               },
               "color": {
@@ -1299,8 +1309,7 @@
                 "reverseScheme": false
               },
               "useDimLoc1": 0
-            },
-            null
+            }
           ]
         },
         "masterVersion": 0.96
@@ -1313,8 +1322,97 @@
           "qId": "mHPPFP",
           "qType": "qlik-variable-input"
         },
-        "qExtendsId": "a36b9f97-7ad1-44c7-b8ce-f4c3c29f9539",
-        "qMetaDef": {}
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "variableName": "v_ViewUptake",
+        "render": "s",
+        "buttonMode": "rowfill",
+        "updateondrag": false,
+        "valueType": "x",
+        "dynamicvalues": "",
+        "alternatives": [
+          {
+            "value": "FIRST",
+            "label": "Uptake at least one vaccine dose",
+            "cId": "wAHZfvC"
+          },
+          {
+            "value": "SECOND",
+            "label": "Uptake full vaccination",
+            "cId": "PBsYdgh"
+          },
+          {
+            "value": "ADD",
+            "label": "Uptake of additional doses",
+            "cId": "mxfjNf"
+          },
+          {
+            "value": "NFIRST",
+            "label": "Number of first doses administered",
+            "cId": "BpjYh"
+          },
+          {
+            "value": "NSECOND",
+            "label": "Number of full vaccinations administered",
+            "cId": "jKuzmjE"
+          },
+          {
+            "value": "NADD",
+            "label": "Number of additional doses administered",
+            "cId": "UsgeJp"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "qlik-variable-input",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=\"v_ViewUptake\""
+          }
+        },
+        "style": "qlik",
+        "version": "6.14.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "control",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable input",
+          "description": "A control that assigns a value to a variable.\nVersion: 6.14.0",
+          "template": "qlik-variable-input",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "type": "visualization",
+          "version": "6.14.0",
+          "preview": "preview.png",
+          "keywords": "qlik-sense, visualization",
+          "author": "Erik Wetterberg upper88.com",
+          "homepage": "https://github.com/erikwett/qsVariable",
+          "license": "MIT",
+          "repository": "",
+          "dependencies": {
+            "qlik-sense": ">=5.5.x"
+          },
+          "contributors": [
+            "Brett Farley contextbi.com"
+          ],
+          "bundle": {
+            "id": "qlik-dashboard-bundle",
+            "name": "Qlik Dashboard bundle",
+            "description": "This is a set of supported objects that will facilitate dashboard creation in Qlik Sense: A date picker, a variable input, a demand-reporting button and a share button. These can be used in addition to the objects found under \"Charts\".\n\nFor limitations and support conditions, see the documentation."
+          },
+          "installer": "QlikExtensionBundler",
+          "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
+        },
+        "masterVersion": 0.96
       },
       "qChildren": []
     },
@@ -1968,7 +2066,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} [UptakeAdd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -1980,7 +2078,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Uptake of additional doses (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
                 "autoSort": true,
                 "cId": "PUFxgj",
                 "numFormatFromTemplate": false,
@@ -2137,7 +2235,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional doses among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -2637,6 +2735,123 @@
                 "qAttributeExpressions": []
               },
               "title": "TG - Uptake full vaccination (%)"
+            },
+            {
+              "qLibraryId": "ef54c47c-c44f-4089-a4ae-df7079944234",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "VwwP",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "left('$(v_ViewUptake)', 1 ) <> 'N' and GetSelectedCount([Member State]) = 0"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
             },
             {
               "qDef": {
@@ -3654,14 +3869,15 @@
             0,
             1,
             2,
-            3,
             4,
-            6,
+            5,
             7,
             8,
-            5,
+            9,
+            6,
+            11,
             10,
-            9
+            3
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
@@ -3696,7 +3912,8 @@
             7,
             8,
             9,
-            10
+            10,
+            11
           ],
           "qExpansionState": [],
           "columnOrder": [
@@ -3710,9 +3927,11 @@
             7,
             8,
             9,
-            10
+            10,
+            11
           ],
           "columnWidths": [
+            -1,
             -1,
             -1,
             -1,
@@ -4003,7 +4222,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n\n",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n      num(rangemin(1,sum({1} [Uptake1st_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n\t  num(rangemin(1,sum({1} [Uptake2nd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(rangemin(1,sum({1} [UptakeAdd_$(v_ViewTargetGroup)])), '0.0%;-0.0%;-'),\n      num(sum({1} [Dose1st_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [Dose2nd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n      num(sum({1} [DoseAdd_$(v_ViewTargetGroup)]), '#,##0;-#,##0;-'),\n)\n\n",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -4014,7 +4233,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Uptake of additional doses (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
                 "autoSort": true,
                 "cId": "PUFxgj",
                 "numFormatFromTemplate": false,
@@ -4077,11 +4296,17 @@
           "qPseudoDimPos": -1,
           "qNoOfLeftDims": -1,
           "qMaxStackedCells": 5000,
-          "qCalcCond": {},
+          "qCalcCond": {
+            "qv": "v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
+          },
           "qTitle": {},
           "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
+            "qCond": {
+              "qv": "v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
+            },
+            "qMsg": {
+              "qv": "='No data available'"
+            }
           },
           "qColumnOrder": [
             0,
@@ -4109,6 +4334,9 @@
               "qColumnOrder": [],
               "qExpansionState": []
             }
+          },
+          "customErrorMessage": {
+            "calcCond": ""
           }
         },
         "refLine": {
@@ -4118,7 +4346,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND','NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among ',\n'Cumulative number of additional doses among ',\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND','NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional doses among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among ',\n'Cumulative number of additional doses among ',\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",

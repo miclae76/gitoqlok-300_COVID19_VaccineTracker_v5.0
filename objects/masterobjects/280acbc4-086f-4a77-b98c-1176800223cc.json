@@ -197,11 +197,17 @@
       "qPseudoDimPos": -1,
       "qNoOfLeftDims": -1,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+        },
+        "qMsg": {
+          "qv": "No data available"
+        }
       },
       "qColumnOrder": [
         0,
@@ -236,6 +242,9 @@
           "qColumnOrder": [],
           "qExpansionState": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "No data available"
       }
     },
     "search": {
@@ -244,7 +253,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Cumulative uptake (%) of at least one vaccine dose among ', 'Cumulative uptake (%) of full vaccination among ') \r\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Cumulative uptake (%) of at least one vaccine dose among ', 'Cumulative uptake (%) of full vaccination among ', 'Cumulative uptake (%) of additional doses among ' ) \r\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": "",

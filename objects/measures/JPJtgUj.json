@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "TG - Uptake One Country Selected",
-    "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND'), \r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) )),\n)\n",
+    "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), \r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]) ))\n        \n)\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
@@ -21,8 +21,8 @@
     "numFormatFromTemplate": true,
     "coloring": {
       "baseColor": {
-        "color": "#62bb46",
-        "index": 1
+        "color": "#c0d236",
+        "index": 4
       }
     }
   },

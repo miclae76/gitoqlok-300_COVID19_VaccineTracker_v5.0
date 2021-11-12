@@ -39,6 +39,7 @@ LOAD
         // Dose administered and Uptake for people age 80+
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st_Cumul)				as Uptake1st_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_60_Cumul,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd_Cumul)				as UptakeAdd_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_60_Cumul, 
     
         // Dose administered and Uptake for people age 80+
@@ -93,7 +94,8 @@ LOAD
     // Uptake = #Doses divided by denominator given by Target Group
     rangesum( Vaccination.DoseFirst_Cumul) / Vaccination.Denominator															as Vaccination.Uptake1st_Cumul,
     rangesum( Vaccination.DoseSecond_Cumul) / Vaccination.Denominator															as Vaccination.Uptake2nd_Cumul,    
-   
+    rangesum( Vaccination.DoseAdd_Cumul) / Vaccination.Denominator															    as Vaccination.UptakeAdd_Cumul,  
+    
     rangesum( Vaccination.DoseFirst_Cumul, Vaccination.DoseSecond_Cumul, Vaccination.DoseUnk_Cumul) / Vaccination.Denominator	as Vaccination.UptakeTotal_Cumul
 ;
 LOAD
@@ -120,6 +122,10 @@ LOAD
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
         AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseSecond_Cumul') , Vaccination.DoseSecond), alt(Vaccination.DoseSecond, 0)) as Vaccination.DoseSecond_Cumul,
+   
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseAdd_Cumul') , Vaccination.DoseAdd), alt(Vaccination.DoseAdd, 0)) as Vaccination.DoseAdd_Cumul,
         
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
