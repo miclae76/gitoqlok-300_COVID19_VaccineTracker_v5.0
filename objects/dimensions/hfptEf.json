@@ -13,7 +13,7 @@
     ],
     "title": "Age Group",
     "coloring": {
-      "changeHash": "0.08660652591554441",
+      "changeHash": "0.05760328600036435",
       "colorMapRef": "hfptEf"
     }
   },
@@ -116,6 +116,13 @@
           "baseColor": {
             "color": "#478184",
             "index": 16
+          }
+        },
+        {
+          "value": "60+ years",
+          "baseColor": {
+            "color": "#9DC748",
+            "index": -1
           }
         }
       ],

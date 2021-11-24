@@ -198,12 +198,12 @@
       "qNoOfLeftDims": -1,
       "qMaxStackedCells": 5000,
       "qCalcCond": {
-        "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+        "qv": "//'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
       },
       "qTitle": {},
       "qCalcCondition": {
         "qCond": {
-          "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+          "qv": "//'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
         },
         "qMsg": {
           "qv": "No data available"

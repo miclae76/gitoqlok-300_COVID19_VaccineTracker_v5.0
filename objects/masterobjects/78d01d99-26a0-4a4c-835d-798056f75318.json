@@ -64,7 +64,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=[Vaccination.CountryCode]"
+              "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
             ],
             "qFieldLabels": [
               ""
@@ -334,7 +334,28 @@
         "qMsg": {}
       },
       "qColumnOrder": [],
-      "qExpansionState": []
+      "qExpansionState": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": []
+        }
+      }
     },
     "showTitles": false,
     "title": "",

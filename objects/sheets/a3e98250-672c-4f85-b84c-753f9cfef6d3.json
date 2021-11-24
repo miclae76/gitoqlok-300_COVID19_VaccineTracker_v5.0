@@ -63,12 +63,12 @@
         "col": 0,
         "row": 0,
         "colspan": 17,
-        "rowspan": 4,
+        "rowspan": 6,
         "bounds": {
           "y": 0,
           "x": 0,
           "width": 70.83333333333334,
-          "height": 33.33333333333333
+          "height": 50
         }
       },
       {

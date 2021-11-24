@@ -51,8 +51,8 @@
         "colspan": 9,
         "rowspan": 4,
         "bounds": {
-          "x": 12.5,
           "y": 16.666666666666664,
+          "x": 12.5,
           "width": 37.5,
           "height": 33.33333333333333
         }
@@ -1581,7 +1581,7 @@
                 "qLabel": "Uptake at least one dose",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "rangemin (1,sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake1st_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"},[MemberState_]=-{\"*EU*\"} >} [Vaccination.Uptake1st_Cumul]) )\n\n\n/*  20210413\nrangemin (1,sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake1st_Cumul]))\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul]), '0.0%'))\n  ",
+                "qDef": "rangemin( 1, sum({<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Vaccination.Uptake1st_Cumul]) )\r\n\n//rangemin (1, sum([Vaccination.Uptake1st_Cumul]))\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"},[MemberState_]=-{\"*EU*\"} >} [Vaccination.Uptake1st_Cumul]) )\n\n\n/*  20210413\nrangemin (1,sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake1st_Cumul]))\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake1st_Cumul]), '0.0%'))\n  ",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -1669,7 +1669,7 @@
                 "qLabel": "Uptake full vaccination",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "rangemin(1, sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
+                "qDef": "rangemin(1, sum([Vaccination.Uptake2nd_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -1875,7 +1875,7 @@
         "orientation": "horizontal",
         "scrollbar": "bar",
         "scrollStartPos": 1,
-        "nullMode": "connect",
+        "nullMode": "gap",
         "dataPoint": {
           "show": true,
           "showLabels": false

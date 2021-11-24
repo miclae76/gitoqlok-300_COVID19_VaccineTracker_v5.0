@@ -330,12 +330,12 @@
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
       "qCalcCond": {
-        "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+        "qv": "//'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
       },
       "qTitle": {},
       "qCalcCondition": {
         "qCond": {
-          "qv": "'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+          "qv": "//'$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
         },
         "qMsg": {
           "qv": "No data available"
@@ -371,7 +371,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_70', 'SECOND_70', 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_50', 'SECOND_50', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\r\n\n'Cumulative uptake (%) of at least one vaccine dose among people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 70 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 70 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of additional doses among people aged 60 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 50 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 50 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in '\n) \n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of additional doses among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of additional doses among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n'Cumulative uptake (%) of additional doses among LTCF residents in '\n)\n& [Member State]\n\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
       }
     },
     "subtitle": "by reporting week",

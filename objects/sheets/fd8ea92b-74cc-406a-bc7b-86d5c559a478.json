@@ -654,6 +654,11 @@
             "cId": "PBsYdgh"
           },
           {
+            "value": "ADD",
+            "label": "Uptake of additional doses",
+            "cId": "LjcwBPW"
+          },
+          {
             "value": "NFIRST",
             "label": "Number of first doses administered",
             "cId": "BpjYh"

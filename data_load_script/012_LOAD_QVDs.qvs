@@ -1,4 +1,4 @@
-///$tab 010_LOAD_QVDs
+///$tab 012_LOAD_QVDs
 /*
 Calendar_Vaccination:
 LOAD *, num(PurgeChar([Vaccination.YearWeek], '-W')) AS Vaccination.YearWeekNUM
@@ -32,7 +32,7 @@ LOAD * INLINE [
     Age18_24, 18-24 years
     Age25_49, 25-49 years
     Age50_59, 50-59 years
-    Age60+, 60+ years
+    Age60+,	60+ years
 ];
 
 // 2021-10-28 - Remove and replace by Age60+ 
@@ -127,7 +127,7 @@ WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND [Vaccination.Denominator] <> '<Missing>' 
     and [Vaccination.Denominator] > 0 
     and len(trim([Vaccination.Denominator]))>0 
-    and WildMatch([Vaccination.TargetGroup], '1_*', 'Age60_69', 'Age70_79', 'Age80+') = 0			// excluded because of 60+ aggregation 
+    and WildMatch([Vaccination.TargetGroup], '1_*', 'Age60_69', 'Age70_79', 'Age80+', 'Age60+') = 0			// excluded because of 60+ aggregation 
   //  and match(Vaccination.ReportingCountry, 'SE', 'NO') = 0
   //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'CY|Age*') = 0
   //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SK|Age*') = 0
@@ -151,7 +151,7 @@ WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND [Vaccination.Denominator] <> '<Missing>' 
     and [Vaccination.Denominator] > 0 
     and len(trim([Vaccination.Denominator]))>0 
-    and WildMatch([Vaccination.TargetGroup], 'Age60_69', 'Age70_79', 'Age80+') > 0
+    and WildMatch([Vaccination.TargetGroup], 'Age60+')>0//, 'Age70_79', 'Age80+') > 0
    // and (Vaccination.ReportingCountry &'|'& Vaccination.DateUsedForStatisticsISO = 'SE|2021-W37'
    //      or Vaccination.ReportingCountry &'|'& Vaccination.DateUsedForStatisticsISO = 'NO|2021-W44')
     ;
@@ -160,7 +160,7 @@ Concatenate(Last_Denominator)
 LOAD 
 	Vaccination.ReportingCountry, 
     'Age60+' AS Vaccination.TargetGroup,
-    Sum(Vaccination.LastDenominator_tmp) AS [Vaccination.LastDenominator]
+    max(Vaccination.LastDenominator_tmp) AS [Vaccination.LastDenominator]
 resident temp_FindDeno_60
 GROUP by Vaccination.ReportingCountry;
 drop Table temp_FindDeno_60;
@@ -194,10 +194,16 @@ Resident Last_Denominator;
 Drop table Last_Denominator;
 
 JOIN (temp_vaccination)
-LOAD distinct Vaccination.DateUsedForStatisticsISO 
+LOAD distinct Vaccination.DateUsedForStatisticsISO
 Resident QVD_Vaccination
 //FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+
+JOIN (temp_vaccination)
+LOAD distinct [Vaccination.ReportingCountry], [Vaccination.Vaccine]
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 
 LEFT JOIN (temp_vaccination)
 LOAD 
@@ -308,6 +314,7 @@ LOAD
     // Doses adminsitered and Uptake for Target Group = Health Care Workers
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake1st)					as Uptake1st_HCW,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd)					as Uptake2nd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeAdd)					as UptakeAdd_HCW,
     if ( Vaccination.TargetGroup = 'HCW',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_HCW,
     if ( Vaccination.TargetGroup = 'HCW',  IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))		as Dose2nd_HCW,
     if ( Vaccination.TargetGroup = 'HCW', [Vaccination.DoseAdd])				    as DoseAdd_HCW,
@@ -318,6 +325,7 @@ LOAD
     // Doses adminsitered and Uptake for Target Group = Health Care Workers
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake1st)					as Uptake1st_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake2nd)					as Uptake2nd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeAdd)					as UptakeAdd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))				as Dose1st_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF',  IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseAdd])				    as DoseAdd_LTCF,
@@ -329,6 +337,7 @@ LOAD
     // Doses adminsitered and Uptake for Target Group Age
     if ( IsNull([Age Group]) = 0, Vaccination.Uptake1st)							as Uptake1st_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.Uptake2nd)							as Uptake2nd_AGE,
+     if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd)							as UptakeAdd_AGE,
     if ( IsNull([Age Group]) = 0,  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_AGE,
     if ( IsNull([Age Group]) = 0, IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))				as Dose2nd_AGE,
     if (IsNull([Age Group]) = 0, [Vaccination.DoseAdd])							    as DoseAdd_AGE,

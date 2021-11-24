@@ -345,7 +345,12 @@
               "measureMax": 10,
               "useBaseColors": "dimension",
               "useDimColVal": false,
-              "useMeasureGradient": false
+              "useMeasureGradient": false,
+              "byMeasureDef": {
+                "label": "",
+                "key": "",
+                "type": "expression"
+              }
             },
             "displayLegend": "auto",
             "showSizeLegend": true,
@@ -435,6 +440,11 @@
                       "isCustomFormatted": false
                     },
                     {
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                      "cId": "LZJDjn",
+                      "id": "customTooltipImages"
+                    },
+                    {
                       "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
                       "id": "colorByExpression"
                     }
@@ -501,7 +511,19 @@
               "auto": true,
               "title": "",
               "description": "",
-              "hideBasic": true
+              "hideBasic": true,
+              "imageComponents": [
+                {
+                  "type": "url",
+                  "size": "small",
+                  "cId": "LZJDjn",
+                  "ref": {
+                    "qStringExpression": {
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
+                    }
+                  }
+                }
+              ]
             },
             "size": {
               "radiusMin": 1,
@@ -514,14 +536,14 @@
                 "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\nsum({1} [DoseAdd_$(v_ViewTargetGroup)])\n)",
                 "type": "expression",
                 "qNumFormat": {
-                  "qType": "U",
+                  "qType": "F",
                   "qnDec": 2,
                   "qDec": ".",
                   "qThou": ",",
-                  "qFmt": ""
+                  "qFmt": "#,##0"
                 },
                 "isCustomFormatted": false,
-                "numFormatFromTemplate": false
+                "numFormatFromTemplate": true
               },
               "label": {
                 "qStringExpression": {
@@ -536,14 +558,14 @@
               "shape": "points",
               "formatting": {
                 "qNumFormat": {
-                  "qType": "U",
+                  "qType": "F",
                   "qnDec": 2,
                   "qDec": ".",
                   "qThou": ",",
-                  "qFmt": ""
+                  "qFmt": "#,##0"
                 },
                 "isCustomFormatted": false,
-                "numFormatFromTemplate": false
+                "numFormatFromTemplate": true
               }
             },
             "cId": "mmEQMpR",
@@ -638,7 +660,7 @@
               0,
               20
             ],
-            "showPopUp": true,
+            "showPopUp": "custom",
             "displayUnselected": false,
             "label": {
               "show": false,
@@ -703,6 +725,11 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                      "cId": "aTjdUN",
+                      "id": "customTooltipImages"
+                    },
+                    {
                       "qLibraryId": "SjnQgM",
                       "id": "colorByAlternative",
                       "matchMeasure": -1,
@@ -734,12 +761,12 @@
               "qNoOfLeftDims": -1,
               "qMaxStackedCells": 5000,
               "qCalcCond": {
-                "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+                "qv": "=left('$(v_ViewUptake)',1) <> 'N' //and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
               },
               "qTitle": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' //and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                 },
                 "qMsg": {
                   "qv": "No data available"
@@ -773,7 +800,21 @@
               }
             },
             "tooltip": {
-              "auto": true
+              "auto": true,
+              "title": "",
+              "description": "",
+              "imageComponents": [
+                {
+                  "type": "url",
+                  "size": "small",
+                  "cId": "aTjdUN",
+                  "ref": {
+                    "qStringExpression": {
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
+                    }
+                  }
+                }
+              ]
             },
             "cId": "ABqQtWF",
             "id": "ABqQtWF",
@@ -986,7 +1027,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= if('$(v_ViewUptake)|$(v_ViewTargetGroup)' ='ADD|HCW' or '$(v_ViewUptake)|$(v_ViewTargetGroup)' = 'ADD|LTCF', 'No data available',\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional doses among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n)"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional doses among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -998,7 +1039,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 968754187,
+          "hashCode": 200577792,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1054,15 +1095,21 @@
                         "isCustomFormatted": false
                       },
                       {
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                        "cId": "LZJDjn",
+                        "id": "customTooltipImages"
+                      },
+                      {
                         "qExpression": "pick(match('$(v_ViewUptake)', 'NFIRST', 'NSECOND', 'NADD'), '#62bb46', '#458d34', '#c0D236')",
                         "id": "colorByExpression"
                       },
                       {
                         "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({1} [Dose1st_$(v_ViewTargetGroup)]),\nsum({1} [Dose2nd_$(v_ViewTargetGroup)]),\nsum({1} [DoseAdd_$(v_ViewTargetGroup)])\n)",
                         "qNumFormat": {
-                          "qType": "U",
+                          "qType": "F",
                           "qnDec": 2,
                           "qUseThou": 0,
+                          "qFmt": "#,##0",
                           "qDec": ".",
                           "qThou": ","
                         },
@@ -1148,7 +1195,12 @@
                 "measureMax": 10,
                 "useBaseColors": "dimension",
                 "useDimColVal": false,
-                "useMeasureGradient": false
+                "useMeasureGradient": false,
+                "byMeasureDef": {
+                  "label": "",
+                  "key": "",
+                  "type": "expression"
+                }
               },
               "useDimLoc1": 0
             },
@@ -1191,6 +1243,11 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                        "cId": "aTjdUN",
+                        "id": "customTooltipImages"
+                      },
+                      {
                         "qLibraryId": "SjnQgM",
                         "id": "colorByAlternative",
                         "matchMeasure": -1,
@@ -1222,12 +1279,12 @@
                 "qNoOfLeftDims": -1,
                 "qMaxStackedCells": 5000,
                 "qCalcCond": {
-                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+                  "qv": "=left('$(v_ViewUptake)',1) <> 'N' //and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                 },
                 "qTitle": {},
                 "qCalcCondition": {
                   "qCond": {
-                    "qv": "=left('$(v_ViewUptake)',1) <> 'N' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
+                    "qv": "=left('$(v_ViewUptake)',1) <> 'N' //and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|HCW' and '$(v_ViewUptake)|$(v_ViewTargetGroup)' <> 'ADD|LTCF'"
                   },
                   "qMsg": {
                     "qv": "No data available"
@@ -1309,7 +1366,8 @@
                 "reverseScheme": false
               },
               "useDimLoc1": 0
-            }
+            },
+            null
           ]
         },
         "masterVersion": 0.96
@@ -3969,7 +4027,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses and full vaccinations administered to people aged 80 years and above in ',\n' of first doses and full vaccinations administered to people aged 70 years and above in ',\n' of first doses and full vaccinations administered to people aged 60 years and above in ',\n' of first doses and full vaccinations administered to people aged 50 years and above in ',\n' of first doses and full vaccinations administered to healthcare workers in ',\n' of first doses and full vaccinations administered to LTCF residents in ',\n),\npick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_80', 'SECOND_80', 'FIRST_70', 'SECOND_70', 'FIRST_60', 'SECOND_60', 'FIRST_50', 'SECOND_50', 'FIRST_HCW', 'SECOND_HCW', 'FIRST_LTCF', 'SECOND_LTCF'),\n'Cumulative uptake (%) of at least one vaccine dose among people aged 80 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 80 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 70 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 70 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among people aged 50 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 50 years and above in ',\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in '\n) \n)\n& if(GetSelectedCount([Member State])=1, [Member State] & ' vs. ' & v_EU27_EEA_Title,   v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n \n\n"
+            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses, full vaccinations and additional doses administered to people aged 80 years and above in ',\n' of first doses, full vaccinations and additional doses administered to people aged 70 years and above in ',\n' of first doses, full vaccinations and additional doses administered to people aged 60 years and above in ',\n' of first doses, full vaccinations and additional doses administered to people aged 50 years and above in ',\n' of first doses, full vaccinations and additional doses administered to healthcare workers in ',\n' of first doses, full vaccinations and additional doses administered to LTCF residents in ',\n),\npick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of additional doses among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of additional doses among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n'Cumulative uptake (%) of additional doses among LTCF residents in ',\n) \n)\n& if(GetSelectedCount([Member State])=1, [Member State] & ' vs. ' & v_EU27_EEA_Title,   v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n "
           }
         },
         "subtitle": {
@@ -4297,12 +4355,12 @@
           "qNoOfLeftDims": -1,
           "qMaxStackedCells": 5000,
           "qCalcCond": {
-            "qv": "v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
+            "qv": "//v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
           },
           "qTitle": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
+              "qv": "//v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|HCW' and v_ViewUptake&'|'&v_ViewTargetGroup <> 'ADD|LTCF'"
             },
             "qMsg": {
               "qv": "='No data available'"

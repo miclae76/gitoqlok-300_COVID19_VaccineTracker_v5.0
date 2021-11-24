@@ -1142,6 +1142,60 @@
     ]
   },
   {
+    "qName": "UptakeAdd_AGE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_AGE_Cumul",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_HCW",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_HCW_Cumul",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_LTCF",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_LTCF_Cumul",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "UptakeTotal_50",
     "qTags": [],
     "qSrcTables": [

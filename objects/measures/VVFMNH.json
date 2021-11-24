@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "VVFMNH",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - Full vaccination (Delta)",
+    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State])) - median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State])))\r\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Full vaccination'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#458d34",
+        "index": 11
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - Full vaccination (Delta)",
+    "description": "",
+    "tags": []
+  }
+}

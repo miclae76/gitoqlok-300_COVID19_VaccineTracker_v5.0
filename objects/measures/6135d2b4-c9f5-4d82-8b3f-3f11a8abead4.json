@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "6135d2b4-c9f5-4d82-8b3f-3f11a8abead4",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - Uptake of additional doses",
+    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State])))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Additional doses'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#c0d236",
+        "index": 4
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - Uptake of additional doses",
+    "description": "",
+    "tags": []
+  }
+}

@@ -173,14 +173,14 @@
         "name": "JBprcz",
         "type": "barchart",
         "col": 18,
-        "row": 8,
+        "row": 9,
         "colspan": 6,
-        "rowspan": 4,
+        "rowspan": 3,
         "bounds": {
-          "y": 66.66666666666666,
+          "y": 75,
           "x": 75,
           "width": 25,
-          "height": 33.33333333333333
+          "height": 25
         }
       },
       {
@@ -307,6 +307,20 @@
           "x": 75,
           "width": 25,
           "height": 16.666666666666664
+        }
+      },
+      {
+        "name": "pMjzAxc",
+        "type": "text-image",
+        "col": 18,
+        "row": 8,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 75,
+          "width": 25,
+          "height": 8.333333333333332
         }
       }
     ],
@@ -825,20 +839,9 @@
                       "id": "colorByExpression"
                     },
                     {
-                      "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), \r\nsum({1} [Dose1st_$(=SW_ADULTS_POP)]), \nsum({1} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({1} [DoseAdd_$(=SW_ADULTS_POP)]),\n)",
-                      "qNumFormat": {
-                        "qType": "F",
-                        "qnDec": 2,
-                        "qUseThou": 0,
-                        "qFmt": "#,##0",
-                        "qDec": ".",
-                        "qThou": ","
-                      },
-                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
-                      "cId": "pKBajp",
-                      "autoSort": true,
-                      "id": "customTooltipExpression",
-                      "isCustomFormatted": false
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                      "cId": "jwnKqJJ",
+                      "id": "customTooltipImages"
                     }
                   ],
                   "qAttributeDimensions": [],
@@ -903,8 +906,19 @@
               "auto": true,
               "title": "",
               "description": "",
-              "hideBasic": true,
-              "imageComponents": []
+              "hideBasic": false,
+              "imageComponents": [
+                {
+                  "type": "url",
+                  "size": "small",
+                  "cId": "jwnKqJJ",
+                  "ref": {
+                    "qStringExpression": {
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
+                    }
+                  }
+                }
+              ]
             },
             "size": {
               "radiusMin": 2,
@@ -917,11 +931,11 @@
                 "key": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)])\n)",
                 "type": "expression",
                 "qNumFormat": {
-                  "qType": "U",
+                  "qType": "F",
                   "qnDec": 2,
                   "qDec": ".",
                   "qThou": ",",
-                  "qFmt": ""
+                  "qFmt": "#,##0"
                 },
                 "isCustomFormatted": false
               },
@@ -938,11 +952,11 @@
               "shape": "points",
               "formatting": {
                 "qNumFormat": {
-                  "qType": "U",
+                  "qType": "F",
                   "qnDec": 2,
                   "qDec": ".",
                   "qThou": ",",
-                  "qFmt": ""
+                  "qFmt": "#,##0"
                 },
                 "isCustomFormatted": false
               }
@@ -1095,7 +1109,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&only([Vaccination.CountryCode])&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
                       "cId": "YwjPjU",
                       "id": "customTooltipImages"
                     },
@@ -1226,7 +1240,7 @@
                   "cId": "YwjPjU",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&only([Vaccination.CountryCode])&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n"
                     }
                   }
                 }
@@ -1454,7 +1468,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -2035142700,
+          "hashCode": -2095104468,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1498,27 +1512,17 @@
                         "id": "colorByExpression"
                       },
                       {
-                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), \r\nsum({1} [Dose1st_$(=SW_ADULTS_POP)]), \nsum({1} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({1} [DoseAdd_$(=SW_ADULTS_POP)]),\n)",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                        "cId": "jwnKqJJ",
+                        "id": "customTooltipImages"
+                      },
+                      {
+                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)])\n)",
                         "qNumFormat": {
                           "qType": "F",
                           "qnDec": 2,
                           "qUseThou": 0,
                           "qFmt": "#,##0",
-                          "qDec": ".",
-                          "qThou": ","
-                        },
-                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
-                        "cId": "pKBajp",
-                        "autoSort": true,
-                        "id": "customTooltipExpression",
-                        "isCustomFormatted": false
-                      },
-                      {
-                        "qExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\nsum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]),\nsum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)])\n)",
-                        "qNumFormat": {
-                          "qType": "U",
-                          "qnDec": 2,
-                          "qUseThou": 0,
                           "qDec": ".",
                           "qThou": ","
                         },
@@ -1646,7 +1650,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
                         "cId": "YwjPjU",
                         "id": "customTooltipImages"
                       },
@@ -5825,6 +5829,124 @@
           "qChildren": []
         }
       ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "pMjzAxc",
+          "qType": "text-image"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "=ComputerName()",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "CHepRK",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0
+          ],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": []
+            }
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "responsive": "all",
+        "markdown": "je =[](CHepRK) jlm^[\n](inherit)^[\n](inherit)",
+        "images": [],
+        "background": {
+          "isUsed": false,
+          "size": "auto",
+          "position": "topLeft",
+          "url": {}
+        },
+        "visualization": "text-image"
+      },
+      "qChildren": []
     }
   ]
 }

@@ -115,6 +115,7 @@ drop table temp_QVD_Aggregate_Age_below_18;
 
 
 
+
 // Create virtual target group ALLP = total population = ALL + Age<18
 temp_QVD_Vaccination:
 NoConcatenate
@@ -130,6 +131,9 @@ Map_AgeBelow18:
 Mapping LOAD distinct [Vaccination.ReportingCountry] , Vaccination.Denominator 		//create country map for wich we ahve below 18 
 Resident temp_QVD_Age_Below_18_Only;
 */
+
+
+
 
 
 
@@ -184,5 +188,6 @@ FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND match(Vaccination.TargetGroup, 'Age<18')=0;
 //AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')=0;
+
 
 drop table temp_QVD_Vaccination;
