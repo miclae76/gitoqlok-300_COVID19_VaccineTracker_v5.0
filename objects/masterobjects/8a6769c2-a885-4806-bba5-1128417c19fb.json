@@ -163,10 +163,18 @@
           }
         },
         {
-          "qLibraryId": "JPJtgUj",
           "qDef": {
+            "qLabel": "TG - Uptake One Country Selected",
             "qTags": [],
             "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), \r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]) )),\n    if( round(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul])), 0.0001) > 0.0001, \n   \n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]) ))\n    )    \n)\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -186,17 +194,7 @@
                 "outputExpression": "Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}Aggr(RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) * Count([$(=Replace(GetObjectField(1),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n\tsum({<[Member State]=>}Uptake1st_ALL_Cumul),\n    sum({<[Member State]=>}Uptake2nd_ALL_Cumul)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}0), 0), 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending))))"
               }
             ],
-            "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
-            }
+            "isCustomFormatted": true
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -231,8 +229,9 @@
           }
         },
         {
-          "qLibraryId": "RpykZ",
+          "qLibraryId": "eCYuS",
           "qDef": {
+            "qLabel": "TG - Uptake Median EU/EEA",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
@@ -343,6 +342,7 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -361,7 +361,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       },
       "customErrorMessage": {
@@ -371,7 +372,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of additional doses among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of additional doses among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n'Cumulative uptake (%) of additional doses among LTCF residents in '\n)\n& [Member State]\n\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of an additional vaccine dose among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of an additional vaccine dose among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n'Cumulative uptake (%) of an additional vaccine dose among LTCF residents in '\n)\n& [Member State]\n\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
       }
     },
     "subtitle": "by reporting week",

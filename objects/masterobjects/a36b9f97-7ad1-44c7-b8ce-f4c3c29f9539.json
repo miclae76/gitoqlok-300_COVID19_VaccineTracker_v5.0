@@ -33,6 +33,11 @@
         "cId": "PBsYdgh"
       },
       {
+        "value": "ADD",
+        "label": "Uptake of an additional vaccine dose",
+        "cId": "Ljtgf"
+      },
+      {
         "value": "NFIRST",
         "label": "Number of first doses administered",
         "cId": "BpjYh"

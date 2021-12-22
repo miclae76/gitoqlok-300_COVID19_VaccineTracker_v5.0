@@ -9,7 +9,7 @@
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Uptake additional doses(%)'",
+    "qLabelExpression": "='Uptake additional dose (%)'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -23,6 +23,25 @@
       "baseColor": {
         "color": "#c0d236",
         "index": 4
+      },
+      "gradient": {
+        "colors": [
+          {
+            "color": "#ffffff",
+            "index": -1
+          },
+          {
+            "color": "#c0d236",
+            "index": 4
+          }
+        ],
+        "breakTypes": [
+          false
+        ],
+        "limits": [
+          0
+        ],
+        "limitType": "absolute"
       }
     }
   },

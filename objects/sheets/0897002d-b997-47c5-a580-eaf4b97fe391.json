@@ -415,7 +415,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake1st_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake2nd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-')\n)",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake1st_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake2nd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [UptakeAdd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-')\n)",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -426,7 +426,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Number of first dose administered',\n'Number of full vaccination administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -501,6 +501,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -519,7 +520,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -530,7 +532,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD',  'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -614,8 +616,8 @@
           "max": 10
         },
         "tooltip": {
-          "auto": false,
-          "hideBasic": true,
+          "auto": true,
+          "hideBasic": false,
           "data": {},
           "title": "",
           "description": ""
@@ -839,7 +841,7 @@
                       "id": "colorByExpression"
                     },
                     {
-                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
                       "cId": "jwnKqJJ",
                       "id": "customTooltipImages"
                     }
@@ -880,6 +882,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -898,7 +901,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -914,7 +918,7 @@
                   "cId": "jwnKqJJ",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
                     }
                   }
                 }
@@ -1015,13 +1019,13 @@
               "useDimColVal": false,
               "useMeasureGradient": false,
               "byMeasureDef": {
-                "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')",
-                "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)])\n)",
+                "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
+                "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
                 "type": "expression"
               },
               "altLabel": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')"
+                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')"
                 }
               },
               "useBaseColors": "dimension",
@@ -1109,7 +1113,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&only([Vaccination.CountryCode])&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
                       "cId": "YwjPjU",
                       "id": "customTooltipImages"
                     },
@@ -1154,7 +1158,27 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)])\n)",
+                      "qExpression": "SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)])",
+                      "qNumFormat": {
+                        "qType": "R",
+                        "qnDec": 2,
+                        "qUseThou": 0,
+                        "qFmt": "0.0%;-0.0%;Missing data",
+                        "qDec": ".",
+                        "qThou": ","
+                      },
+                      "qLabel": "Uptake of additional dose",
+                      "cId": "PBjGx",
+                      "autoSort": true,
+                      "id": "customTooltipExpression",
+                      "quarantine": {
+                        "qNumFormat": {},
+                        "isCustomFormatted": false
+                      },
+                      "isCustomFormatted": false
+                    },
+                    {
+                      "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
                       "qNumFormat": {
                         "qType": "F",
                         "qnDec": 2,
@@ -1164,7 +1188,7 @@
                         "qThou": ","
                       },
                       "id": "colorByAlternative",
-                      "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')",
+                      "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
                       "isCustomFormatted": false
                     }
                   ],
@@ -1204,6 +1228,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -1222,7 +1247,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -1240,7 +1266,7 @@
                   "cId": "YwjPjU",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&only([Vaccination.CountryCode])&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n"
                     }
                   }
                 }
@@ -1360,6 +1386,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -1378,7 +1405,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -1456,7 +1484,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1468,7 +1496,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -2095104468,
+          "hashCode": 1533126790,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1512,7 +1540,7 @@
                         "id": "colorByExpression"
                       },
                       {
-                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n",
                         "cId": "jwnKqJJ",
                         "id": "customTooltipImages"
                       },
@@ -1565,6 +1593,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -1583,7 +1612,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -1650,7 +1680,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n\n\n\n",
                         "cId": "YwjPjU",
                         "id": "customTooltipImages"
                       },
@@ -1695,7 +1725,27 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)])\n)",
+                        "qExpression": "SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)])",
+                        "qNumFormat": {
+                          "qType": "R",
+                          "qnDec": 2,
+                          "qUseThou": 0,
+                          "qFmt": "0.0%;-0.0%;Missing data",
+                          "qDec": ".",
+                          "qThou": ","
+                        },
+                        "qLabel": "Uptake of additional dose",
+                        "cId": "PBjGx",
+                        "autoSort": true,
+                        "id": "customTooltipExpression",
+                        "quarantine": {
+                          "qNumFormat": {},
+                          "isCustomFormatted": false
+                        },
+                        "isCustomFormatted": false
+                      },
+                      {
+                        "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
                         "qNumFormat": {
                           "qType": "F",
                           "qnDec": 2,
@@ -1705,7 +1755,7 @@
                           "qThou": ","
                         },
                         "id": "colorByAlternative",
-                        "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')",
+                        "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
                         "isCustomFormatted": false
                       }
                     ],
@@ -1745,6 +1795,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -1763,7 +1814,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -1789,13 +1841,13 @@
                 "useDimColVal": false,
                 "useMeasureGradient": false,
                 "byMeasureDef": {
-                  "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')",
-                  "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)])\n)",
+                  "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
+                  "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
                   "type": "expression"
                 },
                 "altLabel": {
                   "qStringExpression": {
-                    "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)')"
+                    "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')"
                   }
                 },
                 "useBaseColors": "dimension",
@@ -1812,7 +1864,8 @@
                 }
               },
               "useDimLoc1": 0
-            }
+            },
+            null
           ]
         },
         "masterVersion": 0.96
@@ -2099,6 +2152,123 @@
               "qCalcCondition": {
                 "qCond": {
                   "qv": "GetSelectedCount([Member State])=0   "
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qLibraryId": "53540fee-2f49-462f-ba36-41ef7278aada",
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "pRkrwAZ",
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0"
                 },
                 "qMsg": {}
               },
@@ -2597,11 +2767,13 @@
             0,
             1,
             2,
-            3,
             4,
             5,
-            6
+            6,
+            7,
+            3
           ],
+          "qSuppressZero": true,
           "qSuppressMissing": true,
           "qInitialDataFetch": [],
           "qReductionMode": "N",
@@ -2622,9 +2794,11 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -2632,9 +2806,11 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
           "columnWidths": [
+            -1,
             -1,
             -1,
             -1,
@@ -2661,7 +2837,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2671,7 +2848,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of at least one dose and full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative uptake (%) of at least one vaccine dose and full vaccination '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of an additional vaccine dose among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose among  '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -3280,6 +3457,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -3298,7 +3476,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -3547,7 +3726,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake1st_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake2nd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-')\n)",
+                "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake1st_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [Uptake2nd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(rangemin(1, sum({<[Member State]=, MemberState_=>} [UptakeAdd_$(=SW_ADULTS_POP)])), '0.0%;-0.0%;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose1st_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [Dose2nd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-'),\nnum(sum({<[Member State]=, MemberState_=>} [DoseAdd_$(=SW_ADULTS_POP)]), '#,##0;-#,##0;-')\n)",
                 "qNumFormat": {
                   "qType": "U",
                   "qnDec": 2,
@@ -3559,7 +3738,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -3686,6 +3865,7 @@
             1
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1
@@ -3709,14 +3889,15 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3989,6 +4170,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4007,7 +4189,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4438,6 +4621,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4456,7 +4640,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4709,6 +4894,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4727,7 +4913,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4860,6 +5047,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4878,7 +5066,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4978,6 +5167,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4996,7 +5186,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -5217,7 +5408,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         },
         "showTitles": false,
         "title": "",
@@ -5289,7 +5481,7 @@
             "cId": "DmuHBgZ",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=GetSelectedCount([Member State])=1 AND v_ViewUptake <> 'NADD'"
+                "qExpr": "=GetSelectedCount([Member State])=1 //AND match(v_ViewUptake, 'ADD', 'NADD') > 0 "
               }
             }
           },
@@ -5300,7 +5492,7 @@
             "cId": "jvvZemZ",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=GetSelectedCount([Member State])=1 and v_ViewUptake = 'NADD'"
+                "qExpr": "0//=GetSelectedCount([Member State])=1 and v_ViewUptake = 'ADD'"
               }
             }
           }
@@ -5508,6 +5700,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -5526,7 +5719,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -5907,6 +6101,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -5925,7 +6120,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

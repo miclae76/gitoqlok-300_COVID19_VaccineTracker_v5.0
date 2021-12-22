@@ -14,6 +14,7 @@ LOAD
     //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeAdd_Cumul)					as UptakeAdd_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_ALL_Cumul,
     
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseTotal_Cumul)					as DoseTotal_ALLP_Cumul,
@@ -24,6 +25,8 @@ LOAD
     //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALLP_Cumul,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeAdd_Cumul)					as UptakeAdd_ALLP_Cumul,
+    
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_ALLP_Cumul,
     
     // Dose administered and Uptake for people age 80+

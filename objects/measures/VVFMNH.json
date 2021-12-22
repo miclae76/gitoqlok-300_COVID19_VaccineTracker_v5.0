@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "AGE - Full vaccination (Delta)",
-    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State])) - median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State])))\r\n",
+    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))) - [AGE - Uptake of additional dose]\r\n\n\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,

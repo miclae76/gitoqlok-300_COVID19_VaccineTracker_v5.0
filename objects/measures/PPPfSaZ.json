@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "PPPfSaZ",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "='Full vaccination'",
+    "qDef": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]) )  \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Full vaccination'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#458d34",
+        "index": 11
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "='Full vaccination'",
+    "description": "",
+    "tags": []
+  }
+}

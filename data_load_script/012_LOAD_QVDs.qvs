@@ -258,6 +258,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALL', [Vaccination.DoseUnk])					as DoseUnk_ALL,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st)					as Uptake1st_ALL,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake2nd)					as Uptake2nd_ALL,
+     if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeAdd)					as UptakeAdd_ALL,
     
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeTotal)					as UptakeTotal_ALL,
     
@@ -269,6 +270,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALLP', [Vaccination.DoseAdd])				    as DoseAdd_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st)					as Uptake1st_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake2nd)					as Uptake2nd_ALLP,
+     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeAdd)					as UptakeAdd_ALLP,
     
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeTotal)					as UptakeTotal_ALLP,
     

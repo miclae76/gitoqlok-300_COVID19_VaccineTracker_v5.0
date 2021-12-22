@@ -380,6 +380,7 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -398,7 +399,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },
@@ -434,7 +436,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\n'Cumulative uptake (%) of at least one dose, full vaccination and additional doses by age group in ' \n& [Member State]\n,\n'Median cumulative uptake (%) of at least one dose, full vaccination and additional doses by age group in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\n'Cumulative vaccine uptake by age group in ' \n& [Member State]\n,\n'Median cumulative vaccine uptake (%) by age group in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

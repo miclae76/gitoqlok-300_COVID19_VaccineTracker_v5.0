@@ -203,6 +203,7 @@
         1
       ],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "columnOrder": [
         0,
         1
@@ -229,7 +230,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },

@@ -374,6 +374,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -392,7 +393,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -729,6 +731,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -747,7 +750,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -1086,6 +1090,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -1104,7 +1109,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -1540,6 +1546,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -1558,7 +1565,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -1864,6 +1872,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -1882,7 +1891,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2787,6 +2797,7 @@
             6
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnWidths": [
             -1,
             null,
@@ -2823,7 +2834,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -3037,6 +3049,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -3055,7 +3068,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -3392,6 +3406,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -3410,7 +3425,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

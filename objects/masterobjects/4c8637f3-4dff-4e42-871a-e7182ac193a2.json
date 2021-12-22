@@ -168,7 +168,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*0-4*\"} >} DoseTotal_AGE) > 0"
+              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*0-4*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -283,7 +283,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*5-9*\"} >} DoseTotal_AGE) > 0"
+              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*5-9*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -398,7 +398,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*10-14*\"} >} DoseTotal_AGE) > 0"
+              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*10-14*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -513,7 +513,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"15-17*\"} >} DoseTotal_AGE) > 0"
+              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"15-17*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -4851,6 +4851,7 @@
         38
       ],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "columnOrder": [
         0,
         1,
@@ -4951,14 +4952,15 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of full vaccination by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of additional doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of full vaccination by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of additional doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of full vaccination by age groups in ',\n'Cumulative uptake (%) of an additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of an additional vaccine dose administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of full vaccination by age groups in ',\n'Median cumulative uptake (%) of an additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of an additional vaccine dose administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

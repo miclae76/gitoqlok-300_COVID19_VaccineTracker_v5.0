@@ -420,7 +420,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                       "cId": "NYKRL",
                       "id": "customTooltipImages"
                     },
@@ -476,6 +476,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -494,7 +495,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -509,7 +511,7 @@
                   "cId": "NYKRL",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
                     }
                   }
                 }
@@ -671,7 +673,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                       "cId": "pPjdf",
                       "id": "customTooltipImages"
                     },
@@ -728,6 +730,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -746,7 +749,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -761,7 +765,7 @@
                   "cId": "pPjdf",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
                     }
                   }
                 }
@@ -900,7 +904,7 @@
               0,
               20
             ],
-            "showPopUp": true,
+            "showPopUp": "custom",
             "displayUnselected": false,
             "label": {
               "show": false,
@@ -964,6 +968,11 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "cId": "ZvMCJZ",
+                      "id": "customTooltipImages"
+                    },
+                    {
                       "qExpression": "=100*SUM({1<[Member State]=, Vaccine=>}DosesDistributed_per100Inh)+sum({1}0)",
                       "qNumFormat": {
                         "qType": "F",
@@ -1014,6 +1023,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -1032,14 +1042,27 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
             "tooltip": {
               "auto": true,
               "title": "",
-              "description": ""
+              "description": "",
+              "imageComponents": [
+                {
+                  "type": "url",
+                  "size": "small",
+                  "cId": "ZvMCJZ",
+                  "ref": {
+                    "qStringExpression": {
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                    }
+                  }
+                }
+              ]
             },
             "cId": "XYVpEUw",
             "id": "XYVpEUw",
@@ -1156,6 +1179,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -1174,7 +1198,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -1268,7 +1293,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -1546372848,
+          "hashCode": -1036434110,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1308,7 +1333,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                         "cId": "NYKRL",
                         "id": "customTooltipImages"
                       },
@@ -1373,6 +1398,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -1391,7 +1417,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -1458,7 +1485,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "'https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                         "cId": "pPjdf",
                         "id": "customTooltipImages"
                       },
@@ -1527,6 +1554,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -1545,7 +1573,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -1612,6 +1641,11 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "cId": "ZvMCJZ",
+                        "id": "customTooltipImages"
+                      },
+                      {
                         "qExpression": "=100*SUM({1<[Member State]=, Vaccine=>}DosesDistributed_per100Inh)+sum({1}0)",
                         "qNumFormat": {
                           "qType": "F",
@@ -1662,6 +1696,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -1680,7 +1715,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -1883,6 +1919,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -1901,7 +1938,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2894,6 +2932,7 @@
             3
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -2924,7 +2963,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -3503,6 +3543,7 @@
             4
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -3535,7 +3576,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4068,6 +4110,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -4086,7 +4129,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -4587,6 +4631,7 @@
             2
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -4613,7 +4658,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

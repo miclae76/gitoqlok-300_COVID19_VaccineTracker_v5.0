@@ -63,26 +63,26 @@
         "col": 0,
         "row": 0,
         "colspan": 17,
-        "rowspan": 6,
+        "rowspan": 4,
         "bounds": {
           "y": 0,
           "x": 0,
           "width": 70.83333333333334,
-          "height": 50
+          "height": 33.33333333333333
         }
       },
       {
         "name": "JJYjhj",
         "type": "pivot-table",
         "col": 0,
-        "row": 6,
+        "row": 4,
         "colspan": 17,
-        "rowspan": 6,
+        "rowspan": 3,
         "bounds": {
-          "y": 50,
+          "y": 33.33333333333333,
           "x": 0,
           "width": 70.83333333333334,
-          "height": 50
+          "height": 25
         }
       }
     ],
@@ -302,6 +302,7 @@
             1
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1
@@ -328,7 +329,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -492,7 +494,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         },
         "showTitles": true,
         "title": "",
@@ -1717,6 +1720,7 @@
             14
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -1769,7 +1773,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2049,6 +2054,7 @@
               }
             }
           ],
+          "qDynamicScript": [],
           "columnWidths": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
@@ -2068,7 +2074,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

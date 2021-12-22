@@ -5,7 +5,7 @@
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "AGE - NEW Cumulative Uptake",
+      "title": "AGE - Cumulative Uptake 1st/2nd",
       "description": "",
       "tags": []
     },
@@ -128,6 +128,22 @@
                 "qThou": ","
               },
               "cId": "sycA",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "efkPD",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -793,6 +809,7 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -811,7 +828,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },
@@ -847,7 +865,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of full vaccination by age group in ',\n'Cumulative uptake (%) of additional doses by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Median cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Median cumulative uptake (%) of full vaccination by age group in ',\n'Median cumulative uptake (%) of additional doses by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of full vaccination by age group in ',\n'Cumulative uptake (%) of an additional vaccine dose by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Median cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Median cumulative uptake (%) of full vaccination by age group in ',\n'Median cumulative uptake (%) of an additional vaccine dose by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {

@@ -243,7 +243,8 @@
         "qMsg": {}
       },
       "qColumnOrder": [],
-      "qExpansionState": []
+      "qExpansionState": [],
+      "qDynamicScript": []
     },
     "showTitles": false,
     "title": "",

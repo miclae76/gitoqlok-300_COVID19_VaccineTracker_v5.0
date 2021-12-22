@@ -1160,6 +1160,42 @@
     ]
   },
   {
+    "qName": "UptakeAdd_ALL",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_ALLP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_ALLP_Cumul",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "UptakeAdd_ALL_Cumul",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "UptakeAdd_HCW",
     "qTags": [
       "$numeric"

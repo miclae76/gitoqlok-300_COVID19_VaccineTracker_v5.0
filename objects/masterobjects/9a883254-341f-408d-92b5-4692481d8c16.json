@@ -162,11 +162,18 @@
           }
         },
         {
-          "qLibraryId": "kxvtLQ",
           "qDef": {
-            "qLabel": "TG - Uptake One Country Selected",
+            "qLabel": "ALL - Uptake One country selected",
             "qTags": [],
             "qGrouping": "N",
+            "qDef": "pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND' , '*ADD'),\r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) )),\n     \n     if (round(rangemin( 1, aggr(sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]), [Vaccination.YearWeek]) ), 0.00001) >= 0.00001, \n     dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ))\n     )   \n)\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -186,17 +193,7 @@
                 "outputExpression": "Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}Aggr(RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) * Count([$(=Replace(GetObjectField(1),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n\tsum({<[Member State]=>}Uptake1st_ALL_Cumul),\n    sum({<[Member State]=>}Uptake2nd_ALL_Cumul)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"},[$(=Replace(GetObjectField(1),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(1),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(1),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(1),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(1),']',']]'))]))'\"}>}0), 0), 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending))))"
               }
             ],
-            "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
-            }
+            "isCustomFormatted": true
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -239,21 +236,20 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "VaBLqb",
+            "cId": "excaqJ",
             "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
             "styling": [
               {
                 "key": "line",
                 "style": {
-                  "lineCurve": "linear",
                   "lineType": "dashed"
                 }
               }
-            ],
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
-            }
+            ]
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -318,6 +314,7 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -336,14 +333,15 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'NFIRST', 'NSECOND'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

@@ -168,6 +168,20 @@
           "width": 33.33333333333333,
           "height": 33.33333333333333
         }
+      },
+      {
+        "name": "dRYx",
+        "type": "linechart",
+        "col": 18,
+        "row": 7,
+        "colspan": 6,
+        "rowspan": 5,
+        "bounds": {
+          "y": 58.333333333333336,
+          "x": 75,
+          "width": 25,
+          "height": 41.66666666666667
+        }
       }
     ],
     "qChildListDef": {
@@ -655,7 +669,7 @@
           },
           {
             "value": "ADD",
-            "label": "Uptake of additional doses",
+            "label": "Uptake of an additional vaccine dose",
             "cId": "LjcwBPW"
           },
           {
@@ -846,7 +860,18 @@
             "cId": "pSgjKE",
             "condition": {
               "qStringExpression": {
-                "qExpr": "left('$(v_ViewUptake)', 1)<>'N'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and '$(=v_ViewUptake)' <> 'ADD'"
+              }
+            }
+          },
+          {
+            "refId": "945576b5-39de-4777-9068-7c0b082a6b0f",
+            "label": "AGE - Cum. Uptake Add.",
+            "isMaster": true,
+            "cId": "KTXWnU",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and '$(=v_ViewUptake)' = 'ADD'"
               }
             }
           },
@@ -956,6 +981,18 @@
             "visualization": "barchart"
           },
           "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "9e0bddfd-c2b3-4c1d-bc7a-122c07f47f8c",
+              "qType": "linechart"
+            },
+            "qExtendsId": "945576b5-39de-4777-9068-7c0b082a6b0f",
+            "qMetaDef": {},
+            "visualization": "linechart"
+          },
+          "qChildren": []
         }
       ]
     },
@@ -977,6 +1014,17 @@
           "qType": "barchart"
         },
         "qExtendsId": "6eb31137-69fa-43a2-9481-b098c030fe23",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "dRYx",
+          "qType": "linechart"
+        },
+        "qExtendsId": "945576b5-39de-4777-9068-7c0b082a6b0f",
         "qMetaDef": {}
       },
       "qChildren": []

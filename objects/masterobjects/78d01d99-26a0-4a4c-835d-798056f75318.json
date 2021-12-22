@@ -64,7 +64,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen',\n'qap.ecdc.europa.eu',\n'zvqap.ecdcdmz.europa.eu'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'\n"
+              "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n"
             ],
             "qFieldLabels": [
               ""
@@ -335,6 +335,7 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -353,7 +354,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
       }
     },

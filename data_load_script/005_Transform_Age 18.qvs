@@ -16,7 +16,7 @@ NoConcatenate
 LOAD distinct [Vaccination.ReportingCountry] as hasBelow18
 FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
-AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK';
+AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK' ;//and [Vaccination.ReportingCountry] <> 'LT';
 
 
 // build mapping tables with percentage of young population (0-17 years)

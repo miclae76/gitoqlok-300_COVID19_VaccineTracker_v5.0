@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "53540fee-2f49-462f-ba36-41ef7278aada",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - Uptake additional doses",
+    "qDef": " dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} [Vaccination.DoseAdd_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"} >} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} [Vaccination.DoseAdd_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} [Vaccination.Denominator]) \n      )  \n /*\n dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator])\n        )  \n*/",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Uptake of an additional dose'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#c0d236",
+        "index": 4
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - Uptake additional doses",
+    "description": "",
+    "tags": []
+  }
+}

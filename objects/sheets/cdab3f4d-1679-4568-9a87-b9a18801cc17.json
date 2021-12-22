@@ -1308,6 +1308,7 @@
             3
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -1338,7 +1339,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2394,6 +2396,7 @@
             4
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -2436,7 +2439,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2656,6 +2660,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -2674,7 +2679,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2843,6 +2849,7 @@
                 1
               ],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "columnOrder": [
                 0,
                 1
@@ -3040,7 +3047,8 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         },
         "showTitles": true,
         "title": "",
@@ -3140,6 +3148,7 @@
                 0
               ],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "columnOrder": [
                 0
               ],

@@ -155,6 +155,7 @@
                 },
                 "qColumnOrder": [],
                 "qExpansionState": [],
+                "qDynamicScript": [],
                 "qLayoutExclude": {
                   "qHyperCubeDef": {
                     "qDimensions": [],
@@ -173,7 +174,8 @@
                       "qMsg": {}
                     },
                     "qColumnOrder": [],
-                    "qExpansionState": []
+                    "qExpansionState": [],
+                    "qDynamicScript": []
                   }
                 }
               },
@@ -364,6 +366,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -382,7 +385,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -535,6 +539,7 @@
               },
               "qColumnOrder": [],
               "qExpansionState": [],
+              "qDynamicScript": [],
               "qLayoutExclude": {
                 "qHyperCubeDef": {
                   "qDimensions": [],
@@ -553,7 +558,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 }
               }
             },
@@ -780,7 +786,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "tooltip": {
                   "auto": true,
@@ -809,7 +816,8 @@
                         "qMsg": {}
                       },
                       "qColumnOrder": [],
-                      "qExpansionState": []
+                      "qExpansionState": [],
+                      "qDynamicScript": []
                     }
                   }
                 }
@@ -963,7 +971,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -1094,7 +1103,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -1229,7 +1239,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -1360,7 +1371,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -1500,7 +1512,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -1649,7 +1662,8 @@
                     "qMsg": {}
                   },
                   "qColumnOrder": [],
-                  "qExpansionState": []
+                  "qExpansionState": [],
+                  "qDynamicScript": []
                 },
                 "components": []
               },
@@ -2126,6 +2140,7 @@
             3
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnOrder": [
             0,
             1,
@@ -2158,7 +2173,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

@@ -236,11 +236,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "count(distinct {<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} [Vaccination.TargetGroup]) >= 5"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "count(distinct {<[Member State]=$::[Member State], [_Flag_FilterAgeBelow18]={\"0\"}>} [Vaccination.TargetGroup]) >= 5"
+        },
+        "qMsg": {
+          "qv": "Incomplete reported data by age groups for the selected country"
+        }
       },
       "qColumnOrder": [
         0,
@@ -248,6 +254,7 @@
         2
       ],
       "qExpansionState": [],
+      "qDynamicScript": [],
       "qLayoutExclude": {
         "qHyperCubeDef": {
           "qDimensions": [],
@@ -266,8 +273,12 @@
             "qMsg": {}
           },
           "qColumnOrder": [],
-          "qExpansionState": []
+          "qExpansionState": [],
+          "qDynamicScript": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "Incomplete reported data by age groups for the selected country"
       }
     },
     "refLine": {

@@ -1,22 +1,25 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "bfeaaaa7-e282-40b5-8830-bf0704eda5e9",
+      "qId": "945576b5-39de-4777-9068-7c0b082a6b0f",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "ALL - Uptake Add  One Country",
+      "title": "AGE - Cum. Uptake Add.",
       "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "JvfaJtS",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "=if(GetSelectedCount([Member State])=1, [Vaccination.YearWeekReported], [Vaccination.YearWeek])"
+            ],
+            "qFieldLabels": [
+              "YearWeek"
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -28,9 +31,10 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "cDXQPm",
+            "cId": "mGjU",
             "othersLabel": "Others"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -53,6 +57,7 @@
           "qCalcCond": {},
           "qAttributeExpressions": [
             {
+              "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Cumulative Uptake (%) of at least one vaccine dose', 'Cumulative uptake (%) of full vaccination' , 'Cumulative uptake (%) of additional doses')",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "U",
@@ -64,7 +69,7 @@
               "id": "customTooltipTitle"
             },
             {
-              "qExpression": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]) )  \n\n",
+              "qLibraryId": "BDhJgJ",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -74,15 +79,13 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "ALL - Uptake at least one dose (%)",
-              "qLabelExpression": "='Uptake at least one dose (%)'",
-              "cId": "wpUvAyf",
+              "cId": "cTVwn",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
             },
             {
-              "qExpression": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}>} [Vaccination.Denominator]) )  \n",
+              "qLibraryId": "JzJPTUT",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -92,9 +95,39 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "ALL - Uptake Full Vaccination",
-              "qLabelExpression": "='Uptake full vaccination'",
-              "cId": "HRpjarP",
+              "cId": "dfsPF",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "pprnU",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "PpvE",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "jbsMsM",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "sycA",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -117,27 +150,25 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "jPmeyGy",
+            "cId": "hDZNq",
             "numFormatFromTemplate": true,
             "quarantine": {
               "qNumFormat": {},
               "isCustomFormatted": false
-            },
-            "styling": [
-              {
-                "key": "line",
-                "style": {
-                  "lineThickness": 1
-                }
-              }
-            ]
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
             "qSortByLoadOrder": 1,
             "qExpression": {}
           },
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qExpression": "'#62bb46'",
+              "qAttribute": true,
+              "id": "colorByExpression"
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
@@ -165,18 +196,17 @@
           }
         },
         {
-          "qLibraryId": "yxUAxF",
+          "qLibraryId": "jbsMsM",
           "qDef": {
-            "qLabel": "ALL - Uptake at least one dose (%)",
+            "qLabel": "18-24 years",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Uptake at least one dose (%)'",
             "autoSort": true,
             "cId": "QmAem",
-            "numFormatFromTemplate": true,
+            "numFormatFromTemplate": false,
             "quarantine": {
               "qNumFormat": {
                 "qType": "U",
@@ -222,19 +252,27 @@
           }
         },
         {
-          "qLibraryId": "xHLFuQt",
+          "qLibraryId": "pprnU",
           "qDef": {
+            "qLabel": "25-49 years",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "JrhPdW",
             "numFormatFromTemplate": true,
+            "cId": "vaXPbu",
             "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
             }
           },
           "qSortBy": {
@@ -270,18 +308,73 @@
           }
         },
         {
-          "qLibraryId": "eBWKUb",
+          "qLibraryId": "JzJPTUT",
           "qDef": {
-            "qLabel": "ALL - Uptake Full Vaccination",
+            "qLabel": "50-59 years",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Uptake full vaccination'",
             "autoSort": true,
-            "cId": "NudFngM",
             "numFormatFromTemplate": true,
+            "cId": "fbKx",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "BDhJgJ",
+          "qDef": {
+            "qLabel": "60+ years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "cId": "fjqYm",
             "quarantine": {
               "qNumFormat": {
                 "qType": "U",
@@ -332,7 +425,8 @@
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -407,30 +501,6 @@
           },
           "coloredBackground": false,
           "cId": "dnmYRQ"
-        },
-        {
-          "show": {
-            "qValueExpression": {
-              "qExpr": "0"
-            }
-          },
-          "label": "Target",
-          "showLabel": false,
-          "refLineExpr": {
-            "value": 0.7,
-            "label": "0.7"
-          },
-          "showValue": true,
-          "paletteColor": {
-            "index": -1,
-            "color": "#989a9c"
-          },
-          "style": {
-            "lineThickness": 2,
-            "lineType": "8 4"
-          },
-          "coloredBackground": false,
-          "cId": "DUvEhb"
         }
       ],
       "dimRefLines": []
@@ -438,12 +508,12 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and full vaccination '& SW_ADULTS_POP_LABEL & ' in '\r\n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of full vaccination by age group in ',\n'Cumulative uptake (%) of an additional vaccine dose by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Median cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Median cumulative uptake (%) of full vaccination by age group in ',\n'Median cumulative uptake (%) of an additional vaccine dose by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {
       "qStringExpression": {
-        "qExpr": "='by reporting week (data for the current week are preliminary)'"
+        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '\r\n&pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake2nd_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd_AGE )>0\"}>} [Member State])\n)\n& ' reporting countries, ')\n&'by reporting week '&v_Text_Preliminary"
       }
     },
     "footnote": "",
@@ -478,7 +548,7 @@
     },
     "color": {
       "auto": true,
-      "mode": "byMeasure",
+      "mode": "byMultiple",
       "formatting": {
         "numFormatFromTemplate": true,
         "quarantine": {
@@ -487,7 +557,7 @@
         },
         "qNumFormat": null
       },
-      "useBaseColors": "off",
+      "useBaseColors": "measure",
       "paletteColor": {
         "index": 6
       },
@@ -512,7 +582,7 @@
     },
     "legend": {
       "show": true,
-      "dock": "top",
+      "dock": "bottom",
       "showTitle": false
     },
     "dimensionAxis": {
@@ -533,15 +603,19 @@
       "min": 0,
       "max": {
         "qValueExpression": {
-          "qExpr": "1/*=pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND'),      \r\n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake1st_ALL), [Member State])) > 0.7, 1, 0.7) ,        \n     if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}>} Uptake2nd_ALL), [Member State])) > 0.7, 1, 0.7)     \t \n)*/\n\n"
+          "qExpr": "=1/*\r\nif(GetSelectedCount([Member State]) > 0,\npick(match(v_ViewUptake , 'FIRST', 'SECOND'),\n\t if(max({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake1st_AGE={\">0\"}>} Uptake1st_AGE), [Age Group], [Member State])) > 0.8, 1, 0.8),         \n \t if(max({<[MemberState_]={\"*EU*\"}>}aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">0\"}>} Uptake2nd_AGE), [Age Group], [Member State])) > 0.8, 1, 0.8)\n),\npick(match(v_ViewUptake , 'FIRST', 'SECOND'),\n\t if(max({<[Member State]=, [MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE={\">0\"}>} Uptake1st_AGE), [Age Group], [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=, [MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">0\"}>} Uptake2nd_AGE), [Age Group], [Member State])) > 0.8, 1, 0.8)\n))\n*/\n\n"
         }
       },
       "logarithmic": false
     },
     "tooltip": {
-      "auto": true,
+      "auto": false,
       "hideBasic": true,
-      "title": "",
+      "title": {
+        "qStringExpression": {
+          "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Cumulative Uptake (%) of at least one vaccine dose', 'Cumulative uptake (%) of full vaccination' , 'Cumulative uptake (%) of additional doses')"
+        }
+      },
       "description": ""
     },
     "visualization": "linechart",

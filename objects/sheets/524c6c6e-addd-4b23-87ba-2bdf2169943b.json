@@ -566,6 +566,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnWidths": [
             [
               784
@@ -593,7 +594,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           },
           "customErrorMessage": {
@@ -1586,6 +1588,7 @@
             4
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnWidths": [],
           "customErrorMessage": {
             "calcCond": "Please select one reporting week"
@@ -1615,7 +1618,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -2289,6 +2293,7 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnWidths": [],
           "qLayoutExclude": {
             "qHyperCubeDef": {
@@ -2308,7 +2313,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },
@@ -3568,6 +3574,7 @@
             10
           ],
           "qExpansionState": [],
+          "qDynamicScript": [],
           "columnWidths": [
             -1,
             -1,
@@ -3610,7 +3617,8 @@
                 "qMsg": {}
               },
               "qColumnOrder": [],
-              "qExpansionState": []
+              "qExpansionState": [],
+              "qDynamicScript": []
             }
           }
         },

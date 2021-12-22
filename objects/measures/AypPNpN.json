@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "AypPNpN",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - Uptake Comparison Add",
+    "qDef": "pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND', '*ADD'),\r\n\n\tdual(if([Vaccination.YearWeek]=MaxString(total{< [_Flag_WeekToReport]={1}>} [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]) )  ,\n    \n    dual(if([Vaccination.YearWeek]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]) ) ,\n     \n    if(round(rangemin (1, sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.DoseAdd_Cumul])\n        /sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.Denominator])), 0.0001) >= 0.0001,\n    \n    dual(if([Vaccination.YearWeek]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.DoseAdd_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.DoseAdd_Cumul])\n        /sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Vaccination.DoseAdd_Cumul]={\">0\"}>} [Vaccination.Denominator]) ) \n    )\n    /*    \n    dual(if([Vaccination.YearWeek]=MaxString(total {< [_Flag_WeekToReport]={1}>} [Vaccination.YearWeek]),\n    \tnum(median(aggr(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} UptakeAdd_ALL_Cumul), [Member State], Vaccination.YearWeek)), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tmedian(aggr(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} UptakeAdd_ALL_Cumul), [Member State], Vaccination.YearWeek))\n      )  \n    */\n)\n\n\n\n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=if(WildMatch(v_ViewUptake, '*ADD')>0, 'Median', '') & EU27_EEA",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#3c3c3b",
+        "index": 10
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - Uptake Comparison Add",
+    "description": "",
+    "tags": []
+  }
+}
