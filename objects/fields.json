@@ -295,6 +295,26 @@
     ]
   },
   {
+    "qName": "DoseAdd_ALLP_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "DoseAdd_ALL_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "DoseAdd_HCW",
     "qTags": [
       "$numeric",
@@ -638,6 +658,16 @@
     ],
     "qSrcTables": [
       "EU27_EEA"
+    ]
+  },
+  {
+    "qName": "GROUP_SORT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "TABLE_KPI"
     ]
   },
   {

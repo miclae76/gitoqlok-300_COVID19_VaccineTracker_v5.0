@@ -1,6 +1,7 @@
 ///$tab VERSION NOTES
 /********************* VERSION NOTES  ***********************************************************************
-Version 5.0.1 - Uptake additional doses for 60+
+Version 5.2 - Increase Booster visibility + Renaming Full vax to primary course(s) + small adjsutements for some country/target groups
+Version 5.1 - Uptake additional doses for 60+
 Version 5.0 - Beta Realease - Remove 60-69, 70-79, 80+ and replace by 60+
 Version 5.0 - Alpha Realease - Additional doses + Doses exported + Target Groups 70+, 60+, 50+
 Version 4.2 - Patch 20211013 - Cap Uptake to 100% in Age groups - Table Views
