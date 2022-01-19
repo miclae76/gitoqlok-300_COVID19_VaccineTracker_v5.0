@@ -82,7 +82,7 @@ group by
 LOAD *
 FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
-AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0 OR (match(Vaccination.TargetGroup, 'Age60+') and [Vaccination.CountryCode] = 'DE')) // DE reported 60+ but not disaggregated groups 60-70-80+
+AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0 OR (match(Vaccination.TargetGroup, '1_Age60+') and [Vaccination.CountryCode] = 'DE')) // DE reported 60+ but not disaggregated groups 60-70-80+
 ;
 
 //50+
