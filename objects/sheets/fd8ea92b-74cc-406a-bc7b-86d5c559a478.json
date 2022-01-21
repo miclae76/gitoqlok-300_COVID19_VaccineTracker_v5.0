@@ -182,6 +182,20 @@
           "width": 25,
           "height": 41.66666666666667
         }
+      },
+      {
+        "name": "DWSJTM",
+        "type": "filterpane",
+        "col": 12,
+        "row": 0,
+        "colspan": 9,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 50,
+          "width": 37.5,
+          "height": 8.333333333333332
+        }
       }
     ],
     "qChildListDef": {
@@ -664,12 +678,12 @@
           },
           {
             "value": "SECOND",
-            "label": "Uptake full vaccination",
+            "label": "Uptake primary course",
             "cId": "PBsYdgh"
           },
           {
             "value": "ADD",
-            "label": "Uptake of an additional vaccine dose",
+            "label": "Uptake of a booster/additional vaccine dose",
             "cId": "LjcwBPW"
           },
           {
@@ -679,12 +693,20 @@
           },
           {
             "value": "NSECOND",
-            "label": "Number of full vaccinations administered",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='Number of primary courses administered'"
+              }
+            },
             "cId": "jKuzmjE"
           },
           {
             "value": "NADD",
-            "label": "Number of additional doses administered",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='Number of booster/additional doses administered'"
+              }
+            },
             "cId": "WteJZb"
           },
           {
@@ -1028,6 +1050,68 @@
         "qMetaDef": {}
       },
       "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "DWSJTM",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "qChildListDef": {
+          "qData": {
+            "info": "/qInfo"
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "visualization": "filterpane"
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "MsfZSp",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "Age Group"
+                ],
+                "qFieldLabels": [
+                  "Age Group"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "Age Group",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
     }
   ]
 }

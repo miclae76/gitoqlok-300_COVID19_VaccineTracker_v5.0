@@ -269,23 +269,17 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccination'",
             "autoSort": true,
-            "cId": "NfjLet",
+            "cId": "bawfhN",
             "numFormatFromTemplate": true,
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
+              "qNumFormat": {},
+              "isCustomFormatted": false
             }
           },
           "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
             "qExpression": {}
           },
           "qAttributeExpressions": [],
@@ -316,25 +310,28 @@
           }
         },
         {
+          "qLibraryId": "wcuTWE",
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "if(round(aggr(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek]))\r\n\t, [Vaccination.YearWeek]), 0.0001) >= 0.0001,\n\ndual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])))  \n)",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Additional dose'",
+            "qLabelExpression": "='Booster/additional dose'",
             "autoSort": true,
             "cId": "bYWbMB",
             "numFormatFromTemplate": true,
-            "isCustomFormatted": true
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -465,7 +462,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among people aged 80 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among people aged 70 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among people aged 60 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among people aged 50 years and above in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among healthcare workers in ',\n'Median cumulative uptake (%) of at least one vaccine dose, full vaccination and additional vaccine dose among LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "='Median cumulative uptake (%) of at least one vaccine dose, primary course and a booster/additional vaccine dose among '&\r\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

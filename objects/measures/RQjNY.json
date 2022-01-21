@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "TG - # Full vaccination",
+    "qLabel": "TG - # Primary course",
     "qDef": "sum([Dose2nd_$(v_ViewTargetGroup)])\r\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccinations'",
+    "qLabelExpression": "='Primary courses'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
@@ -24,7 +24,7 @@
     }
   },
   "qMetaDef": {
-    "title": "TG - # Full vaccination",
+    "title": "TG - # Primary course",
     "description": "",
     "tags": []
   }

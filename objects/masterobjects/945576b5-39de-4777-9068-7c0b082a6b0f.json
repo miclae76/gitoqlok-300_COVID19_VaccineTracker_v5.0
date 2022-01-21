@@ -516,7 +516,7 @@
         "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '\r\n&pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake2nd_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd_AGE )>0\"}>} [Member State])\n)\n& ' reporting countries, ')\n&'by reporting week '&v_Text_Preliminary"
       }
     },
-    "footnote": "",
+    "footnote": "See available data in the side table on vaccine uptake by age group",
     "disableNavMenu": false,
     "showDetails": false,
     "showDisclaimer": true,

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "wcuTWE",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG - Booster/additional dose",
+    "qDef": "if(round(aggr(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek]))\r\n\t, [Vaccination.YearWeek]), 0.0001) >= 0.0001,\n\ndual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])))  \n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Booster/additional dose'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "TG - Booster/additional dose",
+    "description": "",
+    "tags": []
+  }
+}

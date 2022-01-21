@@ -82,8 +82,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "TG - # Full vaccination",
-              "qLabelExpression": "='Full vaccinations'",
+              "qLabelExpression": "='Primary courses'",
               "cId": "NTjMK",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -104,8 +103,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "TG - # Dose Additional",
-              "qLabelExpression": "='Additional doses'",
+              "qLabelExpression": "='Booster/additional doses'",
               "cId": "fQRep",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -241,7 +239,7 @@
         },
         {
           "qDef": {
-            "qLabel": "TG - # Full vaccination",
+            "qLabel": "TG - # Primary course",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
@@ -253,7 +251,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccinations'",
+            "qLabelExpression": "='Primary courses'",
             "autoSort": true,
             "numFormatFromTemplate": true,
             "cId": "BTmzSJ",
@@ -334,7 +332,7 @@
         },
         {
           "qDef": {
-            "qLabel": "TG - # Dose Additional",
+            "qLabel": "TG - # Booster/Additional",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseAdd_$(v_ViewTargetGroup)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
@@ -346,7 +344,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Additional doses'",
+            "qLabelExpression": "='Booster/additional doses'",
             "autoSort": true,
             "cId": "fHpsyP",
             "numFormatFromTemplate": true,

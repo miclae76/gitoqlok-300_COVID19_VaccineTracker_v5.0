@@ -3155,7 +3155,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Total doses distributed to ' & if(EU27_EEA='EU27', 'Member State', 'country')",
+                "qLabelExpression": "='Total doses distributed '//to ' & if(EU27_EEA='EU27', 'Member State', 'country')",
                 "autoSort": true,
                 "cId": "ZnYKP",
                 "numFormatFromTemplate": false,
@@ -3235,7 +3235,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "v_ViewDistribution<>'ADM'"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3262,7 +3264,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Doses administered",
+                "qLabel": "Total doses administered",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "sum({<[Member State]=, DosesDistributed=-{\"<Missing>\"}>} DoseTotal_ALLP)",
@@ -3278,7 +3280,6 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "'Total dose administered'",
                 "autoSort": true,
                 "cId": "hmrFuJ",
                 "numFormatFromTemplate": false,
@@ -3358,7 +3359,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "v_ViewDistribution='ADM'"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3481,7 +3484,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "0"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3587,7 +3592,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Total number of vaccine doses distributed and administered in the ' & v_EU27_EEA_Title & ' and proportion of vaccine doses administered (%) as of '&date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=Pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n'Total number of vaccine doses distributed in the ',\n'Total number of vaccine doses distributed in the ',\n'Total number of vaccine doses administered in the '\n)\n& v_EU27_EEA_Title \n& ' as of '&date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",

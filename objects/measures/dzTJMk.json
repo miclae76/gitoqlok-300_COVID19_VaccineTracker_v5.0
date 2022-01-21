@@ -4,7 +4,7 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "=TG - At least one dose",
+    "qLabel": "TG - At least one dose",
     "qDef": "dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Uptake1st_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Uptake1st_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [Uptake1st_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])))  \n\n",
     "qGrouping": "N",
     "qExpressions": [],
@@ -27,7 +27,7 @@
     }
   },
   "qMetaDef": {
-    "title": "=TG - At least one dose",
+    "title": "TG - At least one dose",
     "description": "",
     "tags": []
   }

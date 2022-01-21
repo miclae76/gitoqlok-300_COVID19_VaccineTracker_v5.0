@@ -61,14 +61,14 @@
         "name": "FxUJst",
         "type": "container",
         "col": 12,
-        "row": 2,
-        "colspan": 7,
-        "rowspan": 6,
+        "row": 3,
+        "colspan": 12,
+        "rowspan": 5,
         "bounds": {
-          "y": 16.666666666666664,
+          "y": 25,
           "x": 50,
-          "width": 29.166666666666668,
-          "height": 50
+          "width": 50,
+          "height": 41.66666666666667
         }
       },
       {
@@ -181,20 +181,6 @@
           "x": 29.166666666666668,
           "width": 20.833333333333336,
           "height": 33.33333333333333
-        }
-      },
-      {
-        "name": "Jpbt",
-        "type": "linechart",
-        "col": 19,
-        "row": 2,
-        "colspan": 5,
-        "rowspan": 6,
-        "bounds": {
-          "y": 16.666666666666664,
-          "x": 79.16666666666666,
-          "width": 20.833333333333336,
-          "height": 50
         }
       }
     ],
@@ -447,7 +433,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses' ) & ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
+                      "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. primary courses administered', 'N. boostet/additional doses' )\r\n& ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
                       "cId": "NTDUyu",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -563,7 +549,7 @@
               },
               "label": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses administered' ) \r\n& ' in '  &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50',  'HCW', 'LTCF'), '80+', '70+', '60+', '50+', 'HCW', 'LTCF')"
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. primary courses administered', 'N. booster/additional doses administered' ) \r\n& ' in '  &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50',  'HCW', 'LTCF'), '80+', '70+', '60+', '50+', 'HCW', 'LTCF')"
                 }
               },
               "slider": [
@@ -1047,7 +1033,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of an additional vaccine dose among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of the primary course among ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among ',\n'Number of first doses administered to ',\n'Number of primary courses administered to ',\n'Number of booster/additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  if(GetSelectedCount([Member State])=1, [Member State],  v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -1059,7 +1045,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 831111774,
+          "hashCode": -883799456,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1108,7 +1094,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. full vaccinations administered', 'N. additional doses' ) & ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
+                        "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'N. first doses administered', 'N. primary courses administered', 'N. boostet/additional doses' )\r\n& ' in '  &pick(match(v_ViewTargetGroup, '50', '60', '70', '80', 'HCW', 'LTCF'), '50+', '60+', '70+', '80+', 'HCW', 'LTCF')",
                         "cId": "NTDUyu",
                         "autoSort": true,
                         "id": "customTooltipExpression",
@@ -1425,12 +1411,12 @@
           },
           {
             "value": "SECOND",
-            "label": "Uptake full vaccination",
+            "label": "Uptake of the primary course",
             "cId": "PBsYdgh"
           },
           {
             "value": "ADD",
-            "label": "Uptake of an additional vaccine dose",
+            "label": "Uptake of a booster/additional vaccine dose",
             "cId": "mxfjNf"
           },
           {
@@ -1440,12 +1426,12 @@
           },
           {
             "value": "NSECOND",
-            "label": "Number of full vaccinations administered",
+            "label": "Number of primary courses administered",
             "cId": "jKuzmjE"
           },
           {
             "value": "NADD",
-            "label": "Number of additional doses administered",
+            "label": "Number of booster/additional doses administered",
             "cId": "UsgeJp"
           }
         ],
@@ -2342,7 +2328,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of an additional vaccine dose among ',\n'Number of first doses administered to ',\n'Number of full vaccinations administered ',\n'Number of additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of the primary course among ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among ',\n'Number of first doses administered to ',\n'Number of primary courses administered to ',\n'Number of booster/additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n&  v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -2977,7 +2963,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Nbr. of first doses'",
+                "qLabelExpression": "='N. First doses'",
                 "autoSort": true,
                 "cId": "eKpdfWT",
                 "numFormatFromTemplate": true,
@@ -3095,7 +3081,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Nbr. of full vaccinations'",
+                "qLabelExpression": "='N. Primary courses'",
                 "autoSort": true,
                 "cId": "pzDWnjJ",
                 "numFormatFromTemplate": true,
@@ -3213,7 +3199,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Nbr. of additional doses'",
+                "qLabelExpression": "='N. Booster/additional doses'",
                 "autoSort": true,
                 "numFormatFromTemplate": true,
                 "textAlign": {
@@ -3473,7 +3459,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Cumulative nbr. of full vaccinations'",
+                "qLabelExpression": "='Cumulative nbr. of primary courses'",
                 "autoSort": true,
                 "numFormatFromTemplate": true,
                 "textAlign": {
@@ -3549,7 +3535,7 @@
                     "base": {
                       "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
                       "qLibraryId": "",
-                      "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
+                      "qLabelExpression": "='Cumulative nbr. of primary courses'"
                     }
                   }
                 ],
@@ -3557,7 +3543,7 @@
                 "base": {
                   "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
                   "qLibraryId": "",
-                  "qLabelExpression": "='Cumulative nbr. of full vaccinations'"
+                  "qLabelExpression": "='Cumulative nbr. of primary courses'"
                 }
               },
               "qSortBy": {
@@ -3614,7 +3600,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Cumulative nbr. of additonal doses'",
+                "qLabelExpression": "='Cumulative nbr. of booster/additonal doses'",
                 "autoSort": true,
                 "numFormatFromTemplate": true,
                 "textAlign": {
@@ -3689,7 +3675,7 @@
                     "base": {
                       "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
                       "qLibraryId": "",
-                      "qLabelExpression": "='Cumulative nbr. of additonal doses'"
+                      "qLabelExpression": "='Cumulative nbr. of booster/additonal doses'"
                     }
                   }
                 ],
@@ -3697,7 +3683,7 @@
                 "base": {
                   "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
                   "qLibraryId": "",
-                  "qLabelExpression": "='Cumulative nbr. of additonal doses'"
+                  "qLabelExpression": "='Cumulative nbr. of booster/additonal doses'"
                 },
                 "cId": "DsAagD"
               },
@@ -4078,7 +4064,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses, full vaccinations and additional vaccine dose administered to people aged 80 years and above in ',\n' of first doses, full vaccinations and additional vaccine dose administered to people aged 70 years and above in ',\n' of first doses, full vaccinations and additional vaccine dose administered to people aged 60 years and above in ',\n' of first doses, full vaccinations and additional vaccine dose administered to people aged 50 years and above in ',\n' of first doses, full vaccinations and additional vaccine dose administered to healthcare workers in ',\n' of first doses, full vaccinations and additional vaccine dose administered to LTCF residents in ',\n),\npick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ', \nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of full vaccination' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of an additional vaccine dose' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ',\n\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of full vaccination' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of an additional vaccine dose' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\n\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among LTCF residents in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of full vaccination' , 'Cumulative vaccine uptake') & ' among LTCF residents in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of an additional vaccine dose' , 'Cumulative vaccine uptake') & ' among LTCF residents in ',\n) \n)\n& if(GetSelectedCount([Member State])=1, [Member State] & ' vs. ' & v_EU27_EEA_Title,   v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n "
+            "qExpr": "=if(left('$(v_ViewUptake)', 1 ) = 'N', \r\nif(v_WeeklyOrCumul = 'CUM', 'Cumulative number', 'Number') &\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n' of first doses, primary courses and booster/additional vaccine dose administered to people aged 80 years and above in ',\n' of first doses, primary courses and booster/additional vaccine dose administered to people aged 70 years and above in ',\n' of first doses, primary courses and booster/additional vaccine dose administered to people aged 60 years and above in ',\n' of first doses, primary courses and booster/additional vaccine dose administered to people aged 50 years and above in ',\n' of first doses, primary courses and booster/additional vaccine dose administered to healthcare workers in ',\n' of first doses, primary courses and booster/additional vaccine dose administered to LTCF residents in ',\n),\npick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ', \nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of the primary course' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of a booster/additional vaccine dose' , 'Cumulative vaccine uptake') & ' among people aged 60 years and above in ',\n\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of the primary course' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of a booster/additional vaccine dose' , 'Cumulative vaccine uptake') & ' among healthcare workers in ',\n\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of at least one vaccine dose' , 'Cumulative vaccine uptake') & ' among LTCF residents in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of the primary course ', 'Cumulative vaccine uptake') & ' among LTCF residents in ',\nif(GetSelectedCount([Member State])=1,  'Cumulative uptake (%) of a booster/additional vaccine dose' , 'Cumulative vaccine uptake') & ' among LTCF residents in ',\n) \n)\n& if(GetSelectedCount([Member State])=1, [Member State] & ' vs. ' & v_EU27_EEA_Title,   v_EU27_EEA_Title)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n "
           }
         },
         "subtitle": {
@@ -4342,7 +4328,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake full vaccination (%) - ',\n'Uptake of additional doses (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of full vaccinations - ',\n'Cumulative number of additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Uptake at least one dose (%) - ',\n'Uptake of the primary course (%) - ',\n'Uptake of a booster/additional doses (%) - ',\n'Cumulative number of first doses - ',\n'Cumulative number of primary courses - ',\n'Cumulative number of booster/additional doses - '\n)\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)\n",
                 "autoSort": true,
                 "cId": "PUFxgj",
                 "numFormatFromTemplate": false,
@@ -4457,7 +4443,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND','NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of full vaccination among ',\n'Cumulative uptake (%) of additional vaccine dose among ',\n'Cumulative number of first doses among ',\n'Cumulative number of full vaccinations among ',\n'Cumulative number of additional doses among ',\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "= pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'), \r\n'Cumulative uptake (%) of at least one vaccine dose among ',\n'Cumulative uptake (%) of the primary course among ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among ',\n'Number of first doses administered to ',\n'Number of primary courses administered to ',\n'Number of booster/additional doses administered '\n)\n&\npick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in '\n)\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -4901,17 +4887,6 @@
           },
           "quarantine": {}
         }
-      },
-      "qChildren": []
-    },
-    {
-      "qProperty": {
-        "qInfo": {
-          "qId": "Jpbt",
-          "qType": "linechart"
-        },
-        "qExtendsId": "949b1b4a-a7e0-4889-9dba-15b4c17f54cf",
-        "qMetaDef": {}
       },
       "qChildren": []
     }

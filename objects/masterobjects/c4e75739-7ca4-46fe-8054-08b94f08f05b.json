@@ -85,7 +85,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "Full vaccination",
+              "qLabel": "Primary courses",
               "cId": "nMHLNr",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -102,7 +102,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "Additional doses",
+              "qLabel": "Booster/additional doses",
               "cId": "hLRjwJt",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -126,7 +126,7 @@
               "isCustomFormatted": false
             },
             {
-              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose1st_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\r\n+\nRangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\n+\nRangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseUnk_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+              "qExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose1st_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\r\n+\nRangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([Dose2nd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\n+\nRangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseUnk_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))\n+\nRangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum([DoseAdd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -246,7 +246,7 @@
         },
         {
           "qDef": {
-            "qLabel": "ALL - # Full vaccination",
+            "qLabel": "ALL - # Primary courses",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({<[_Flag_WeekToReport]={1}>}[Dose2nd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
@@ -258,7 +258,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccinations'",
+            "qLabelExpression": "='Primary courses'",
             "autoSort": true,
             "numFormatFromTemplate": true,
             "cId": "BTmzSJ",
@@ -339,6 +339,94 @@
         },
         {
           "qDef": {
+            "qLabel": "ALL - # Booster/Additional doses",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Booster/additional doses'",
+            "autoSort": true,
+            "cId": "brkjn",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
+            "modifiers": [
+              {
+                "type": "accumulation",
+                "disabled": false,
+                "accumulationDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "fullAccumulation": true,
+                "steps": 6,
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "base": {
+                  "qDef": "",
+                  "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+                  "qLabel": "",
+                  "qLabelExpression": ""
+                }
+              }
+            ],
+            "base": {
+              "qDef": "",
+              "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+              "qLabel": "",
+              "qLabelExpression": ""
+            },
+            "isCustomFormatted": false,
+            "coloring": {
+              "baseColor": {
+                "color": "#c0d236",
+                "index": 4
+              }
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
             "qLabel": "ALL - # Doses Unknown",
             "qTags": [],
             "qGrouping": "N",
@@ -387,94 +475,6 @@
               "baseColor": {
                 "color": "#b1b1b1",
                 "index": -1
-              }
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qDef": {
-            "qLabel": "ALL - # Additional doses",
-            "qTags": [],
-            "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
-            },
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "qLabelExpression": "='Additional doses'",
-            "autoSort": true,
-            "cId": "brkjn",
-            "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
-            },
-            "modifiers": [
-              {
-                "type": "accumulation",
-                "disabled": false,
-                "accumulationDimension": 0,
-                "crossAllDimensions": false,
-                "showExcludedValues": true,
-                "fullAccumulation": true,
-                "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "",
-                  "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
-                  "qLabel": "",
-                  "qLabelExpression": ""
-                }
-              }
-            ],
-            "base": {
-              "qDef": "",
-              "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
-              "qLabel": "",
-              "qLabelExpression": ""
-            },
-            "isCustomFormatted": false,
-            "coloring": {
-              "baseColor": {
-                "color": "#c0d236",
-                "index": 4
               }
             }
           },

@@ -426,7 +426,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake of the primary course (%)',\n'Uptake of a booster/additional dose (%)',\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -532,7 +532,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD',  'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1147,7 +1147,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabel": "Uptake full vaccination",
+                      "qLabel": "Uptake of the primary course",
                       "cId": "kSZKWT",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -1167,7 +1167,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabel": "Uptake of additional dose",
+                      "qLabel": "Uptake of a booster/additional dose",
                       "cId": "PBjGx",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -1484,7 +1484,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1496,7 +1496,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 1533126790,
+          "hashCode": -1998944133,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1714,7 +1714,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabel": "Uptake full vaccination",
+                        "qLabel": "Uptake of the primary course",
                         "cId": "kSZKWT",
                         "autoSort": true,
                         "id": "customTooltipExpression",
@@ -1734,7 +1734,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabel": "Uptake of additional dose",
+                        "qLabel": "Uptake of a booster/additional dose",
                         "cId": "PBjGx",
                         "autoSort": true,
                         "id": "customTooltipExpression",
@@ -3738,7 +3738,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake of the primary course (%)',\n'Uptake of a booster/additional dose (%)',\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -3897,7 +3897,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",

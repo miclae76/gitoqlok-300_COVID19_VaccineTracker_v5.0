@@ -85,6 +85,35 @@ WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0 OR (match(Vaccination.TargetGroup, '1_Age60+') and [Vaccination.CountryCode] = 'DE')) // DE reported 60+ but not disaggregated groups 60-70-80+
 ;
 
+trace **** coucou ****;
+Concatenate(QVD_Vaccination)
+LOAD
+    Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    Vaccination.DoseFirst	,
+    Vaccination.DoseFirstRefused,
+    Vaccination.DoseUnk AS Vaccination.DoseUnk,
+    Vaccination.Region,
+     Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    [Vaccination.Denominator] ,
+    Vaccination.DoseSecond,
+    Vaccination.DoseAdditional1;
+LOAD *
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0)
+;
+
+
 //50+
 /*
 Concatenate(QVD_Vaccination)

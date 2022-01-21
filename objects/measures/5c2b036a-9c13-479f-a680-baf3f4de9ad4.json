@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - # Additional doses",
+    "qLabel": "ALL - # Booster/Additional doses",
     "qDef": "sum({<[_Flag_WeekToReport]={1}>}[DoseAdd_$(=SW_ADULTS_POP)])",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Additional doses'",
+    "qLabelExpression": "='Booster/additional doses'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -27,7 +27,7 @@
     "isCustomFormatted": false
   },
   "qMetaDef": {
-    "title": "ALL - # Additional doses",
+    "title": "ALL - # Booster/Additional doses",
     "description": "",
     "tags": []
   }

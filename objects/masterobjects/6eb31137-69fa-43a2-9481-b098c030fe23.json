@@ -113,7 +113,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. full vaccination', 'Nbr. additional doses')",
+              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. booster/additional doses')",
               "cId": "CKepXSj",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -152,7 +152,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')",
+            "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. booster/additional doses')",
             "autoSort": true,
             "cId": "WPqXh",
             "numFormatFromTemplate": true
@@ -254,7 +254,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in ',\n'Number of additional doses administered by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of full vaccinations administered by age group in ',\n'Number of additional doses administered by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of primary courses administered by age group in ',\n'Number of booster/additional doses administered by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Number of first doses administered by age group in ',\n'Number of primary courses administered by age group in ',\n'Number of booster/additional doses administered by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n\n\n"
       }
     },
     "subtitle": {
