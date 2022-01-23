@@ -72,31 +72,7 @@
     ]
   },
   {
-    "qName": "Dose1st_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
     "qName": "Dose1st_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_80",
     "qTags": [
       "$numeric",
       "$integer"
@@ -156,31 +132,7 @@
     ]
   },
   {
-    "qName": "Dose2nd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
     "qName": "Dose2nd_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_80",
     "qTags": [
       "$numeric",
       "$integer"
@@ -240,31 +192,7 @@
     ]
   },
   {
-    "qName": "DoseAdd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
     "qName": "DoseAdd_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_80",
     "qTags": [
       "$numeric",
       "$integer"
@@ -531,31 +459,7 @@
     ]
   },
   {
-    "qName": "DoseUnk_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
     "qName": "DoseUnk_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_80",
     "qTags": [
       "$numeric",
       "$integer"
@@ -866,20 +770,6 @@
     ]
   },
   {
-    "qName": "Uptake1st_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "Uptake1st_60",
     "qTags": [
       "$numeric"
@@ -890,38 +780,6 @@
   },
   {
     "qName": "Uptake1st_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_80",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_80_Cumul",
     "qTags": [
       "$numeric"
     ],
@@ -1020,20 +878,6 @@
     ]
   },
   {
-    "qName": "Uptake2nd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "Uptake2nd_60",
     "qTags": [
       "$numeric"
@@ -1044,38 +888,6 @@
   },
   {
     "qName": "Uptake2nd_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_80",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_80_Cumul",
     "qTags": [
       "$numeric"
     ],
@@ -1282,20 +1094,6 @@
     ]
   },
   {
-    "qName": "UptakeTotal_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "UptakeTotal_60",
     "qTags": [
       "$numeric"
@@ -1306,38 +1104,6 @@
   },
   {
     "qName": "UptakeTotal_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_80",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_80_Cumul",
     "qTags": [
       "$numeric"
     ],

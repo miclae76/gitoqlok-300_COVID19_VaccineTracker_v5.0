@@ -30,25 +30,25 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_ALLP_Cumul,
     
     // Dose administered and Uptake for people age 80+
-    if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake1st_Cumul)				as Uptake1st_80_Cumul,
-    if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_80_Cumul,
-    if ( Vaccination.TargetGroup = 'Age80+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_80_Cumul, 
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake1st_Cumul)				as Uptake1st_80_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_80_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_80_Cumul, 
     
-        // Dose administered and Uptake for people age 80+
-    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake1st_Cumul)				as Uptake1st_70_Cumul,
-    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_70_Cumul,
-    if ( Vaccination.TargetGroup = 'Age70+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_70_Cumul, 
+//         // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake1st_Cumul)				as Uptake1st_70_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_70_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_70_Cumul, 
     
         // Dose administered and Uptake for people age 80+
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st_Cumul)				as Uptake1st_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd_Cumul)				as UptakeAdd_60_Cumul,
-    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_60_Cumul, 
+     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)			as UptakeTotal_60_Cumul, 
     
-        // Dose administered and Uptake for people age 80+
-    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st_Cumul)				as Uptake1st_50_Cumul,
-    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_50_Cumul,
-    if ( Vaccination.TargetGroup = 'Age50+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_50_Cumul, 
+//         // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st_Cumul)				as Uptake1st_50_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_50_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_50_Cumul, 
     
     
     // Doses adminsitered and Uptake for Target Group = Health Care Workers

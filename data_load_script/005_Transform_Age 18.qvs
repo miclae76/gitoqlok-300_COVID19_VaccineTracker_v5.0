@@ -65,7 +65,7 @@ and not Exists(hasBelow18, Vaccination.ReportingCountry)
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
-    Vaccination.NumberDosesReceived,
+//    Vaccination.NumberDosesReceived,
     Vaccination.Region,
     Vaccination.Vaccine,
     Vaccination.Population,
