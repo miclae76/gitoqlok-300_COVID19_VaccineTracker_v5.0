@@ -6,7 +6,7 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=if([_Flag_FilterAgeBelow18] =0, [Age Group])"
+      "=if('$(v_ViewUptake)'='ADD' or '$(v_ViewUptake)'='NADD', _DimAgeGroupFilteredBooster,  _DimAgeGroupFiltered)"
     ],
     "qFieldLabels": [
       "Age Group  <18 filtered out"
@@ -14,7 +14,7 @@
     "qLabelExpression": "='Age Group'",
     "title": "Age Group  <18 filtered out",
     "coloring": {
-      "changeHash": "0.4884351405098397",
+      "changeHash": "0.33612405716624183",
       "colorMapRef": "8446682d-42cb-4c6c-98a1-71468cacfa48"
     }
   },

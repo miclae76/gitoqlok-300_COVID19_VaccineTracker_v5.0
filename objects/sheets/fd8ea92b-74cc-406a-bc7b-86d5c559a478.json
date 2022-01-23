@@ -584,7 +584,18 @@
             "cId": "CsyqpBP",
             "condition": {
               "qStringExpression": {
-                "qExpr": "left('$(v_ViewUptake)', 1)<>'N'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and right('$(v_ViewUptake)',3) <> 'ADD'"
+              }
+            }
+          },
+          {
+            "refId": "ef07e39b-0782-43c3-b7b5-50334a5b2f5b",
+            "label": "AGE - Progress Uptake Booster (%)",
+            "isMaster": true,
+            "cId": "txpquvM",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and right('$(v_ViewUptake)',3) = 'ADD'"
               }
             }
           },
@@ -648,6 +659,18 @@
             "visualization": "barchart"
           },
           "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "6fba7848-5e3e-4eb1-816e-8a44efcd1899",
+              "qType": "barchart"
+            },
+            "qExtendsId": "ef07e39b-0782-43c3-b7b5-50334a5b2f5b",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
         }
       ]
     },
@@ -678,7 +701,7 @@
           },
           {
             "value": "SECOND",
-            "label": "Uptake primary course",
+            "label": "Uptake of the primary course",
             "cId": "PBsYdgh"
           },
           {

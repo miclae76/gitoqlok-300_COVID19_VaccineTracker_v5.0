@@ -165,7 +165,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "'$(v_ViewUptake)' = 'ADD'"
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -280,7 +280,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "'$(v_ViewUptake)' = 'ADD'"
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -395,7 +395,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "'$(v_ViewUptake)' = 'ADD'"
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -510,7 +510,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "'$(v_ViewUptake)' <> 'ADD'"
+              "qv": "'$(v_ViewUptake)' <> 'ADD' and '$(v_ViewUptake)' <> 'NADD'"
             },
             "qMsg": {}
           },

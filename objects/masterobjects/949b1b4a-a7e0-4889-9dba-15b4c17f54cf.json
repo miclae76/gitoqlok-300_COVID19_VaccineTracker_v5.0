@@ -95,6 +95,22 @@
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "wcuTWE",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "JmQgNL",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
             }
           ],
           "qAttributeDimensions": [],
@@ -284,13 +300,62 @@
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
           }
+        },
+        {
+          "qLibraryId": "wcuTWE",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "ZrfdjRL",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
         }
       ],
       "qInterColumnSortOrder": [
         0,
         1,
         2,
-        3
+        3,
+        4
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,

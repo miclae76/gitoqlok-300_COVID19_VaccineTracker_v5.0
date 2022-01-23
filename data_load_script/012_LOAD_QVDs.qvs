@@ -44,6 +44,18 @@ LOAD * INLINE [
 //     Age80+,	60+ years
 
 
+PopGroup:
+LOAD * INLINE [
+"Population Group"
+Total population
+Adults 18+
+Adults 60+
+Children below 18
+Healthcare workers
+LTCF residents
+];
+
+
 Map_Population_Group:
 Mapping 
 LOAD * INLINE [
@@ -365,9 +377,10 @@ LOAD
     // Doses Exported
     // Doses Distributed to Countries (absolute and per 100 Inhabitants)
     if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported > 0,   
-    	 Vaccination.NumberDosesExported, '<Missing>')								as DoseExported
+    	 Vaccination.NumberDosesExported, '<Missing>')								as DoseExported,
    
-   
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) AS [_DimAgeGroupFiltered],
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+', 'AgeUNK' ) > 0, null(), [Age Group]) AS [_DimAgeGroupFilteredBooster], 
 ;
 LOAD 
 	*,
@@ -411,7 +424,8 @@ LOAD
     Vaccination.DoseUnk,
     Vaccination.Region,
     Vaccination.TargetGroup,
-    if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17') > 0, 1, 0) AS _Flag_FilterAgeBelow18,
+//    if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) = 0, null(), Vaccination.TargetGroup) AS [_DimAgeGroupFiltered],
+ //   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+' ) > 0, null(), Vaccination.TargetGroup) AS [_DimAgeGroupFilteredBooster],
     Vaccination.Vaccine													as [Vaccine Code],
     ApplyMap('Map_Vaccine_ShortName', Vaccination.Vaccine, 'Unknown')	as Vaccine,
     ApplyMap('Map_Vaccine_FullName', Vaccination.Vaccine, 'Unknown')	as VaccineFullName,
@@ -431,7 +445,7 @@ drop table temp_vaccination;
 
 
 
-Concatenate(Vaccination)
-LOAD 'Bulgaria' as [Member State], 'BG' AS [Vaccination.CountryCode] AutoGenerate 1;
-Concatenate(Vaccination)
-LOAD 'Liechtenstein' as [Member State], 'LI' AS [Vaccination.CountryCode] AutoGenerate 1;
+// Concatenate(Vaccination)
+// LOAD 'Bulgaria' as [Member State], 'BG' AS [Vaccination.CountryCode] AutoGenerate 1;
+// Concatenate(Vaccination)
+// LOAD 'Liechtenstein' as [Member State], 'LI' AS [Vaccination.CountryCode] AutoGenerate 1;

@@ -945,7 +945,7 @@
               },
               "label": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered',\n\n)"
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered',\n\n)"
                 }
               },
               "slider": [
@@ -2848,7 +2848,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of an additional vaccine dose among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose among  '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of of the primary course among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of a booster/additional vaccine dose among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among  '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -3327,7 +3327,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake full vaccination",
+                "qLabel": "Uptake of the primary course",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "SUM({<[Member State]=>} [Uptake2nd_$(=SW_ADULTS_POP)])",
@@ -3554,7 +3554,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and full vaccination ' & SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+            "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and the primary course ' & SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
           }
         },
         "subtitle": "Bubble size : Total dose administered",

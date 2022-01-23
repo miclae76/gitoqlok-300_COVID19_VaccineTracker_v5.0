@@ -273,7 +273,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of full vaccinations administered by age group in  ',\n'Cumulative number of additional doses administered by age group in  ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of full vaccinations administered by age group in  ',\n'Cumulative number of additional doses administered by age group in  ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in  ',\n'Cumulative number of booster/additional doses administered by age group in  ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in  ',\n'Cumulative number of booster/additional doses administered by age group in  ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {

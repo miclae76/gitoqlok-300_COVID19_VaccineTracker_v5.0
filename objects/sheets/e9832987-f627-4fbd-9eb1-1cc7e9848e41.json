@@ -1078,6 +1078,7 @@
             "qFieldLabels": [],
             "qSortCriterias": [
               {
+                "qSortByLoadOrder": 1,
                 "qExpression": {
                   "qv": " "
                 }
@@ -2261,7 +2262,7 @@
                   "=[Vaccination.YearWeek]"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Week"
                 ],
                 "qSortCriterias": [
                   {
@@ -2445,7 +2446,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake full vaccination",
+                "qLabel": "Uptake of the primary course",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul])), '0.0%')",
@@ -2558,7 +2559,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake of an additional dose",
+                "qLabel": "Uptake of a booster/additional dose",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd_Cumul])), '0.0%')",
@@ -3398,11 +3399,14 @@
               }
             },
             {
-              "qLibraryId": "hfptEf",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
+                "qFieldDefs": [
+                  "_DimAgeGroupFilteredBooster"
+                ],
+                "qFieldLabels": [
+                  "_DimAgeGroupFilteredBooster"
+                ],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -3414,9 +3418,10 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "GJKpThZ",
+                "cId": "Fcjwpg",
                 "othersLabel": "Others"
               },
+              "qNullSuppression": true,
               "qOtherTotalSpec": {
                 "qOtherMode": "OTHER_OFF",
                 "qOtherCounted": {

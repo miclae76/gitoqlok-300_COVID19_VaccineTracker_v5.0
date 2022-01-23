@@ -664,9 +664,11 @@
     "qName": "Population Group",
     "qTags": [
       "$ascii",
-      "$text"
+      "$text",
+      "$key"
     ],
     "qSrcTables": [
+      "PopGroup",
       "Vaccination"
     ]
   },
@@ -1577,10 +1579,20 @@
     ]
   },
   {
-    "qName": "_Flag_FilterAgeBelow18",
+    "qName": "_DimAgeGroupFiltered",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "_DimAgeGroupFilteredBooster",
+    "qTags": [
+      "$ascii",
+      "$text"
     ],
     "qSrcTables": [
       "Vaccination"

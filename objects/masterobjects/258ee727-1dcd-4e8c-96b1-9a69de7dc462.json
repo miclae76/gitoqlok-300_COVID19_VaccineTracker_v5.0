@@ -60,11 +60,14 @@
           "$$hashKey": "object:70823"
         },
         {
-          "qLibraryId": "hfptEf",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "_DimAgeGroupFilteredBooster"
+            ],
+            "qFieldLabels": [
+              "_DimAgeGroupFilteredBooster"
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -76,9 +79,10 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "BmzUvbe",
+            "cId": "qhEZSu",
             "othersLabel": "Others"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
