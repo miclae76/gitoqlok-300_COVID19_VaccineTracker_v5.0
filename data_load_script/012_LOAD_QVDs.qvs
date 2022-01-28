@@ -313,7 +313,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st)					as Uptake1st_60,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd)					as Uptake2nd_60,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd)					as UptakeAdd_60,
-    if ( Vaccination.TargetGroup = 'Age60+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_60,
+    if ( Vaccination.TargetGroup = 'Age60+', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_60,
     if ( Vaccination.TargetGroup = 'Age60+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_60,
     
     if ( Vaccination.TargetGroup = 'Age60+', [Vaccination.DoseAdd])				    as DoseAdd_60,

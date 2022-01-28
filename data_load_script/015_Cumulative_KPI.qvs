@@ -45,7 +45,10 @@ LOAD
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st_Cumul)				as Uptake1st_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_60_Cumul,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd_Cumul)				as UptakeAdd_60_Cumul,
-     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)			as UptakeTotal_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseFirst_Cumul)				as DoseFirst_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseSecond_Cumul)				as DoseSecond_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseAdd_Cumul)					as DoseAdd_60_Cumul,
     
 //         // Dose administered and Uptake for people age 80+
 //     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st_Cumul)				as Uptake1st_50_Cumul,
@@ -61,6 +64,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_HCW_Cumul, 
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseFirst_Cumul)					as DoseFirst_HCW_Cumul, 
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseSecond_Cumul)					as DoseSecond_HCW_Cumul, 
+     if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseAdd_Cumul)					as DoseAdd_HCW_Cumul, 
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Denominator)					    as Denominator_HCW,
     
     // Doses adminsitered and Uptake for Target Group = LTCF
@@ -70,7 +74,8 @@ LOAD
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseTotal_Cumul)					as DoseTotal_LTCF_Cumul,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_LTCF_Cumul, 
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseFirst_Cumul)					as DoseFirst_LTCF_Cumul, 
-    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseSecond_Cumul)				as DoseSecond_LTCF_Cumul, 
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseSecond_Cumul)				as DoseSecond_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseAdd_Cumul)					as DoseAdd_LTCF_Cumul,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Denominator)					    as Denominator_LTCF,
     
     // Doses adminsitered and Uptake for Target Group Age
@@ -129,7 +134,7 @@ LOAD
     
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
-        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseFirst_Cumul') , Vaccination.DoseFirst), alt(Vaccination.DoseFirst, 0)) as Vaccination.DoseFirst_Cumul,
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseFirst_Cumul') , IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst)), alt(Vaccination.DoseFirst, 0)) as Vaccination.DoseFirst_Cumul,
    
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
@@ -147,7 +152,8 @@ LOAD
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
         AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseTotal_Cumul') , Vaccination.DoseTotal), alt(Vaccination.DoseTotal, 0)) as Vaccination.DoseTotal_Cumul,
     
-   [Vaccination.Denominator]
+   [Vaccination.Denominator],
+   Vaccination.VaccineTreatmentDoses
   
 Resident Vaccination  
 order by 
@@ -161,7 +167,8 @@ drop fields
     Vaccination.TargetGroup,
     Vaccine,
     Vaccination.YearWeek,
-    Vaccination.Denominator from Vaccination_Cumulative;
+    Vaccination.Denominator,
+    Vaccination.VaccineTreatmentDoses from Vaccination_Cumulative;
     
   
 

@@ -222,6 +222,16 @@
     ]
   },
   {
+    "qName": "DoseAdd_60_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "DoseAdd_AGE",
     "qTags": [
       "$numeric",
@@ -292,6 +302,16 @@
     ]
   },
   {
+    "qName": "DoseAdd_HCW_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "DoseAdd_LTCF",
     "qTags": [
       "$numeric",
@@ -302,10 +322,30 @@
     ]
   },
   {
+    "qName": "DoseAdd_LTCF_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
     "qName": "DoseExported",
     "qTags": [],
     "qSrcTables": [
       "Vaccination"
+    ]
+  },
+  {
+    "qName": "DoseFirst_60_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
     ]
   },
   {
@@ -340,6 +380,16 @@
   },
   {
     "qName": "DoseFirst_LTCF_Cumul",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "DoseSecond_60_Cumul",
     "qTags": [
       "$numeric",
       "$integer"

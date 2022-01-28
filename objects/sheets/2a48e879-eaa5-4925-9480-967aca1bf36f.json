@@ -3302,10 +3302,9 @@
             },
             {
               "qDef": {
-                "qLabel": "TG - # Dose First administered",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qDef": "pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseFirst_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseFirst_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseFirst_LTCF_Cumul)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -3384,26 +3383,16 @@
                 "modifiers": [
                   {
                     "type": "accumulation",
-                    "disabled": false,
+                    "disabled": true,
                     "accumulationDimension": 0,
                     "crossAllDimensions": false,
                     "showExcludedValues": true,
                     "fullAccumulation": true,
                     "steps": 6,
-                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                    "base": {
-                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
-                      "qLibraryId": "",
-                      "qLabelExpression": "='Cumulative nbr. of first doses'"
-                    }
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseFirst_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseFirst_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseFirst_LTCF_Cumul)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
                   }
                 ],
-                "isCustomFormatted": false,
-                "base": {
-                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose1st_80),\n    sum({1} Dose1st_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose1st_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose1st_LTCF)\n)",
-                  "qLibraryId": "",
-                  "qLabelExpression": "='Cumulative nbr. of first doses'"
-                }
+                "isCustomFormatted": false
               },
               "qSortBy": {
                 "qSortByNumeric": -1,
@@ -3443,10 +3432,9 @@
             },
             {
               "qDef": {
-                "qLabel": "TG - # Full vaccination",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qDef": "pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseSecond_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseSecond_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseSecond_LTCF_Cumul)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -3525,26 +3513,16 @@
                 "modifiers": [
                   {
                     "type": "accumulation",
-                    "disabled": false,
+                    "disabled": true,
                     "accumulationDimension": 0,
                     "crossAllDimensions": false,
                     "showExcludedValues": true,
                     "fullAccumulation": true,
                     "steps": 6,
-                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                    "base": {
-                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
-                      "qLibraryId": "",
-                      "qLabelExpression": "='Cumulative nbr. of primary courses'"
-                    }
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseSecond_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseSecond_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseSecond_LTCF_Cumul)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
                   }
                 ],
-                "isCustomFormatted": false,
-                "base": {
-                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} Dose2nd_80),\n    sum({1} Dose2nd_70),\n    sum({1} Dose1st_60),\n    sum({1} Dose2nd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} Dose2nd_LTCF)\n)",
-                  "qLibraryId": "",
-                  "qLabelExpression": "='Cumulative nbr. of primary courses'"
-                }
+                "isCustomFormatted": false
               },
               "qSortBy": {
                 "qSortByNumeric": -1,
@@ -3584,10 +3562,9 @@
             },
             {
               "qDef": {
-                "qLabel": "TG - # Full vaccination",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+                "qDef": "pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseAdd_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF_Cumul)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -3665,26 +3642,16 @@
                 "modifiers": [
                   {
                     "type": "accumulation",
-                    "disabled": false,
+                    "disabled": true,
                     "accumulationDimension": 0,
                     "crossAllDimensions": false,
                     "showExcludedValues": true,
                     "fullAccumulation": true,
                     "steps": 6,
-                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                    "base": {
-                      "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
-                      "qLibraryId": "",
-                      "qLabelExpression": "='Cumulative nbr. of booster/additonal doses'"
-                    }
+                    "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\r\n    sum({1} DoseAdd_60_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW_Cumul),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF_Cumul)\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
                   }
                 ],
                 "isCustomFormatted": false,
-                "base": {
-                  "qDef": "pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\r\n\tsum({1} DoseAdd_80),\n    sum({1} DoseAdd_70),\n    sum({1} DoseAdd_60),\n    sum({1} DoseAdd_50),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_HCW),\n    sum({1<[Member State]=-{\"Iceland\"}>} DoseAdd_LTCF)\n)",
-                  "qLibraryId": "",
-                  "qLabelExpression": "='Cumulative nbr. of booster/additonal doses'"
-                },
                 "cId": "DsAagD"
               },
               "qSortBy": {
@@ -3962,15 +3929,15 @@
             0,
             1,
             2,
+            3,
             4,
             5,
+            6,
             7,
             8,
             9,
-            6,
-            11,
             10,
-            3
+            11
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
