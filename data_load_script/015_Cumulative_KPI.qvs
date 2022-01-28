@@ -10,6 +10,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseFirst_Cumul)					as DoseFirst_ALL_Cumul, 
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseSecond_Cumul)					as DoseSecond_ALL_Cumul, 
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseAdd_Cumul)					as DoseAdd_ALL_Cumul,
+     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseUnk_ALL_Cumul,
    
     //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALL_Cumul,
@@ -21,6 +22,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseFirst_Cumul)					as DoseFirst_ALLP_Cumul, 
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseSecond_Cumul)				as DoseSecond_ALLP_Cumul, 
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseAdd_Cumul)					as DoseAdd_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseUnk_Cumul)					as DoseUnk_ALLP_Cumul,
    
     //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALLP_Cumul,
@@ -77,6 +79,10 @@ LOAD
     if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.UptakeAdd_Cumul)							as UptakeAdd_AGE_Cumul,
     if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseTotal_Cumul)							as DoseTotal_AGE_Cumul,
     if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.UptakeTotal_Cumul)						as UptakeTotal_AGE_Cumul, 
+
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseFirst_Cumul)					as Dose1st_AGE_Cumul, 
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseSecond_Cumul)					as Dose2nd_AGE_Cumul, 
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseAdd_Cumul)					as DoseAdd_AGE_Cumul,
     
     
     // Doses Distributed to Countries (absolute and per 100 Inhabitants)

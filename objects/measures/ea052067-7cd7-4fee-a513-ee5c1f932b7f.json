@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "ea052067-7cd7-4fee-a513-ee5c1f932b7f",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Doses Unknown CUM",
+    "qDef": "sum( [DoseUnk_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Unspecified doses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#b1b1b1",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # Doses Unknown CUM",
+    "description": "",
+    "tags": []
+  }
+}

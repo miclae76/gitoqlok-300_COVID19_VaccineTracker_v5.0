@@ -1,11 +1,11 @@
 {
   "qInfo": {
-    "qId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+    "qId": "b7120974-4d98-4113-872a-fe6b7ceae7f5",
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - # Booster/Additional doses",
-    "qDef": "sum({<[_Flag_WeekToReport]={1}>} [DoseAdd_$(=SW_ADULTS_POP)])",
+    "qLabel": "ALL - # Booster/Additional doses CUM",
+    "qDef": "sum( [DoseAdd_$(=SW_ADULTS_POP)_Cumul])",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
@@ -27,7 +27,7 @@
     "isCustomFormatted": false
   },
   "qMetaDef": {
-    "title": "ALL - # Booster/Additional doses",
+    "title": "ALL - # Booster/Additional doses CUM",
     "description": "",
     "tags": []
   }
