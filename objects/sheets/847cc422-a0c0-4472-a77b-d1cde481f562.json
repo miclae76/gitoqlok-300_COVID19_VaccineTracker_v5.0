@@ -4035,7 +4035,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n  SUM({1} DosesDistributed),\n  SUM({1} DosesDistributed),\n  SUM({1} DoseTotal_ALLP)\n)",
+                "qDef": "pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DosesDistributed),\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DosesDistributed),\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DoseTotal_ALLP)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
