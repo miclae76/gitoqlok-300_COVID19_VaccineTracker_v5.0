@@ -24,10 +24,11 @@
             ],
             "qSortCriterias": [
               {
-                "qSortByNumeric": -1,
-                "qSortByAscii": -1,
+                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
-                "qExpression": {}
+                "qExpression": {
+                  "qv": "=[Vaccination.YearWeekNUM]"
+                }
               }
             ],
             "qNumberPresentations": [],
@@ -5368,7 +5369,7 @@
     ],
     "visualization": "table",
     "search": {
-      "sorting": "auto"
+      "sorting": "inherit"
     },
     "totals": {
       "show": false,

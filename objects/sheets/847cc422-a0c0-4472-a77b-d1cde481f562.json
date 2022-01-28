@@ -3870,7 +3870,11 @@
           },
           {
             "refId": "2f2c02fd-b7a9-407d-85b0-8cf72ff3298a",
-            "label": "DOSES - N. Vaccine doses distributed",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='DOSES - N. Vaccine doses distributed'"
+              }
+            },
             "isMaster": true,
             "cId": "JjMsKPJ",
             "condition": {

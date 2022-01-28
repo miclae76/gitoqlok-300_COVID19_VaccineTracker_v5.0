@@ -20,7 +20,7 @@ Cumulative vaccine uptake, 80, Cumulative uptake of the primary course among hea
 Cumulative vaccine uptake, 90, Cumulative uptake of the primary course among residents of long-term care facilities*
 Cumulative vaccine uptake, 100, Cumulative uptake of a booster/additional dose in the total population
 Cumulative vaccine uptake, 110, Cumulative uptake of a booster/additional dose among adults aged 18 years and above
-Cumulative vaccine uptake, 120, Cumulative uptake of a booster/additional dose among persons aged 60 years and above
+Cumulative vaccine uptake, 120, Cumulative uptake of a booster/additional dose among persons aged 60 years and above*
 ];
 
 //Total doses distributed and administered, 15, Total number of vaccine doses exported

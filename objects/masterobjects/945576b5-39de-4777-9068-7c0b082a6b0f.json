@@ -69,7 +69,7 @@
               "id": "customTooltipTitle"
             },
             {
-              "qLibraryId": "BDhJgJ",
+              "qLibraryId": "BEhxck",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -79,7 +79,39 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "cId": "cTVwn",
+              "cId": "NMQZUw",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "JwwTut",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "bPBGZ",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "yBdqt",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "ALhGf",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -128,6 +160,22 @@
                 "qThou": ","
               },
               "cId": "sycA",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "WcqrMRe",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false

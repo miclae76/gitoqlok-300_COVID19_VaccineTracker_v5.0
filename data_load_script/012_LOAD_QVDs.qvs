@@ -379,8 +379,10 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported > 0,   
     	 Vaccination.NumberDosesExported, '<Missing>')								as DoseExported,
    
-   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) AS [_DimAgeGroupFiltered],
-   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+', 'AgeUNK' ) > 0, null(), [Age Group]) AS [_DimAgeGroupFilteredBooster], 
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) 	AS [_DimAgeGroupFiltered],
+   if(match(Vaccination.TargetGroup, 'Age<18', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) 										AS [_DimAgeGroupFiltered_N],
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+', 'AgeUNK' ) > 0, null(), [Age Group]) 							AS [_DimAgeGroupFilteredBooster]
+
 ;
 LOAD 
 	*,

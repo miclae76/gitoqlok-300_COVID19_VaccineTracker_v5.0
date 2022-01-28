@@ -21,7 +21,6 @@
             "qFieldLabels": [],
             "qSortCriterias": [
               {
-                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -29,7 +28,7 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": true,
+            "autoSort": false,
             "cId": "hTZNSP",
             "othersLabel": "Others"
           },
@@ -147,44 +146,18 @@
         {
           "qLibraryId": "unaTD",
           "qDef": {
-            "qLabel": "TG - # Dose First administered",
             "qTags": [],
             "qGrouping": "N",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='First dose'",
             "autoSort": true,
-            "cId": "LpDxjgm",
+            "cId": "qcprjN",
             "numFormatFromTemplate": true,
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 10,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": "",
-                "qThou": ""
-              },
+              "qNumFormat": {},
               "isCustomFormatted": false
-            },
-            "modifiers": [
-              {
-                "type": "accumulation",
-                "disabled": true,
-                "accumulationDimension": 0,
-                "crossAllDimensions": false,
-                "showExcludedValues": true,
-                "fullAccumulation": true,
-                "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({1} Dose1st_ALL)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
-              }
-            ]
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -216,8 +189,7 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          },
-          "$$hashKey": "object:56641"
+          }
         },
         {
           "qLibraryId": "JppxR",

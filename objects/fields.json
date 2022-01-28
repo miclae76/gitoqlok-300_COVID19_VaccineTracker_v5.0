@@ -1599,6 +1599,16 @@
     ]
   },
   {
+    "qName": "_DimAgeGroupFiltered_N",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
     "qName": "_Flag_WeekToReport",
     "qTags": [
       "$numeric",

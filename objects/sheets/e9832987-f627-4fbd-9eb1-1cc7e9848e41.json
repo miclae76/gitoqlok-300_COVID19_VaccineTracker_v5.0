@@ -1168,7 +1168,7 @@
           "varMultiselectSep": "|",
           "variableNameForKey": "",
           "variableOptionsForKeys": "",
-          "allwaysOneSelectedDefault": "",
+          "allwaysOneSelectedDefault": "Total population",
           "selectOnlyOne": false,
           "selectAlsoThese": "",
           "selectDefaultsOnlyOnce": false,

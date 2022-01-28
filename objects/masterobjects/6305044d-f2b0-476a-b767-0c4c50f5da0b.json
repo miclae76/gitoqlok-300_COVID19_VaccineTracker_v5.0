@@ -93,8 +93,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Full vaccination",
-              "qLabelExpression": "='Full vaccinations'",
+              "qLabelExpression": "='Primary courses'",
               "cId": "xjqvvH",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -111,8 +110,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Additional doses",
-              "qLabelExpression": "='Additional doses'",
+              "qLabelExpression": "='Booster/additional doses'",
               "cId": "VKrnjf",
               "autoSort": true,
               "id": "customTooltipExpression",

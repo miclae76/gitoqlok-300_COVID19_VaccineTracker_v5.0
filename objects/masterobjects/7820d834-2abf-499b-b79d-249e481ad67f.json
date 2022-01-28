@@ -1,11 +1,11 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "6eb31137-69fa-43a2-9481-b098c030fe23",
+      "qId": "7820d834-2abf-499b-b79d-249e481ad67f",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "AGE - N. Administered",
+      "title": "AGE - N.  Booster Administered",
       "description": "",
       "tags": [
         "AGE",
@@ -65,7 +65,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "_DimAgeGroupFiltered_N"
+              "_DimAgeGroupFilteredBooster"
             ],
             "qFieldLabels": [
               "Age group"
@@ -81,7 +81,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "Pvujcb",
+            "cId": "NkNrj",
             "othersLabel": "Others"
           },
           "qNullSuppression": true,

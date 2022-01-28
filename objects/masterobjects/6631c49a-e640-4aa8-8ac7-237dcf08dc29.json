@@ -59,11 +59,14 @@
           }
         },
         {
-          "qLibraryId": "hfptEf",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "_DimAgeGroupFiltered_N"
+            ],
+            "qFieldLabels": [
+              "Age group"
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -75,9 +78,10 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "GJKpThZ",
+            "cId": "UvACU",
             "othersLabel": "Others"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
