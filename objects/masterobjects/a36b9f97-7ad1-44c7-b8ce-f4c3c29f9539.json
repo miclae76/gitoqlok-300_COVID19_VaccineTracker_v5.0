@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Dropdown Uptake View",
-      "description": "",
       "tags": []
     },
     "showTitles": false,
@@ -102,7 +101,8 @@
       "installer": "QlikExtensionBundler",
       "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

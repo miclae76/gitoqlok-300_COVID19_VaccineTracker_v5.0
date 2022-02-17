@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "ALL - Uptake One Country",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -482,11 +481,9 @@
       "auto": false,
       "spacing": 0
     },
-    "version": "1.5.0",
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

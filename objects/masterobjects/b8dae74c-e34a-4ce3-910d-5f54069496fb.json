@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Cum uptake (%) Target_Total",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -569,12 +568,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

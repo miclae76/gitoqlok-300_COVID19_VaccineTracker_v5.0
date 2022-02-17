@@ -2833,14 +2833,7 @@
           "wrapTextInCells": true
         },
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {
-            "conditionalShowHide": {
-              "dimensions": {}
-            }
-          }
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "list",

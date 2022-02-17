@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - Table Uptake Age Group",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -1589,34 +1588,9 @@
       "wrapTextInHeaders": true,
       "wrapTextInCells": true
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": ""
-      },
-      "quarantine": {
-        "pivotInterColSortOrder": [
-          0,
-          1
-        ],
-        "noOfLeftDims": {
-          "qHyperCubeDef.qNoOfLeftDims": 1
-        },
-        "pivotTableColumnWidths": {
-          "qHyperCubeDef.columnWidths": []
-        },
-        "conditionalShowHide": {
-          "measures": {},
-          "dimensions": {}
-        },
-        "totalMode": {
-          "dimensions": {
-            "nLXpGzL": "TOTAL_OFF",
-            "ATjgYZe": "TOTAL_OFF"
-          }
-        }
-      }
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

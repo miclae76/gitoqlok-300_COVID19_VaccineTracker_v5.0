@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - Progress N. Doses",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -620,23 +619,13 @@
       "data": {}
     },
     "visualization": "barchart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "barGrouping": {
       "grouping": "stacked"
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "nullMode": "gap",
-        "masterVersion": 0.96
-      },
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

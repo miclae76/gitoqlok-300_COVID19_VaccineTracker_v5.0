@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Country Profile - Uptake <18 or LTCF",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -546,12 +545,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
-    "qLayoutExclude": {
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

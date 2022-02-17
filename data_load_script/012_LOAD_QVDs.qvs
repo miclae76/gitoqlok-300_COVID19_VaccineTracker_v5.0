@@ -78,6 +78,7 @@ LOAD * INLINE [
 	COM, Comirnaty 
     JANSS, Janssen
 	MOD, Spikevax
+    NVXD, Nuvaxovid
 	SIN, Sinovac
 	SPU, Sputnik V
 	UNK, Unknown
@@ -92,6 +93,7 @@ LOAD * INLINE [
 	COM, Comirnaty – Pfizer/BioNTech
     JANSS, Janssen    
 	MOD, Spikevax – Moderna
+    NVXD, Nuvaxovid - Novavax
 	SIN, Coronavac – Sinovac
 	SPU, Sputnik V - Gamaleya Research Institute
 	UNK, Unknown
@@ -108,6 +110,7 @@ LOAD * INLINE [
 	COM,2
     JANSS,1    
 	MOD,2
+    NVXD,2
 	SIN,2
 	SPU,2
 	UNK,2
@@ -270,7 +273,7 @@ LOAD
     // Dose administered and Uptake for ALL (population > 17 years old)
 	if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseTotal)					as DoseTotal_ALL,
     if ( Vaccination.TargetGroup = 'ALL',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_ALL,
-    if ( Vaccination.TargetGroup = 'ALL', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', 	Vaccination.DoseSecond)	as Dose2nd_ALL,
     if ( Vaccination.TargetGroup = 'ALL', [Vaccination.DoseAdd])				    as DoseAdd_ALL,
     if ( Vaccination.TargetGroup = 'ALL', [Vaccination.DoseUnk])					as DoseUnk_ALL,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st)					as Uptake1st_ALL,
@@ -282,7 +285,7 @@ LOAD
         // Dose administered and Uptake for ALL (population > 17 years old)
 	if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseTotal)					as DoseTotal_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_ALLP,
-    if ( Vaccination.TargetGroup = 'ALLP', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseSecond)	as Dose2nd_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP', [Vaccination.DoseUnk])					as DoseUnk_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP', [Vaccination.DoseAdd])				    as DoseAdd_ALLP,
     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st)					as Uptake1st_ALLP,
@@ -335,7 +338,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd)					as Uptake2nd_HCW,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeAdd)					as UptakeAdd_HCW,
     if ( Vaccination.TargetGroup = 'HCW',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_HCW,
-    if ( Vaccination.TargetGroup = 'HCW',  IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))		as Dose2nd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW',  Vaccination.DoseSecond)		as Dose2nd_HCW,
     if ( Vaccination.TargetGroup = 'HCW', [Vaccination.DoseAdd])				    as DoseAdd_HCW,
     if ( Vaccination.TargetGroup = 'HCW', [Vaccination.DoseUnk])					as DoseUnk_HCW,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseTotal)					as DoseTotal_HCW,
@@ -346,7 +349,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake2nd)					as Uptake2nd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeAdd)					as UptakeAdd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))				as Dose1st_LTCF,
-    if ( Vaccination.TargetGroup = 'LTCF',  IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseSecond)	as Dose2nd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseAdd])				    as DoseAdd_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseUnk])					as DoseUnk_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseTotal)					as DoseTotal_LTCF,
@@ -358,7 +361,7 @@ LOAD
     if ( IsNull([Age Group]) = 0, Vaccination.Uptake2nd)							as Uptake2nd_AGE,
      if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd)							as UptakeAdd_AGE,
     if ( IsNull([Age Group]) = 0,  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_AGE,
-    if ( IsNull([Age Group]) = 0, IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))				as Dose2nd_AGE,
+    if ( IsNull([Age Group]) = 0, [Vaccination.DoseSecond])							as Dose2nd_AGE,
     if (IsNull([Age Group]) = 0, [Vaccination.DoseAdd])							    as DoseAdd_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.DoseUnk)								as DoseUnk_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.DoseTotal)							as DoseTotal_AGE,
@@ -393,17 +396,25 @@ LOAD
     
 // 20210416
 //	rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk)	as Vaccination.DoseTotal,
-	IF(Vaccination.VaccineTreatmentDoses = 1
-   	,rangesum( Vaccination.DoseFirst, Vaccination.DoseUnk, Vaccination.DoseAdd)
-	,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) as Vaccination.DoseTotal, // count(only once for single dose vaccine
+
+	//20220202 - v5.2.2 - take into account also second doses of JANSSEN
+  //  rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) as Vaccination.DoseTotal,
+    IF(Vaccination.VaccineTreatmentDoses = 1 
+    ,rangesum(Vaccination.DoseSecond,  Vaccination.DoseUnk, Vaccination.DoseAdd)
+    ,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) as Vaccination.DoseTotal, // count(only once for single dose vaccine
 
 
     // Uptake = #Doses divided by denominator given by Target Group
     rangesum( Vaccination.DoseFirst) / Vaccination.Denominator 														as Vaccination.Uptake1st,
-    rangesum( IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond) ) / Vaccination.Denominator	
-    																												as Vaccination.Uptake2nd,    // must count single dose vaccine as full vaccinated
+    // 20220202 - v5.2.2 - Uptake full - Jannssen Single dose count full vax + use of 2nd doses of Janssen to complete first doses
+    rangesum(  Vaccination.DoseSecond ) / Vaccination.Denominator	  
+    																												as Vaccination.Uptake2nd,    
+   // rangesum( IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond) ) / Vaccination.Denominator	
+   // 																												as Vaccination.Uptake2nd,    // must count single dose vaccine as full vaccinated
     rangesum( Vaccination.DoseAdd) / Vaccination.Denominator 														as Vaccination.UptakeAdd,                                                                                                               
-    rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk) / Vaccination.Denominator 		as Vaccination.UptakeTotal,
+    IF(Vaccination.VaccineTreatmentDoses = 1 
+    ,rangesum(Vaccination.DoseSecond,  Vaccination.DoseUnk, Vaccination.DoseAdd)
+    ,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) / Vaccination.Denominator 		as Vaccination.UptakeTotal,
 
 ;   
 LOAD  
@@ -421,7 +432,7 @@ LOAD
     [Vaccination.NumberDosesExported],
     [Vaccination.DoseFirstRefused],
     Vaccination.DoseFirst,
-    Vaccination.DoseSecond,  
+    Vaccination.DoseSecond,
     Vaccination.DoseAdditional1 AS Vaccination.DoseAdd,
     Vaccination.DoseUnk,
     Vaccination.Region,

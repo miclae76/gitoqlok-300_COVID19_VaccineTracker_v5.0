@@ -134,11 +134,11 @@ LOAD
     
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
-        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseFirst_Cumul') , IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst)), alt(Vaccination.DoseFirst, 0)) as Vaccination.DoseFirst_Cumul,
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseFirst_Cumul') , [Vaccination.DoseFirst]), alt(Vaccination.DoseFirst, 0)) as Vaccination.DoseFirst_Cumul,
    
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
-        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseSecond_Cumul') , Vaccination.DoseSecond), alt(Vaccination.DoseSecond, 0)) as Vaccination.DoseSecond_Cumul,
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseSecond_Cumul') , [Vaccination.DoseSecond]), alt(Vaccination.DoseSecond, 0)) as Vaccination.DoseSecond_Cumul,
    
    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
     	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 

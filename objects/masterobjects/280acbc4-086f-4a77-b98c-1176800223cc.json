@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Table Uptake  Current",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -278,7 +277,8 @@
       "wrapTextInCells": true
     },
     "visualization": "table",
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

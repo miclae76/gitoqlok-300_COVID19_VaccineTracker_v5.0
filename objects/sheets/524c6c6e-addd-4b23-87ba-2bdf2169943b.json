@@ -1679,43 +1679,7 @@
           "wrapTextInHeaders": true,
           "wrapTextInCells": true
         },
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": "",
-            "showMiniChartForContinuousAxis": false
-          },
-          "quarantine": {
-            "pivotInterColSortOrder": [
-              0,
-              1,
-              -1
-            ],
-            "noOfLeftDims": {
-              "qHyperCubeDef.qNoOfLeftDims": 2
-            },
-            "pivotTableColumnWidths": {
-              "qHyperCubeDef.columnWidths": [
-                [
-                  784
-                ],
-                [
-                  null,
-                  null
-                ]
-              ]
-            },
-            "conditionalShowHide": {
-              "measures": {},
-              "dimensions": {}
-            },
-            "totalMode": {
-              "dimensions": {
-                "hnkmyB": "TOTAL_OFF",
-                "qBLd": "TOTAL_OFF"
-              }
-            }
-          }
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     },
@@ -4146,35 +4110,7 @@
           "wrapTextInHeaders": true,
           "wrapTextInCells": true
         },
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": ""
-          },
-          "quarantine": {
-            "pivotInterColSortOrder": [
-              0,
-              1,
-              2
-            ],
-            "noOfLeftDims": {
-              "qHyperCubeDef.qNoOfLeftDims": 1
-            },
-            "pivotTableColumnWidths": {
-              "qHyperCubeDef.columnWidths": []
-            },
-            "conditionalShowHide": {
-              "measures": {},
-              "dimensions": {}
-            },
-            "totalMode": {
-              "dimensions": {
-                "cKxJT": "TOTAL_EXPR",
-                "FjgMDd": "TOTAL_OFF",
-                "Vhrbm": "TOTAL_OFF"
-              }
-            }
-          }
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     }
