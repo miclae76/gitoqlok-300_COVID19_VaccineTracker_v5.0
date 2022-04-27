@@ -1,0 +1,1448 @@
+///$tab Main
+//
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='DD-MM-YY';
+SET TimestampFormat='DD-MM-YY h:mm:ss[.fff] TT';
+
+// 20201208   0=Monday, 6=Sunday
+//SET FirstWeekDay=6;
+SET FirstWeekDay=6;
+
+
+SET BrokenWeeks=0;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+//SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+//Set HidePrefix 	= '%';
+// Set HidePrefix = 'Sel_';
+
+NullAsValue URL_Plan, URL_Rollout;
+Set NullValue 	= '';
+//
+$(Must_Include=lib://QData\0_Generic\01_Config\Generic_Paths.txt);    
+$(Must_Include=lib://QData\0_Generic\01_Config\Qlik_Include_MasterCalendar.txt);
+$(Must_Include=lib://QData\2_Projects\22_CoronaVirus\01_Config\22_CoronaVirus_Paths.txt);    // OJO
+//
+
+// including project configuration file
+// Let vProject= '22_CoronaVirus';
+// Let vProjectFolder=vG_Projects&'\'&vProject&'\01_Config\'&vProject&'_Paths.txt';
+// $(Must_Include=$(vG_Connection)$(vProjectFolder));   
+//	
+    
+// used to differenciate the load of QVDs, some QVDs are loaded when it's a public version some are only loaded when it is a restricted version
+Let vAppName = DocumentTitle();
+//
+// end
+///$tab VERSION NOTES
+/********************* VERSION NOTES  ***********************************************************************
+Version 5.2.5 - Set DosesReceived to 0 for AgeUNK (EL and IS) - Section 005_Transform_Age<18
+Version 5.2.4 - Add new vaccine NVXD
+Version 5.2.3 - Fix Uptake > 100% in Uptake Map Legend
+Version 5.2.2.- Fix 2nd dose of Janssen = DoseFirst + DoseSecond (to combine with data prep made in app 200_ !)
+Version 5.2.1 - Fix Cum. N Doses in data table view
+Version 5.2 - Increase Booster visibility + Renaming Full vax to primary course(s) + small adjsutements for some country/target groups
+Version 5.1 - Uptake additional doses for 60+
+Version 5.0 - Beta Realease - Remove 60-69, 70-79, 80+ and replace by 60+
+Version 5.0 - Alpha Realease - Additional doses + Doses exported + Target Groups 70+, 60+, 50+
+Version 4.2 - Patch 20211013 - Cap Uptake to 100% in Age groups - Table Views
+Version 4.2 - Patch 20211007 - Issue with DK Age<18 group
+Version 4.2 - Patch 20211005 - Add AgeUNK to doses All Population - Uptake capped 100% Country Profile
+Version 4.2 - Summary Key Figures and data completeness
+Version 4.1 - include age group <18 years
+*************************************************************************************************************/
+///$tab 005_Transform_Age<18
+Mapping_Pop_0_17:
+Mapping
+LOAD
+    CountryCode,
+//    ReportYear,
+//    AgeGroup,
+    Population_00_17
+FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_Population_00_17.qvd
+(qvd);
+
+
+
+Filter_Country_has_below_18:
+NoConcatenate
+LOAD distinct [Vaccination.ReportingCountry] as hasBelow18
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK' ;//and [Vaccination.ReportingCountry] <> 'LT';
+
+
+// build mapping tables with percentage of young population (0-17 years)
+Map_Population_0_17:
+Mapping 
+LOAD distinct [Vaccination.ReportingCountry],  ApplyMap('Mapping_Pop_0_17',  [Vaccination.ReportingCountry]) AS Vaccination.Population_0_17
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+;//AND match(Vaccination.TargetGroup, 'Age<18') = 1;
+
+// add average value for other countries that do not report for Age<18
+/*
+Mapping
+LOAD distinct [Vaccination.ReportingCountry] , 0.1782 AS Vaccination.Percent_Population_0_17
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 0 ;
+*/
+
+// Consolidate targe groups < 18 disagregated into unique class Age<18
+temp_QVD_Aggregate_Age_below_18:
+LOAD
+    0 AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    0 AS [Vaccination.NumberDosesReceived],  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
+    Vaccination.Region,
+    'Age<18' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+   // sum(Vaccination.Population * ApplyMap('Map_Percentage_0_17', Vaccination.ReportingCountry )) AS Vaccination.Denominator, // if reported in more detail 0-4,  5-9... override denominator to the Age<18 values
+    ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17') > 0
+and not Exists(hasBelow18, Vaccination.ReportingCountry)
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+//    Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+
+
+temp_QVD_Age_Below_18_Only:
+NoConcatenate
+LOAD     
+	Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    0 AS [Vaccination.NumberDosesReceived],  // only reported on target group ALLVaccination.NumberDosesReceived,
+    Vaccination.DoseFirst,
+    Vaccination.DoseSecond,
+    Vaccination.DoseFirstRefused,
+    Vaccination.DoseUnk,
+    Vaccination.Region,
+    Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Denominator_ALL,
+    Vaccination.Percent_Population_0_17,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+  //  Vaccination.Denominator,
+  //  Vaccination.Population * ApplyMap('Map_Percentage_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+   ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+    [Vaccination.DoseAdditional1]
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK';
+
+
+
+
+Concatenate (temp_QVD_Age_Below_18_Only)
+LOAD * Resident temp_QVD_Aggregate_Age_below_18;
+
+drop table temp_QVD_Aggregate_Age_below_18;
+
+
+
+
+
+
+// Create virtual target group ALLP = total population = ALL + Age<18
+temp_QVD_Vaccination:
+NoConcatenate
+LOAD * 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18') = 0;
+
+Concatenate (temp_QVD_Vaccination)
+LOAD * Resident temp_QVD_Age_Below_18_Only;
+/*
+Map_AgeBelow18:
+Mapping LOAD distinct [Vaccination.ReportingCountry] , Vaccination.Denominator 		//create country map for wich we ahve below 18 
+Resident temp_QVD_Age_Below_18_Only;
+*/
+
+
+
+
+
+
+QVD_Vaccination:
+LOAD
+    'VIRTUAL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  	//sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(if(Vaccination.TargetGroup = 'AgeUNK', 0 , Vaccination.NumberDosesReceived )) AS Vaccination.NumberDosesReceived,
+    sum(Vaccination.NumberDosesExported) AS Vaccination.NumberDosesExported,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    'ALLP' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    sum(if(Vaccination.TargetGroup = 'ALL', Vaccination.Denominator +  ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ), 0)  ) AS [Vaccination.Denominator],
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  //  Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+LOAD *
+Resident temp_QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'ALL', 'Age<18', 'AgeUNK') > 0;
+
+
+Concatenate(QVD_Vaccination)
+LOAD * 
+Resident temp_QVD_Age_Below_18_Only;
+drop Table temp_QVD_Age_Below_18_Only;
+   
+    
+Concatenate(QVD_Vaccination)
+LOAD * 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18')=0;
+//AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')=0;
+
+
+drop table temp_QVD_Vaccination;
+///$tab 010_Transform_50+_60+_70+
+// Populate 50+, 60+, 70+ target groups base on accumulation of age groups 
+// QVD_Vaccination:
+// LOAD * Inline [Vaccination.RecordId];
+
+//70+
+/*
+Concatenate(QVD_Vaccination)
+LOAD
+    'VIRTUAL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    'Age70+' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  //  Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+LOAD *
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age70_79', 'Age80+') > 0
+;
+*/
+
+
+
+//60+
+Concatenate(QVD_Vaccination)
+LOAD
+    'VIRTUAL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    'Age60+' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  //  Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+LOAD *
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0 OR (match(Vaccination.TargetGroup, '1_Age60+') and [Vaccination.CountryCode] = 'DE')) // DE reported 60+ but not disaggregated groups 60-70-80+
+;
+
+
+trace **** coucou ****;
+// Concatenate(QVD_Vaccination)
+// LOAD
+//     Vaccination.RecordId,
+//     Vaccination.DateUsedForStatisticsISO,
+//     Vaccination.ReportingCountry,
+//     Vaccination.NumberDosesReceived,   
+//     Vaccination.DoseFirst	,
+//     Vaccination.DoseFirstRefused,
+//     Vaccination.DoseUnk AS Vaccination.DoseUnk,
+//     Vaccination.Region,
+//      Vaccination.TargetGroup,
+//     Vaccination.Vaccine,
+//     Vaccination.Population,
+//     Vaccination.CountryCode,
+//     Vaccination.LocationCode,
+//     Vaccination.Reload_Date,
+//     Vaccination.CountryName,
+//     //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+//     [Vaccination.Denominator] ,
+//     Vaccination.DoseSecond,
+//     Vaccination.DoseAdditional1;
+// LOAD *
+// FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+// WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+// AND (match(Vaccination.TargetGroup, 'Age60_69', 'Age70_79', 'Age80+') > 0)
+// ;
+
+
+//50+
+/*
+Concatenate(QVD_Vaccination)
+LOAD
+    'VIRTUAL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    //sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    'Age50+' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  //  Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+LOAD *
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age50_59', 'Age60_69', 'Age70_79', 'Age80+') > 0
+;
+*/
+///$tab 012_LOAD_QVDs
+/*
+Calendar_Vaccination:
+LOAD *, num(PurgeChar([Vaccination.YearWeek], '-W')) AS Vaccination.YearWeekNUM
+FROM [lib://QData/2_Projects/22_CoronaVirus/03_Qvd/032_Source/Calendar_Vaccination.qvd]
+(qvd);
+*/
+Tag Vaccination.YearWeek With '$date';
+
+
+//LOAD *
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Calendar_Vaccination.qvd (qvd);  
+
+Map_EU27_EEA:
+Mapping 
+LOAD * INLINE [
+    F1, F2
+    Iceland, EU/EEA
+    Liechtenstein, EU/EEA
+    Norway, EU/EEA
+];
+
+Map_Age_Group:
+Mapping 
+LOAD * INLINE [
+	F1, F2
+    Age<18, <18 years
+	Age0_4, 0-4 years
+	Age5_9, 5-9 years
+	Age10_14, 10-14 years
+	Age15_17, 15-17 years
+    Age18_24, 18-24 years
+    Age25_49, 25-49 years
+    Age50_59, 50-59 years
+    Age60+,	60+ years
+    Age60_69, 60-69 years
+    Age70_79, 70-79 years
+    Age80+, 80+ years
+];
+
+// 2021-10-28 - Remove and replace by Age60+ 
+//     Age60_69, 60-69 years
+//     Age70_79, 70-79 years
+//     Age80+,	60+ years
+
+
+PopGroup:
+LOAD * INLINE [
+"Population Group"
+Total population
+Adults 18+
+Adults 60+
+Children below 18
+Healthcare workers
+LTCF residents
+];
+
+
+Map_Population_Group:
+Mapping 
+LOAD * INLINE [
+	F1, F2
+    ALLP, Total population
+    ALL, Adults 18+
+    Age<18, Children below 18
+    Age60+,	Adults 60+
+    LTCF, LTCF residents
+   	HCW, Healthcare workers
+];
+
+
+Map_Vaccine_ShortName:
+Mapping 
+LOAD * INLINE [
+	Code, Label
+	AZ, Vaxzevria
+	BECNBG, Beijing CNBG
+	COM, Comirnaty 
+    JANSS, Janssen
+	MOD, Spikevax
+    NVXD, Nuvaxovid
+	SIN, Sinovac
+	SPU, Sputnik V
+	UNK, Unknown
+];
+
+Map_Vaccine_FullName:
+Mapping 
+LOAD * INLINE [
+	Code, Label
+	AZ, AZD1222 – Vaxzevria
+	BECNBG, Inactivated – Beijing CNBG
+	COM, Comirnaty – Pfizer/BioNTech
+    JANSS, Janssen    
+	MOD, Spikevax – Moderna
+    NVXD, Nuvaxovid - Novavax
+	SIN, Coronavac – Sinovac
+	SPU, Sputnik V - Gamaleya Research Institute
+	UNK, Unknown
+];
+
+
+// 20210416 - one or two doses depending on vaccine product
+Map_Vaccine_Doses:
+Mapping 
+LOAD * INLINE [
+	Code, Label
+	AZ,2
+	BECNBG,2
+	COM,2
+    JANSS,1    
+	MOD,2
+    NVXD,2
+	SIN,2
+	SPU,2
+	UNK,2
+];
+
+
+
+
+Last_ReportedWeek:
+LOAD
+   Vaccination.ReportingCountry, 
+   FirstSortedValue(distinct Vaccination.DateUsedForStatisticsISO, -num(MakeWeekDate(left(Vaccination.DateUsedForStatisticsISO, 4), right([Vaccination.DateUsedForStatisticsISO], 2)))) AS Vaccination.LastReportedWeek
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+group by 
+ Vaccination.ReportingCountry 
+;
+   
+  
+  
+  
+
+
+Last_Denominator:
+LOAD
+   Vaccination.ReportingCountry, 
+   Vaccination.TargetGroup, 
+   FirstSortedValue(distinct Vaccination.Denominator, -num(MakeWeekDate(left(Vaccination.DateUsedForStatisticsISO, 4), right([Vaccination.DateUsedForStatisticsISO], 2))), 2) AS Vaccination.LastDenominator
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region] 
+AND [Vaccination.Denominator] <> '<Missing>' 
+    and [Vaccination.Denominator] > 0 
+    and len(trim([Vaccination.Denominator]))>0 
+    and WildMatch([Vaccination.TargetGroup], '1_*', 'Age60+') = 0
+  //  and WildMatch([Vaccination.TargetGroup], '1_*', 'Age60_69', 'Age70_79', 'Age80+', 'Age60+') = 0			// excluded because of 60+ aggregation 
+  //  and match(Vaccination.ReportingCountry, 'SE', 'NO') = 0
+  //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'CY|Age*') = 0
+  //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SK|Age*') = 0
+  //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'IE|2021-W2*') = 0
+  //  and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SE|HCW*') = 0
+  // and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'BE|ALL') = 0
+group by 	
+	Vaccination.ReportingCountry, 
+    Vaccination.TargetGroup;
+ 
+// ensure for 60+ that we have the correct total denominator because sometimes discontinuity in underlying age groups/vaccines then step 009 might have underestimated denominators for 60+
+
+temp_FindDeno_60:
+LOAD distinct 
+   Vaccination.ReportingCountry, 
+   Vaccination.TargetGroup, 
+   [Vaccination.Denominator] AS Vaccination.LastDenominator_tmp
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region] 
+AND [Vaccination.Denominator] <> '<Missing>' 
+    and [Vaccination.Denominator] > 0 
+    and len(trim([Vaccination.Denominator]))>0 
+    and WildMatch([Vaccination.TargetGroup], 'Age60+')>0//, 'Age70_79', 'Age80+') > 0
+   // and (Vaccination.ReportingCountry &'|'& Vaccination.DateUsedForStatisticsISO = 'SE|2021-W37'
+   //      or Vaccination.ReportingCountry &'|'& Vaccination.DateUsedForStatisticsISO = 'NO|2021-W44')
+    ;
+
+Concatenate(Last_Denominator) 
+LOAD 
+	Vaccination.ReportingCountry, 
+    'Age60+' AS Vaccination.TargetGroup,
+    max(Vaccination.LastDenominator_tmp) AS [Vaccination.LastDenominator]
+resident temp_FindDeno_60
+GROUP by Vaccination.ReportingCountry;
+drop Table temp_FindDeno_60;
+
+
+// Cartesian Product to generate all the reported week for country that have not reported for the last available week 
+// then we can accumulate until max week
+temp_vaccination:
+LOAD distinct
+	Vaccination.ReportingCountry,
+    Vaccination.CountryName,
+    Vaccination.TargetGroup,
+    Vaccination.Vaccine 
+  //  Vaccination.Denominator
+   //if(Vaccination.ReportingCountry = 'DK' and Vaccination.TargetGroup = 'LTCF', 43467, [Vaccination.Denominator]) AS  [Vaccination.Denominator] // 20210409 - DK LTCF KO denominator
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region] 
+and WildMatch([Vaccination.TargetGroup], '1_*') = 0 
+//and WildMatch([Vaccination.TargetGroup], '1_*', 'Age60_69', 'Age70_79', 'Age80+') = 0   // filter age 60+/60- because recompute afterwards section (010)
+;// and (Vaccination.ReportingCountry&'|'&[Vaccination.TargetGroup] <> 'CY|Age80+') ; //and [Vaccination.Denominator] <> '<Missing>';
+
+
+ 
+LEFT JOIN (temp_vaccination)
+LOAD 
+	Vaccination.ReportingCountry, 
+    Vaccination.TargetGroup,
+    Vaccination.LastDenominator AS [Vaccination.Denominator]
+Resident Last_Denominator;
+
+Drop table Last_Denominator;
+
+JOIN (temp_vaccination)
+LOAD distinct Vaccination.DateUsedForStatisticsISO
+Resident QVD_Vaccination
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+
+JOIN (temp_vaccination)
+LOAD distinct [Vaccination.ReportingCountry], [Vaccination.Vaccine]
+Resident QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+
+LEFT JOIN (temp_vaccination)
+LOAD 
+	Vaccination.ReportingCountry, 
+    Vaccination.LastReportedWeek,
+    AutoNumber(Vaccination.LastReportedWeek) AS Vaccination.LastReportedWeekID
+Resident Last_ReportedWeek;
+Drop table Last_ReportedWeek;
+
+
+LEFT JOIN (temp_vaccination)
+LOAD
+    Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO, 
+    Vaccination.ReportingCountry,
+    Vaccination.NumberDosesReceived,
+    Vaccination.NumberDosesExported,
+    Vaccination.DoseFirst,
+    Vaccination.DoseFirstRefused,
+    Vaccination.DoseSecond,
+    Vaccination.DoseAdditional1,
+    Vaccination.DoseUnk,
+    Vaccination.Region,
+    Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName
+  //  [Vaccination.Denominator]
+  //  if(Vaccination.ReportingCountry = 'DK' and Vaccination.TargetGroup = 'LTCF', 43467, [Vaccination.Denominator]) AS  [Vaccination.Denominator] // 20210409 - DK LTCF KO denominator
+Resident QVD_Vaccination
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+and WildMatch([Vaccination.TargetGroup], '1_*') = 0   // filter age 60+/60- because recompute afterwards section (010)
+	//and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'CY|Age*') = 0
+    //and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SK|Age*') = 0
+    //and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'BE|ALL') = 0
+;// and WildMatch(Vaccination.ReportingCountry &'|'& [Vaccination.TargetGroup], 'SE|HCW*') = 0;
+
+Vaccination:
+LOAD 
+	*,
+    if ( IsNull([Age Group]) = 0, [Member State] & ' - ' & [Age Group]	) 			as [Member State - Age Group],
+    
+    // Dose administered and Uptake for ALL (population > 17 years old)
+	if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseTotal)					as DoseTotal_ALL,
+    if ( Vaccination.TargetGroup = 'ALL',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', 	Vaccination.DoseSecond)	as Dose2nd_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', [Vaccination.DoseAdd])				    as DoseAdd_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', [Vaccination.DoseUnk])					as DoseUnk_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st)					as Uptake1st_ALL,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake2nd)					as Uptake2nd_ALL,
+     if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeAdd)					as UptakeAdd_ALL,
+    
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeTotal)					as UptakeTotal_ALL,
+    
+        // Dose administered and Uptake for ALL (population > 17 years old)
+	if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseTotal)					as DoseTotal_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseSecond)	as Dose2nd_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', [Vaccination.DoseUnk])					as DoseUnk_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', [Vaccination.DoseAdd])				    as DoseAdd_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st)					as Uptake1st_ALLP,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake2nd)					as Uptake2nd_ALLP,
+     if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeAdd)					as UptakeAdd_ALLP,
+    
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeTotal)					as UptakeTotal_ALLP,
+    
+//     // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake1st)					as Uptake1st_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake2nd)					as Uptake2nd_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', [Vaccination.DoseAdd])				    as DoseAdd_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', [Vaccination.DoseUnk])					as DoseUnk_80,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.UptakeTotal)				as UptakeTotal_80, 
+    
+//     // Dose administered and Uptake for people age 70+
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake1st)					as Uptake1st_70,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake2nd)					as Uptake2nd_70,
+//     if ( Vaccination.TargetGroup = 'Age70+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_70,
+//     if ( Vaccination.TargetGroup = 'Age70+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_70,
+//     if ( Vaccination.TargetGroup = 'Age70+', [Vaccination.DoseAdd])				    as DoseAdd_70,
+//     if ( Vaccination.TargetGroup = 'Age70+', [Vaccination.DoseUnk])					as DoseUnk_70,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.UptakeTotal)				as UptakeTotal_70, 
+    
+    // Dose administered and Uptake for people age 60+
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st)					as Uptake1st_60,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd)					as Uptake2nd_60,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd)					as UptakeAdd_60,
+    if ( Vaccination.TargetGroup = 'Age60+', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_60,
+    if ( Vaccination.TargetGroup = 'Age60+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_60,
+    
+    if ( Vaccination.TargetGroup = 'Age60+', [Vaccination.DoseAdd])				    as DoseAdd_60,
+    if ( Vaccination.TargetGroup = 'Age60+', [Vaccination.DoseUnk])					as DoseUnk_60,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal)				as UptakeTotal_60, 
+    
+//     // Dose administered and Uptake for people age 50+
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st)					as Uptake1st_50,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake2nd)					as Uptake2nd_50,
+//     if ( Vaccination.TargetGroup = 'Age50+',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_50,
+//     if ( Vaccination.TargetGroup = 'Age50+', IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond))	as Dose2nd_50,
+//     if ( Vaccination.TargetGroup = 'Age50+', [Vaccination.DoseAdd])				    as DoseAdd_50,
+//     if ( Vaccination.TargetGroup = 'Age50+', [Vaccination.DoseUnk])					as DoseUnk_50,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.UptakeTotal)				as UptakeTotal_50, 
+    
+    
+    // Doses adminsitered and Uptake for Target Group = Health Care Workers
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake1st)					as Uptake1st_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd)					as Uptake2nd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeAdd)					as UptakeAdd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW',  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_HCW,
+    if ( Vaccination.TargetGroup = 'HCW',  Vaccination.DoseSecond)		as Dose2nd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', [Vaccination.DoseAdd])				    as DoseAdd_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', [Vaccination.DoseUnk])					as DoseUnk_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseTotal)					as DoseTotal_HCW,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeTotal)					as UptakeTotal_HCW, 
+    
+    // Doses adminsitered and Uptake for Target Group = Health Care Workers
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake1st)					as Uptake1st_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake2nd)					as Uptake2nd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeAdd)					as UptakeAdd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))				as Dose1st_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseSecond)	as Dose2nd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseAdd])				    as DoseAdd_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseUnk])					as DoseUnk_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseTotal)					as DoseTotal_LTCF,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeTotal)					as UptakeTotal_LTCF, 
+    
+    
+    // Doses adminsitered and Uptake for Target Group Age
+    if ( IsNull([Age Group]) = 0, Vaccination.Uptake1st)							as Uptake1st_AGE,
+    if ( IsNull([Age Group]) = 0, Vaccination.Uptake2nd)							as Uptake2nd_AGE,
+     if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd)							as UptakeAdd_AGE,
+    if ( IsNull([Age Group]) = 0,  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_AGE,
+    if ( IsNull([Age Group]) = 0, [Vaccination.DoseSecond])							as Dose2nd_AGE,
+    if (IsNull([Age Group]) = 0, [Vaccination.DoseAdd])							    as DoseAdd_AGE,
+    if ( IsNull([Age Group]) = 0, Vaccination.DoseUnk)								as DoseUnk_AGE,
+    if ( IsNull([Age Group]) = 0, Vaccination.DoseTotal)							as DoseTotal_AGE,
+    if ( IsNull([Age Group]) = 0, Vaccination.UptakeTotal)							as UptakeTotal_AGE, 
+    
+    // Doses Distributed to Countries (absolute and per 100 Inhabitants)
+    if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesReceived > 0,  
+    	 Vaccination.NumberDosesReceived, '<Missing>') 								as DosesDistributed,
+         
+    if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.NumberDosesReceived > 0,   
+  	  Vaccination.NumberDosesReceived, '<Missing>') / [Vaccination.Population] 		as DosesDistributed_per100Inh,
+      
+    if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.DoseTotal > 0,   
+  	  Vaccination.DoseTotal, '<Missing>') / Vaccination.Denominator 				as DosesAdministered_per100Inh,
+      
+    // Doses Exported
+    // Doses Distributed to Countries (absolute and per 100 Inhabitants)
+    if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported > 0,   
+    	 Vaccination.NumberDosesExported, '<Missing>')								as DoseExported,
+   
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) 	AS [_DimAgeGroupFiltered],
+   if(match(Vaccination.TargetGroup, 'Age<18', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) > 0, null(), [Age Group]) 										AS [_DimAgeGroupFiltered_N],
+   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+', 'AgeUNK' ) > 0, null(), [Age Group]) 							AS [_DimAgeGroupFilteredBooster]
+
+;
+LOAD 
+	*,
+    Vaccination.ReportingCountry &'|'&Vaccination.TargetGroup&'|'&Vaccine&'|'&Vaccination.YearWeek  AS %Key_Cumul_KPI,
+    
+    ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )								as [Age Group],
+    ApplyMap('Map_Population_Group', [Vaccination.TargetGroup], null())							as [Population Group],
+    
+// 20210416
+//	rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk)	as Vaccination.DoseTotal,
+
+	//20220202 - v5.2.2 - take into account also second doses of JANSSEN
+  //  rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) as Vaccination.DoseTotal,
+    IF(Vaccination.VaccineTreatmentDoses = 1 
+    ,rangesum(Vaccination.DoseSecond,  Vaccination.DoseUnk, Vaccination.DoseAdd)
+    ,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) as Vaccination.DoseTotal, // count(only once for single dose vaccine
+
+
+    // Uptake = #Doses divided by denominator given by Target Group
+    rangesum( Vaccination.DoseFirst) / Vaccination.Denominator 														as Vaccination.Uptake1st,
+    // 20220202 - v5.2.2 - Uptake full - Jannssen Single dose count full vax + use of 2nd doses of Janssen to complete first doses
+    rangesum(  Vaccination.DoseSecond ) / Vaccination.Denominator	  
+    																												as Vaccination.Uptake2nd,    
+   // rangesum( IF(Vaccination.VaccineTreatmentDoses = 1, Vaccination.DoseFirst, 	Vaccination.DoseSecond) ) / Vaccination.Denominator	
+   // 																												as Vaccination.Uptake2nd,    // must count single dose vaccine as full vaccinated
+    rangesum( Vaccination.DoseAdd) / Vaccination.Denominator 														as Vaccination.UptakeAdd,                                                                                                               
+    IF(Vaccination.VaccineTreatmentDoses = 1 
+    ,rangesum(Vaccination.DoseSecond,  Vaccination.DoseUnk, Vaccination.DoseAdd)
+    ,rangesum( Vaccination.DoseFirst, Vaccination.DoseSecond, Vaccination.DoseUnk, Vaccination.DoseAdd) ) / Vaccination.Denominator 		as Vaccination.UptakeTotal,
+
+;   
+LOAD  
+	Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO AS Vaccination.YearWeek,
+    num(PurgeChar(Vaccination.DateUsedForStatisticsISO , '-W')) AS Vaccination.YearWeekNUM,
+    Vaccination.LastReportedWeek,
+    if(Vaccination.DateUsedForStatisticsISO > Vaccination.LastReportedWeek, null(), 1) AS _Flag_WeekToReport, 
+    if(Vaccination.DateUsedForStatisticsISO <= Vaccination.LastReportedWeek, Vaccination.DateUsedForStatisticsISO, null()) AS Vaccination.YearWeekReported,
+    Vaccination.ReportingCountry,
+    Vaccination.Denominator,
+  //   if(Vaccination.ReportingCountry = 'NL', 0, Vaccination.Denominator) AS [Vaccination.Denominator], // 20210409 - Netherlands to reported Doses UNK only , set 0 to remove from denominator total EU uptake.
+  //   Vaccination.Denominator 											 AS Vaccination.Denominator_Original, // because we need to compute doses per inhabitants for NL altough unknow reported
+    Vaccination.NumberDosesReceived,
+    [Vaccination.NumberDosesExported],
+    [Vaccination.DoseFirstRefused],
+    Vaccination.DoseFirst,
+    Vaccination.DoseSecond,
+    Vaccination.DoseAdditional1 AS Vaccination.DoseAdd,
+    Vaccination.DoseUnk,
+    Vaccination.Region,
+    Vaccination.TargetGroup,
+//    if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60_69', 'Age70_79', 'Age80+', 'AgeUNK' ) = 0, null(), Vaccination.TargetGroup) AS [_DimAgeGroupFiltered],
+ //   if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age60+' ) > 0, null(), Vaccination.TargetGroup) AS [_DimAgeGroupFilteredBooster],
+    Vaccination.Vaccine													as [Vaccine Code],
+    ApplyMap('Map_Vaccine_ShortName', Vaccination.Vaccine, 'Unknown')	as Vaccine,
+    ApplyMap('Map_Vaccine_FullName', Vaccination.Vaccine, 'Unknown')	as VaccineFullName,
+
+// 20210416    
+    ApplyMap('Map_Vaccine_Doses', Vaccination.Vaccine,2)	as Vaccination.VaccineTreatmentDoses,    
+    
+    Vaccination.Population,
+    if( Vaccination.CountryCode = 'EL', 'GR', Vaccination.CountryCode) AS Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.CountryName 		as [Member State]
+Resident temp_vaccination;
+//FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+//WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+drop table temp_vaccination;
+
+
+
+
+// Concatenate(Vaccination)
+// LOAD 'Bulgaria' as [Member State], 'BG' AS [Vaccination.CountryCode] AutoGenerate 1;
+// Concatenate(Vaccination)
+// LOAD 'Liechtenstein' as [Member State], 'LI' AS [Vaccination.CountryCode] AutoGenerate 1;
+///$tab 015_Cumulative_KPI
+Vaccination_Cumulative:
+LOAD 
+	*,
+   // if ( IsNull([Age Group]) = 0, [Member State] & ' - ' & [Age Group]	) 			as [Member State - Age Group],
+    
+    // Dose administered and Uptake for ALL (population > 17 years old)
+    
+	if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseTotal_Cumul)					as DoseTotal_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseFirst_Cumul)					as DoseFirst_ALL_Cumul, 
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseSecond_Cumul)					as DoseSecond_ALL_Cumul, 
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseAdd_Cumul)					as DoseAdd_ALL_Cumul,
+     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseUnk_ALL_Cumul,
+   
+    //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeAdd_Cumul)					as UptakeAdd_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_ALL_Cumul,
+    
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseTotal_Cumul)					as DoseTotal_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseFirst_Cumul)					as DoseFirst_ALLP_Cumul, 
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseSecond_Cumul)				as DoseSecond_ALLP_Cumul, 
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseAdd_Cumul)					as DoseAdd_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.DoseUnk_Cumul)					as DoseUnk_ALLP_Cumul,
+   
+    //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake1st_Cumul)					as Uptake1st_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_ALLP_Cumul,
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeAdd_Cumul)					as UptakeAdd_ALLP_Cumul,
+    
+    if ( Vaccination.TargetGroup = 'ALLP', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_ALLP_Cumul,
+    
+    // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake1st_Cumul)				as Uptake1st_80_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_80_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age80+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_80_Cumul, 
+    
+//         // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake1st_Cumul)				as Uptake1st_70_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_70_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age70+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_70_Cumul, 
+    
+        // Dose administered and Uptake for people age 80+
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake1st_Cumul)				as Uptake1st_60_Cumul,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_60_Cumul,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd_Cumul)				as UptakeAdd_60_Cumul,
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseFirst_Cumul)				as DoseFirst_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseSecond_Cumul)				as DoseSecond_60_Cumul, 
+    if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseAdd_Cumul)					as DoseAdd_60_Cumul,
+    
+//         // Dose administered and Uptake for people age 80+
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake1st_Cumul)				as Uptake1st_50_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.Uptake2nd_Cumul)				as Uptake2nd_50_Cumul,
+//     if ( Vaccination.TargetGroup = 'Age50+', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_50_Cumul, 
+    
+    
+    // Doses adminsitered and Uptake for Target Group = Health Care Workers
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake1st_Cumul)					as Uptake1st_HCW_Cumul,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_HCW_Cumul,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeAdd_Cumul)			  		as UptakeAdd_HCW_Cumul,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseTotal_Cumul)					as DoseTotal_HCW_Cumul,
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_HCW_Cumul, 
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseFirst_Cumul)					as DoseFirst_HCW_Cumul, 
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseSecond_Cumul)					as DoseSecond_HCW_Cumul, 
+     if ( Vaccination.TargetGroup = 'HCW', Vaccination.DoseAdd_Cumul)					as DoseAdd_HCW_Cumul, 
+    if ( Vaccination.TargetGroup = 'HCW', Vaccination.Denominator)					    as Denominator_HCW,
+    
+    // Doses adminsitered and Uptake for Target Group = LTCF
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake1st_Cumul)					as Uptake1st_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeAdd_Cumul)				    as UptakeAdd_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseTotal_Cumul)					as DoseTotal_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeTotal_Cumul)				as UptakeTotal_LTCF_Cumul, 
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseFirst_Cumul)					as DoseFirst_LTCF_Cumul, 
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseSecond_Cumul)				as DoseSecond_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseAdd_Cumul)					as DoseAdd_LTCF_Cumul,
+    if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Denominator)					    as Denominator_LTCF,
+    
+    // Doses adminsitered and Uptake for Target Group Age
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, [Vaccination.Uptake1st_Cumul])						as Uptake1st_AGE_Cumul,
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.Uptake2nd_Cumul)							as Uptake2nd_AGE_Cumul,
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.UptakeAdd_Cumul)							as UptakeAdd_AGE_Cumul,
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseTotal_Cumul)							as DoseTotal_AGE_Cumul,
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.UptakeTotal_Cumul)						as UptakeTotal_AGE_Cumul, 
+
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseFirst_Cumul)					as Dose1st_AGE_Cumul, 
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseSecond_Cumul)					as Dose2nd_AGE_Cumul, 
+    if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.DoseAdd_Cumul)					as DoseAdd_AGE_Cumul,
+    
+    
+    // Doses Distributed to Countries (absolute and per 100 Inhabitants)
+    if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.NumberDosesReceived_Cumul > 0,  
+    	 Vaccination.NumberDosesReceived_Cumul, '<Missing>') 								as DosesDistributed_Cumul,
+            
+    if ( Vaccination.TargetGroup = 'ALLP' AND Vaccination.NumberDosesReceived_Cumul > 0,   
+    	 Vaccination.NumberDosesReceived_Cumul, '<Missing>') / [Vaccination.Denominator]	as DosesDistributed_per100Inh_Cumul,
+         
+     // Doses exported
+    if ( Vaccination.TargetGroup = 'ALL' AND Vaccination.NumberDosesExported_Cumul > 0,  
+    	 Vaccination.NumberDosesExported_Cumul, '<Missing>') 								as DosesExported_Cumul,
+;
+LOAD 
+	*,
+    //ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )									as [Age Group],
+      
+	//rangesum( Vaccination.DoseFirst_Cumul, Vaccination.DoseSecond_Cumul, Vaccination.DoseUnk_Cumul)					as Vaccination.DoseTotal_Cumul,
+    
+    
+    // Uptake = #Doses divided by denominator given by Target Group
+    rangesum( Vaccination.DoseFirst_Cumul) / Vaccination.Denominator															as Vaccination.Uptake1st_Cumul,
+    rangesum( Vaccination.DoseSecond_Cumul) / Vaccination.Denominator															as Vaccination.Uptake2nd_Cumul,    
+    rangesum( Vaccination.DoseAdd_Cumul) / Vaccination.Denominator															    as Vaccination.UptakeAdd_Cumul,  
+    
+    rangesum( Vaccination.DoseFirst_Cumul, Vaccination.DoseSecond_Cumul, Vaccination.DoseUnk_Cumul) / Vaccination.Denominator	as Vaccination.UptakeTotal_Cumul
+;
+LOAD
+	Vaccination.ReportingCountry &'|'&Vaccination.TargetGroup&'|'&Vaccine&'|'&Vaccination.YearWeek AS %Key_Cumul_KPI,
+    
+	Vaccination.ReportingCountry,
+    Vaccination.TargetGroup,
+ 
+    Vaccine,
+    Vaccination.YearWeek,
+
+    IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.NumberDosesReceived_Cumul') , Vaccination.NumberDosesReceived), alt(Vaccination.NumberDosesReceived, 0)) as Vaccination.NumberDosesReceived_Cumul,
+    
+      IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.NumberDosesExported_Cumul') , Vaccination.NumberDosesExported), alt(Vaccination.NumberDosesExported, 0)) as Vaccination.NumberDosesExported_Cumul,
+    
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseFirst_Cumul') , [Vaccination.DoseFirst]), alt(Vaccination.DoseFirst, 0)) as Vaccination.DoseFirst_Cumul,
+   
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseSecond_Cumul') , [Vaccination.DoseSecond]), alt(Vaccination.DoseSecond, 0)) as Vaccination.DoseSecond_Cumul,
+   
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseAdd_Cumul') , Vaccination.DoseAdd), alt(Vaccination.DoseAdd, 0)) as Vaccination.DoseAdd_Cumul,
+        
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseUnk_Cumul') , Vaccination.DoseUnk), alt(Vaccination.DoseSecond, 0)) as Vaccination.DoseUnk_Cumul,
+        
+   IF(Previous(Vaccination.ReportingCountry)=Vaccination.ReportingCountry
+    	AND Previous(Vaccination.TargetGroup)=Vaccination.TargetGroup 
+        AND Previous(Vaccine)=Vaccine, rangesum(peek('Vaccination.DoseTotal_Cumul') , Vaccination.DoseTotal), alt(Vaccination.DoseTotal, 0)) as Vaccination.DoseTotal_Cumul,
+    
+   [Vaccination.Denominator],
+   Vaccination.VaccineTreatmentDoses
+  
+Resident Vaccination  
+order by 
+	Vaccination.ReportingCountry,
+    Vaccination.TargetGroup,
+    Vaccine,
+    Vaccination.YearWeek;
+    
+drop fields 
+	Vaccination.ReportingCountry,
+    Vaccination.TargetGroup,
+    Vaccine,
+    Vaccination.YearWeek,
+    Vaccination.Denominator,
+    Vaccination.VaccineTreatmentDoses from Vaccination_Cumulative;
+    
+  
+
+Autonumber %Key_Cumul_KPI;
+///$tab 016_Data_Completeness
+DataCompleteness:
+LOAD
+   Vaccination.CountryName AS Completeness.Country, 
+   if(Vaccination.TargetGroup='ALL', 'ALL_18+', Vaccination.TargetGroup)  AS Completeness.TargetGroup, 
+   Vaccination.DateUsedForStatisticsISO AS Completeness.YearWeek
+FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+
+/*
+JOIN (DataCompleteness)
+LOAD DISTINCT Vaccination.TargetGroup AS Completeness.TargetGroup 
+FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+*/
+///$tab 017_Subnational
+/*
+Qualify *; Unqualify Subnational_RegionCode, Vaccination.YearWeek;
+
+Region:
+LOAD *,  [Vaccination.Region] AS Subnational_RegionCode
+FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] <> [Vaccination.Region]
+;
+
+unqualify *;
+
+SubnationalRegions_Shapes: 	
+LOAD * FROM $(vG_Connection)$(vG_22_032QVDSource)\SubnationalRegions_Shapes.qvd (qvd) where exists(Subnational_LocationParentCode);
+
+*/
+///$tab 020_XLS_INFOS
+URLs:
+LOAD
+    "Member State",
+    trim(URL_Plan) AS URL_Plan,
+    trim(URL_Rollout) AS URL_Rollout
+FROM [lib://QData/2_Projects/22_CoronaVirus/02_ExternalSources/National_Vaccine_URL.xlsx]
+(ooxml, embedded labels, table is URL);
+
+
+Product:
+Load Distinct Vaccine, Vaccine as Product_ 
+Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL'
+order by Vaccine;
+LOAD Distinct Vaccine, 'ALL' as Product_ 
+Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL';
+
+MemberState_Group:
+Load Distinct "Member State", "Member State" as MemberState_ 
+Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL'
+order by "Member State";
+LOAD Distinct "Member State", 'Median EU/EEA' as  MemberState_  
+Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL';
+
+EU27_EEA:
+Load Distinct "Member State",
+applymap('Map_EU27_EEA', [Member State], 'EU') 		AS EU27_EEA
+Resident Vaccination;
+
+Concatenate (EU27_EEA)
+LOAD "Member State", 'EU/EEA' AS EU27_EEA
+Resident EU27_EEA 
+where EU27_EEA = 'EU';
+
+
+
+NoteOnDataXLS:
+LOAD
+    "Member State",
+    "Notes on data by country"
+FROM [lib://QData/2_Projects/22_CoronaVirus/02_ExternalSources/National_Vaccine_URL.xlsx]
+(ooxml, embedded labels, table is URL) 
+where len(trim("Notes on data by country"))>0;
+///$tab 030_Design_Fields
+D_BUTTON_ALL_ALLP:
+LOAD * INLINE [
+	SW_ADULTS_POP, SW_ADULTS_POP_LABEL, SW_ADULTS_POP_LABEL_KPI,  SW_ADULTS_POP_LABEL_N
+    ALL, among adults (18+), adults (18+), adults (18+)
+    ALLP, in the total population, people, the total population
+];
+
+// for the pivot with key figures
+KPI:
+LOAD * INLINE [KPI_GROUP, KPI_ID, KPI_NAME
+Total doses distributed and administered, 10, Total number of vaccine doses distributed by manufactures to countries
+Total doses distributed and administered, 20, Number of vaccine doses distributed by manufactures to countries per hundred inhabitants*
+Total doses distributed and administered, 30, Total number of vaccine doses administered
+Cumulative vaccine uptake, 40, Cumulative uptake of the primary course in the total population
+Cumulative vaccine uptake, 50, Cumulative uptake of the primary course among adults aged 18 years and above
+Cumulative vaccine uptake, 60, Cumulative uptake of the primary course among adolescents and children below 18 years*
+Cumulative vaccine uptake, 70, Cumulative uptake of the primary course among persons aged 60 years and above*
+Cumulative vaccine uptake, 80, Cumulative uptake of the primary course among healthcare workers*
+Cumulative vaccine uptake, 90, Cumulative uptake of the primary course among residents of long-term care facilities*
+Cumulative vaccine uptake, 100, Cumulative uptake of a booster/additional dose in the total population
+Cumulative vaccine uptake, 110, Cumulative uptake of a booster/additional dose among adults aged 18 years and above
+Cumulative vaccine uptake, 120, Cumulative uptake of a booster/additional dose among persons aged 60 years and above*
+];
+
+//Total doses distributed and administered, 15, Total number of vaccine doses exported
+
+// for the country summary KPI
+TABLE_KPI:
+LOAD * INLINE [T_KPI_GROUP, T_KPI_ID, T_KPI_NAME, GROUP_SORT
+, 1, Reporting Week, 1
+, 2, Total doses administered, 1
+Total population, 10, N. with at least one dose, 2
+Total population, 20, N. primary courses, 2
+Total population, 25, N. booster/additional doses, 2
+Total population, 30, Uptake at least one dose (%), 2
+Total population, 40, Uptake of the primary course (%), 2
+Total population, 50, Uptake of a booster/additional dose (%), 2
+Adults (18+), 100, N. with at least one dose, 3
+Adults (18+), 200, N. primary courses, 3
+Adults (18+), 250, N. booster/additional doses, 3
+Adults (18+), 300, Uptake at least one dose (%), 3
+Adults (18+), 400, Uptake of the primary course (%),3
+Adults (18+), 500, Uptake of a booster/additional dose (%), 3
+];
+///$tab Exit Script
+drop table QVD_Vaccination;
+
+Exit Script;
+///$tab 005_Transform_Age<18 (1)
+Mapping_Pop_0_17:
+Mapping
+LOAD
+    CountryCode,
+//    ReportYear,
+//    AgeGroup,
+    Population_00_17
+FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_Population_00_17.qvd
+(qvd);
+
+
+
+Filter_Country_has_below_18:
+NoConcatenate
+LOAD distinct [Vaccination.ReportingCountry] as hasBelow18
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK' ;//and [Vaccination.ReportingCountry] <> 'LT';
+
+
+// build mapping tables with percentage of young population (0-17 years)
+Map_Population_0_17:
+Mapping 
+LOAD distinct [Vaccination.ReportingCountry],  ApplyMap('Mapping_Pop_0_17',  [Vaccination.ReportingCountry]) AS Vaccination.Population_0_17
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+;//AND match(Vaccination.TargetGroup, 'Age<18') = 1;
+
+// add average value for other countries that do not report for Age<18
+/*
+Mapping
+LOAD distinct [Vaccination.ReportingCountry] , 0.1782 AS Vaccination.Percent_Population_0_17
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 0 ;
+*/
+
+// Consolidate targe groups < 18 disagregated into unique class Age<18
+temp_QVD_Aggregate_Age_below_18:
+LOAD
+    0 AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    0 AS [Vaccination.NumberDosesReceived],  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
+    Vaccination.Region,
+    'Age<18' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+   // sum(Vaccination.Population * ApplyMap('Map_Percentage_0_17', Vaccination.ReportingCountry )) AS Vaccination.Denominator, // if reported in more detail 0-4,  5-9... override denominator to the Age<18 values
+    ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17') > 0
+and not Exists(hasBelow18, Vaccination.ReportingCountry)
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+
+
+temp_QVD_Age_Below_18_Only:
+NoConcatenate
+LOAD     
+	Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    0 AS [Vaccination.NumberDosesReceived],  // only reported on target group ALLVaccination.NumberDosesReceived,
+    Vaccination.DoseFirst,
+    Vaccination.DoseSecond,
+    Vaccination.DoseFirstRefused,
+    Vaccination.DoseUnk,
+    Vaccination.Region,
+    Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Denominator_ALL,
+    Vaccination.Percent_Population_0_17,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+  //  Vaccination.Denominator,
+  //  Vaccination.Population * ApplyMap('Map_Percentage_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+   ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
+    [Vaccination.DoseAdditional1]
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK';
+
+
+
+
+Concatenate (temp_QVD_Age_Below_18_Only)
+LOAD * Resident temp_QVD_Aggregate_Age_below_18;
+
+drop table temp_QVD_Aggregate_Age_below_18;
+
+
+
+
+
+
+// Create virtual target group ALLP = total population = ALL + Age<18
+temp_QVD_Vaccination:
+NoConcatenate
+LOAD * 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18') = 0;
+
+Concatenate (temp_QVD_Vaccination)
+LOAD * Resident temp_QVD_Age_Below_18_Only;
+/*
+Map_AgeBelow18:
+Mapping LOAD distinct [Vaccination.ReportingCountry] , Vaccination.Denominator 		//create country map for wich we ahve below 18 
+Resident temp_QVD_Age_Below_18_Only;
+*/
+
+
+
+
+
+
+QVD_Vaccination:
+LOAD
+    'VIRTUAL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  	sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(Vaccination.NumberDosesExported) AS Vaccination.NumberDosesExported,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    'ALLP' AS Vaccination.TargetGroup,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    sum(if(Vaccination.TargetGroup = 'ALL', Vaccination.Denominator +  ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ), 0)  ) AS [Vaccination.Denominator],
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+group by  
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  //  Vaccination.NumberDosesReceived,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName;
+LOAD *
+Resident temp_QVD_Vaccination
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND ((match(Vaccination.TargetGroup, 'ALL', 'Age<18', 'AgeUNK') > 0 and [Vaccination.ReportingCountry] <> 'DK') 
+	OR (match(Vaccination.TargetGroup, 'ALL', 'AgeUNK') > 0 and [Vaccination.ReportingCountry] = 'DK') 
+   )
+;
+
+
+Concatenate(QVD_Vaccination)
+LOAD * 
+Resident temp_QVD_Age_Below_18_Only;
+drop Table temp_QVD_Age_Below_18_Only;
+   
+    
+Concatenate(QVD_Vaccination)
+LOAD * 
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND match(Vaccination.TargetGroup, 'Age<18')=0 and [Vaccination.ReportingCountry] <> 'DK';
+//AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')=0;
+
+
+temp_dk:
+NoConcatenate
+LOAD
+   'VIRTUAL_ALL' AS Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+  	sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
+    sum(Vaccination.NumberDosesExported) AS Vaccination.NumberDosesExported,  // only reported on target group ALL
+    sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
+    sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
+    sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
+    Vaccination.Region,
+    [Vaccination.TargetGroup],
+    Vaccination.Vaccine,
+    sum(Vaccination.Population) AS [Vaccination.Population],
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    //avg(Vaccination.Population) AS Vaccination.Denominator,	// Denominator for ALLP is total population
+    //sum(if(Vaccination.TargetGroup = 'ALL', Vaccination.Denominator +  ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ), 0)  ) AS [Vaccination.Denominator],
+    //DK has already includ below 18 in target group ALL
+    sum([Vaccination.Denominator]) AS [Vaccination.Denominator],
+    //sum(if(Vaccination.TargetGroup = 'ALL', Vaccination.Denominator +  ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ), 0)  ) AS [Vaccination.Denominator],
+    
+    sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
+    sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1
+GROUP BY 
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    Vaccination.TargetGroup,
+    Vaccination.Region,
+    Vaccination.Vaccine,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName
+;    
+
+
+LOAD
+    Vaccination.RecordId,
+    Vaccination.DateUsedForStatisticsISO,
+    Vaccination.ReportingCountry,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.NumberDosesReceived AS Vaccination.NumberDosesReceived ,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.NumberDosesExported AS Vaccination.NumberDosesExported,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.DoseFirst			AS Vaccination.DoseFirst,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.DoseFirstRefused	AS Vaccination.DoseFirstRefused,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.DoseAdditional1		AS Vaccination.DoseAdditional1	,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -1, 1) * Vaccination.DoseUnk				AS Vaccination.DoseUnk	,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', -Vaccination.DoseSecond, Vaccination.DoseSecond)  		AS Vaccination.DoseSecond	,
+    Vaccination.Region,
+    if( match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', 'ALL', [Vaccination.TargetGroup]) as [Vaccination.TargetGroup],
+    Vaccination.Vaccine,
+    if(match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')>0 and  Vaccination.ReportingCountry = 'DK', 0, 1) * Vaccination.Population	as Vaccination.Population,
+    Vaccination.CountryCode,
+    Vaccination.LocationCode,
+    //Vaccination.Denominator_ALL,
+    //Vaccination.Percent_Population_0_17,
+    Vaccination.Reload_Date,
+    Vaccination.CountryName,
+    [Vaccination.Denominator],
+    //if( [Vaccination.TargetGroup] = 'Age<18' and  Vaccination.ReportingCountry = 'DK', 0, 1) * Vaccination.Denominator			AS Vaccination.Denominator,
+ //  Vaccination.DoseSecond,
+    'COUCOU' as test
+FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
+AND  [Vaccination.ReportingCountry] = 'DK' ; 
+//AND match(Vaccination.TargetGroup, 'Age0_4', 'Age5_9', 'Age10_14', 'Age15_17', 'Age<18')=0;
+
+Concatenate(QVD_Vaccination)
+LOAD * Resident temp_dk;
+drop table temp_dk;
+
+drop table temp_QVD_Vaccination;

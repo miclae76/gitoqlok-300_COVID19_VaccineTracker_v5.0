@@ -1,5 +1,6 @@
 ///$tab VERSION NOTES
 /********************* VERSION NOTES  ***********************************************************************
+Version 5.2.5 - Set DosesReceived to 0 for AgeUNK (EL and IS) - Section 005_Transform_Age<18
 Version 5.2.4 - Add new vaccine NVXD
 Version 5.2.3 - Fix Uptake > 100% in Uptake Map Legend
 Version 5.2.2.- Fix 2nd dose of Janssen = DoseFirst + DoseSecond (to combine with data prep made in app 200_ !)
