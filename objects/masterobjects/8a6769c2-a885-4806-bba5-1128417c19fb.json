@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - Uptake Comparison",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -372,7 +371,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of full vaccination among people aged 60 years and above in ',\n'Cumulative uptake (%) of an additional vaccine dose among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of full vaccination among healthcare workers in ',\n'Cumulative uptake (%) of an additional vaccine dose among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of full vaccination among LTCF residents in ',\n'Cumulative uptake (%) of an additional vaccine dose among LTCF residents in '\n)\n& [Member State]\n\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+        "qExpr": "=pick(match(v_ViewUptake & '_' & v_ViewTargetGroup, 'FIRST_60', 'SECOND_60', 'ADD_60', 'FIRST_HCW', 'SECOND_HCW', 'ADD_HCW', 'FIRST_LTCF', 'SECOND_LTCF', 'ADD_LTCF'),\r\n'Cumulative uptake (%) of at least one vaccine dose among people aged 60 years and above in ',\n'Cumulative uptake (%) of the primary course among people aged 60 years and above in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among people aged 60 years and above in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among healthcare workers in ',\n'Cumulative uptake (%) of the primary course among healthcare workers in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among healthcare workers in ',\n\n'Cumulative uptake (%) of at least one vaccine dose among LTCF residents in ',\n'Cumulative uptake (%) of the primary course among LTCF residents in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among LTCF residents in '\n)\n& [Member State]\n\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
       }
     },
     "subtitle": "by reporting week",
@@ -509,11 +508,9 @@
       "auto": false,
       "spacing": 0
     },
-    "version": "1.5.0",
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

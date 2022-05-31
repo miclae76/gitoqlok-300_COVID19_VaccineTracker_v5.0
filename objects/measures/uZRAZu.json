@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "=TG - Full vaccination",
+    "qLabel": "TG - Primary course",
     "qDef": "dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Uptake2nd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Uptake2nd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [Uptake2nd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])))  ",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccination'",
+    "qLabelExpression": "='Primary course'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -27,7 +27,7 @@
     }
   },
   "qMetaDef": {
-    "title": "=TG - Full vaccination",
+    "title": "TG - Primary course",
     "description": "",
     "tags": []
   }

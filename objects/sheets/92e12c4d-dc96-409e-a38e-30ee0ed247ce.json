@@ -1729,6 +1729,19 @@
               "altVisId": "A-heatmap-chart"
             }
           ]
+        },
+        "background": {
+          "layers": [
+            {
+              "type": "XYZ",
+              "urls": [
+                "http://tile.openstreetmap.org/${z}/${x}/${y}.png"
+              ],
+              "attribution": "© OpenStreetMap @[http://www.openstreetmap.org/copyright](License)"
+            }
+          ],
+          "show": false,
+          "defaultMapService": false
         }
       },
       "qChildren": []
@@ -2196,12 +2209,7 @@
           "wrapTextInHeaders": true,
           "wrapTextInCells": true
         },
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": ""
-          },
-          "quarantine": {}
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     }

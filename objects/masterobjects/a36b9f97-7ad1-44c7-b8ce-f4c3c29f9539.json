@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Dropdown Uptake View",
-      "description": "",
       "tags": []
     },
     "showTitles": false,
@@ -29,12 +28,12 @@
       },
       {
         "value": "SECOND",
-        "label": "Uptake full vaccination",
+        "label": "Uptake of the primary course",
         "cId": "PBsYdgh"
       },
       {
         "value": "ADD",
-        "label": "Uptake of an additional vaccine dose",
+        "label": "Uptake of a booster/additional dose",
         "cId": "Ljtgf"
       },
       {
@@ -44,12 +43,16 @@
       },
       {
         "value": "NSECOND",
-        "label": "Number of full vaccinations administered",
+        "label": "Number of primary courses administered",
         "cId": "jKuzmjE"
       },
       {
         "value": "NADD",
-        "label": "Number of additional doses administered",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of booster/additional doses administered'"
+          }
+        },
         "cId": "UsgeJp"
       }
     ],
@@ -98,7 +101,8 @@
       "installer": "QlikExtensionBundler",
       "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

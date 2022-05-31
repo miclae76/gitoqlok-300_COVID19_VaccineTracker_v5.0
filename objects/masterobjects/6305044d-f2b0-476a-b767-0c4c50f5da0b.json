@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - Progress N. Doses",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -93,8 +92,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Full vaccination",
-              "qLabelExpression": "='Full vaccinations'",
+              "qLabelExpression": "='Primary courses'",
               "cId": "xjqvvH",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -111,8 +109,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Additional doses",
-              "qLabelExpression": "='Additional doses'",
+              "qLabelExpression": "='Booster/additional doses'",
               "cId": "VKrnjf",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -622,23 +619,13 @@
       "data": {}
     },
     "visualization": "barchart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "barGrouping": {
       "grouping": "stacked"
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "nullMode": "gap",
-        "masterVersion": 0.96
-      },
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

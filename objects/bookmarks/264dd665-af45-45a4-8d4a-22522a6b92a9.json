@@ -1,0 +1,77 @@
+{
+  "qInfo": {
+    "qId": "264dd665-af45-45a4-8d4a-22522a6b92a9",
+    "qType": "bookmark"
+  },
+  "qMetaDef": {
+    "title": "Bookmark_AppMetadata",
+    "description": "",
+    "isExtended": false
+  },
+  "creationDate": "2022-05-31T07:14:12.429Z",
+  "sheetId": "0897002d-b997-47c5-a580-eaf4b97fe391",
+  "selectionFields": "EU27_EEA, SW_ADULTS_POP_LABEL",
+  "qBookMark": {
+    "qStateData": [
+      {
+        "qStateName": "$",
+        "qFieldItems": [
+          {
+            "qDef": {
+              "qName": "EU27_EEA",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "EU/EEA",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": []
+          },
+          {
+            "qDef": {
+              "qName": "SW_ADULTS_POP_LABEL",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "in the total population",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": []
+          }
+        ]
+      },
+      {
+        "qStateName": "Static",
+        "qFieldItems": []
+      }
+    ],
+    "qVariableItems": [],
+    "qPatches": []
+  }
+}

@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Button Week Or Cumul",
-      "description": "",
       "tags": []
     },
     "showTitles": true,
@@ -78,7 +77,8 @@
       "installer": "QlikExtensionBundler",
       "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

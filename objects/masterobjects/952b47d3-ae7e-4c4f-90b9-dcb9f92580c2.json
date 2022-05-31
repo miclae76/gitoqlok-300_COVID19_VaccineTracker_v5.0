@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "ALL - Uptake All countries",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -232,20 +231,12 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccination'",
             "autoSort": true,
-            "cId": "NudFngM",
+            "cId": "LUHum",
             "numFormatFromTemplate": true,
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
+              "qNumFormat": {},
+              "isCustomFormatted": false
             }
           },
           "qSortBy": {
@@ -295,7 +286,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Additional dose'",
+            "qLabelExpression": "='Booster/additional dose'",
             "autoSort": true,
             "cId": "HVmmBcA",
             "numFormatFromTemplate": true,
@@ -453,11 +444,7 @@
         "qExpr": "='by reporting week (data for the current week are preliminary)'"
       }
     },
-    "footnote": {
-      "qStringExpression": {
-        "qExpr": "='Uptake (%) of additional vaccine dose is based on '&count(distinct {<[Member State]={\"=sum(Vaccination.DoseAdd)>0\"}>} [Member State]) & ' countries'"
-      }
-    },
+    "footnote": "",
     "disableNavMenu": false,
     "showDetails": false,
     "showDisclaimer": true,
@@ -556,12 +543,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

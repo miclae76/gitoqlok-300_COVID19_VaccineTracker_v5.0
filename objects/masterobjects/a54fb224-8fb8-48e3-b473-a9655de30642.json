@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Country Profile - Uptake <18 or LTCF",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -81,7 +80,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "Uptake full vaccination",
+              "qLabel": "Uptake primary course",
               "cId": "LAwqSW",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -186,7 +185,7 @@
         },
         {
           "qDef": {
-            "qLabel": "Full vaccination",
+            "qLabel": "Primary course",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "rangemin(1, sum([Vaccination.Uptake2nd_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
@@ -264,12 +263,94 @@
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
           }
+        },
+        {
+          "qDef": {
+            "qLabel": "Booster/additional dose",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "rangemin(1, sum([Vaccination.UptakeAdd_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "isCustomFormatted": true,
+            "modifiers": [
+              {
+                "type": "accumulation",
+                "disabled": true,
+                "accumulationDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "fullAccumulation": false,
+                "steps": 6,
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\r\n\n/*   20210413\nrangemin(sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, 6))"
+              },
+              {
+                "type": "difference",
+                "disabled": true,
+                "primaryDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "outputExpression": "If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\r\n\n/*   20210413\nrangemin(sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0) - Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\r\n\n/*   20210413\nrangemin(sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0))"
+              },
+              {
+                "type": "normalization",
+                "disabled": true,
+                "primaryDimension": 0,
+                "outputExpression": " (　RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\r\n\n/*   20210413\nrangemin(sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))　) / Sum({1} Total Aggr({1}  (　RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\r\n\n/*   20210413\nrangemin(sum({<[MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]))　) , [$(=Replace(GetObjectField(0),']',']]'))]))",
+                "dimensionalScope": 2,
+                "selectionScope": 2
+              }
+            ],
+            "cId": "FPFRGw"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
         }
       ],
       "qInterColumnSortOrder": [
         0,
         1,
-        2
+        2,
+        3
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -464,12 +545,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
-    "qLayoutExclude": {
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Cum uptake LTCF w/o Add.",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -488,12 +487,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

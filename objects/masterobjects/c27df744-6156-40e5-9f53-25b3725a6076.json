@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - Table Uptake Age Group",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -74,6 +73,351 @@
         }
       ],
       "qMeasures": [
+        {
+          "qDef": {
+            "qLabel": "80+ years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60+*\"}, [Member State]=>} Uptake1st_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60+*\"}, [Member State]=>} Uptake1st_AGE))), '0.0%;-0.0%;-'),\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60+*\"}, [Member State]=>} Uptake2nd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60+*\"}, [Member State]=>} Uptake2nd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60+*\"}, [Member State]=>} UptakeAdd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60+*\"}, [Member State]=>} UptakeAdd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60+*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60+*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60+*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"60+*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "isCustomFormatted": true,
+            "cId": "MQPSem"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "70-79 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"70-*\"}, [Member State]=>} Uptake1st_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"70-*\"}, [Member State]=>} Uptake1st_AGE))), '0.0%;-0.0%;-'),\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"70-*\"}, [Member State]=>} Uptake2nd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"70-*\"}, [Member State]=>} Uptake2nd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"70-*\"}, [Member State]=>} UptakeAdd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"70-*\"}, [Member State]=>} UptakeAdd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"70-*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"70-*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"70-*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"70-*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "isCustomFormatted": true,
+            "cId": "EQkpCRq"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "60-69 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60-*\"}, [Member State]=>} Uptake1st_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60-*\"}, [Member State]=>} Uptake1st_AGE))), '0.0%;-0.0%;-'),\n\tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60-*\"}, [Member State]=>} Uptake2nd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60-*\"}, [Member State]=>} Uptake2nd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + rangemin(1, IF(ROUND(sum({<[Age Group]={\"60-*\"}, [Member State]=>} UptakeAdd_AGE), 0.001) <0.01, 0, Sum({<[Age Group]={\"60-*\"}, [Member State]=>} UptakeAdd_AGE))), '0.0%;-0.0%;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60-*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60-*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"60-*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"60-*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n\n",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": false,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "isCustomFormatted": true,
+            "cId": "mkxY"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' = 'ADD' or '$(v_ViewUptake)' = 'NADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
         {
           "qDef": {
             "qLabel": "60+ years",
@@ -164,7 +508,9 @@
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
-            "qCond": {},
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' <> 'ADD' and '$(v_ViewUptake)' <> 'NADD'"
+            },
             "qMsg": {}
           },
           "qTrendLines": [],
@@ -531,7 +877,7 @@
             "qLabel": "<18 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n    if( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake1st_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake1st_AGE), '0.0%;-0.0%;-')),\n\tif( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose2nd_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake1st_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake2nd_AGE), '0.0%;-0.0%;-')),\n    if( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  DoseAdd_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} UptakeAdd_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} UptakeAdd_AGE), '0.0%;-0.0%;-')),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"*<18*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n    if( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake1st_AGE) < 0.000001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake1st_AGE), '0.0%;-0.0%;-')),\n\tif( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake2nd_AGE) < 0.000001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Uptake2nd_AGE), '0.0%;-0.0%;-')),\n    if( sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  DoseAdd_AGE) > 0 AND sum({<[Age Group]={\"*<18*\"}, [Member State]=>} UptakeAdd_AGE) < 0.000001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"*<18*\"}, [Member State]=>} UptakeAdd_AGE), '0.0%;-0.0%;-')),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"*<18*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"*<18*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -616,9 +962,7 @@
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
-            "qCond": {
-              "qv": "'$(v_ViewUptake)' <> 'ADD'"
-            },
+            "qCond": {},
             "qMsg": {}
           },
           "qTrendLines": [],
@@ -880,7 +1224,7 @@
             "qLabel": "5-9 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n\tif( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake1st_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake1st_AGE), '0.0%;-0.0%;-')),\n\tif( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose2nd_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake1st_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake2nd_AGE), '0.0%;-0.0%;-')),\n    if( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  DoseAdd_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} UptakeAdd_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} UptakeAdd_AGE), '0.0%;-0.0%;-')),\n  \tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"5-9*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n       \n            \n\n",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n\tif( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake1st_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake1st_AGE), '0.0%;-0.0%;-')),\n\tif( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose1st_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake2nd_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Uptake2nd_AGE), '0.0%;-0.0%;-')),\n    if( sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  DoseAdd_AGE) > 0 AND sum({<[Age Group]={\"5-9*\"}, [Member State]=>} UptakeAdd_AGE) < 0.0001,\n    \tnum(0, '0.0%;-0.0%)'),    num(sum({<[Age Group]={\"5-9*\"}, [Member State]=>} UptakeAdd_AGE), '0.0%;-0.0%;-')),\n  \tnum(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>}  Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + sum({<[Age Group]={\"5-9*\"}, [Member State]=>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<EU27_EEA=P(EU27_EEA), [Member State]=>}0) + Sum({< [Age Group]={\"5-9*\"},  [Member State]=>}DoseTotal_AGE) / sum(Total <[Member State]> {<[Member State]=>} DoseTotal_AGE), '0.0%;-0.0%;-')\n)\n       \n            \n\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -1112,15 +1456,18 @@
       ],
       "qInterColumnSortOrder": [
         0,
-        1,
-        2,
-        3,
         4,
+        5,
         6,
         7,
-        8,
         9,
-        5
+        10,
+        11,
+        12,
+        8,
+        3,
+        2,
+        1
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [
@@ -1152,11 +1499,17 @@
         6,
         7,
         8,
-        9
+        9,
+        10,
+        11,
+        12
       ],
       "qExpansionState": [],
       "qDynamicScript": [],
       "columnWidths": [
+        -1,
+        -1,
+        -1,
         -1,
         -1,
         -1,
@@ -1178,7 +1531,10 @@
         6,
         7,
         8,
-        9
+        9,
+        10,
+        11,
+        12
       ],
       "qLayoutExclude": {
         "qHyperCubeDef": {
@@ -1209,7 +1565,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of full vaccination by age group in ',\n'Cumulative uptake (%) of an additional vaccine dose by age group in ',\n'Number of first doses administered by age group in ',\n'Number of full vaccination administered by age group in ',\n'Number of additional doses administered by age group in ',\n'Proportion of vaccine doses administered by age group in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\r\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of the primary course by age group in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose by age group in ',\n'Number of first doses administered by age group in ',\n'Number of primary courses administered by age group in ',\n'Number of booster/additional doses administered by age group in ',\n'Proportion of vaccine doses administered by age group in '\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": "",
@@ -1232,34 +1588,9 @@
       "wrapTextInHeaders": true,
       "wrapTextInCells": true
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": ""
-      },
-      "quarantine": {
-        "pivotInterColSortOrder": [
-          0,
-          1
-        ],
-        "noOfLeftDims": {
-          "qHyperCubeDef.qNoOfLeftDims": 1
-        },
-        "pivotTableColumnWidths": {
-          "qHyperCubeDef.columnWidths": []
-        },
-        "conditionalShowHide": {
-          "measures": {},
-          "dimensions": {}
-        },
-        "totalMode": {
-          "dimensions": {
-            "nLXpGzL": "TOTAL_OFF",
-            "ATjgYZe": "TOTAL_OFF"
-          }
-        }
-      }
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

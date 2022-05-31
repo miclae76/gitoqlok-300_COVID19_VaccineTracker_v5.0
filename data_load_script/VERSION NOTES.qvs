@@ -1,6 +1,14 @@
 ///$tab VERSION NOTES
 /********************* VERSION NOTES  ***********************************************************************
-Version 5.0.1 - Uptake additional doses for 60+
+Version 6.0 - Short term simplification + Second Booster
+version 5.2.6 - New population 2022
+Version 5.2.5 - Set DosesReceived to 0 for AgeUNK (EL and IS) - Section 005_Transform_Age<18
+Version 5.2.4 - Add new vaccine NVXD
+Version 5.2.3 - Fix Uptake > 100% in Uptake Map Legend
+Version 5.2.2.- Fix 2nd dose of Janssen = DoseFirst + DoseSecond (to combine with data prep made in app 200_ !)
+Version 5.2.1 - Fix Cum. N Doses in data table view
+Version 5.2 - Increase Booster visibility + Renaming Full vax to primary course(s) + small adjsutements for some country/target groups
+Version 5.1 - Uptake additional doses for 60+
 Version 5.0 - Beta Realease - Remove 60-69, 70-79, 80+ and replace by 60+
 Version 5.0 - Alpha Realease - Additional doses + Doses exported + Target Groups 70+, 60+, 50+
 Version 4.2 - Patch 20211013 - Cap Uptake to 100% in Age groups - Table Views
@@ -8,4 +16,4 @@ Version 4.2 - Patch 20211007 - Issue with DK Age<18 group
 Version 4.2 - Patch 20211005 - Add AgeUNK to doses All Population - Uptake capped 100% Country Profile
 Version 4.2 - Summary Key Figures and data completeness
 Version 4.1 - include age group <18 years
-*/
+*************************************************************************************************************/

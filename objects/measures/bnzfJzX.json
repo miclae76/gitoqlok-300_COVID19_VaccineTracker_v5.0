@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - Uptake Full Vaccination",
+    "qLabel": "ALL - Uptake Primary course",
     "qDef": " \tdual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]) )  \n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Uptake full vaccination'",
+    "qLabelExpression": "='Uptake of the primary course'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -27,7 +27,7 @@
     }
   },
   "qMetaDef": {
-    "title": "ALL - Uptake Full Vaccination",
+    "title": "ALL - Uptake Primary course",
     "description": "",
     "tags": []
   }

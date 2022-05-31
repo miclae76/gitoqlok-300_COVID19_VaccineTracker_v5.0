@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Widget National References",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -400,7 +399,8 @@
         "masterVersion": 0.96
       },
       "quarantine": {}
-    }
+    },
+    "metadata": {}
   },
   "qChildren": []
 }

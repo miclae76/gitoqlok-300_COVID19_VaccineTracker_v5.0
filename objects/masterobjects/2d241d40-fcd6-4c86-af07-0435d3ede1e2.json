@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Doses distributed per inhabitants by country",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -283,13 +282,9 @@
       "data": {}
     },
     "visualization": "barchart",
-    "version": "1.6.0",
     "showMiniChartForContinuousAxis": true,
     "isRecommended": true,
-    "qLayoutExclude": {
-      "disabled": {},
-      "quarantine": {}
-    },
+    "qLayoutExclude": {},
     "recommendation": {
       "analysis": {
         "analysis": "rank",
@@ -357,7 +352,8 @@
       "relevance": 1,
       "analysisIntentRelevance": 0.09000000000000001
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

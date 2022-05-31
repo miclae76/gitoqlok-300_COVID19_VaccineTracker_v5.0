@@ -426,7 +426,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake of the primary course (%)',\n'Uptake of a booster/additional dose (%)',\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -532,7 +532,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD',  'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -623,13 +623,9 @@
           "description": ""
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {}
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "rank",
@@ -945,7 +941,7 @@
               },
               "label": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered',\n\n)"
+                  "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered',\n\n)"
                 }
               },
               "slider": [
@@ -1019,13 +1015,13 @@
               "useDimColVal": false,
               "useMeasureGradient": false,
               "byMeasureDef": {
-                "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
-                "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
+                "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')",
+                "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nrangemin(1, sum({1}[Uptake1st_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]))\n)",
                 "type": "expression"
               },
               "altLabel": {
                 "qStringExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')"
+                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')"
                 }
               },
               "useBaseColors": "dimension",
@@ -1118,7 +1114,7 @@
                       "id": "customTooltipImages"
                     },
                     {
-                      "qExpression": "SUM({1}[Uptake1st_$(=SW_ADULTS_POP)])",
+                      "qExpression": "rangemin(1, SUM({1}[Uptake1st_$(=SW_ADULTS_POP)]))",
                       "qNumFormat": {
                         "qType": "R",
                         "qnDec": 2,
@@ -1138,7 +1134,7 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "SUM({1}[Uptake2nd_$(=SW_ADULTS_POP)])",
+                      "qExpression": "rangemin(1, SUM({1}[Uptake2nd_$(=SW_ADULTS_POP)]))",
                       "qNumFormat": {
                         "qType": "R",
                         "qnDec": 2,
@@ -1147,7 +1143,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabel": "Uptake full vaccination",
+                      "qLabel": "Uptake of the primary course",
                       "cId": "kSZKWT",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -1158,7 +1154,7 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)])",
+                      "qExpression": "rangemin(1, SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)]))",
                       "qNumFormat": {
                         "qType": "R",
                         "qnDec": 2,
@@ -1167,7 +1163,7 @@
                         "qDec": ".",
                         "qThou": ","
                       },
-                      "qLabel": "Uptake of additional dose",
+                      "qLabel": "Uptake of a booster/additional dose",
                       "cId": "PBjGx",
                       "autoSort": true,
                       "id": "customTooltipExpression",
@@ -1178,7 +1174,7 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
+                      "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nrangemin(1, sum({1}[Uptake1st_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]))\n)",
                       "qNumFormat": {
                         "qType": "F",
                         "qnDec": 2,
@@ -1188,7 +1184,7 @@
                         "qThou": ","
                       },
                       "id": "colorByAlternative",
-                      "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
+                      "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')",
                       "isCustomFormatted": false
                     }
                   ],
@@ -1484,7 +1480,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -1496,7 +1492,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": 1533126790,
+          "hashCode": 872088533,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1685,7 +1681,7 @@
                         "id": "customTooltipImages"
                       },
                       {
-                        "qExpression": "SUM({1}[Uptake1st_$(=SW_ADULTS_POP)])",
+                        "qExpression": "rangemin(1, SUM({1}[Uptake1st_$(=SW_ADULTS_POP)]))",
                         "qNumFormat": {
                           "qType": "R",
                           "qnDec": 2,
@@ -1705,7 +1701,7 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "SUM({1}[Uptake2nd_$(=SW_ADULTS_POP)])",
+                        "qExpression": "rangemin(1, SUM({1}[Uptake2nd_$(=SW_ADULTS_POP)]))",
                         "qNumFormat": {
                           "qType": "R",
                           "qnDec": 2,
@@ -1714,7 +1710,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabel": "Uptake full vaccination",
+                        "qLabel": "Uptake of the primary course",
                         "cId": "kSZKWT",
                         "autoSort": true,
                         "id": "customTooltipExpression",
@@ -1725,7 +1721,7 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)])",
+                        "qExpression": "rangemin(1, SUM({1}[UptakeAdd_$(=SW_ADULTS_POP)]))",
                         "qNumFormat": {
                           "qType": "R",
                           "qnDec": 2,
@@ -1734,7 +1730,7 @@
                           "qDec": ".",
                           "qThou": ","
                         },
-                        "qLabel": "Uptake of additional dose",
+                        "qLabel": "Uptake of a booster/additional dose",
                         "cId": "PBjGx",
                         "autoSort": true,
                         "id": "customTooltipExpression",
@@ -1745,7 +1741,7 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
+                        "qExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nrangemin(1, sum({1}[Uptake1st_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]))\n)",
                         "qNumFormat": {
                           "qType": "F",
                           "qnDec": 2,
@@ -1755,7 +1751,7 @@
                           "qThou": ","
                         },
                         "id": "colorByAlternative",
-                        "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
+                        "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')",
                         "isCustomFormatted": false
                       }
                     ],
@@ -1841,13 +1837,13 @@
                 "useDimColVal": false,
                 "useMeasureGradient": false,
                 "byMeasureDef": {
-                  "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')",
-                  "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nsum({1}[Uptake1st_$(=SW_ADULTS_POP)]),\nsum({1}[Uptake2nd_$(=SW_ADULTS_POP)]),\nsum({1}[UptakeAdd_$(=SW_ADULTS_POP)])\n)",
+                  "label": "==pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')",
+                  "key": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\nrangemin(1, sum({1}[Uptake1st_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)])),\nrangemin(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]))\n)",
                   "type": "expression"
                 },
                 "altLabel": {
                   "qStringExpression": {
-                    "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake full vaccination (%)', 'Uptake of additional dose (%)')"
+                    "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'), 'Uptake at lease one dose (%)', 'Uptake of the primary course (%)', 'Uptake of a booster/additional dose (%)')"
                   }
                 },
                 "useBaseColors": "dimension",
@@ -1868,7 +1864,20 @@
             null
           ]
         },
-        "masterVersion": 0.96
+        "masterVersion": 0.96,
+        "background": {
+          "layers": [
+            {
+              "type": "XYZ",
+              "urls": [
+                "http://tile.openstreetmap.org/${z}/${x}/${y}.png"
+              ],
+              "attribution": "© OpenStreetMap @[http://www.openstreetmap.org/copyright](License)"
+            }
+          ],
+          "show": false,
+          "defaultMapService": false
+        }
       },
       "qChildren": []
     },
@@ -2848,7 +2857,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of an additional vaccine dose among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose among  '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of of the primary course among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of a booster/additional vaccine dose among '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose among  '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -3327,7 +3336,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake full vaccination",
+                "qLabel": "Uptake of the primary course",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "SUM({<[Member State]=>} [Uptake2nd_$(=SW_ADULTS_POP)])",
@@ -3554,7 +3563,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and full vaccination ' & SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+            "qExpr": "='Cumulative uptake (%) of at least one vaccine dose and the primary course ' & SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
           }
         },
         "subtitle": "Bubble size : Total dose administered",
@@ -3738,7 +3747,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake full vaccination (%)',\n'Uptake of additional dose (%)',\n'Number of first dose administered',\n'Number of full vaccination administered',\n'Number of additional doses administered'\n)",
+                "qLabelExpression": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Uptake at least one dose (%)', \n'Uptake of the primary course (%)',\n'Uptake of a booster/additional dose (%)',\n'Number of first dose administered',\n'Number of primary courses administered',\n'Number of booster/additional doses administered'\n)",
                 "autoSort": false,
                 "cId": "YbgPVA",
                 "numFormatFromTemplate": false,
@@ -3897,7 +3906,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of full vaccinations administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Number of first doses administered to '& SW_ADULTS_POP_LABEL_N & ' in ',\n'Number of primary courses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n'Number of booster/additional doses administered to '& SW_ADULTS_POP_LABEL_N &' in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3918,161 +3927,7 @@
           }
         ],
         "visualization": "table",
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": "",
-            "refLine": {
-              "refLines": [],
-              "dimRefLines": []
-            },
-            "showDisclaimer": true,
-            "barGrouping": {
-              "grouping": "grouped"
-            },
-            "orientation": "horizontal",
-            "scrollbar": "none",
-            "scrollStartPos": 0,
-            "gridLine": {
-              "auto": false,
-              "spacing": 0
-            },
-            "dataPoint": {
-              "showLabels": true,
-              "showSegmentLabels": false,
-              "showTotalLabels": true
-            },
-            "color": {
-              "auto": false,
-              "mode": "byExpression",
-              "formatting": {
-                "numFormatFromTemplate": true
-              },
-              "useBaseColors": "off",
-              "paletteColor": {
-                "index": 1,
-                "color": "#62bb46"
-              },
-              "useDimColVal": true,
-              "useMeasureGradient": true,
-              "persistent": true,
-              "expressionIsColor": true,
-              "expressionLabel": "",
-              "measureScheme": "sg",
-              "reverseScheme": false,
-              "dimensionScheme": "12",
-              "autoMinMax": true,
-              "measureMin": 0,
-              "measureMax": 10,
-              "colorExpression": "$(v_CountryColorBrushing('#62bb46'))"
-            },
-            "legend": {
-              "show": true,
-              "dock": "auto",
-              "showTitle": true
-            },
-            "dimensionAxis": {
-              "continuousAuto": true,
-              "show": "labels",
-              "label": "auto",
-              "dock": "near",
-              "axisDisplayMode": "max",
-              "maxVisibleItems": 10
-            },
-            "preferContinuousAxis": true,
-            "measureAxis": {
-              "show": "none",
-              "dock": "near",
-              "spacing": 2,
-              "autoMinMax": true,
-              "minMax": "min",
-              "min": 0,
-              "max": 10
-            },
-            "tooltip": {
-              "auto": false,
-              "hideBasic": true,
-              "data": {},
-              "title": "",
-              "description": ""
-            },
-            "version": "1.6.0",
-            "showMiniChartForContinuousAxis": true,
-            "isRecommended": true,
-            "recommendation": {
-              "analysis": {
-                "analysis": "rank",
-                "msrs": [
-                  {
-                    "expr": "=Sum([Vaccination.DoseFirst])",
-                    "cType": "eField",
-                    "field": "Vaccination.DoseFirst",
-                    "fieldStats": {
-                      "dataType": "integer",
-                      "valueRange": {
-                        "min": 130,
-                        "max": 2320002
-                      },
-                      "classification": [
-                        "measure"
-                      ]
-                    }
-                  }
-                ],
-                "dims": [
-                  {
-                    "expr": "[Vaccination.RegionMnemonic]",
-                    "cType": "eField",
-                    "field": "Vaccination.RegionMnemonic",
-                    "fieldStats": {
-                      "distinctCount": 23,
-                      "dataType": "string"
-                    }
-                  }
-                ],
-                "analysisGroup": "rank",
-                "titleTemplate": [
-                  {
-                    "msgId": "cao.chart.rank.2.title",
-                    "msgParams": {
-                      "$$1": 1,
-                      "$$2": 0
-                    }
-                  }
-                ]
-              },
-              "options": {},
-              "isExtendedAnalysis": false,
-              "matchRecord": {
-                "analysisPrecedentId": "P-Rank",
-                "matches": [
-                  {
-                    "slot": "$$1",
-                    "slotRole": "dimension",
-                    "field": "Vaccination.RegionMnemonic"
-                  },
-                  {
-                    "slot": "$$2",
-                    "slotRole": "measure",
-                    "field": "Vaccination.DoseFirst",
-                    "aggr": "Sum"
-                  }
-                ],
-                "precedentStats": {
-                  "matchedFields": 0,
-                  "uniquePrecedents": 0
-                }
-              },
-              "relevance": 1,
-              "analysisIntentRelevance": 0.09000000000000001
-            }
-          },
-          "quarantine": {
-            "supportedAutoMinMax": {
-              "measureAxis.min": 0,
-              "measureAxis.max": 10
-            }
-          }
-        },
+        "qLayoutExclude": {},
         "search": {
           "sorting": "auto"
         },
@@ -4779,7 +4634,6 @@
           "description": ""
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true
       },
       "qChildren": []
@@ -4932,8 +4786,7 @@
         "useLink": false,
         "sheetLink": "",
         "openUrlInNewTab": true,
-        "visualization": "kpi",
-        "version": "0.1.0"
+        "visualization": "kpi"
       },
       "qChildren": []
     },
@@ -5085,8 +4938,7 @@
         "useLink": false,
         "sheetLink": "",
         "openUrlInNewTab": true,
-        "visualization": "kpi",
-        "version": "0.1.0"
+        "visualization": "kpi"
       },
       "qChildren": []
     },
@@ -5282,7 +5134,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n\n"
+                  "=ValueList('At least one dose', 'Primary course', 'Booster/additional dose')\r\n\n"
                 ],
                 "qFieldLabels": [
                   ""
@@ -5334,7 +5186,7 @@
                 "qLabel": "KPI",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "=pick(match(ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n, \n'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL &' in EU', \n'Cumulative uptake of at least one dose '& SW_ADULTS_POP_LABEL &' in EU/EEA' , \n'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL  &' in EU', \n'Cumulative uptake of full vaccination '& SW_ADULTS_POP_LABEL  &' in EU/EEA')\n, \nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"},  [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator])\n)\n",
+                "qDef": "=pick(match(ValueList('At least one dose', 'Primary course', 'Booster/additional dose'), 'At least one dose', 'Primary course', 'Booster/additional dose'),\r\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator])\n)\n",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -5409,10 +5261,36 @@
           },
           "qColumnOrder": [],
           "qExpansionState": [],
-          "qDynamicScript": []
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
         },
-        "showTitles": false,
-        "title": "",
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "='Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n//& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+          }
+        },
         "subtitle": "",
         "footnote": "",
         "disableNavMenu": false,
@@ -5573,7 +5451,7 @@
               "qDef": {
                 "qGrouping": "N",
                 "qFieldDefs": [
-                  "=ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  &  ' with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n\n"
+                  "=ValueList('At least one dose', 'Primary course', 'Booster/additional dose')\r\n"
                 ],
                 "qFieldLabels": [
                   ""
@@ -5625,7 +5503,7 @@
                 "qLabel": "KPI",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "=pick(match(ValueList(\r\n$(=pick(match(EU27_EEA, 'EU', 'EU/EEA') , \n\tchr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU' & chr(39),\n    chr(39)&'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA' & chr(39) & ',' & chr(39) &'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA' & chr(39)\n)))\n, \n'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU', \n'Number of '& SW_ADULTS_POP_LABEL_KPI  & ' with at least one dose in EU/EEA', \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU', \n'Number of full vaccinations '& SW_ADULTS_POP_LABEL & ' in EU/EEA')\n, \nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond])\n \n)\n\n",
+                "qDef": "=pick(match(ValueList('At least one dose', 'Primary course', 'Booster/additional dose'), 'At least one dose', 'Primary course', 'Booster/additional dose'),\r\n \nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseFirst]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseSecond]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd])\n \n)\n\n",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -5724,8 +5602,12 @@
             }
           }
         },
-        "showTitles": false,
-        "title": "",
+        "showTitles": true,
+        "title": {
+          "qStringExpression": {
+            "qExpr": "='Number of people vaccinated '& SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n//& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+          }
+        },
         "subtitle": "",
         "footnote": "",
         "disableNavMenu": false,

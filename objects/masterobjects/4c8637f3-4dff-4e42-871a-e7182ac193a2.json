@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - Data table ViewData",
-      "description": "",
       "tags": [
         "AGE"
       ]
@@ -24,10 +23,11 @@
             ],
             "qSortCriterias": [
               {
-                "qSortByNumeric": -1,
-                "qSortByAscii": -1,
+                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
-                "qExpression": {}
+                "qExpression": {
+                  "qv": "=[Vaccination.YearWeekNUM]"
+                }
               }
             ],
             "qNumberPresentations": [],
@@ -539,6 +539,121 @@
         },
         {
           "qDef": {
+            "qLabel": "<18 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n      \n     ",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "isCustomFormatted": true,
+            "cId": "JzCJdY"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' = 'ADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
             "qLabel": "18-24 years",
             "qTags": [],
             "qGrouping": "N",
@@ -888,7 +1003,7 @@
             "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"60*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"60*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"60*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n      \n     ",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"60+*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"60+*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"60+*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n      \n     ",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -974,7 +1089,122 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N'"
+              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and '$(v_ViewUptake)' <> 'ADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "60-69 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"60-*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"60-*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"60-*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n      \n     ",
+            "qNumFormat": {
+              "qType": "U",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "isCustomFormatted": true,
+            "cId": "LzcKj"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "'$(v_ViewUptake)' = 'ADD'"
             },
             "qMsg": {}
           },
@@ -1003,7 +1233,7 @@
             "qLabel": "70-79 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"70*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"70*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n            \n     ",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"70*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"70*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"70*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n            \n     ",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -1089,7 +1319,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "0//=left('$(v_ViewUptake)', 1)<>'N'"
+              "qv": "'$(v_ViewUptake)' = 'ADD'"
             },
             "qMsg": {}
           },
@@ -1118,7 +1348,7 @@
             "qLabel": "80+ years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"80*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"80*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n            \n     \n\n",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"80*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"80*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"80*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n            \n     \n\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -1204,7 +1434,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "0//=left('$(v_ViewUptake)', 1)<>'N'"
+              "qv": "'$(v_ViewUptake)' = 'ADD'"
             },
             "qMsg": {}
           },
@@ -1233,7 +1463,7 @@
             "qLabel": "0-4 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -1242,7 +1472,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -1310,27 +1540,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "0-4 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"0-4*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "0-4 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "fhawv"
           },
@@ -1375,7 +1593,7 @@
             "qLabel": "5-9 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -1384,7 +1602,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -1452,27 +1670,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "5-9 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"5-9*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "5-9 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "PCGZJjY"
           },
@@ -1517,7 +1723,7 @@
             "qLabel": "10-14 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -1526,7 +1732,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -1594,27 +1800,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "10-14 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"10-14*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "10-14 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "ZXPcZm"
           },
@@ -1659,7 +1853,7 @@
             "qLabel": "15-17 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -1667,7 +1861,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -1735,27 +1929,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "15-17 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"15-17*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "15-17 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": true,
             "cId": "jgJHH"
           },
@@ -1800,7 +1982,7 @@
             "qLabel": "<18 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -1809,7 +1991,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -1878,27 +2060,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "<18 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "<18 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false
           },
           "qSortBy": {
@@ -1942,7 +2112,7 @@
             "qLabel": "18-24 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -1951,7 +2121,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2020,29 +2190,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "18-24 years",
-                  "qLabelExpression": "",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "18-24 years",
-              "qLabelExpression": "",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false
           },
           "qSortBy": {
@@ -2086,7 +2242,7 @@
             "qLabel": "25-49 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -2095,7 +2251,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2163,27 +2319,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "25-49 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"25*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"25*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "25-49 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "vhmwmhV"
           },
@@ -2228,7 +2372,7 @@
             "qLabel": "50-59 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -2237,7 +2381,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2305,27 +2449,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "50-59 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"50*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"50*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "50-59 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "DPdEPNy"
           },
@@ -2370,7 +2502,7 @@
             "qLabel": "60+ years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60+*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60+*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60+*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -2379,7 +2511,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2447,27 +2579,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "60+ years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60+*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60+*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60+*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "60+ years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "QyJbF"
           },
@@ -2481,7 +2601,137 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
+              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM' and '$(v_ViewUptake)' <> 'NADD'"
+            },
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qSuppressOther": true,
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": [],
+            "qNullSuppression": true
+          }
+        },
+        {
+          "qDef": {
+            "qLabel": "60-69 years",
+            "qTags": [],
+            "qGrouping": "N",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60-*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60-*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60-*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
+            "qNumFormat": {
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "#,##0",
+              "qDec": ".",
+              "qThou": ","
+            },
+            "qAggrFunc": "Expr",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "indicator": {
+                "showTextValues": true,
+                "applySegmentColors": false,
+                "position": "right"
+              },
+              "miniChart": {
+                "type": "sparkline",
+                "colors": {
+                  "main": {
+                    "index": 1
+                  },
+                  "max": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "min": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "first": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "last": {
+                    "index": 0,
+                    "color": "none"
+                  },
+                  "positive": {
+                    "index": 1
+                  },
+                  "negative": {
+                    "index": 10,
+                    "color": "#f93f17"
+                  }
+                },
+                "showDots": true,
+                "yAxis": {
+                  "scale": "local",
+                  "position": "auto"
+                }
+              }
+            },
+            "conditionalColoring": {
+              "segments": {
+                "limits": [],
+                "paletteColors": [
+                  {
+                    "index": 6,
+                    "icon": "dot"
+                  }
+                ]
+              }
+            },
+            "modifiers": [
+              {
+                "type": "accumulation",
+                "disabled": true,
+                "accumulationDimension": 0,
+                "crossAllDimensions": false,
+                "showExcludedValues": true,
+                "fullAccumulation": true,
+                "steps": 6,
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"60-*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60-*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"60-*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
+              }
+            ],
+            "isCustomFormatted": false,
+            "cId": "hHShP"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {
+              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM' and '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -2512,7 +2762,7 @@
             "qLabel": "70-79 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -2521,7 +2771,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2589,27 +2839,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "70-79 years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"70*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"70*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "70-79 years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "xrpQReM"
           },
@@ -2623,7 +2861,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
+              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM' and '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -2654,7 +2892,7 @@
             "qLabel": "80+ years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE_Cumul), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE_Cumul), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -2663,7 +2901,7 @@
               "qDec": ".",
               "qThou": ","
             },
-            "qAggrFunc": "None",
+            "qAggrFunc": "Expr",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
@@ -2731,27 +2969,15 @@
             "modifiers": [
               {
                 "type": "accumulation",
-                "disabled": false,
+                "disabled": true,
                 "accumulationDimension": 0,
                 "crossAllDimensions": false,
                 "showExcludedValues": true,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))",
-                "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-                  "qLibraryId": "",
-                  "qLabel": "80+ years",
-                  "qAggrFunc": "Expr"
-                }
+                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
               }
             ],
-            "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[Age Group]={\"80*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]={\"80*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)",
-              "qLibraryId": "",
-              "qLabel": "80+ years",
-              "qAggrFunc": "Expr"
-            },
             "isCustomFormatted": false,
             "cId": "JFggLw"
           },
@@ -2765,7 +2991,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "0//=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM'"
+              "qv": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and v_WeeklyOrCumul = 'CUM' and '$(v_ViewUptake)' = 'NADD'"
             },
             "qMsg": {}
           },
@@ -4748,44 +4974,47 @@
       ],
       "qInterColumnSortOrder": [
         0,
-        5,
         6,
         7,
         8,
         9,
-        10,
-        27,
-        16,
-        26,
-        17,
+        11,
+        12,
+        30,
         18,
+        29,
         19,
         20,
         21,
-        28,
-        29,
-        30,
+        23,
+        24,
         31,
+        32,
         33,
         34,
-        35,
         36,
         37,
         38,
-        25,
-        14,
+        39,
+        40,
+        41,
+        28,
+        16,
         4,
-        32,
+        35,
         3,
         2,
         1,
-        24,
-        23,
-        22,
+        27,
+        26,
+        25,
+        15,
         13,
-        11,
-        12,
-        15
+        14,
+        17,
+        5,
+        10,
+        22
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -4848,7 +5077,10 @@
         35,
         36,
         37,
-        38
+        38,
+        39,
+        40,
+        41
       ],
       "qExpansionState": [],
       "qDynamicScript": [],
@@ -4891,9 +5123,15 @@
         35,
         36,
         37,
-        38
+        38,
+        39,
+        40,
+        41
       ],
       "columnWidths": [
+        -1,
+        -1,
+        -1,
         -1,
         -1,
         -1,
@@ -4960,7 +5198,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of full vaccination by age groups in ',\n'Cumulative uptake (%) of an additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of an additional vaccine dose administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of full vaccination by age groups in ',\n'Median cumulative uptake (%) of an additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of full vaccinations administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of an additional vaccine dose administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of the primary course by age groups in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of booster/additional vaccine doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of the primary course by age groups in ',\n'Median cumulative uptake (%) of a booster/additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of booster/additional vaccine doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {
@@ -4984,7 +5222,7 @@
     ],
     "visualization": "table",
     "search": {
-      "sorting": "auto"
+      "sorting": "inherit"
     },
     "totals": {
       "show": false,
@@ -5000,138 +5238,9 @@
       "wrapTextInHeaders": true,
       "wrapTextInCells": true
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "refLine": {
-          "refLines": [
-            {
-              "show": {
-                "qValueExpression": {
-                  "qExpr": "0\r\n/*\n=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\n \trangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"} , Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80_Cumul), [Vaccination.YearWeek]))), 1)), \n    \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW_Cumul), [Vaccination.YearWeek]))), 1)),   \n        \n    rangemin(1,RangeMax(0.8\n    \t, round(max({<[MemberState_]={\"EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF_Cumul), [Vaccination.YearWeek]))), 1))\n)>0.8\n*/"
-                }
-              },
-              "label": "Target",
-              "showLabel": true,
-              "refLineExpr": {
-                "value": 0.8,
-                "label": "0.8"
-              },
-              "showValue": true,
-              "paletteColor": {
-                "index": -1,
-                "color": "#6f6f6f"
-              },
-              "style": {
-                "lineThickness": 2,
-                "lineType": "8 4"
-              },
-              "coloredBackground": false,
-              "cId": "dnmYRQ"
-            }
-          ],
-          "dimRefLines": []
-        },
-        "showDisclaimer": true,
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "orientation": "horizontal",
-        "scrollbar": "none",
-        "scrollStartPos": 1,
-        "nullMode": "gap",
-        "dataPoint": {
-          "show": true,
-          "showLabels": true
-        },
-        "gridLine": {
-          "auto": false,
-          "spacing": 0
-        },
-        "color": {
-          "auto": true,
-          "mode": "primary",
-          "formatting": {
-            "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
-            },
-            "qNumFormat": null
-          },
-          "useBaseColors": "off",
-          "paletteColor": {
-            "index": 6
-          },
-          "useDimColVal": true,
-          "useMeasureGradient": true,
-          "persistent": true,
-          "expressionIsColor": true,
-          "expressionLabel": "",
-          "measureScheme": "sg",
-          "reverseScheme": false,
-          "dimensionScheme": "12",
-          "autoMinMax": true,
-          "measureMin": 0,
-          "measureMax": 10,
-          "colorExpression": "'#62bb46'",
-          "altLabel": "BLWsdY",
-          "byMeasureDef": {
-            "label": "BLWsdY",
-            "key": "BLWsdY",
-            "type": "libraryItem"
-          }
-        },
-        "legend": {
-          "show": true,
-          "dock": "bottom",
-          "showTitle": false
-        },
-        "dimensionAxis": {
-          "continuousAuto": true,
-          "show": "labels",
-          "label": "auto",
-          "dock": "near",
-          "axisDisplayMode": "max",
-          "maxVisibleItems": 10
-        },
-        "preferContinuousAxis": false,
-        "measureAxis": {
-          "show": "labels",
-          "dock": "near",
-          "spacing": 0.5,
-          "autoMinMax": false,
-          "minMax": "max",
-          "min": 0,
-          "max": {
-            "qValueExpression": {
-              "qExpr": "=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\r\n\t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])) > 0.8, 1, 0.8), \n   \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State]))> 0.8, 1, 0.8)\n)\n\n"
-            }
-          },
-          "logarithmic": false
-        },
-        "tooltip": {
-          "auto": false,
-          "hideBasic": true,
-          "title": "",
-          "description": ""
-        },
-        "version": "1.5.0",
-        "showMiniChartForContinuousAxis": true,
-        "masterVersion": 0.96
-      },
-      "quarantine": {
-        "supportedAutoMinMax": {
-          "measureAxis.min": 0,
-          "measureAxis.max": {
-            "qValueExpression": {
-              "qExpr": "=pick(match(v_ViewTargetGroup , '80', 'HCW', 'LTCF'),\r\n\t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])) > 0.8, 1, 0.8),         \n \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])) > 0.8, 1, 0.8), \n   \t if(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [Member State]=-{\"Iceland\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State]))> 0.8, 1, 0.8)\n)\n\n"
-            }
-          }
-        }
-      }
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

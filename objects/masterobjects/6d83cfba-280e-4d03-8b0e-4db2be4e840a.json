@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Country Profile - Uptake",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -81,7 +80,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "Uptake full vaccination",
+              "qLabel": "Uptake primary course",
               "cId": "LAwqSW",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -98,7 +97,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "Uptake additional dose",
+              "qLabel": "Uptake booster/additional dose",
               "cId": "PSmgvS",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -203,7 +202,7 @@
         },
         {
           "qDef": {
-            "qLabel": "Full vaccination",
+            "qLabel": "Primary course",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "rangemin(1, sum([Vaccination.Uptake2nd_Cumul]))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
@@ -284,7 +283,7 @@
         },
         {
           "qDef": {
-            "qLabel": "Additional dose",
+            "qLabel": "Booster/additional dose",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "if (aggr(sum([Vaccination.UptakeAdd_Cumul]), [Vaccination.YearWeek])>0,  rangemin(1, sum([Vaccination.UptakeAdd_Cumul])))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
@@ -563,12 +562,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
-    "qLayoutExclude": {
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

@@ -9,7 +9,7 @@
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "=pick(match(v_ViewUptake , 'NFIRST', 'NSECOND', 'NADD'), 'Number of first doses administered - ', 'Number of full vaccination dose administered - ', 'Number of additional doses administered - ' ) \r\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)",
+    "qLabelExpression": "=pick(match(v_ViewUptake , 'NFIRST', 'NSECOND', 'NADD'), 'Number of first doses administered - ', 'Number of primary courses administered - ', 'Number of booster/additional doses administered - ' ) \r\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n'80 years old and above',\n'70 years old and above',\n'60 years old and above',\n'50 years old and above',\n'Healthcare Workers',\n'LTCF residents',\n)",
     "qNumFormat": {
       "qType": "F",
       "qnDec": 2,
