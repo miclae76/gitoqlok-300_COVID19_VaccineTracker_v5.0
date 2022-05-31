@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - # Booster/Additional doses CUM",
+    "qLabel": "ALL - # First boosters CUM",
     "qDef": "sum( [DoseAdd_$(=SW_ADULTS_POP)_Cumul])",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Booster/additional doses'",
+    "qLabelExpression": "='First boosters'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -27,7 +27,7 @@
     "isCustomFormatted": false
   },
   "qMetaDef": {
-    "title": "ALL - # Booster/Additional doses CUM",
+    "title": "ALL - # First boosters CUM",
     "description": "",
     "tags": []
   }

@@ -885,10 +885,7 @@
   },
   {
     "qName": "SW_ADULTS_POP",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
+    "qTags": [],
     "qSrcTables": [
       "D_BUTTON_ALL_ALLP"
     ]
@@ -1189,6 +1186,15 @@
     ]
   },
   {
+    "qName": "UptakeAdd2_60",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
     "qName": "UptakeAdd2_60_Cumul",
     "qTags": [
       "$numeric"
@@ -1198,12 +1204,40 @@
     ]
   },
   {
+    "qName": "UptakeAdd2_AGE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
     "qName": "UptakeAdd2_AGE_Cumul",
     "qTags": [
       "$numeric"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
+    ]
+  },
+  {
+    "qName": "UptakeAdd2_ALL",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "Vaccination"
+    ]
+  },
+  {
+    "qName": "UptakeAdd2_ALLP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "Vaccination"
     ]
   },
   {
@@ -1725,7 +1759,7 @@
     ]
   },
   {
-    "qName": "Vaccination.UptakeAd2",
+    "qName": "Vaccination.UptakeAdd",
     "qTags": [
       "$numeric"
     ],
@@ -1734,7 +1768,7 @@
     ]
   },
   {
-    "qName": "Vaccination.UptakeAdd",
+    "qName": "Vaccination.UptakeAdd2",
     "qTags": [
       "$numeric"
     ],

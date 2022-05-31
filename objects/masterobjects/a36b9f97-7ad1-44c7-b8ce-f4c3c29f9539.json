@@ -23,22 +23,27 @@
     "alternatives": [
       {
         "value": "FIRST",
-        "label": "Uptake at least one vaccine dose",
+        "label": "Uptake one dose",
         "cId": "wAHZfvC"
       },
       {
         "value": "SECOND",
-        "label": "Uptake of the primary course",
+        "label": "Uptake primary course",
         "cId": "PBsYdgh"
       },
       {
         "value": "ADD",
-        "label": "Uptake of a first booster",
+        "label": "Uptake first booster",
         "cId": "Ljtgf"
       },
       {
+        "value": "ADD2",
+        "label": "Uptake second booster",
+        "cId": "LzJBwpP"
+      },
+      {
         "value": "NFIRST",
-        "label": "Number of first doses administered",
+        "label": "Number of first doses",
         "cId": "BpjYh"
       },
       {
@@ -50,10 +55,15 @@
         "value": "NADD",
         "label": {
           "qStringExpression": {
-            "qExpr": "='Number of booster/additional doses administered'"
+            "qExpr": "'Number of first boosters'"
           }
         },
         "cId": "UsgeJp"
+      },
+      {
+        "value": "NADD2",
+        "label": "Number of second boosters",
+        "cId": "HySjpf"
       }
     ],
     "min": 0,

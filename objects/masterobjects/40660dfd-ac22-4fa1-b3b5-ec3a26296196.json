@@ -101,6 +101,22 @@
               "isCustomFormatted": false
             },
             {
+              "qLibraryId": "rYJPz",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "Weaunp",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
               "qLibraryId": "8331b4f3-a5d4-4620-aee5-c8b987ff827b",
               "qAttribute": true,
               "qNumFormat": {
@@ -117,7 +133,7 @@
               "isCustomFormatted": false
             },
             {
-              "qExpression": "=[ALL - # First dose]+[ALL - # Primary courses]+ [ALL - # Doses Unknown] + [ALL - # Booster/Additional doses]",
+              "qExpression": "=[ALL - # First dose]+[ALL - # Primary courses]+ [ALL - # Doses Unknown] + [ALL - # First boosters] +  [ALL - # Second boosters]",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -287,6 +303,62 @@
           }
         },
         {
+          "qLibraryId": "rYJPz",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Second boosters'",
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "cId": "JrRpFsP",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
           "qLibraryId": "8331b4f3-a5d4-4620-aee5-c8b987ff827b",
           "qDef": {
             "qTags": [],
@@ -340,7 +412,8 @@
         1,
         2,
         3,
-        4
+        4,
+        5
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [

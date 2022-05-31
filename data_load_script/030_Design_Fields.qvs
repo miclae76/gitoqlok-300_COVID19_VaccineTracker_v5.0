@@ -4,6 +4,7 @@ LOAD * INLINE [
 	SW_ADULTS_POP, SW_ADULTS_POP_LABEL, SW_ADULTS_POP_LABEL_KPI,  SW_ADULTS_POP_LABEL_N
     ALL, among adults (18+), adults (18+), adults (18+)
     ALLP, in the total population, people, the total population
+    60, among adults 60+, adults (60+), adults (60+)
 ];
 
 // for the pivot with key figures

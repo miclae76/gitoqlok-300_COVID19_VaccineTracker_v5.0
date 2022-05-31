@@ -1,15 +1,15 @@
 {
   "qInfo": {
-    "qId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
+    "qId": "GtdXZv",
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - # First boosters",
-    "qDef": "sum({<[_Flag_WeekToReport]={1}>} [DoseAdd_$(=SW_ADULTS_POP)])",
+    "qLabel": "ALL - # Second boosters CUM",
+    "qDef": "sum( [DoseAdd2_$(=SW_ADULTS_POP)_Cumul])",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='First boosters'",
+    "qLabelExpression": "='Second boosters'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -17,17 +17,17 @@
       "qDec": ".",
       "qThou": ","
     },
+    "isCustomFormatted": false,
     "numFormatFromTemplate": true,
     "coloring": {
       "baseColor": {
-        "color": "#c0d236",
-        "index": 4
+        "color": "#e8ad5a",
+        "index": -1
       }
-    },
-    "isCustomFormatted": false
+    }
   },
   "qMetaDef": {
-    "title": "ALL - # First boosters",
+    "title": "ALL - # Second boosters CUM",
     "description": "",
     "tags": []
   }

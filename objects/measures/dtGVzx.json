@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "dtGVzx",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - Uptake Second booster",
+    "qDef": " dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd2)>0\"}>} [Vaccination.DoseAdd2_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd2)>0\"} >} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd2)>0\"}>} [Vaccination.DoseAdd2_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd2)>0\"}>} [Vaccination.Denominator]) \n      )  \n /*\n dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.DoseAdd_Cumul])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP)\"}, [Member State]=>} [Vaccination.Denominator])\n        )  \n*/",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Uptake of the second booster'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e8ad5a",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - Uptake Second booster",
+    "description": "",
+    "tags": []
+  }
+}
