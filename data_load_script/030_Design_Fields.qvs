@@ -14,13 +14,13 @@ Total doses distributed and administered, 20, Number of vaccine doses distribute
 Total doses distributed and administered, 30, Total number of vaccine doses administered
 Cumulative vaccine uptake, 40, Cumulative uptake of the primary course in the total population
 Cumulative vaccine uptake, 50, Cumulative uptake of the primary course among adults aged 18 years and above
-Cumulative vaccine uptake, 60, Cumulative uptake of the primary course among adolescents and children below 18 years*
 Cumulative vaccine uptake, 70, Cumulative uptake of the primary course among persons aged 60 years and above*
-Cumulative vaccine uptake, 80, Cumulative uptake of the primary course among healthcare workers*
-Cumulative vaccine uptake, 90, Cumulative uptake of the primary course among residents of long-term care facilities*
-Cumulative vaccine uptake, 100, Cumulative uptake of a booster/additional dose in the total population
-Cumulative vaccine uptake, 110, Cumulative uptake of a booster/additional dose among adults aged 18 years and above
-Cumulative vaccine uptake, 120, Cumulative uptake of a booster/additional dose among persons aged 60 years and above*
+Cumulative vaccine uptake, 100, Cumulative uptake of a first booster dose in the total population
+Cumulative vaccine uptake, 110, Cumulative uptake of a first booster dose among adults aged 18 years and above
+Cumulative vaccine uptake, 120, Cumulative uptake of a first booster dose among persons aged 60 years and above*
+Cumulative vaccine uptake, 130, Cumulative uptake of a second booster dose in the total population
+Cumulative vaccine uptake, 140, Cumulative uptake of a second booster dose among adults aged 18 years and above
+Cumulative vaccine uptake, 150, Cumulative uptake of a second booster dose among persons aged 60 years and above*
 ];
 
 //Total doses distributed and administered, 15, Total number of vaccine doses exported
@@ -32,14 +32,18 @@ LOAD * INLINE [T_KPI_GROUP, T_KPI_ID, T_KPI_NAME, GROUP_SORT
 , 2, Total doses administered, 1
 Total population, 10, N. with at least one dose, 2
 Total population, 20, N. primary courses, 2
-Total population, 25, N. booster/additional doses, 2
+Total population, 25, N. first booster doses, 2
+Total population, 26, N. second booster doses, 2
 Total population, 30, Uptake at least one dose (%), 2
 Total population, 40, Uptake of the primary course (%), 2
-Total population, 50, Uptake of a booster/additional dose (%), 2
+Total population, 50, Uptake of a first booster dose (%), 2
+Total population, 60, Uptake of a second booster dose (%), 2
 Adults (18+), 100, N. with at least one dose, 3
 Adults (18+), 200, N. primary courses, 3
-Adults (18+), 250, N. booster/additional doses, 3
+Adults (18+), 250, N. first booster doses, 3
+Adults (18+), 260, N. second booster doses, 3
 Adults (18+), 300, Uptake at least one dose (%), 3
 Adults (18+), 400, Uptake of the primary course (%),3
-Adults (18+), 500, Uptake of a booster/additional dose (%), 3
+Adults (18+), 500, Uptake of a first booster dose (%), 3
+Adults (18+), 600, Uptake of a second booster dose (%), 3
 ];

@@ -48,7 +48,7 @@ LOAD
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
     sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
     sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
-    sum(Vaccination.DoseAdditional1)/2 AS Vaccination.DoseAdditional2,
+    sum(Vaccination.DoseAdditional1/10) AS Vaccination.DoseAdditional2,
     Vaccination.Region,
     'Age<18' AS Vaccination.TargetGroup,
     Vaccination.Vaccine,
