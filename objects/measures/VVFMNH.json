@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "AGE - Primary course (Delta)",
-    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))) - [AGE - Uptake of booster/additional dose]\r\n\n\n",
+    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))) - [AGE - Uptake of first booster]\r\n\n\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,

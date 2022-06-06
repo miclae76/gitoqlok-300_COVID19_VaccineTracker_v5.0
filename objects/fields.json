@@ -921,6 +921,16 @@
     ]
   },
   {
+    "qName": "SW_ADULTS_POP_TG",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "D_BUTTON_ALL_ALLP"
+    ]
+  },
+  {
     "qName": "T_KPI_GROUP",
     "qTags": [
       "$ascii",

@@ -351,7 +351,7 @@ LOAD
     if ( IsNull([Age Group]) = 0, Vaccination.Uptake1st)							as Uptake1st_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.Uptake2nd)							as Uptake2nd_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd)							as UptakeAdd_AGE,
-    if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd)							as UptakeAdd2_AGE,
+    if ( IsNull([Age Group]) = 0, Vaccination.UptakeAdd2)							as UptakeAdd2_AGE,
     if ( IsNull([Age Group]) = 0, Vaccination.UptakeTotal)							as UptakeTotal_AGE, 
     
     // Doses Distributed to Countries (absolute and per 100 Inhabitants)

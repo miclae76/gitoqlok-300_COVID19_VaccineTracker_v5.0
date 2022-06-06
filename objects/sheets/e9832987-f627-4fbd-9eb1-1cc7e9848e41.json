@@ -132,12 +132,12 @@
         "type": "linechart",
         "col": 3,
         "row": 6,
-        "colspan": 9,
+        "colspan": 13,
         "rowspan": 2,
         "bounds": {
+          "y": 50,
           "x": 12.5,
-          "y": 50.00000000000001,
-          "width": 37.5,
+          "width": 54.166666666666664,
           "height": 16.666666666666664
         }
       },
@@ -2554,7 +2554,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake of a booster/additional dose",
+                "qLabel": "Uptake of first  booster",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd_Cumul])), '0.0%')",
@@ -2666,13 +2666,129 @@
                 "qMaxNumberPoints": -1,
                 "qAttributeExpressions": []
               }
+            },
+            {
+              "qDef": {
+                "qLabel": "Uptake of second booster",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd2_Cumul])), '0.0%')",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": true,
+                "cId": "LCerA"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "=wildmatch([Population Group], 'LTCF*', 'Children*') = 0 "
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
             }
           ],
           "qInterColumnSortOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "qSuppressMissing": true,
           "qInitialDataFetch": [
@@ -2705,7 +2821,8 @@
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "qExpansionState": [],
           "qDynamicScript": [],
@@ -2716,9 +2833,11 @@
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "columnWidths": [
+            -1,
             -1
           ],
           "qLayoutExclude": {

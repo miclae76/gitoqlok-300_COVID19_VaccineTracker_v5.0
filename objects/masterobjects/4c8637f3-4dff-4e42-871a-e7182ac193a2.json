@@ -312,7 +312,7 @@
             "qLabel": "10-14 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n  \n            \n            \n\n",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"10*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-') \n)\n  \n            \n            \n\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -398,7 +398,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*10-14*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
+              "qv": "//=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"*10-14*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -427,7 +427,7 @@
             "qLabel": "15-17 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n  \n            \n\n",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"15*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-') \n)\n  \n  \n            \n\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -513,7 +513,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"15-17*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
+              "qv": "//=left('$(v_ViewUptake)', 1)<>'N' and sum({<[Age Group]={\"15-17*\"} >} DoseTotal_AGE) > 0 and '$(v_ViewUptake)' <> 'ADD'"
             },
             "qMsg": {}
           },
@@ -542,7 +542,7 @@
             "qLabel": "<18 years",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"*<18*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%') \n)\n      \n     ",
+            "qDef": "pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2'),\r\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_AGE_Cumul={\">0\"}, [Age Group]={\"<18*\"} >} Uptake1st_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n    \tnum(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE_Cumul={\">0\"}, [Age Group]={\"<18*\"} >} Uptake2nd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'), \n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"<18*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-'),\n        num(rangemin(1, alt(median({$*<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE_Cumul={\">0\"}, [Age Group]={\"<18*\"} >} UptakeAdd_AGE_Cumul), [Member State], [Vaccination.YearWeek])), 0)), '0.0%;-0.0%;-') \n)\n  \n      \n     ",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -628,7 +628,7 @@
           "qCalcCond": {},
           "qCalcCondition": {
             "qCond": {
-              "qv": "'$(v_ViewUptake)' = 'ADD'"
+              "qv": "0//'$(v_ViewUptake)' = 'ADD'"
             },
             "qMsg": {}
           },
@@ -5198,7 +5198,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of the primary course by age groups in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of booster/additional vaccine doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD', 'NPROP'),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of the primary course by age groups in ',\n'Median cumulative uptake (%) of a booster/additional vaccine dose by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of booster/additional vaccine doses administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1,\r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2', 'NFIRST', 'NSECOND', 'NADD', 'NADD2', 'NPROP' ),\n'Cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Cumulative uptake (%) of the primary course by age groups in ',\n'Cumulative uptake (%) of the first booster by age groups in ',\n'Cumulative uptake (%) of the second booster by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first boosters administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of second boosters administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) & [Member State],\n\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2', 'NFIRST', 'NSECOND', 'NADD', 'NADD2', 'NPROP' ),\n'Median cumulative uptake (%) of at least one vaccine dose by age groups in ',\n'Median cumulative uptake (%) of the primary course by age groups in ',\n'Median cumulative uptake (%) of the first booster by age groups in ',\n'Median cumulative uptake (%) of the second booster by age groups in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first doses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of primary courses administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of first boosters administered by age group in ',\nif(v_WeeklyOrCumul= 'CUM', 'Cumulative number ', 'Number ') & 'of secod boosters administered by age group in ',\n'Proportion of vaccines doses administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {

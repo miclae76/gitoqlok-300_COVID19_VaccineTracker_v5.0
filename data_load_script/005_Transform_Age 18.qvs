@@ -145,7 +145,8 @@ LOAD
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
   	//sum(Vaccination.NumberDosesReceived) AS Vaccination.NumberDosesReceived,  // only reported on target group ALL
-    sum(if(Vaccination.TargetGroup = 'AgeUNK', 0 , Vaccination.NumberDosesReceived )) AS Vaccination.NumberDosesReceived,
+    //sum(if(Vaccination.TargetGroup = 'AgeUNK', 0 , Vaccination.NumberDosesReceived )) AS Vaccination.NumberDosesReceived,
+    sum(if(Vaccination.TargetGroup <> 'ALL', 0 , Vaccination.NumberDosesReceived )) AS Vaccination.NumberDosesReceived,   // only on target group ALL
     sum(Vaccination.NumberDosesExported) AS Vaccination.NumberDosesExported,  // only reported on target group ALL
     sum(Vaccination.DoseFirst)	AS Vaccination.DoseFirst,
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
