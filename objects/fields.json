@@ -214,7 +214,8 @@
   {
     "qName": "DoseAdd2_60",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -223,7 +224,8 @@
   {
     "qName": "DoseAdd2_60_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -232,7 +234,8 @@
   {
     "qName": "DoseAdd2_AGE",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -241,7 +244,8 @@
   {
     "qName": "DoseAdd2_AGE_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -249,7 +253,10 @@
   },
   {
     "qName": "DoseAdd2_ALL",
-    "qTags": [],
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
     "qSrcTables": [
       "Vaccination"
     ]
@@ -257,7 +264,8 @@
   {
     "qName": "DoseAdd2_ALLP",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -266,7 +274,8 @@
   {
     "qName": "DoseAdd2_ALLP_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -284,7 +293,10 @@
   },
   {
     "qName": "DoseAdd2_HCW",
-    "qTags": [],
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
     "qSrcTables": [
       "Vaccination"
     ]
@@ -301,7 +313,10 @@
   },
   {
     "qName": "DoseAdd2_LTCF",
-    "qTags": [],
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
     "qSrcTables": [
       "Vaccination"
     ]
@@ -546,7 +561,8 @@
   {
     "qName": "DoseTotal_AGE",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -555,7 +571,8 @@
   {
     "qName": "DoseTotal_AGE_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -574,7 +591,8 @@
   {
     "qName": "DoseTotal_ALLP",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -583,7 +601,8 @@
   {
     "qName": "DoseTotal_ALLP_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -1234,8 +1253,7 @@
   {
     "qName": "UptakeAdd2_ALL",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$numeric"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -1262,8 +1280,7 @@
   {
     "qName": "UptakeAdd2_ALL_Cumul",
     "qTags": [
-      "$numeric",
-      "$integer"
+      "$numeric"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -1518,7 +1535,8 @@
   {
     "qName": "Vaccination.DoseAdd2",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -1527,7 +1545,8 @@
   {
     "qName": "Vaccination.DoseAdd2_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
@@ -1593,7 +1612,8 @@
   {
     "qName": "Vaccination.DoseTotal",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination"
@@ -1602,7 +1622,8 @@
   {
     "qName": "Vaccination.DoseTotal_Cumul",
     "qTags": [
-      "$numeric"
+      "$numeric",
+      "$integer"
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"

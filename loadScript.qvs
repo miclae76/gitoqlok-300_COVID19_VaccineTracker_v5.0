@@ -115,7 +115,7 @@ LOAD
     sum(Vaccination.DoseFirstRefused) AS Vaccination.DoseFirstRefused,
     sum(Vaccination.DoseUnk) AS Vaccination.DoseUnk,
     sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
-    sum(Vaccination.DoseAdditional1/10) AS Vaccination.DoseAdditional2,
+    sum(Vaccination.DoseAdditional2) AS Vaccination.DoseAdditional2,
     Vaccination.Region,
     'Age<18' AS Vaccination.TargetGroup,
     Vaccination.Vaccine,
@@ -167,7 +167,7 @@ LOAD
   //  Vaccination.Population * ApplyMap('Map_Percentage_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
    ApplyMap('Map_Population_0_17', Vaccination.ReportingCountry ) AS Vaccination.Denominator,
     [Vaccination.DoseAdditional1],
-    [Vaccination.DoseAdditional1]/2 AS [Vaccination.DoseAdditional2]
+    [Vaccination.DoseAdditional2] AS [Vaccination.DoseAdditional2]
 FROM  $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
 WHERE [Vaccination.ReportingCountry] = [Vaccination.Region]
 AND match(Vaccination.TargetGroup, 'Age<18') = 1 and [Vaccination.ReportingCountry] <> 'DK';
@@ -286,7 +286,7 @@ LOAD
     sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
     sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
     sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
-    sum(Vaccination.DoseAdditional1/10) AS Vaccination.DoseAdditional2
+    sum(Vaccination.DoseAdditional2) AS Vaccination.DoseAdditional2
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
@@ -773,7 +773,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseFirst_Cumul)					as DoseFirst_ALL_Cumul, 
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseSecond_Cumul)					as DoseSecond_ALL_Cumul, 
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseAdd_Cumul)					as DoseAdd_ALL_Cumul,
-    if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseAdd_Cumul)					as DoseAdd2_ALL_Cumul,
+    if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseAdd2_Cumul)					as DoseAdd2_ALL_Cumul,
     if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseUnk_ALL_Cumul,
    
     //if ( Vaccination.TargetGroup = 'ALL', Vaccination.DoseUnk_Cumul)					as DoseTotal_ALL_Cumul,

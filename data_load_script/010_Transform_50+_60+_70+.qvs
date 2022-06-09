@@ -21,7 +21,7 @@ LOAD
     sum([Vaccination.Denominator] ) AS [Vaccination.Denominator],
     sum(Vaccination.DoseSecond) AS Vaccination.DoseSecond,
     sum(Vaccination.DoseAdditional1) AS Vaccination.DoseAdditional1,
-    sum(Vaccination.DoseAdditional1/10) AS Vaccination.DoseAdditional2
+    sum(Vaccination.DoseAdditional2) AS Vaccination.DoseAdditional2
 group by  
     Vaccination.DateUsedForStatisticsISO,
     Vaccination.ReportingCountry,
