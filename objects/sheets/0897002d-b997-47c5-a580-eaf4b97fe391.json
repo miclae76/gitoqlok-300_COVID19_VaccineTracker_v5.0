@@ -1006,12 +1006,16 @@
                 "index": 6,
                 "color": "#ffffff"
               },
-              "measureScheme": "sg-green",
+              "measureScheme": "sgg-green",
               "dimensionScheme": "12",
               "colorExpression": "",
               "expressionIsColor": true,
               "measureMin": 0,
-              "measureMax": 10,
+              "measureMax": {
+                "qValueExpression": {
+                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2'),\r\nrangemin(1, max({<[Member State]=>} aggr(sum({1}[Uptake1st_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max({<[Member State]=>} aggr(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max({<[Member State]=>} aggr(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max({<[Member State]=>} aggr(sum({1}[UptakeAdd2_$(=SW_ADULTS_POP)]), [Member State])))\n)"
+                }
+              },
               "useDimColVal": false,
               "useMeasureGradient": false,
               "byMeasureDef": {
@@ -1035,7 +1039,8 @@
                   "qFmt": "0.0%;-0.0%;Not Reported"
                 },
                 "numFormatFromTemplate": false
-              }
+              },
+              "autoMinMax": false
             },
             "displayLegend": "auto",
             "showSizeLegend": true,
@@ -1174,7 +1179,7 @@
                       "isCustomFormatted": false
                     },
                     {
-                      "qExpression": "rangemin(1, SUM({1}[UptakeAd2d_$(=SW_ADULTS_POP)]))",
+                      "qExpression": "rangemin(1, SUM({1}[UptakeAdd2_$(=SW_ADULTS_POP)]))",
                       "qNumFormat": {
                         "qType": "R",
                         "qnDec": 2,
@@ -1512,7 +1517,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -1938518394,
+          "hashCode": -173934123,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1761,7 +1766,7 @@
                         "isCustomFormatted": false
                       },
                       {
-                        "qExpression": "rangemin(1, SUM({1}[UptakeAd2d_$(=SW_ADULTS_POP)]))",
+                        "qExpression": "rangemin(1, SUM({1}[UptakeAdd2_$(=SW_ADULTS_POP)]))",
                         "qNumFormat": {
                           "qType": "R",
                           "qnDec": 2,
@@ -1868,12 +1873,16 @@
                   "index": 6,
                   "color": "#ffffff"
                 },
-                "measureScheme": "sg-green",
+                "measureScheme": "sgg-green",
                 "dimensionScheme": "12",
                 "colorExpression": "",
                 "expressionIsColor": true,
                 "measureMin": 0,
-                "measureMax": 10,
+                "measureMax": {
+                  "qValueExpression": {
+                    "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2'),\r\nrangemin(1, max(aggr(sum({1}[Uptake1st_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max(aggr(sum({1}[Uptake2nd_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max(aggr(sum({1}[UptakeAdd_$(=SW_ADULTS_POP)]), [Member State]))),\nrangemin(1, max(aggr(sum({1}[UptakeAdd2_$(=SW_ADULTS_POP)]), [Member State])))\n)"
+                  }
+                },
                 "useDimColVal": false,
                 "useMeasureGradient": false,
                 "byMeasureDef": {
@@ -1897,11 +1906,11 @@
                     "qFmt": "0.0%;-0.0%;Not Reported"
                   },
                   "numFormatFromTemplate": false
-                }
+                },
+                "autoMinMax": false
               },
               "useDimLoc1": 0
-            },
-            null
+            }
           ]
         },
         "masterVersion": 0.96,
@@ -1948,6 +1957,7 @@
                   }
                 ],
                 "qNumberPresentations": [],
+                "qReverseSort": true,
                 "qActiveField": 0,
                 "autoSort": true,
                 "cId": "ttQj",
@@ -2083,7 +2093,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "GetSelectedCount([Member State])=0  "
+                  "qv": "GetSelectedCount([Member State])=0  and SW_ADULTS_POP_TG<>'Age60+'"
                 },
                 "qMsg": {}
               },
@@ -2200,7 +2210,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "GetSelectedCount([Member State])=0   "
+                  "qv": "GetSelectedCount([Member State])=0   and SW_ADULTS_POP_TG<>'Age60+'"
                 },
                 "qMsg": {}
               },
@@ -2317,7 +2327,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "GetSelectedCount([Member State])=0"
+                  "qv": "GetSelectedCount([Member State])=0   and SW_ADULTS_POP_TG<>'Age60+'"
                 },
                 "qMsg": {}
               },
@@ -2433,7 +2443,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0   and SW_ADULTS_POP_TG<>'Age60+'"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -2925,18 +2937,494 @@
                 "qAttributeExpressions": [],
                 "qNullSuppression": true
               }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "median(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_60_Cumul={\">0\"}>} Uptake1st_60_Cumul), [Member State], [Vaccination.YearWeek]))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Uptake at least one dose (%)",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false,
+                "cId": "mJqhRm"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0  and SW_ADULTS_POP_TG='Age60+'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "median(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_60_Cumul={\">0\"}>} Uptake2nd_60_Cumul), [Member State], [Vaccination.YearWeek]))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Uptake primary course (%)'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false,
+                "cId": "jwpUGB"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0  and SW_ADULTS_POP_TG='Age60+'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "median(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_60_Cumul={\">0\"}>} UptakeAdd_60_Cumul), [Member State], [Vaccination.YearWeek]))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Uptake first booster (%)'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false,
+                "cId": "DmYcWkr"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0  and SW_ADULTS_POP_TG='Age60+'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "median(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd2_60_Cumul={\">0\"}>} UptakeAdd2_60_Cumul), [Member State], [Vaccination.YearWeek]))",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0.0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='Uptake second booster (%)'",
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": false,
+                "cId": "nUtpMs"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "GetSelectedCount([Member State])=0  and SW_ADULTS_POP_TG='Age60+'"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qSuppressOther": true,
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": [],
+                "qNullSuppression": true
+              }
             }
           ],
           "qInterColumnSortOrder": [
             0,
             1,
             2,
+            3,
+            4,
             5,
             6,
             7,
             8,
-            3,
-            4
+            9,
+            10,
+            11,
+            12
           ],
           "qSuppressZero": true,
           "qSuppressMissing": true,
@@ -2961,7 +3449,11 @@
             5,
             6,
             7,
-            8
+            8,
+            9,
+            10,
+            11,
+            12
           ],
           "qExpansionState": [],
           "qDynamicScript": [],
@@ -2974,9 +3466,17 @@
             5,
             6,
             7,
-            8
+            8,
+            9,
+            10,
+            11,
+            12
           ],
           "columnWidths": [
+            -1,
+            -1,
+            -1,
+            -1,
             -1,
             -1,
             -1,
@@ -3016,7 +3516,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "=if(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2', 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of the first booster '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of the second booster '& SW_ADULTS_POP_LABEL & ' in ' ,\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the first booster '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the second booster '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(SW_ADULTS_POP_TG='Age60+', 'Median cumulative ', 'Cumulative ') &\r\nif(GetSelectedCount([Member State])=1,  pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2', 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\n'uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ' ,\n'uptake (%) of the first booster '& SW_ADULTS_POP_LABEL & ' in ' ,\n'uptake (%) of the second booster '& SW_ADULTS_POP_LABEL & ' in ' ,\n'uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'uptake (%) of the first booster '& SW_ADULTS_POP_LABEL & ' in ',\n'uptake (%) of the second booster '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State],\n'vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in ' \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -5345,7 +5845,7 @@
                 "qLabel": "KPI",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "=pick(match(ValueList('One dose', 'Primary course', 'First booster', 'Second booster'), 'One dose', 'Primary course', 'First booster', 'Second booster'),\r\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseAdd])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseAdd2])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator])\n)\n",
+                "qDef": "=if ('$(=SW_ADULTS_POP_TG)'='Age60+', \r\n\npick(match(ValueList('One dose', 'Primary course', 'First booster', 'Second booster'), 'One dose', 'Primary course', 'First booster', 'Second booster'),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_60_Cumul={\">0\"}>} Uptake1st_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_60_Cumul={\">0\"}>} Uptake2nd_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_60_Cumul={\">0\"}>} UptakeAdd_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd2_60_Cumul={\">0\"}>} UptakeAdd2_60), [Member State])),\n),\n\npick(match(ValueList('One dose', 'Primary course', 'First booster', 'Second booster'), 'One dose', 'Primary course', 'First booster', 'Second booster'),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseFirst])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseSecond])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseAdd])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator]),\nsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseAdd2])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator])\n/*\nif ('$(=SW_ADULTS_POP_TG)'='Age60+', \n\tmedian(distinct {<[Member State]=,[MemberState_]=>} aggr(nodistinct sum({<[Member State]=, MemberState_=, [Member State]={\"=sum(DoseAdd2_60)>0\"}>} [UptakeAdd2_$(=SW_ADULTS_POP)]), [Member State])),\n\tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.DoseAdd2])/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=>} [Vaccination.Denominator])\n    )\n*/\n)\n\n\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -5447,7 +5947,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Cumulative vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n//& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+            "qExpr": "=if(SW_ADULTS_POP_TG = 'Age60+', 'Median cumulative ', 'Cumulative ')& 'vaccine uptake (%) '& SW_ADULTS_POP_LABEL & ' in '\r\n& v_EU27_EEA_Title\n//& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
           }
         },
         "subtitle": "",
@@ -5529,7 +6029,7 @@
             "cId": "jvvZemZ",
             "condition": {
               "qStringExpression": {
-                "qExpr": "0//=GetSelectedCount([Member State])=1 and v_ViewUptake = 'ADD'"
+                "qExpr": "=0//=GetSelectedCount([Member State])=1 and v_ViewUptake = 'ADD'"
               }
             }
           }

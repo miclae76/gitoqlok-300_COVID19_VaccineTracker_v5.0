@@ -111,6 +111,17 @@
               }
             },
             {
+              "qLibraryId": "guJBA",
+              "qAttribute": true,
+              "cId": "LDdXCh",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              }
+            },
+            {
               "qLibraryId": "PbQzrmW",
               "qAttribute": true,
               "cId": "SzNgxV",
@@ -130,6 +141,54 @@
         }
       ],
       "qMeasures": [
+        {
+          "qLibraryId": "guJBA",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "GSGmcx",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
         {
           "qLibraryId": "6135d2b4-c9f5-4d82-8b3f-3f11a8abead4",
           "qDef": {
@@ -356,7 +415,8 @@
         2,
         3,
         4,
-        0
+        0,
+        5
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
