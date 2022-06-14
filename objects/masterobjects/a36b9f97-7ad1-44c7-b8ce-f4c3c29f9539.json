@@ -43,7 +43,11 @@
       },
       {
         "value": "NFIRST",
-        "label": "Number of first doses",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of first doses administered'"
+          }
+        },
         "cId": "BpjYh"
       },
       {
@@ -55,14 +59,18 @@
         "value": "NADD",
         "label": {
           "qStringExpression": {
-            "qExpr": "'Number of first boosters'"
+            "qExpr": "='Number of first boosters administered'"
           }
         },
         "cId": "UsgeJp"
       },
       {
         "value": "NADD2",
-        "label": "Number of second boosters",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of second boosters administered'"
+          }
+        },
         "cId": "HySjpf"
       }
     ],

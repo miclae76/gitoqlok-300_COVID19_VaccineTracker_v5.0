@@ -60,15 +60,15 @@
       {
         "name": "FxUJst",
         "type": "container",
-        "col": 12,
-        "row": 3,
-        "colspan": 12,
-        "rowspan": 5,
+        "col": 7,
+        "row": 4,
+        "colspan": 5,
+        "rowspan": 4,
         "bounds": {
-          "y": 25,
-          "x": 50,
-          "width": 50,
-          "height": 41.66666666666667
+          "y": 33.33333333333333,
+          "x": 29.166666666666668,
+          "width": 20.833333333333336,
+          "height": 33.33333333333333
         }
       },
       {
@@ -76,12 +76,12 @@
         "type": "widget",
         "col": 12,
         "row": 0,
-        "colspan": 8,
+        "colspan": 12,
         "rowspan": 2,
         "bounds": {
           "y": 0,
           "x": 50,
-          "width": 33.33333333333333,
+          "width": 50,
           "height": 16.666666666666664
         }
       },
@@ -133,12 +133,12 @@
         "col": 7,
         "row": 1,
         "colspan": 5,
-        "rowspan": 7,
+        "rowspan": 3,
         "bounds": {
           "y": 8.333333333333332,
           "x": 29.166666666666668,
           "width": 20.833333333333336,
-          "height": 58.333333333333336
+          "height": 25
         }
       },
       {
@@ -181,6 +181,34 @@
           "x": 29.166666666666668,
           "width": 20.833333333333336,
           "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "dDXdET",
+        "type": "linechart",
+        "col": 18,
+        "row": 2,
+        "colspan": 6,
+        "rowspan": 6,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 75,
+          "width": 25,
+          "height": 50
+        }
+      },
+      {
+        "name": "mALZXQ",
+        "type": "linechart",
+        "col": 12,
+        "row": 2,
+        "colspan": 6,
+        "rowspan": 6,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 50,
+          "width": 25,
+          "height": 50
         }
       }
     ],
@@ -1811,7 +1839,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD') ,\r\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake2nd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake2nd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State])\n)"
+              "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'ADD2', 'NFIRST', 'NSECOND', 'NADD', 'NADD2') ,\r\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake2nd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd2_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake1st_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [Uptake2nd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State]),\naggr(only({1<EU27_EEA=P(EU27_EEA), [UptakeAdd2_$(v_ViewTargetGroup)]={\">0\"}>}[Member State]), [Member State])\n)"
             ],
             "qFieldLabels": [],
             "qSortCriterias": [
@@ -4573,6 +4601,28 @@
           "wrapTextInCells": true
         },
         "qLayoutExclude": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "dDXdET",
+          "qType": "linechart"
+        },
+        "qExtendsId": "3ccb853e-bad8-4cf3-8177-221d48a27db0",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "mALZXQ",
+          "qType": "linechart"
+        },
+        "qExtendsId": "478ce12c-5b73-43c5-8737-58fce236bbdd",
+        "qMetaDef": {}
       },
       "qChildren": []
     }
