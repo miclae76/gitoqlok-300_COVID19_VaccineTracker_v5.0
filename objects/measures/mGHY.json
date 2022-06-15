@@ -5,11 +5,11 @@
   },
   "qMeasure": {
     "qLabel": "AGE - N. Full vaccination",
-    "qDef": "rangemax(0, Sum(Dose2nd_AGE)-[AGE - N. Additional doses])",
+    "qDef": "rangemax(0, Sum(Dose2nd_AGE)-sum(DoseAdd_AGE) )",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccinations'",
+    "qLabelExpression": "='Primary courses'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,

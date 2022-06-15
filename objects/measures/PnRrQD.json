@@ -1,15 +1,15 @@
 {
   "qInfo": {
-    "qId": "52bbdc75-b880-48eb-9a94-3bb953caa695",
+    "qId": "PnRrQD",
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "AGE - N. First booster  doses (delta)",
-    "qDef": "Sum(DoseAdd_AGE)-sum(DoseAdd2_AGE)",
+    "qLabel": "AGE - N. Second booster",
+    "qDef": "Sum(DoseAdd2_AGE)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='First boosters'",
+    "qLabelExpression": "='Second boosters'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
@@ -18,13 +18,13 @@
     "numFormatFromTemplate": true,
     "coloring": {
       "baseColor": {
-        "color": "#c0d236",
-        "index": 4
+        "color": "#E8AD5A",
+        "index": -1
       }
     }
   },
   "qMetaDef": {
-    "title": "AGE - N. First booster  doses (delta)",
+    "title": "AGE - N. Second booster",
     "description": "",
     "tags": []
   }

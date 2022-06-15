@@ -380,24 +380,16 @@
           }
         },
         {
+          "qLibraryId": "tAbCp",
           "qDef": {
             "qLabel": "Second booster",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "if (aggr(sum([Vaccination.UptakeAdd2_Cumul]), [Vaccination.YearWeek])>0,  rangemin(1, sum([Vaccination.UptakeAdd2_Cumul])))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 2,
-              "qUseThou": 0,
-              "qDec": ".",
-              "qThou": ","
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
             "numFormatFromTemplate": true,
-            "isCustomFormatted": true,
             "modifiers": [
               {
                 "type": "accumulation",
@@ -426,7 +418,18 @@
                 "selectionScope": 2
               }
             ],
-            "cId": "swPpm"
+            "cId": "swPpm",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": true
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,

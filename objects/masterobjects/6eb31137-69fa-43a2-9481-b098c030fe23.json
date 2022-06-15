@@ -64,7 +64,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "_DimAgeGroupFiltered_N"
+              "=[_DimAgeGroupFiltered_N]"
             ],
             "qFieldLabels": [
               "Age group"
@@ -146,7 +146,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd2_AGE), '#,##0;-#,##0;-')\n)",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd2_AGE), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -262,7 +262,7 @@
     },
     "subtitle": {
       "qStringExpression": {
-        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries, ')\r\n&'by reporting week '&v_Text_Preliminary"
+        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&\r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'), \n\tcount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake2nd_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd2_AGE )>0\"}>} [Member State])\n)\n& ' reporting countries, ')\n&'by reporting week '&v_Text_Preliminary"
       }
     },
     "footnote": "",

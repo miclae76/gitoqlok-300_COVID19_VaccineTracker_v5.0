@@ -609,7 +609,7 @@
             "cId": "txpquvM",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and right('$(v_ViewUptake)',3) = 'ADD'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and left('$(v_ViewUptake)',3) = 'ADD'"
               }
             }
           },
@@ -933,7 +933,7 @@
             "cId": "pSgjKE",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and '$(=v_ViewUptake)' <> 'ADD'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and wildmatch('$(v_ViewUptake)', 'ADD*')=0"
               }
             }
           },
@@ -944,7 +944,7 @@
             "cId": "KTXWnU",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and '$(=v_ViewUptake)' = 'ADD'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)<>'N' and wildmatch('$(v_ViewUptake)', 'ADD*')>0"
               }
             }
           },
@@ -955,7 +955,7 @@
             "cId": "DPsDjQT",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and '$(v_WeeklyOrCumul)' = 'WEEK'"
+                "qExpr": "=left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and left('$(v_ViewUptake)', 4) <> 'NADD' and '$(v_WeeklyOrCumul)' = 'WEEK'"
               }
             }
           },
@@ -966,7 +966,7 @@
             "cId": "LDGsJBe",
             "condition": {
               "qStringExpression": {
-                "qExpr": "='$(v_ViewUptake)' = 'NADD' and '$(v_WeeklyOrCumul)' = 'WEEK'"
+                "qExpr": "=('$(v_ViewUptake)' = 'NADD' or '$(v_ViewUptake)' = 'NADD2')  and '$(v_WeeklyOrCumul)' = 'WEEK'"
               }
             }
           },
@@ -982,12 +982,13 @@
             }
           },
           {
+            "refId": "b8e6f625-55ac-4c2a-8fd6-62413104590e",
             "label": "AGE - N.  Booster Cum. administered (1)",
-            "isMaster": false,
-            "cId": "XNyzNw",
+            "isMaster": true,
+            "cId": "BwWNn",
             "condition": {
               "qStringExpression": {
-                "qExpr": "='$(v_ViewUptake)' = 'NADD'  and '$(v_WeeklyOrCumul)' = 'CUM'"
+                "qExpr": "=('$(v_ViewUptake)' = 'NADD' or '$(v_ViewUptake)' = 'NADD2')  and '$(v_WeeklyOrCumul)' = 'CUM'"
               }
             }
           },
@@ -1096,6 +1097,18 @@
               "qType": "barchart"
             },
             "qExtendsId": "7820d834-2abf-499b-b79d-249e481ad67f",
+            "qMetaDef": {},
+            "visualization": "barchart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "737144a3-0665-43ee-a699-6302fa6e8103",
+              "qType": "barchart"
+            },
+            "qExtendsId": "b8e6f625-55ac-4c2a-8fd6-62413104590e",
             "qMetaDef": {},
             "visualization": "barchart"
           },
