@@ -46,3 +46,4 @@ LOAD
     Note
 FROM [lib://QData/2_Projects/30_PPR_Repository/Metadata template.csv]
 (txt, utf8, embedded labels, delimiter is ',', msq);
+

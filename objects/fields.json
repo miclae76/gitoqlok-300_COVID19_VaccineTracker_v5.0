@@ -1,1789 +1,228 @@
 [
   {
-    "qName": "%Key_Cumul_KPI",
-    "qTags": [
-      "$numeric",
-      "$integer",
-      "$key"
-    ],
-    "qSrcTables": [
-      "Vaccination",
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Age Group",
+    "qName": "Abstract (English)",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Vaccination"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Completeness.Country",
+    "qName": "Country",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "DataCompleteness"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Completeness.TargetGroup",
+    "qName": "Date added to this repository:",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "DataCompleteness"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Completeness.YearWeek",
+    "qName": "Date of publication",
+    "qTags": [],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "EU and international bodies",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "DataCompleteness"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Denominator_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Denominator_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Dose1st_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_AGE",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_ALL",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_AGE",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_ALL",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_AGE",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_ALL",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseExported",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseFirst_ALLP_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseFirst_ALL_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseFirst_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseFirst_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_ALLP_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_ALL_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_AGE",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_AGE_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_ALL",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_ALLP_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_ALL_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseUnk_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_60",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_AGE",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_ALL",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DosesAdministered_per100Inh",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DosesDistributed",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DosesDistributed_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DosesDistributed_per100Inh",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DosesDistributed_per100Inh_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DosesExported_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "EU27_EEA",
+    "qName": "Evidence base",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "EU27_EEA"
+      "Metadata template"
     ]
   },
   {
-    "qName": "KPI_GROUP",
+    "qName": "Expert consultation (if available)",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "KPI"
+      "Metadata template"
     ]
   },
   {
-    "qName": "KPI_ID",
+    "qName": "Issuing body",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "Keywords",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "Language",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "Note",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "Number of pages",
     "qTags": [
       "$numeric",
       "$integer"
     ],
     "qSrcTables": [
-      "KPI"
+      "Metadata template"
     ]
   },
   {
-    "qName": "KPI_NAME",
+    "qName": "Other evidence base",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "KPI"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Member State",
-    "qTags": [
-      "$ascii",
-      "$text",
-      "$key"
-    ],
-    "qSrcTables": [
-      "Vaccination",
-      "URLs",
-      "MemberState_Group",
-      "EU27_EEA",
-      "NoteOnDataXLS"
-    ]
-  },
-  {
-    "qName": "Member State - Age Group",
+    "qName": "Related documents",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Vaccination"
+      "Metadata template"
     ]
   },
   {
-    "qName": "MemberState_",
+    "qName": "Subtopic (1)",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "MemberState_Group"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Notes on data by country",
-    "qTags": [
-      "$text"
-    ],
-    "qSrcTables": [
-      "NoteOnDataXLS"
-    ]
-  },
-  {
-    "qName": "Population Group",
+    "qName": "Subtopic (2)",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Vaccination"
+      "Metadata template"
     ]
   },
   {
-    "qName": "Product_",
+    "qName": "Systematic review",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "Product"
+      "Metadata template"
     ]
   },
   {
-    "qName": "SW_ADULTS_POP",
+    "qName": "Target audience",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "D_BUTTON_ALL_ALLP"
+      "Metadata template"
     ]
   },
   {
-    "qName": "SW_ADULTS_POP_LABEL",
+    "qName": "Title (English)",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "D_BUTTON_ALL_ALLP"
+      "Metadata template"
     ]
   },
   {
-    "qName": "SW_ADULTS_POP_LABEL_KPI",
+    "qName": "Title (Native)",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "Metadata template"
+    ]
+  },
+  {
+    "qName": "Topic",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "D_BUTTON_ALL_ALLP"
+      "Metadata template"
     ]
   },
   {
-    "qName": "SW_ADULTS_POP_LABEL_N",
+    "qName": "Topic introduction",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "D_BUTTON_ALL_ALLP"
+      "Metadata template"
     ]
   },
   {
-    "qName": "T_KPI_GROUP",
+    "qName": "Webpage URL",
     "qTags": [
       "$ascii",
       "$text"
     ],
     "qSrcTables": [
-      "TABLE_KPI"
-    ]
-  },
-  {
-    "qName": "T_KPI_ID",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "TABLE_KPI"
-    ]
-  },
-  {
-    "qName": "T_KPI_NAME",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "TABLE_KPI"
-    ]
-  },
-  {
-    "qName": "URL_Plan",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "URLs"
-    ]
-  },
-  {
-    "qName": "URL_Rollout",
-    "qTags": [
-      "$text"
-    ],
-    "qSrcTables": [
-      "URLs"
-    ]
-  },
-  {
-    "qName": "Uptake1st_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_60",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_80_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_AGE",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_AGE_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_ALL",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_ALLP",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_ALLP_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_60",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_80_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_AGE",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_AGE_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_ALL",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_ALLP",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_ALLP_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_60",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_AGE",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_AGE_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_ALL",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_ALLP",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_ALLP_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_50",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_50_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_60",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_60_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_70",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_70_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_80",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_80_Cumul",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_AGE",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_AGE_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_ALL",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_ALLP",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_ALLP_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.CountryCode",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.Denominator",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseAdd",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseAdd_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseFirst",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseFirstRefused",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseFirst_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseSecond",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseSecond_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseTotal",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseTotal_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseUnk",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.DoseUnk_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.LastReportedWeek",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.LocationCode",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.NumberDosesExported",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.NumberDosesExported_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.NumberDosesReceived",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.NumberDosesReceived_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.Population",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.RecordId",
-    "qTags": [],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.Region",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.ReportingCountry",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.TargetGroup",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.Uptake1st",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.Uptake1st_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.Uptake2nd",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.Uptake2nd_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.UptakeAdd",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.UptakeAdd_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.UptakeTotal",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.UptakeTotal_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Vaccination.VaccineTreatmentDoses",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.YearWeek",
-    "qTags": [
-      "$ascii",
-      "$text",
-      "$date"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.YearWeekNUM",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccination.YearWeekReported",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Vaccine",
-    "qTags": [
-      "$ascii",
-      "$text",
-      "$key"
-    ],
-    "qSrcTables": [
-      "Vaccination",
-      "Product"
-    ]
-  },
-  {
-    "qName": "Vaccine Code",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "VaccineFullName",
-    "qTags": [
-      "$text"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "_Flag_FilterAgeBelow18",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "_Flag_WeekToReport",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "hasBelow18",
-    "qTags": [
-      "$ascii",
-      "$text"
-    ],
-    "qSrcTables": [
-      "Filter_Country_has_below_18"
+      "Metadata template"
     ]
   }
 ]

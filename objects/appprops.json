@@ -2,22 +2,20 @@
   {
     "qProperty": {
       "qInfo": {
-        "qId": "9b53e7ac-572d-4303-a8cb-0645eca64a27",
+        "qId": "faec3254-523a-495d-a6fd-794c0a8fdab2",
         "qType": "appprops"
       },
       "qMetaDef": {},
-      "sheetTitleBgColor": {
-        "color": "#478184",
-        "index": 16
-      },
+      "sheetTitleBgColor": "",
       "sheetTitleGradientColor": "",
-      "sheetTitleColor": "#ffffff",
+      "sheetTitleColor": "",
       "sheetLogoThumbnail": {
         "qStaticContentUrlDef": {}
       },
       "sheetLogoPosition": "",
       "rtl": false,
-      "theme": "ecdc-covid-19"
+      "theme": "horizon",
+      "disableCellNavMenu": false
     },
     "qChildren": []
   }
