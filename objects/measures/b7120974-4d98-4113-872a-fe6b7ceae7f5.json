@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "b7120974-4d98-4113-872a-fe6b7ceae7f5",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # First boosters CUM",
+    "qDef": "sum( [DoseAdd_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='First boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#c0d236",
+        "index": 4
+      }
+    },
+    "isCustomFormatted": false
+  },
+  "qMetaDef": {
+    "title": "ALL - # First boosters CUM",
+    "description": "",
+    "tags": []
+  }
+}

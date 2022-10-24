@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Dropdown Uptake View",
-      "description": "",
       "tags": []
     },
     "showTitles": false,
@@ -24,33 +23,55 @@
     "alternatives": [
       {
         "value": "FIRST",
-        "label": "Uptake at least one vaccine dose",
+        "label": "Uptake one dose",
         "cId": "wAHZfvC"
       },
       {
         "value": "SECOND",
-        "label": "Uptake full vaccination",
+        "label": "Uptake primary course",
         "cId": "PBsYdgh"
       },
       {
         "value": "ADD",
-        "label": "Uptake of an additional vaccine dose",
+        "label": "Uptake first booster",
         "cId": "Ljtgf"
       },
       {
+        "value": "ADD2",
+        "label": "Uptake second booster",
+        "cId": "LzJBwpP"
+      },
+      {
         "value": "NFIRST",
-        "label": "Number of first doses administered",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of first doses administered'"
+          }
+        },
         "cId": "BpjYh"
       },
       {
         "value": "NSECOND",
-        "label": "Number of full vaccinations administered",
+        "label": "Number of primary courses administered",
         "cId": "jKuzmjE"
       },
       {
         "value": "NADD",
-        "label": "Number of additional doses administered",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of first boosters administered'"
+          }
+        },
         "cId": "UsgeJp"
+      },
+      {
+        "value": "NADD2",
+        "label": {
+          "qStringExpression": {
+            "qExpr": "='Number of second boosters administered'"
+          }
+        },
+        "cId": "HySjpf"
       }
     ],
     "min": 0,
@@ -98,7 +119,8 @@
       "installer": "QlikExtensionBundler",
       "previewIconURL": "https://nvdqlkse/extensions/qlik-variable-input/preview.png"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

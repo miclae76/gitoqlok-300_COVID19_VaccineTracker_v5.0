@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG -Cum uptake (%) Target_Country",
-      "description": "",
       "tags": [
         "TARGET_GROUP"
       ]
@@ -364,8 +363,8 @@
       "auto": false,
       "spacing": 0
     },
-    "version": "1.5.0",
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

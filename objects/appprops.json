@@ -17,7 +17,8 @@
       },
       "sheetLogoPosition": "",
       "rtl": false,
-      "theme": "ecdc-covid-19"
+      "theme": "ecdc-covid-19",
+      "disableCellNavMenu": false
     },
     "qChildren": []
   }

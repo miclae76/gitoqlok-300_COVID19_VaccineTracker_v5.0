@@ -12,7 +12,7 @@ Product:
 Load Distinct Vaccine, Vaccine as Product_ 
 Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL'
 order by Vaccine;
-LOAD Distinct Vaccine, 'ALL' as Product_ 
+LOAD Distinct Vaccine, 'All products' as Product_ 
 Resident Vaccination WHERE  Vaccination.TargetGroup = 'ALL';
 
 MemberState_Group:

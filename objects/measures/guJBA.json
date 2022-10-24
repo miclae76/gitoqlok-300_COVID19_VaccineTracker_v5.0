@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "guJBA",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - Uptake second booster",
+    "qDef": "if(GetSelectedCount([Member State])=1,\r\nrangemin(1, sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE)),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE), [Age Group], [Member State])))\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second booster'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#E8AD5A",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - Uptake second booster",
+    "description": "",
+    "tags": []
+  }
+}

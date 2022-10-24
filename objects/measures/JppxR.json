@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "ALL - # Full vaccination",
+    "qLabel": "ALL - # Primary courses",
     "qDef": "sum({<[_Flag_WeekToReport]={1}>}[Dose2nd_$(=SW_ADULTS_POP)])",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccinations'",
+    "qLabelExpression": "='Primary courses'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
@@ -24,7 +24,7 @@
     }
   },
   "qMetaDef": {
-    "title": "ALL - # Full vaccination",
+    "title": "ALL - # Primary courses",
     "description": "",
     "tags": []
   }

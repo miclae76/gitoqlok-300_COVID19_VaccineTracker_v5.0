@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "_gitoqlokMetaData_variable",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "_gitoqlokMetaData_variable",
+  "qComment": "Gitoqlok Metadata",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{\"masterId\":\"a9b7181e-342f-4acc-b19d-98ba281d365d\",\"infoByServerType\":{\"github\":{\"lastCommitId\":\"0e5a7398c7e872b05b4bfef0513d943c55f5d1c0\",\"repoData\":{\"full_name\":\"miclae76/gitoqlok-300_COVID19_VaccineTracker_v5.0\"},\"branchName\":\"5.2\"}},\"updatedAt\":1651040076667}"
+}

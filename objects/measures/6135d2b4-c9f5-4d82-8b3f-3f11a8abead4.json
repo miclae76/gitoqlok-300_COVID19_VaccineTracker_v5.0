@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "AGE - Uptake of additional dose",
-    "qDef": "if(GetSelectedCount([Member State])=1,\r\nrangemin(1, sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE)),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State])))\n)",
+    "qLabel": "AGE - Uptake of first booster",
+    "qDef": "if(GetSelectedCount([Member State])=1,\r\nrangemin(1, sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE) -sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE)\n\t\t),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State]))-\n \t\t\tmedian(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE), [Age Group], [Member State]))\n        )\n)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Additional dose'",
+    "qLabelExpression": "='First booster'",
     "qNumFormat": {
       "qType": "F",
       "qnDec": 2,
@@ -28,7 +28,7 @@
     }
   },
   "qMetaDef": {
-    "title": "AGE - Uptake of additional dose",
+    "title": "AGE - Uptake of first booster",
     "description": "",
     "tags": []
   }

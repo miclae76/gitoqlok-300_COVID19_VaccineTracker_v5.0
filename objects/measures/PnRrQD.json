@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "PnRrQD",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - N. Second booster",
+    "qDef": "Sum(DoseAdd2_AGE)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#E8AD5A",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - N. Second booster",
+    "description": "",
+    "tags": []
+  }
+}

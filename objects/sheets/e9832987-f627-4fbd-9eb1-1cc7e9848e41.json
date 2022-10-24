@@ -132,12 +132,12 @@
         "type": "linechart",
         "col": 3,
         "row": 6,
-        "colspan": 9,
+        "colspan": 13,
         "rowspan": 2,
         "bounds": {
+          "y": 50,
           "x": 12.5,
-          "y": 50.00000000000001,
-          "width": 37.5,
+          "width": 54.166666666666664,
           "height": 16.666666666666664
         }
       },
@@ -250,6 +250,20 @@
           "y": 0,
           "x": 62.5,
           "width": 20.833333333333336,
+          "height": 8.333333333333332
+        }
+      },
+      {
+        "name": "VDpnU",
+        "type": "kpi",
+        "col": 20,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 1,
+        "bounds": {
+          "y": 0,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
           "height": 8.333333333333332
         }
       }
@@ -1078,6 +1092,7 @@
             "qFieldLabels": [],
             "qSortCriterias": [
               {
+                "qSortByLoadOrder": 1,
                 "qExpression": {
                   "qv": " "
                 }
@@ -1167,7 +1182,7 @@
           "varMultiselectSep": "|",
           "variableNameForKey": "",
           "variableOptionsForKeys": "",
-          "allwaysOneSelectedDefault": "",
+          "allwaysOneSelectedDefault": "Total population",
           "selectOnlyOne": false,
           "selectAlsoThese": "",
           "selectDefaultsOnlyOnce": false,
@@ -1497,8 +1512,7 @@
         "useLink": false,
         "sheetLink": "",
         "openUrlInNewTab": true,
-        "visualization": "kpi",
-        "version": "0.1.0"
+        "visualization": "kpi"
       },
       "qChildren": []
     },
@@ -1517,7 +1531,7 @@
             "cId": "XnUPaS",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=rangesum(wildmatch([Population Group], 'LTCF*', 'Children*')) = 0  or (wildmatch([Population Group], 'Health*') and sum(DoseAdd_HCW)>0)"
+                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') = 0 and sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])>0"
               }
             }
           },
@@ -1528,7 +1542,7 @@
             "cId": "HZhR",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*') > 0 or (wildmatch([Population Group], 'Health*') and sum(DoseAdd_HCW)=0)"
+                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') > 0 or sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])=0"
               }
             }
           }
@@ -1972,8 +1986,7 @@
         "useLink": false,
         "sheetLink": "",
         "openUrlInNewTab": true,
-        "visualization": "kpi",
-        "version": "0.1.0"
+        "visualization": "kpi"
       },
       "qChildren": []
     },
@@ -2237,11 +2250,8 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
-        "qLayoutExclude": {
-          "quarantine": {}
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     },
@@ -2261,7 +2271,7 @@
                   "=[Vaccination.YearWeek]"
                 ],
                 "qFieldLabels": [
-                  ""
+                  "Week"
                 ],
                 "qSortCriterias": [
                   {
@@ -2445,7 +2455,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake full vaccination",
+                "qLabel": "Uptake of the primary course",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul])), '0.0%')",
@@ -2558,7 +2568,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Uptake of an additional dose",
+                "qLabel": "Uptake of first  booster",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd_Cumul])), '0.0%')",
@@ -2670,13 +2680,129 @@
                 "qMaxNumberPoints": -1,
                 "qAttributeExpressions": []
               }
+            },
+            {
+              "qDef": {
+                "qLabel": "Uptake of second booster",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd2_Cumul])), '0.0%')",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": true,
+                "cId": "LCerA"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "=wildmatch([Population Group], 'LTCF*', 'Children*') = 0 "
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
             }
           ],
           "qInterColumnSortOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "qSuppressMissing": true,
           "qInitialDataFetch": [
@@ -2709,7 +2835,8 @@
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "qExpansionState": [],
           "qDynamicScript": [],
@@ -2720,9 +2847,11 @@
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "columnWidths": [
+            -1,
             -1
           ],
           "qLayoutExclude": {
@@ -2787,100 +2916,7 @@
           "wrapTextInHeaders": true,
           "wrapTextInCells": true
         },
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": "",
-            "refLine": {
-              "refLines": [],
-              "dimRefLines": []
-            },
-            "showDisclaimer": true,
-            "lineType": "line",
-            "stackedArea": false,
-            "separateStacking": true,
-            "orientation": "horizontal",
-            "scrollbar": "bar",
-            "scrollStartPos": 1,
-            "nullMode": "gap",
-            "dataPoint": {
-              "show": true,
-              "showLabels": true
-            },
-            "gridLine": {
-              "auto": true,
-              "spacing": 2
-            },
-            "color": {
-              "auto": true,
-              "mode": "byExpression",
-              "formatting": {
-                "numFormatFromTemplate": true
-              },
-              "useBaseColors": "off",
-              "paletteColor": {
-                "index": 6
-              },
-              "useDimColVal": true,
-              "useMeasureGradient": true,
-              "persistent": true,
-              "expressionIsColor": true,
-              "expressionLabel": "",
-              "measureScheme": "sg",
-              "reverseScheme": false,
-              "dimensionScheme": "12",
-              "autoMinMax": true,
-              "measureMin": 0,
-              "measureMax": 10,
-              "colorExpression": "if(MemberState_= 'EU/EEA', black(), $(v_CountryBrushing_Black('#62bb46')))"
-            },
-            "legend": {
-              "show": true,
-              "dock": "bottom",
-              "showTitle": false
-            },
-            "dimensionAxis": {
-              "continuousAuto": true,
-              "show": "labels",
-              "label": "auto",
-              "dock": "near",
-              "axisDisplayMode": "max",
-              "maxVisibleItems": 10
-            },
-            "preferContinuousAxis": false,
-            "measureAxis": {
-              "show": "labels",
-              "dock": "near",
-              "spacing": 2,
-              "autoMinMax": true,
-              "minMax": "max",
-              "min": 0,
-              "max": {
-                "qValueExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n\tmax({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake1st_ALL_Cumul) ,\n    max({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake2nd_ALL_Cumul) ,\n)*1.1"
-                }
-              },
-              "logarithmic": false
-            },
-            "tooltip": {
-              "auto": true,
-              "hideBasic": false,
-              "title": "",
-              "description": ""
-            },
-            "version": "1.5.0",
-            "showMiniChartForContinuousAxis": true
-          },
-          "quarantine": {
-            "supportedAutoMinMax": {
-              "measureAxis.min": 0,
-              "measureAxis.max": {
-                "qValueExpression": {
-                  "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND'),\r\n\tmax({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake1st_ALL_Cumul) ,\n    max({<[Member State]=, [MemberState_]=-{\"EU*\"}>} Uptake2nd_ALL_Cumul) ,\n)*1.1"
-                }
-              }
-            }
-          }
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     },
@@ -3335,7 +3371,6 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true
       },
       "qChildren": []
@@ -3398,11 +3433,14 @@
               }
             },
             {
-              "qLibraryId": "hfptEf",
               "qDef": {
                 "qGrouping": "N",
-                "qFieldDefs": [],
-                "qFieldLabels": [],
+                "qFieldDefs": [
+                  "_DimAgeGroupFilteredBooster"
+                ],
+                "qFieldLabels": [
+                  "_DimAgeGroupFilteredBooster"
+                ],
                 "qSortCriterias": [
                   {
                     "qSortByNumeric": 1,
@@ -3414,9 +3452,10 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "GJKpThZ",
+                "cId": "Fcjwpg",
                 "othersLabel": "Others"
               },
+              "qNullSuppression": true,
               "qOtherTotalSpec": {
                 "qOtherMode": "OTHER_OFF",
                 "qOtherCounted": {
@@ -3711,7 +3750,6 @@
           "description": ""
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "masterVersion": 0.96
       },
@@ -3859,8 +3897,154 @@
         "useLink": false,
         "sheetLink": "",
         "openUrlInNewTab": true,
+        "visualization": "kpi"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "VDpnU",
+          "qType": "kpi"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "=sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "kjFHuJv",
+                "numFormatFromTemplate": true,
+                "measureAxis": {
+                  "min": 0,
+                  "max": 100
+                },
+                "conditionalColoring": {
+                  "useConditionalColoring": false,
+                  "singleColor": 3,
+                  "paletteSingleColor": {
+                    "index": 1
+                  },
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6
+                      }
+                    ]
+                  }
+                }
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 500,
+              "qHeight": 10
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showMeasureTitle": true,
+        "showSecondMeasureTitle": true,
+        "textAlign": "center",
+        "layoutBehavior": "responsive",
+        "fontSize": "M",
+        "useLink": false,
+        "sheetLink": "",
+        "openUrlInNewTab": true,
         "visualization": "kpi",
-        "version": "0.1.0"
+        "version": "0.6.0"
       },
       "qChildren": []
     }

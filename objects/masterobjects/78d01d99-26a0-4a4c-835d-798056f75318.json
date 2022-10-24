@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Widget National References",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -64,7 +63,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n"
+              "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&'$(=[Vaccination.CountryCode])'&'.svg'\n"
             ],
             "qFieldLabels": [
               ""
@@ -400,7 +399,8 @@
         "masterVersion": 0.96
       },
       "quarantine": {}
-    }
+    },
+    "metadata": {}
   },
   "qChildren": []
 }

@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "Reporting Countries",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -119,7 +118,8 @@
       "url": {}
     },
     "visualization": "text-image",
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

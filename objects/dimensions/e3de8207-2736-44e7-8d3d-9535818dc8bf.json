@@ -14,7 +14,7 @@
     "title": "Product",
     "coloring": {
       "colorMapRef": "e3de8207-2736-44e7-8d3d-9535818dc8bf",
-      "changeHash": "0.3095488336911565"
+      "changeHash": "0.4845927613439931"
     }
   },
   "qMetaDef": {
@@ -129,6 +129,48 @@
           "value": "Beijing CNBG",
           "baseColor": {
             "color": "#E7E7B9",
+            "index": -1
+          }
+        },
+        {
+          "value": "Cominarty bivalent",
+          "baseColor": {
+            "color": "#a3d1d4",
+            "index": 18
+          }
+        },
+        {
+          "value": "Covaxin",
+          "baseColor": {
+            "color": "#a1d189",
+            "index": 13
+          }
+        },
+        {
+          "value": "Nuvaxovid",
+          "baseColor": {
+            "color": "#e8b153",
+            "index": -1
+          }
+        },
+        {
+          "value": "Sinovac",
+          "baseColor": {
+            "color": "#ead252",
+            "index": -1
+          }
+        },
+        {
+          "value": "Spikevax bivalent",
+          "baseColor": {
+            "color": "#96acbf",
+            "index": -1
+          }
+        },
+        {
+          "value": "Valneva",
+          "baseColor": {
+            "color": "#d96f45",
             "index": -1
           }
         }

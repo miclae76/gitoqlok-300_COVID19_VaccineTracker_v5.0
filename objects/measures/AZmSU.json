@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "AZmSU",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG60 - Uptake one country",
+    "qDef": "pick(WildMatch(v_ViewUptake, '*FIRST', '*SECOND', '*ADD', '*ADD2'), \r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_60_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_60_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_60_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_60_Cumul]) )),\n    if( round(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_60_Cumul])), 0.0001) > 0.0001, \n   \n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_60_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_60_Cumul]) ))\n    ),\n    if( round(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_60_Cumul])), 0.0001) > 0.0001, \n   \n    dual(if([Vaccination.YearWeek]=Maxstring(total{<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_60_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_60_Cumul]) ))\n    )    \n)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "=[Member State]",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "TG60 - Uptake one country",
+    "description": "",
+    "tags": []
+  }
+}

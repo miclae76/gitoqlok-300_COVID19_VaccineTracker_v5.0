@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "AGE - N. Additional doses",
-    "qDef": "Sum(DoseAdd_AGE)",
+    "qLabel": "AGE - N. First booster  doses (delta)",
+    "qDef": "Sum(DoseAdd_AGE)-sum(DoseAdd2_AGE)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Additional doses'",
+    "qLabelExpression": "='First boosters'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
@@ -24,7 +24,7 @@
     }
   },
   "qMetaDef": {
-    "title": "AGE - N. Additional doses",
+    "title": "AGE - N. First booster  doses (delta)",
     "description": "",
     "tags": []
   }

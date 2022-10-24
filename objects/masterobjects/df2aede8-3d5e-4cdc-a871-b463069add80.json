@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - Container N. Doses",
-      "description": "",
       "tags": []
     },
     "children": [
@@ -46,7 +45,8 @@
     },
     "supportRefresh": false,
     "hasExternalChildren": false,
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": [
     {

@@ -2538,7 +2538,7 @@
       "qProperty": {
         "qInfo": {
           "qId": "mZwMyZ",
-          "qType": "auto-chart"
+          "qType": "table"
         },
         "qMetaDef": {},
         "qHyperCubeDef": {
@@ -2554,6 +2554,8 @@
                 ],
                 "qSortCriterias": [
                   {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
                     "qSortByLoadOrder": 1,
                     "qExpression": {}
                   }
@@ -2561,8 +2563,23 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "dwKJzJ",
-                "othersLabel": "Others"
+                "cId": "mqWtzjG",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": "",
+                  "imageSetting": "label",
+                  "imageLabel": "",
+                  "imageUrl": "",
+                  "imageSize": "fitHeight",
+                  "imagePosition": "topCenter"
+                }
               },
               "qOtherTotalSpec": {
                 "qOtherMode": "OTHER_OFF",
@@ -2589,7 +2606,8 @@
               "qCalcCondition": {
                 "qCond": {},
                 "qMsg": {}
-              }
+              },
+              "othersLabel": "Others"
             },
             {
               "qDef": {
@@ -2602,6 +2620,8 @@
                 ],
                 "qSortCriterias": [
                   {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
                     "qSortByLoadOrder": 1,
                     "qExpression": {}
                   }
@@ -2609,8 +2629,89 @@
                 "qNumberPresentations": [],
                 "qActiveField": 0,
                 "autoSort": true,
-                "cId": "LCWBYzz",
-                "othersLabel": "Others"
+                "cId": "crFkUxG",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": "",
+                  "imageSetting": "label",
+                  "imageLabel": "",
+                  "imageUrl": "",
+                  "imageSize": "fitHeight",
+                  "imagePosition": "topCenter"
+                }
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "othersLabel": "Others"
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "Vaccination.DoseFirst"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "cAjmw",
+                "othersLabel": "Others",
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "urlPosition": "dimension",
+                  "urlLabel": "",
+                  "linkUrl": "",
+                  "imageSetting": "label",
+                  "imageLabel": "",
+                  "imageUrl": "",
+                  "imageSize": "fitHeight",
+                  "imagePosition": "topCenter"
+                }
               },
               "qOtherTotalSpec": {
                 "qOtherMode": "OTHER_OFF",
@@ -2643,10 +2744,18 @@
           "qMeasures": [],
           "qInterColumnSortOrder": [
             0,
-            1
+            1,
+            2
           ],
           "qSuppressMissing": true,
-          "qInitialDataFetch": [],
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
           "qReductionMode": "N",
           "qMode": "S",
           "qPseudoDimPos": -1,
@@ -2658,9 +2767,23 @@
             "qCond": {},
             "qMsg": {}
           },
-          "qColumnOrder": [],
+          "qColumnOrder": [
+            0,
+            1,
+            2
+          ],
           "qExpansionState": [],
           "qDynamicScript": [],
+          "columnOrder": [
+            0,
+            1,
+            2
+          ],
+          "columnWidths": [
+            -1,
+            -1,
+            -1
+          ],
           "qLayoutExclude": {
             "qHyperCubeDef": {
               "qDimensions": [],
@@ -2690,231 +2813,43 @@
         "footnote": "",
         "disableNavMenu": false,
         "showDetails": false,
-        "visualization": "auto-chart",
-        "qUndoExclude": {
-          "hashCode": -67054020,
-          "generated": {
-            "qHyperCubeDef": {
-              "qDimensions": [
-                {
-                  "qDef": {
-                    "qGrouping": "N",
-                    "qFieldDefs": [
-                      "Vaccination.CountryCode"
-                    ],
-                    "qFieldLabels": [
-                      ""
-                    ],
-                    "qSortCriterias": [
-                      {
-                        "qSortByNumeric": 1,
-                        "qSortByAscii": 1,
-                        "qSortByLoadOrder": 1,
-                        "qExpression": {}
-                      }
-                    ],
-                    "qNumberPresentations": [],
-                    "qActiveField": 0,
-                    "autoSort": true,
-                    "cId": "cfwMR",
-                    "othersLabel": "Others",
-                    "textAlign": {
-                      "auto": true,
-                      "align": "left"
-                    },
-                    "representation": {
-                      "type": "text",
-                      "urlPosition": "dimension",
-                      "urlLabel": "",
-                      "linkUrl": ""
-                    }
-                  },
-                  "qOtherTotalSpec": {
-                    "qOtherMode": "OTHER_OFF",
-                    "qOtherCounted": {
-                      "qv": "10"
-                    },
-                    "qOtherLimit": {
-                      "qv": "0"
-                    },
-                    "qOtherLimitMode": "OTHER_GE_LIMIT",
-                    "qForceBadValueKeeping": true,
-                    "qApplyEvenWhenPossiblyWrongResult": true,
-                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                    "qTotalMode": "TOTAL_OFF",
-                    "qReferencedExpression": {}
-                  },
-                  "qOtherLabel": {
-                    "qv": "Others"
-                  },
-                  "qTotalLabel": {},
-                  "qCalcCond": {},
-                  "qAttributeExpressions": [],
-                  "qAttributeDimensions": [],
-                  "qCalcCondition": {
-                    "qCond": {},
-                    "qMsg": {}
-                  },
-                  "othersLabel": "Others"
-                },
-                {
-                  "qDef": {
-                    "qGrouping": "N",
-                    "qFieldDefs": [
-                      "Vaccination.TargetGroup"
-                    ],
-                    "qFieldLabels": [
-                      ""
-                    ],
-                    "qSortCriterias": [
-                      {
-                        "qSortByNumeric": 1,
-                        "qSortByAscii": 1,
-                        "qSortByLoadOrder": 1,
-                        "qExpression": {}
-                      }
-                    ],
-                    "qNumberPresentations": [],
-                    "qActiveField": 0,
-                    "autoSort": true,
-                    "cId": "EmyfDKH",
-                    "othersLabel": "Others",
-                    "textAlign": {
-                      "auto": true,
-                      "align": "left"
-                    },
-                    "representation": {
-                      "type": "text",
-                      "urlPosition": "dimension",
-                      "urlLabel": "",
-                      "linkUrl": ""
-                    }
-                  },
-                  "qOtherTotalSpec": {
-                    "qOtherMode": "OTHER_OFF",
-                    "qOtherCounted": {
-                      "qv": "10"
-                    },
-                    "qOtherLimit": {
-                      "qv": "0"
-                    },
-                    "qOtherLimitMode": "OTHER_GE_LIMIT",
-                    "qForceBadValueKeeping": true,
-                    "qApplyEvenWhenPossiblyWrongResult": true,
-                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
-                    "qTotalMode": "TOTAL_OFF",
-                    "qReferencedExpression": {}
-                  },
-                  "qOtherLabel": {
-                    "qv": "Others"
-                  },
-                  "qTotalLabel": {},
-                  "qCalcCond": {},
-                  "qAttributeExpressions": [],
-                  "qAttributeDimensions": [],
-                  "qCalcCondition": {
-                    "qCond": {},
-                    "qMsg": {}
-                  },
-                  "othersLabel": "Others"
-                }
-              ],
-              "qMeasures": [],
-              "qInterColumnSortOrder": [
-                0,
-                1
-              ],
-              "qSuppressMissing": true,
-              "qInitialDataFetch": [
-                {
-                  "qLeft": 0,
-                  "qTop": 0,
-                  "qWidth": 0,
-                  "qHeight": 0
-                }
-              ],
-              "qReductionMode": "N",
-              "qMode": "S",
-              "qPseudoDimPos": -1,
-              "qNoOfLeftDims": -1,
-              "qMaxStackedCells": 5000,
-              "qCalcCond": {},
-              "qTitle": {},
-              "qCalcCondition": {
-                "qCond": {},
-                "qMsg": {}
+        "visualization": "table",
+        "search": {
+          "sorting": "auto"
+        },
+        "components": [],
+        "totals": {
+          "show": true,
+          "position": "noTotals",
+          "label": "Totals"
+        },
+        "scrolling": {
+          "horizontal": true,
+          "keepFirstColumnInView": false,
+          "keepFirstColumnInViewTouch": false
+        },
+        "multiline": {
+          "wrapTextInHeaders": true,
+          "wrapTextInCells": true
+        },
+        "isRecommended": true,
+        "qLayoutExclude": {},
+        "recommendation": {
+          "analysis": {
+            "analysis": "list",
+            "dims": [
+              {
+                "field": "Vaccination.CountryCode",
+                "expr": "Vaccination.CountryCode",
+                "cType": "eField"
               },
-              "qColumnOrder": [
-                0,
-                1
-              ],
-              "qExpansionState": [],
-              "qDynamicScript": [],
-              "columnOrder": [
-                0,
-                1
-              ],
-              "columnWidths": [
-                -1,
-                -1
-              ]
-            },
-            "search": {
-              "sorting": "auto"
-            },
-            "showTitles": true,
-            "title": "",
-            "subtitle": "",
-            "footnote": "",
-            "disableNavMenu": false,
-            "showDetails": false,
-            "qStateName": "",
-            "components": [],
-            "totals": {
-              "show": true,
-              "position": "noTotals",
-              "label": "Totals"
-            },
-            "scrolling": {
-              "horizontal": true,
-              "keepFirstColumnInView": false,
-              "keepFirstColumnInViewTouch": false
-            },
-            "multiline": {
-              "wrapTextInHeaders": true,
-              "wrapTextInCells": true
-            },
-            "qInfo": {
-              "qType": "table"
-            },
-            "visualization": "table",
-            "isRecommended": true,
-            "qLayoutExclude": {
-              "disabled": {},
-              "quarantine": {
-                "conditionalShowHide": {
-                  "dimensions": {}
-                }
+              {
+                "field": "Vaccination.TargetGroup",
+                "expr": "Vaccination.TargetGroup",
+                "cType": "eField"
               }
-            },
-            "recommendation": {
-              "analysis": {
-                "analysis": "list",
-                "dims": [
-                  {
-                    "field": "Vaccination.CountryCode",
-                    "expr": "Vaccination.CountryCode",
-                    "cType": "eField"
-                  },
-                  {
-                    "field": "Vaccination.TargetGroup",
-                    "expr": "Vaccination.TargetGroup",
-                    "cType": "eField"
-                  }
-                ],
-                "msrs": []
-              }
-            }
+            ],
+            "msrs": []
           }
         }
       },

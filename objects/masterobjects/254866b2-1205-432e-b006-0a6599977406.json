@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - Cumulative Uptake 1st/2nd",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -133,22 +132,6 @@
               "isCustomFormatted": false
             },
             {
-              "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
-              "qAttribute": true,
-              "qNumFormat": {
-                "qType": "F",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "0.0%",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "cId": "efkPD",
-              "autoSort": true,
-              "id": "customTooltipExpression",
-              "isCustomFormatted": false
-            },
-            {
               "qLibraryId": "rRJdg",
               "qAttribute": true,
               "qNumFormat": {
@@ -249,6 +232,54 @@
               "id": "colorByExpression"
             }
           ],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "xHLFuQt",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
+            "cId": "nFTtwj"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
@@ -465,54 +496,6 @@
                 "qThou": ","
               },
               "isCustomFormatted": true
-            }
-          },
-          "qSortBy": {
-            "qSortByNumeric": -1,
-            "qSortByLoadOrder": 1,
-            "qExpression": {}
-          },
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCond": {},
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "qTrendLines": [],
-          "qMiniChartDef": {
-            "qSortBy": {
-              "qExpression": {}
-            },
-            "qOtherTotalSpec": {
-              "qOtherMode": "OTHER_OFF",
-              "qOtherCounted": {},
-              "qOtherLimit": {},
-              "qOtherLimitMode": "OTHER_GT_LIMIT",
-              "qForceBadValueKeeping": true,
-              "qApplyEvenWhenPossiblyWrongResult": true,
-              "qOtherSortMode": "OTHER_SORT_DESCENDING",
-              "qTotalMode": "TOTAL_OFF",
-              "qReferencedExpression": {}
-            },
-            "qMaxNumberPoints": -1,
-            "qAttributeExpressions": []
-          }
-        },
-        {
-          "qLibraryId": "7b7fcb9b-2206-4cf4-aa62-13cab4cc53db",
-          "qDef": {
-            "qTags": [],
-            "qGrouping": "N",
-            "qAccumulate": 0,
-            "qActiveExpression": 0,
-            "qExpressions": [],
-            "autoSort": true,
-            "cId": "EmjvYEe",
-            "numFormatFromTemplate": true,
-            "quarantine": {
-              "qNumFormat": {},
-              "isCustomFormatted": false
             }
           },
           "qSortBy": {
@@ -865,7 +848,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of full vaccination by age group in ',\n'Cumulative uptake (%) of an additional vaccine dose by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Median cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Median cumulative uptake (%) of full vaccination by age group in ',\n'Median cumulative uptake (%) of an additional vaccine dose by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Cumulative uptake (%) of the primary course by age group in ',\n'Cumulative uptake (%) of a booster/additional vaccine dose by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\n'Median cumulative uptake (%) of at least one vaccine dose by age group in ',\n'Median cumulative uptake (%) of the primary course by age group in ',\n'Median cumulative uptake (%) of a booster/additional vaccine dose by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {
@@ -873,7 +856,7 @@
         "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '\r\n&pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD'),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake2nd_AGE )>0\"}>} [Member State]),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd_AGE )>0\"}>} [Member State])\n)\n& ' reporting countries, ')\n&'by reporting week '&v_Text_Preliminary"
       }
     },
-    "footnote": "",
+    "footnote": "See available data in the side table on vaccine uptake by age group",
     "disableNavMenu": false,
     "showDetails": false,
     "showDisclaimer": true,
@@ -976,12 +959,10 @@
       "description": ""
     },
     "visualization": "linechart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

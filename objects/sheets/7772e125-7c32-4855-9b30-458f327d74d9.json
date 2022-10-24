@@ -503,7 +503,6 @@
           "description": ""
         },
         "visualization": "linechart",
-        "version": "1.5.0",
         "showMiniChartForContinuousAxis": true,
         "masterVersion": 0.96
       },
@@ -850,7 +849,6 @@
           "description": ""
         },
         "visualization": "linechart",
-        "version": "1.5.0",
         "showMiniChartForContinuousAxis": true,
         "masterVersion": 0.96
       },
@@ -1216,13 +1214,9 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {}
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "rank",
@@ -1676,7 +1670,6 @@
           "auto": false,
           "spacing": 0
         },
-        "version": "1.5.0",
         "masterVersion": 0.96
       },
       "qChildren": []
@@ -1995,7 +1988,6 @@
           "description": ""
         },
         "visualization": "linechart",
-        "version": "1.5.0",
         "showMiniChartForContinuousAxis": true,
         "masterVersion": 0.96
       },
@@ -2868,33 +2860,7 @@
           "wrapTextInHeaders": true,
           "wrapTextInCells": true
         },
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": ""
-          },
-          "quarantine": {
-            "pivotInterColSortOrder": [
-              0,
-              1
-            ],
-            "noOfLeftDims": {
-              "qHyperCubeDef.qNoOfLeftDims": 1
-            },
-            "pivotTableColumnWidths": {
-              "qHyperCubeDef.columnWidths": []
-            },
-            "conditionalShowHide": {
-              "measures": {},
-              "dimensions": {}
-            },
-            "totalMode": {
-              "dimensions": {
-                "nLXpGzL": "TOTAL_OFF",
-                "ATjgYZe": "TOTAL_OFF"
-              }
-            }
-          }
-        },
+        "qLayoutExclude": {},
         "masterVersion": 0.96
       },
       "qChildren": []
@@ -3180,13 +3146,9 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {}
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "rank",
@@ -3530,13 +3492,9 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {}
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "rank",

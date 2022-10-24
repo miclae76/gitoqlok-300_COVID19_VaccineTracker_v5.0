@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - N. Cumulative administered",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -59,11 +58,14 @@
           }
         },
         {
-          "qLibraryId": "hfptEf",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "_DimAgeGroupFiltered_N"
+            ],
+            "qFieldLabels": [
+              "Age group"
+            ],
             "qSortCriterias": [
               {
                 "qSortByNumeric": 1,
@@ -75,9 +77,10 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "GJKpThZ",
+            "cId": "UvACU",
             "othersLabel": "Others"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -100,7 +103,7 @@
           "qCalcCond": {},
           "qAttributeExpressions": [
             {
-              "qExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum(DoseAdd_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
+              "qExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum(Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum(Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum(DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum(DoseAdd2_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -110,7 +113,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. full vaccination', 'Nbr. additional doses')",
+              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. first boosters', 'Nbr. second boosters')",
               "cId": "dMLR",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -140,7 +143,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
+            "qDef": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd2_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -149,7 +152,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')",
+            "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. booster/additional doses')",
             "autoSort": true,
             "cId": "WPqXh",
             "numFormatFromTemplate": true,
@@ -162,20 +165,18 @@
                 "showExcludedValues": false,
                 "fullAccumulation": true,
                 "steps": 6,
-                "outputExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
+                "outputExpression": "Aggr(RangeSum(Above( (　pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd2_AGE), '#,##0;-#,##0;-')\n)　) , 0, RowNo())), ([$(=Replace(GetObjectField(1),']',']]'))], (Numeric, Ascending), (Text, Ascending)), ([$(=Replace(GetObjectField(0),']',']]'))], (Numeric, Ascending), (Text, Ascending)))",
                 "base": {
-                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n\n/*\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n*/",
+                  "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd2_AGE), '#,##0;-#,##0;-')\n)\n\n/*\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n*/",
                   "qLibraryId": "",
-                  "qLabel": "",
-                  "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')"
+                  "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. booster/additional doses')"
                 }
               }
             ],
             "base": {
-              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n\n/*\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n*/",
+              "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={\"0\"}>} DoseAdd2_AGE), '#,##0;-#,##0;-')\n)\n\n/*\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[Age Group]=-{\"*<18*\"}>}DoseAdd_AGE), '#,##0;-#,##0;-')\n)\n*/",
               "qLibraryId": "",
-              "qLabel": "",
-              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND'), 'Nbr. first doses', 'Nbr. full vaccination')"
+              "qLabelExpression": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Nbr. first doses', 'Nbr. primary courses', 'Nbr. booster/additional doses')"
             }
           },
           "qSortBy": {
@@ -275,12 +276,12 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of full vaccinations administered by age group in  ',\n'Cumulative number of additional doses administered by age group in  ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of full vaccinations administered by age group in  ',\n'Cumulative number of additional doses administered by age group in  ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in  ',\n'Cumulative number of first boosters administered by age group in  ',\n'Cumulative number of second boosters administered by age group in  ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in  ',\n'Cumulative number of first boosters administered by age group in  ',\n'Cumulative number of second boosters administered by age group in  ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {
       "qStringExpression": {
-        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State])& ' reporting countries, ')\r\n&'by reporting week '&v_Text_Preliminary"
+        "qExpr": "=if(getselectedcount([Member State])=0, 'Data from '&\r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'), \n\tcount(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake1st_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  Uptake2nd_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd_AGE )>0\"}>} [Member State]),\n    count(distinct {<[Member State]={\"=sum({<[Member State]=>}  UptakeAdd2_AGE )>0\"}>} [Member State])\n)\n& ' reporting countries, ')\n&'by reporting week '&v_Text_Preliminary"
       }
     },
     "footnote": "",
@@ -362,9 +363,9 @@
       "description": ""
     },
     "visualization": "barchart",
-    "version": "1.6.0",
     "showMiniChartForContinuousAxis": true,
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

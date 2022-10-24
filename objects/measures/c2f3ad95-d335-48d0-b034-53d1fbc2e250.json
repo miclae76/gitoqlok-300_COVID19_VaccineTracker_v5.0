@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "c2f3ad95-d335-48d0-b034-53d1fbc2e250",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Primary courses CUM",
+    "qDef": "sum([DoseSecond_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Primary courses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#458d34",
+        "index": 11
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # Primary courses CUM",
+    "description": "",
+    "tags": []
+  }
+}

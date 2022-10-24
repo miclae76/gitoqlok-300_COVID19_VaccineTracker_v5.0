@@ -6,29 +6,31 @@
     },
     "qMetaDef": {
       "title": "AGE - Progress Uptake (%)",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "8446682d-42cb-4c6c-98a1-71468cacfa48",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [],
+            "qFieldDefs": [
+              "=_DimAgeGroupFiltered"
+            ],
+            "qFieldLabels": [
+              ""
+            ],
             "qSortCriterias": [
               {
-                "qSortByNumeric": -1,
-                "qSortByAscii": -1,
+                "qSortByNumeric": 1,
+                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
               }
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": false,
-            "cId": "nDW",
+            "autoSort": true,
+            "cId": "CLjNT",
             "othersLabel": "Others"
           },
           "qNullSuppression": true,
@@ -98,9 +100,31 @@
               }
             },
             {
-              "qLibraryId": "6135d2b4-c9f5-4d82-8b3f-3f11a8abead4",
+              "qExpression": "if(GetSelectedCount([Member State])=1,\r\nrangemin(1, sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE) \n\t\t),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd_AGE={\">0\"}>} UptakeAdd_AGE), [Age Group], [Member State]))\n        )\n)",
               "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "AGE - Uptake of first booster",
+              "qLabelExpression": "='First booster'",
               "cId": "JcmTpC",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "quarantine": {
+                "qNumFormat": {},
+                "isCustomFormatted": false
+              },
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "guJBA",
+              "qAttribute": true,
+              "cId": "LDdXCh",
               "autoSort": true,
               "id": "customTooltipExpression",
               "quarantine": {
@@ -128,6 +152,54 @@
         }
       ],
       "qMeasures": [
+        {
+          "qLibraryId": "guJBA",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "GSGmcx",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
         {
           "qLibraryId": "6135d2b4-c9f5-4d82-8b3f-3f11a8abead4",
           "qDef": {
@@ -350,11 +422,12 @@
         }
       ],
       "qInterColumnSortOrder": [
-        0,
         1,
         2,
         3,
-        4
+        4,
+        0,
+        5
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -502,12 +575,7 @@
       "measureMin": 0,
       "measureMax": 10,
       "colorExpression": "'#62bb46'",
-      "altLabel": "BLWsdY",
-      "byMeasureDef": {
-        "label": "BLWsdY",
-        "key": "BLWsdY",
-        "type": "libraryItem"
-      }
+      "altLabel": "BLWsdY"
     },
     "legend": {
       "show": true,
@@ -545,20 +613,10 @@
       "description": ""
     },
     "visualization": "barchart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "nullMode": "gap",
-        "masterVersion": 0.96
-      },
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }
