@@ -1,0 +1,45 @@
+[
+  {
+    "id": "4a1b9c24-3acb-4143-b848-cb39dede5b72",
+    "createdDate": "2019-11-11T10:07:51.279Z",
+    "modifiedDate": "2022-01-31T09:24:16.560Z",
+    "modifiedByUserName": "ECDCNET\\ccunha",
+    "customProperties": [
+      {
+        "id": "06dd76be-9332-4e70-9489-bd1730941eaf",
+        "createdDate": "2020-01-14T12:47:56.006Z",
+        "modifiedDate": "2022-01-31T09:24:16.560Z",
+        "modifiedByUserName": "ECDCNET\\ccunha",
+        "value": "Technical-Developers",
+        "definition": {
+          "id": "9b0fa08d-40bb-47f8-8298-dc334eb23333",
+          "name": "Stream_Developer_ADGroup",
+          "valueType": "Text",
+          "choiceValues": [
+            "Technical-Developers"
+          ],
+          "privileges": null
+        },
+        "schemaPath": "CustomPropertyValue"
+      }
+    ],
+    "owner": {
+      "id": "4130d96d-3c70-48b6-9cd0-b008f4a93e14",
+      "userId": "qlikdev",
+      "userDirectory": "ECDCNET",
+      "userDirectoryConnectorName": "ECDCNET",
+      "name": "Qlik Development",
+      "privileges": null
+    },
+    "name": "QData",
+    "connectionstring": "\\\\nvdqlkse.ecdcnet.europa.eu\\g\\",
+    "type": "folder",
+    "engineObjectId": "4a1b9c24-3acb-4143-b848-cb39dede5b72",
+    "username": "",
+    "logOn": 0,
+    "architecture": 0,
+    "tags": [],
+    "privileges": null,
+    "schemaPath": "DataConnection"
+  }
+]
