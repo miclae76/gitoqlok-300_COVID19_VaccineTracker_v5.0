@@ -32,3 +32,4 @@ mlaenen|[https://nvdqlkse/sense/app/a9b7181e-342f-4acc-b19d-98ba281d365d](https:
 6.0|[https://nvdqlkse/sense/app/98896b39-1af4-49fe-8b5f-04e5fdb7e876](https://nvdqlkse/sense/app/98896b39-1af4-49fe-8b5f-04e5fdb7e876)
 6.1|[https://nvdqlkse/sense/app/33690559-3aee-49eb-a405-3e0adfe77075](https://nvdqlkse/sense/app/33690559-3aee-49eb-a405-3e0adfe77075)
 CreateConnections|[https://nvdqlkse/sense/app/a6c10ef4-1e3e-4df1-acdf-512cacf18b20](https://nvdqlkse/sense/app/a6c10ef4-1e3e-4df1-acdf-512cacf18b20)
+v7|[https://nvdqlkse/sense/app/ee6f6c49-da54-4da2-848c-bd755b613e67](https://nvdqlkse/sense/app/ee6f6c49-da54-4da2-848c-bd755b613e67)
