@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "AGE - Progress N. Doses",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -93,8 +92,7 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Full vaccination",
-              "qLabelExpression": "='Full vaccinations'",
+              "qLabelExpression": "='Primary courses'",
               "cId": "xjqvvH",
               "autoSort": true,
               "id": "customTooltipExpression",
@@ -111,9 +109,42 @@
                 "qDec": ".",
                 "qThou": ","
               },
-              "qLabel": "AGE - N. Additional doses",
-              "qLabelExpression": "='Additional doses'",
+              "qLabelExpression": "='First boosters'",
               "cId": "VKrnjf",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "Sum(DoseAdd2_AGE)",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabelExpression": "='Second boosters'",
+              "cId": "sXaJk",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "Sum(DoseAdd3_AGE)",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabelExpression": "='Third boosters'",
+              "cId": "rfCnNbU",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -163,18 +194,26 @@
       ],
       "qMeasures": [
         {
-          "qLibraryId": "52bbdc75-b880-48eb-9a94-3bb953caa695",
+          "qLibraryId": "WTpQXj",
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
+            "qLabelExpression": "='Third boosters'",
             "autoSort": true,
-            "cId": "zQPUGeS",
             "numFormatFromTemplate": true,
+            "cId": "fgPQEh",
             "quarantine": {
-              "qNumFormat": {},
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": "",
+                "qThou": ""
+              },
               "isCustomFormatted": false
             }
           },
@@ -190,6 +229,110 @@
               "id": "colorByExpression"
             }
           ],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "PnRrQD",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Second boosters'",
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "cId": "vLpJmW",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": "",
+                "qThou": ""
+              },
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "52bbdc75-b880-48eb-9a94-3bb953caa695",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            },
+            "cId": "JxUSxky"
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
@@ -434,7 +577,9 @@
         2,
         3,
         4,
-        5
+        5,
+        6,
+        7
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,
@@ -622,23 +767,13 @@
       "data": {}
     },
     "visualization": "barchart",
-    "version": "1.5.0",
     "showMiniChartForContinuousAxis": true,
     "barGrouping": {
       "grouping": "stacked"
     },
-    "qLayoutExclude": {
-      "disabled": {
-        "qExtendsId": "",
-        "lineType": "line",
-        "stackedArea": false,
-        "separateStacking": true,
-        "nullMode": "gap",
-        "masterVersion": 0.96
-      },
-      "quarantine": {}
-    },
-    "masterVersion": 0.96
+    "qLayoutExclude": {},
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "YcJuVA",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG60 - Uptake Comparison",
+    "qDef": "pick(wildmatch(v_ViewUptake , '*FIRST', '*SECOND', '*ADD', '*ADD2', '*ADD3'),\r\n\n\tdual(if([Vaccination.YearWeekReported]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeekReported]), \n    num(\n \trangemin( 1, median({<[Member State]=,[MemberState_]={\"*EU*\"}, [_Flag_WeekToReport]={1}  >}aggr(sum({<[Member State]=, [MemberState_]={\"*EU*\"},[Uptake1st_60_Cumul]={\">=0\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_60_Cumul]),\n    [Member State], [Vaccination.YearWeekReported])))\n    , '0.0%'), ''), \n    rangemin( 1, median({<[Member State]=,[MemberState_]={\"*EU*\"}, [_Flag_WeekToReport]={1}>}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[Uptake1st_60_Cumul]={\">=0\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_60_Cumul]),\n    [Member State], [Vaccination.YearWeekReported])))\n    ),\n    \n    dual(if([Vaccination.YearWeekReported]=MaxString(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeekReported]), \n    num(\n \trangemin( 1, median({<[Member State]=,[MemberState_]={\"*EU*\"}, [_Flag_WeekToReport]={1}>}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[Uptake2nd_60_Cumul]={\">=0\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_60_Cumul]),\n    [Member State], [Vaccination.YearWeekReported])))\n    , '0.0%'), ''), \n    rangemin( 1, median({<[Member State]=,[MemberState_]={\"*EU*\"}, [_Flag_WeekToReport]={1}>}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[Uptake2nd_60_Cumul]={\">=0\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_60_Cumul]),\n    [Member State], [Vaccination.YearWeekReported])))\n    ),\n    \n    if (round(median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd_60_Cumul]={\">0\"}>} [UptakeAdd_60_Cumul]),\n    [Member State], [Vaccination.YearWeek])), 0.0001) > 0.0001,\n       dual(if([Vaccination.YearWeekReported]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeekReported]), \n      num(\n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd_60_Cumul]={\">0\"}>} [UptakeAdd_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      , '0.0%'), ''), \n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd_60_Cumul]={\">0\"}>} [UptakeAdd_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      )  \n    ),\n    if (round(median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd2_60_Cumul]={\">0\"}>} [UptakeAdd2_60_Cumul]),\n    [Member State], [Vaccination.YearWeek])), 0.0001) > 0.0001,\n       dual(if([Vaccination.YearWeekReported]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeekReported]), \n      num(\n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd2_60_Cumul]={\">0\"}>} [UptakeAdd2_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      , '0.0%'), ''), \n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd2_60_Cumul]={\">0\"}>} [UptakeAdd2_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      )  \n    ),\n    if (round(median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]),\n    [Member State], [Vaccination.YearWeek])), 0.0001) > 0.0001,\n       dual(if([Vaccination.YearWeekReported]=MaxString(total {<[_Flag_WeekToReport]={1}>} [Vaccination.YearWeekReported]), \n      num(\n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      , '0.0%'), ''), \n      median({<[Member State]=,[MemberState_]={\"*EU*\"} >}aggr( sum({<[Member State]=, [MemberState_]={\"*EU*\"},[UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]),\n      [Member State], [Vaccination.YearWeek]))\n      )  \n    )\n)\n\n\n\n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Median '&EU27_EEA",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#3c3c3b",
+        "index": 10
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG60 - Uptake Comparison",
+    "description": "",
+    "tags": []
+  }
+}

@@ -5,7 +5,7 @@ LOAD
    if(Vaccination.TargetGroup='ALL', 'ALL_18+', Vaccination.TargetGroup)  AS Completeness.TargetGroup, 
    Vaccination.DateUsedForStatisticsISO AS Completeness.YearWeek
 FROM $(vG_Connection)$(vG_22_032QVDSource)\Vaccination_2.qvd (qvd)
-WHERE [Vaccination.ReportingCountry] = [Vaccination.Region];
+WHERE [Vaccination.ReportingCountry] = [Vaccination.Region] ;//AND  left(Vaccination.DateUsedForStatisticsISO, 4) = '2022';
 
 /*
 JOIN (DataCompleteness)

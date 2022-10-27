@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "wyRTgSR",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Third boosters Cum",
+    "qDef": "sum( [DoseAdd3_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Third boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#AE8157",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # Third boosters Cum",
+    "description": "",
+    "tags": []
+  }
+}

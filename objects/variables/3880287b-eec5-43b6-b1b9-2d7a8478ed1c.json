@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "3880287b-eec5-43b6-b1b9-2d7a8478ed1c",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "crossAppsSearchEnabled",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "1",
+  "tags": []
+}

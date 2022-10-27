@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "CThpJgs",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - Uptake of second booster",
+    "qDef": "if(GetSelectedCount([Member State])=1,\r\nrangemin(1, sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE)),\nrangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, UptakeAdd2_AGE={\">0\"}>} UptakeAdd2_AGE), [Age Group], [Member State])))\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second booster'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "AGE - Uptake of second booster",
+    "description": "",
+    "tags": []
+  }
+}

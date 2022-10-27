@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - Table N. Administered Current",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -241,7 +240,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Number of first doses administered to ', 'Number of full vaccinations administered to ', 'Number of additional doses administered to ')\r\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD'), 'Number of first doses administered to ', 'Number of primary courses administered to ', 'Number of booster/additional doses administered to ')\r\n&pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'),\n'people aged 80 years and above in ',\n'people aged 70 years and above in ',\n'people aged 60 years and above in ',\n'people aged 50 years and above in ',\n'healthcare workers in ',\n'LTCF residents in ',\n) \n& v_EU27_EEA_Title\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": "",
@@ -264,7 +263,8 @@
       "wrapTextInCells": true
     },
     "visualization": "table",
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

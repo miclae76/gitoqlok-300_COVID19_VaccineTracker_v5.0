@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "WTpQXj",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "AGE - N. Third booster",
+    "qDef": "Sum(DoseAdd3_AGE)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Third boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#AE8157",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "AGE - N. Third booster",
+    "description": "",
+    "tags": []
+  }
+}

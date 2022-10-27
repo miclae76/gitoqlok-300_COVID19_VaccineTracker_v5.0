@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "AGE - Full vaccination (Delta)",
-    "qDef": "rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))) - [AGE - Uptake of additional dose]\r\n\n\n",
+    "qLabel": "AGE - Primary course (Delta)",
+    "qDef": "rangemax(0, rangemin(1, median(aggr( sum({<[MemberState_]=-{\"*EU*\"}, Uptake2nd_AGE={\">=0\"}>} Uptake2nd_AGE), [Age Group], [Member State]))) - [AGE - Uptake of first booster] - [AGE - Uptake second booster] - [AGE - Uptake third booster])\r\n\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Full vaccination'",
+    "qLabelExpression": "='Primary course'",
     "qNumFormat": {
       "qType": "F",
       "qnDec": 2,
@@ -28,7 +28,7 @@
     }
   },
   "qMetaDef": {
-    "title": "AGE - Full vaccination (Delta)",
+    "title": "AGE - Primary course (Delta)",
     "description": "",
     "tags": []
   }

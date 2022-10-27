@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - KPI TEXT",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -15,7 +14,7 @@
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [
-              "=ValueList(\r\n$(=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n \tchr(39)&'Cumulative uptake of at least one dose among adults 80+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 80+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 70+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 70+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 60+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 60+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 50+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 50+' & chr(39),\n\tchr(39)&'Cumulative uptake of at least one dose among HCW' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among HCW' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among LTCF residents' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among LTCF residents' & chr(39)\n)))"
+              "=ValueList('At least one dose', 'Primary course', 'Booster/additional dose')\r\n\n"
             ],
             "qFieldLabels": [
               ""
@@ -67,7 +66,7 @@
             "qLabel": "KPI",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "=pick(match(ValueList(\r\n$(=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n \tchr(39)&'Cumulative uptake of at least one dose among adults 80+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 80+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 70+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 70+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 60+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 60+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 50+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 50+' & chr(39),\n\tchr(39)&'Cumulative uptake of at least one dose among HCW' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among HCW' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among LTCF residents' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among LTCF residents' & chr(39)\n))), \n'Cumulative uptake of at least one dose among adults 80+', \n'Cumulative uptake of full vaccination among adults 80+',\n'Cumulative uptake of at least one dose among adults 70+', \n'Cumulative uptake of full vaccination among adults 70+',\n'Cumulative uptake of at least one dose among adults 60+', \n'Cumulative uptake of full vaccination among adults 60+',\n'Cumulative uptake of at least one dose among adults 50+', \n'Cumulative uptake of full vaccination among adults 50+',\n'Cumulative uptake of at least one dose among HCW', \n'Cumulative uptake of full vaccination among HCW', \n'Cumulative uptake of at least one dose among LTCF residents', \n'Cumulative uptake of full vaccination among LTCF residents'\n),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_80_Cumul={\">0\"}>} Uptake1st_80), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_80_Cumul={\">0\"}>} Uptake2nd_80), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_70_Cumul={\">0\"}>} Uptake1st_70), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_70_Cumul={\">0\"}>} Uptake2nd_70), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_60_Cumul={\">0\"}>} Uptake1st_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_60_Cumul={\">0\"}>} Uptake2nd_60), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_50_Cumul={\">0\"}>} Uptake1st_50), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_50_Cumul={\">0\"}>} Uptake2nd_50), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  Uptake2nd_HCW_Cumul={\">0\"}>} Uptake2nd_HCW), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  Uptake2nd_LTCF_Cumul={\">0\"}>} Uptake2nd_LTCF), [Member State])),\n)\n\n\n",
+            "qDef": "=pick(match(ValueList('At least one dose', 'Primary course', 'Booster/additional dose'), 'At least one dose', 'Primary course', 'Booster/additional dose'),\r\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'), \nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_60_Cumul={\">0\"}>} Uptake1st_60), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_HCW_Cumul={\">0\"}>} Uptake1st_HCW), [Member State])),\nmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(distinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake1st_LTCF_Cumul={\">0\"}>} Uptake1st_LTCF), [Member State])),\n),\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, Uptake2nd_60_Cumul={\">0\"}>} Uptake2nd_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  Uptake2nd_HCW_Cumul={\">0\"}>} Uptake2nd_HCW), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  Uptake2nd_LTCF_Cumul={\">0\"}>} Uptake2nd_LTCF), [Member State])),\n),\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, UptakeAdd_60_Cumul={\">0\"}>} UptakeAdd_60), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  UptakeAdd_HCW_Cumul={\">0\"}>} UptakeAdd_HCW), [Member State])),\nmedian(distinct{<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr(nodistinct sum({<[Member State]=, [MemberState_]=-{\"*EU*\"},  UptakeAdd_LTCF_Cumul={\">0\"}>} UptakeAdd_LTCF), [Member State])),\n)\n)\n\n",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,
@@ -121,7 +120,7 @@
             "qLabel": "Footer",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "=pick(match(ValueList(\r\n$(=pick(match(v_ViewTargetGroup, '80', '70', '60', '50', 'HCW', 'LTCF'), \n \tchr(39)&'Cumulative uptake of at least one dose among adults 80+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 80+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 70+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 70+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 60+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 60+' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among adults 50+' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among adults 50+' & chr(39),\n\tchr(39)&'Cumulative uptake of at least one dose among HCW' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among HCW' & chr(39),\n    chr(39)&'Cumulative uptake of at least one dose among LTCF residents' & chr(39) & ',' & chr(39) &'Cumulative uptake of full vaccination among LTCF residents' & chr(39)\n))), \n'Cumulative uptake of at least one dose among adults 80+', \n'Cumulative uptake of full vaccination among adults 80+',\n'Cumulative uptake of at least one dose among adults 70+', \n'Cumulative uptake of full vaccination among adults 70+',\n'Cumulative uptake of at least one dose among adults 60+', \n'Cumulative uptake of full vaccination among adults 60+',\n'Cumulative uptake of at least one dose among adults 50+', \n'Cumulative uptake of full vaccination among adults 50+',\n'Cumulative uptake of at least one dose among HCW', \n'Cumulative uptake of full vaccination among HCW', \n'Cumulative uptake of at least one dose among LTCF residents', \n'Cumulative uptake of full vaccination among LTCF residents'\n),\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_80)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_80)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_70)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_70)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_60)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_60)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_50)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_50)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_HCW)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_HCW)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n'Median from '&count(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_LTCF)>0\"}>} [Member State]) & ' reporting countries'\n)\n\n\n",
+            "qDef": "=pick(match(ValueList('At least one dose', 'Primary course', 'Booster/additional dose'), 'At least one dose', 'Primary course', 'Booster/additional dose'),\r\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'), \ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_60)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_HCW)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake1st_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n),\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_60)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_HCW)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} Uptake2nd_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n),\npick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'),\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} UptakeAdd_60)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} UptakeAdd_HCW)>0\"}>} [Member State]) & ' reporting countries',\ncount(distinct {<[Member State]={\"=sum({<[Member State]=>} UptakeAdd_LTCF)>0\"}>} [Member State]) & ' reporting countries',\n)\n)\n\n\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -244,10 +243,36 @@
       },
       "qColumnOrder": [],
       "qExpansionState": [],
-      "qDynamicScript": []
+      "qDynamicScript": [],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
+      }
     },
-    "showTitles": false,
-    "title": "",
+    "showTitles": true,
+    "title": {
+      "qStringExpression": {
+        "qExpr": "='Median cumulative vaccine uptake (%) among '&pick(match(v_ViewTargetGroup, '60', 'HCW', 'LTCF'), 'people aged 60 years and above', 'healthcare workers', 'LTCF residents') & ' in ' & v_EU27_EEA_Title"
+      }
+    },
     "subtitle": "",
     "footnote": "",
     "disableNavMenu": false,
@@ -287,7 +312,8 @@
         "masterVersion": 0.96
       },
       "quarantine": {}
-    }
+    },
+    "metadata": {}
   },
   "qChildren": []
 }

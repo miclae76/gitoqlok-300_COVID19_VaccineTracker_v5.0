@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "ALL - N. vaccine doses administered",
-      "description": "",
       "tags": [
         "ALL"
       ]
@@ -21,7 +20,6 @@
             "qFieldLabels": [],
             "qSortCriterias": [
               {
-                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -29,7 +27,7 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": true,
+            "autoSort": false,
             "cId": "hTZNSP",
             "othersLabel": "Others"
           },
@@ -103,6 +101,38 @@
               "isCustomFormatted": false
             },
             {
+              "qLibraryId": "rYJPz",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "Weaunp",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qLibraryId": "MWJkUg",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "cId": "nFjMAqJ",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
               "qLibraryId": "8331b4f3-a5d4-4620-aee5-c8b987ff827b",
               "qAttribute": true,
               "qNumFormat": {
@@ -119,7 +149,7 @@
               "isCustomFormatted": false
             },
             {
-              "qExpression": "=[ALL - # First dose]+[ALL - # Full vaccination]+[ALL - # Doses Unknown]",
+              "qExpression": "=[ALL - # First dose]+[ALL - # Primary courses]+ [ALL - # Doses Unknown] + [ALL - # First boosters] +  [ALL - # Second boosters] + [ALL - # Third boosters]",
               "qAttribute": true,
               "qNumFormat": {
                 "qType": "F",
@@ -147,44 +177,18 @@
         {
           "qLibraryId": "unaTD",
           "qDef": {
-            "qLabel": "TG - # Dose First administered",
             "qTags": [],
             "qGrouping": "N",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='First dose'",
             "autoSort": true,
-            "cId": "LpDxjgm",
+            "cId": "qcprjN",
             "numFormatFromTemplate": true,
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 10,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": "",
-                "qThou": ""
-              },
+              "qNumFormat": {},
               "isCustomFormatted": false
-            },
-            "modifiers": [
-              {
-                "type": "accumulation",
-                "disabled": true,
-                "accumulationDimension": 0,
-                "crossAllDimensions": false,
-                "showExcludedValues": true,
-                "fullAccumulation": true,
-                "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({1} Dose1st_ALL)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
-              }
-            ]
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -216,50 +220,23 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          },
-          "$$hashKey": "object:56641"
+          }
         },
         {
           "qLibraryId": "JppxR",
           "qDef": {
-            "qLabel": "TG - # Full vaccination",
             "qTags": [],
             "qGrouping": "N",
-            "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
-            },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Full vaccination'",
             "autoSort": true,
+            "cId": "Lmbdpn",
             "numFormatFromTemplate": true,
-            "cId": "BTmzSJ",
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 10,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": "",
-                "qThou": ""
-              },
+              "qNumFormat": {},
               "isCustomFormatted": false
-            },
-            "modifiers": [
-              {
-                "type": "accumulation",
-                "disabled": true,
-                "accumulationDimension": 0,
-                "crossAllDimensions": false,
-                "showExcludedValues": true,
-                "fullAccumulation": true,
-                "steps": 6,
-                "outputExpression": "RangeSum(Above(If(Count([$(=Replace(GetObjectField(0),']',']]'))]) > 0,  (　sum({1} Dose2nd_ALL)　)  + Sum({1<[$(=Replace(GetObjectField(0),']',']]'))]={\"=Only({1}[$(=Replace(GetObjectField(0),']',']]'))])>='$(=MinString([$(=Replace(GetObjectField(0),']',']]'))]))' and Only({1}[$(=Replace(GetObjectField(0),']',']]'))])<='$(=MaxString([$(=Replace(GetObjectField(0),']',']]'))]))'\"}>}0), 0), 0, RowNo()))"
-              }
-            ]
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -291,8 +268,7 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          },
-          "$$hashKey": "object:56642"
+          }
         },
         {
           "qLibraryId": "5c2b036a-9c13-479f-a680-baf3f4de9ad4",
@@ -304,6 +280,110 @@
             "qExpressions": [],
             "autoSort": true,
             "cId": "PjpHmku",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "rYJPz",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "qLabelExpression": "='Second boosters'",
+            "autoSort": true,
+            "numFormatFromTemplate": true,
+            "cId": "JrRpFsP",
+            "quarantine": {
+              "qNumFormat": {
+                "qType": "U",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
+        },
+        {
+          "qLibraryId": "MWJkUg",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "HSWVn",
             "numFormatFromTemplate": true,
             "quarantine": {
               "qNumFormat": {},
@@ -396,7 +476,9 @@
         1,
         2,
         3,
-        4
+        4,
+        5,
+        6
       ],
       "qSuppressMissing": true,
       "qInitialDataFetch": [
@@ -543,12 +625,10 @@
       "description": ""
     },
     "visualization": "barchart",
-    "version": "1.6.0",
     "showMiniChartForContinuousAxis": true,
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

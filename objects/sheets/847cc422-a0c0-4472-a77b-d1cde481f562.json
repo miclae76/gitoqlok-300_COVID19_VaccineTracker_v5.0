@@ -420,7 +420,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                       "cId": "NYKRL",
                       "id": "customTooltipImages"
                     },
@@ -511,7 +511,7 @@
                   "cId": "NYKRL",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
                     }
                   }
                 }
@@ -673,7 +673,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                       "cId": "pPjdf",
                       "id": "customTooltipImages"
                     },
@@ -765,7 +765,7 @@
                   "cId": "pPjdf",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
                     }
                   }
                 }
@@ -968,7 +968,7 @@
                   "qCalcCond": {},
                   "qAttributeExpressions": [
                     {
-                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                      "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                       "cId": "ZvMCJZ",
                       "id": "customTooltipImages"
                     },
@@ -1058,7 +1058,7 @@
                   "cId": "ZvMCJZ",
                   "ref": {
                     "qStringExpression": {
-                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
+                      "qExpr": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'"
                     }
                   }
                 }
@@ -1293,7 +1293,7 @@
         "gaVersion": 2,
         "layers": [],
         "qUndoExclude": {
-          "hashCode": -1036434110,
+          "hashCode": -702752603,
           "gaLayers": [
             {
               "qHyperCubeDef": {
@@ -1333,7 +1333,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                         "cId": "NYKRL",
                         "id": "customTooltipImages"
                       },
@@ -1485,7 +1485,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                         "cId": "pPjdf",
                         "id": "customTooltipImages"
                       },
@@ -1641,7 +1641,7 @@
                     "qCalcCond": {},
                     "qAttributeExpressions": [
                       {
-                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
+                        "qExpression": "='https://' &\r\npick(match(upper(ComputerName()), 'NVDQLKSE', 'ZVDQAP', 'QAP-DEV', 'NVQLKSEN', 'QAP', 'ZVQAP'),\n'nvdqlkse.ecdcnet.europa.eu',\n//'zvdqap.ecdcdmz.europa.eu', \n'qap-dev.ecdc.europa.eu',\n'qap-dev.ecdc.europa.eu',\n'nvqlksen.ecdcnet.europa.eu',\n'qap.ecdc.europa.eu/public',\n'qap.ecdc.europa.eu/public'\n) &'/extensions/covid-19/flags/'&[Vaccination.CountryCode]&'.svg'\n//='https://www.countryflags.io/'&[Vaccination.CountryCode]&'/flat/64.png'",
                         "cId": "ZvMCJZ",
                         "id": "customTooltipImages"
                       },
@@ -1766,7 +1766,20 @@
             null
           ]
         },
-        "masterVersion": 0.96
+        "masterVersion": 0.96,
+        "background": {
+          "layers": [
+            {
+              "type": "XYZ",
+              "urls": [
+                "http://tile.openstreetmap.org/${z}/${x}/${y}.png"
+              ],
+              "attribution": "© OpenStreetMap @[http://www.openstreetmap.org/copyright](License)"
+            }
+          ],
+          "show": false,
+          "defaultMapService": false
+        }
       },
       "qChildren": []
     },
@@ -2050,13 +2063,9 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
         "isRecommended": true,
-        "qLayoutExclude": {
-          "disabled": {},
-          "quarantine": {}
-        },
+        "qLayoutExclude": {},
         "recommendation": {
           "analysis": {
             "analysis": "rank",
@@ -3061,7 +3070,7 @@
               "qCalcCond": {},
               "qAttributeExpressions": [
                 {
-                  "qExpression": "=if(Product_ = 'ALL',  black())",
+                  "qExpression": "=if(Product_ = 'All products',  black())",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -3125,7 +3134,7 @@
               "qCalcCond": {},
               "qAttributeExpressions": [
                 {
-                  "qExpression": "=if(Product_ = 'ALL',  black())",
+                  "qExpression": "=if(Product_ = 'All products',  black())",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -3155,7 +3164,7 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "='Total doses distributed to ' & if(EU27_EEA='EU27', 'Member State', 'country')",
+                "qLabelExpression": "='Total doses distributed '//to ' & if(EU27_EEA='EU27', 'Member State', 'country')",
                 "autoSort": true,
                 "cId": "ZnYKP",
                 "numFormatFromTemplate": false,
@@ -3227,7 +3236,7 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "=if(Product_ = 'ALL',  black())",
+                  "qExpression": "=if(Product_ = 'All products',  black())",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -3235,7 +3244,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "v_ViewDistribution<>'ADM'"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3262,7 +3273,7 @@
             },
             {
               "qDef": {
-                "qLabel": "Doses administered",
+                "qLabel": "Total doses administered",
                 "qTags": [],
                 "qGrouping": "N",
                 "qDef": "sum({<[Member State]=, DosesDistributed=-{\"<Missing>\"}>} DoseTotal_ALLP)",
@@ -3278,7 +3289,6 @@
                 "qAccumulate": 0,
                 "qActiveExpression": 0,
                 "qExpressions": [],
-                "qLabelExpression": "'Total dose administered'",
                 "autoSort": true,
                 "cId": "hmrFuJ",
                 "numFormatFromTemplate": false,
@@ -3350,7 +3360,7 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "=if(Product_ = 'ALL',  black())",
+                  "qExpression": "=if(Product_ = 'All products',  black())",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -3358,7 +3368,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "v_ViewDistribution='ADM'"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3473,7 +3485,7 @@
               },
               "qAttributeExpressions": [
                 {
-                  "qExpression": "=if(Product_ = 'ALL',  black())",
+                  "qExpression": "=if(Product_ = 'All products',  black())",
                   "qAttribute": true,
                   "id": "cellForegroundColor"
                 }
@@ -3481,7 +3493,9 @@
               "qAttributeDimensions": [],
               "qCalcCond": {},
               "qCalcCondition": {
-                "qCond": {},
+                "qCond": {
+                  "qv": "0"
+                },
                 "qMsg": {}
               },
               "qTrendLines": [],
@@ -3587,7 +3601,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Total number of vaccine doses distributed and administered in the ' & v_EU27_EEA_Title & ' and proportion of vaccine doses administered (%) as of '&date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "=Pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n'Total number of vaccine doses distributed in the ',\n'Total number of vaccine doses distributed in the ',\n'Total number of vaccine doses administered in the '\n)\n& v_EU27_EEA_Title \n& ' as of '&date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -3640,196 +3654,7 @@
           "wrapTextInCells": true
         },
         "visualization": "table",
-        "qLayoutExclude": {
-          "disabled": {
-            "qExtendsId": "",
-            "navigation": false,
-            "recommendation": {
-              "options": {},
-              "analysis": {
-                "analysis": "comparison",
-                "analysisGroup": "comparison",
-                "titleTemplate": [
-                  {
-                    "msgId": "cao.chart.comparison.cre.4.title",
-                    "msgParams": {
-                      "$$1": 0,
-                      "$$2": 1,
-                      "$$3": 2,
-                      "$$4": 3
-                    }
-                  }
-                ],
-                "dims": [
-                  {
-                    "expr": "[Vaccination.CountryCode]",
-                    "cType": "eField",
-                    "field": "Vaccination.CountryCode",
-                    "fieldStats": {
-                      "distinctCount": 14,
-                      "dataType": "string"
-                    }
-                  }
-                ],
-                "msrs": [
-                  {
-                    "expr": "VpcgpA",
-                    "cType": "eLibItem",
-                    "libId": "VpcgpA",
-                    "label": "Vaccine - Uptake first dose",
-                    "fieldStats": {
-                      "dataType": "integer",
-                      "valueRange": {
-                        "min": 8136,
-                        "max": 2320002
-                      },
-                      "classification": [
-                        "measure"
-                      ]
-                    }
-                  },
-                  {
-                    "expr": "36b08b42-25a7-4a2c-99e2-da90251c8277",
-                    "cType": "eLibItem",
-                    "libId": "36b08b42-25a7-4a2c-99e2-da90251c8277",
-                    "label": "Vaccines - Doses distributed",
-                    "fieldStats": {
-                      "dataType": "integer",
-                      "valueRange": {
-                        "min": 0,
-                        "max": 2167950
-                      },
-                      "classification": [
-                        "measure"
-                      ]
-                    }
-                  },
-                  {
-                    "expr": "2ccdd2ae-17ba-4fb9-9ae2-b3fa283ec2fb",
-                    "cType": "eLibItem",
-                    "libId": "2ccdd2ae-17ba-4fb9-9ae2-b3fa283ec2fb",
-                    "label": "Vaccines - Uptake 1st+2nd+Unk",
-                    "fieldStats": {
-                      "valueRange": {
-                        "min": 8136,
-                        "max": 2320002
-                      },
-                      "classification": [
-                        "measure"
-                      ]
-                    }
-                  }
-                ]
-              },
-              "isExtendedAnalysis": false,
-              "matchRecord": {
-                "analysisPrecedentId": "P-MeasureComparison",
-                "matches": [
-                  {
-                    "slot": "$$1",
-                    "slotRole": "dimension",
-                    "field": "Vaccination.CountryCode"
-                  },
-                  {
-                    "slot": "$$2",
-                    "slotRole": "measure",
-                    "libId": "VpcgpA",
-                    "libIdLabel": "Vaccine - Uptake first dose"
-                  },
-                  {
-                    "slot": "$$3",
-                    "slotRole": "measure",
-                    "libId": "36b08b42-25a7-4a2c-99e2-da90251c8277",
-                    "libIdLabel": "Vaccines - Doses distributed"
-                  },
-                  {
-                    "slot": "$$4",
-                    "slotRole": "measure",
-                    "libId": "2ccdd2ae-17ba-4fb9-9ae2-b3fa283ec2fb",
-                    "libIdLabel": "Vaccines - Uptake 1st+2nd+Unk"
-                  }
-                ],
-                "precedentStats": {
-                  "matchedFields": 0,
-                  "uniquePrecedents": 0
-                }
-              },
-              "relevance": 1,
-              "analysisIntentRelevance": 0.09000000000000001
-            },
-            "refLine": {
-              "refLinesX": [],
-              "refLinesY": []
-            },
-            "showDisclaimer": true,
-            "dataPoint": {
-              "bubbleSizes": 5,
-              "rangeBubbleSizes": [
-                2,
-                8
-              ]
-            },
-            "labels": {
-              "mode": 1
-            },
-            "compressionResolution": 5,
-            "gridLine": {
-              "auto": true,
-              "spacing": 2
-            },
-            "color": {
-              "auto": true,
-              "mode": "primary",
-              "formatting": {
-                "numFormatFromTemplate": true
-              },
-              "useBaseColors": "off",
-              "paletteColor": {
-                "index": 1
-              },
-              "useDimColVal": true,
-              "useMeasureGradient": true,
-              "persistent": false,
-              "expressionIsColor": true,
-              "expressionLabel": "",
-              "measureScheme": "sg",
-              "reverseScheme": false,
-              "dimensionScheme": "12",
-              "autoMinMax": true,
-              "measureMin": 0,
-              "measureMax": 10
-            },
-            "legend": {
-              "show": true,
-              "dock": "auto",
-              "showTitle": true
-            },
-            "xAxis": {
-              "show": "all",
-              "dock": "near",
-              "spacing": 1,
-              "autoMinMax": true,
-              "minMax": "min",
-              "min": 0,
-              "max": 10
-            },
-            "yAxis": {
-              "show": "all",
-              "dock": "near",
-              "spacing": 1,
-              "autoMinMax": true,
-              "minMax": "min",
-              "min": 0,
-              "max": 10
-            },
-            "tooltip": {
-              "auto": true,
-              "hideBasic": false
-            },
-            "isRecommended": true
-          },
-          "quarantine": {}
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     },
@@ -3865,7 +3690,11 @@
           },
           {
             "refId": "2f2c02fd-b7a9-407d-85b0-8cf72ff3298a",
-            "label": "DOSES - N. Vaccine doses distributed",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='DOSES - N. Vaccine doses distributed'"
+              }
+            },
             "isMaster": true,
             "cId": "JjMsKPJ",
             "condition": {
@@ -4026,7 +3855,7 @@
               "qDef": {
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n  SUM({1} DosesDistributed),\n  SUM({1} DosesDistributed),\n  SUM({1} DoseTotal_ALLP)\n)",
+                "qDef": "pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DosesDistributed),\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DosesDistributed),\n  SUM({1 <EU27_EEA=P(EU27_EEA)>} DoseTotal_ALLP)\n)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -4154,7 +3983,7 @@
           "grouping": "grouped"
         },
         "orientation": "horizontal",
-        "scrollbar": "miniChart",
+        "scrollbar": "none",
         "scrollStartPos": 0,
         "gridLine": {
           "auto": false,
@@ -4218,11 +4047,8 @@
           "data": {}
         },
         "visualization": "barchart",
-        "version": "1.6.0",
         "showMiniChartForContinuousAxis": true,
-        "qLayoutExclude": {
-          "quarantine": {}
-        }
+        "qLayoutExclude": {}
       },
       "qChildren": []
     },
@@ -4675,91 +4501,7 @@
         "showDetails": false,
         "components": [],
         "visualization": "table",
-        "qLayoutExclude": {
-          "quarantine": {
-            "supportedAutoMinMax": {
-              "measureAxis.min": 0,
-              "measureAxis.max": 10
-            }
-          },
-          "disabled": {
-            "qExtendsId": "",
-            "refLine": {
-              "refLines": [],
-              "dimRefLines": []
-            },
-            "showDisclaimer": true,
-            "barGrouping": {
-              "grouping": "grouped"
-            },
-            "orientation": "horizontal",
-            "scrollbar": "miniChart",
-            "scrollStartPos": 0,
-            "gridLine": {
-              "auto": false,
-              "spacing": 0
-            },
-            "dataPoint": {
-              "showLabels": true,
-              "showSegmentLabels": false,
-              "showTotalLabels": true
-            },
-            "color": {
-              "auto": false,
-              "mode": "byExpression",
-              "formatting": {
-                "numFormatFromTemplate": true
-              },
-              "useBaseColors": "off",
-              "paletteColor": {
-                "index": 3,
-                "color": "#6bbabf"
-              },
-              "useDimColVal": true,
-              "useMeasureGradient": true,
-              "persistent": false,
-              "expressionIsColor": true,
-              "expressionLabel": "",
-              "measureScheme": "sg",
-              "reverseScheme": false,
-              "dimensionScheme": "12",
-              "autoMinMax": true,
-              "measureMin": 0,
-              "measureMax": 10,
-              "colorExpression": "pick(match(v_ViewDistribution, 'PER', 'TOTAL', 'ADM'), \r\n'#6bbabf', \n'#6bbabf', \n'#62bb46'\n)"
-            },
-            "legend": {
-              "show": true,
-              "dock": "auto",
-              "showTitle": false
-            },
-            "dimensionAxis": {
-              "continuousAuto": true,
-              "show": "labels",
-              "label": "horizontal",
-              "dock": "near",
-              "axisDisplayMode": "auto",
-              "maxVisibleItems": 10
-            },
-            "preferContinuousAxis": true,
-            "measureAxis": {
-              "show": "none",
-              "dock": "near",
-              "spacing": 1,
-              "autoMinMax": true,
-              "minMax": "min",
-              "min": 0,
-              "max": 10
-            },
-            "tooltip": {
-              "auto": true,
-              "hideBasic": false,
-              "data": {}
-            },
-            "version": "1.6.0",
-            "showMiniChartForContinuousAxis": true
-          }
-        },
+        "qLayoutExclude": {},
         "search": {
           "sorting": "auto"
         },

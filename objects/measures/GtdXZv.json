@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "GtdXZv",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Second boosters CUM",
+    "qDef": "sum( [DoseAdd2_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e8ad5a",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # Second boosters CUM",
+    "description": "",
+    "tags": []
+  }
+}

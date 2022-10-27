@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "DOSES - N. Vaccine doses distributed",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -103,15 +102,21 @@
           "qCalcCond": {},
           "qAttributeExpressions": [
             {
-              "qLibraryId": "36b08b42-25a7-4a2c-99e2-da90251c8277",
+              "qExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'),   SUM(DosesDistributed),   SUM(DoseTotal_ALLP) )",
               "qAttribute": true,
-              "cId": "SwWSRcF",
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "#,##0",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'),   'Doses distributed',   'Doses administered' )",
+              "cId": "CSxjbu",
               "autoSort": true,
               "id": "customTooltipExpression",
-              "quarantine": {
-                "qNumFormat": {},
-                "isCustomFormatted": false
-              }
+              "isCustomFormatted": false
             }
           ],
           "qAttributeDimensions": [],
@@ -124,7 +129,6 @@
       "qMeasures": [
         {
           "qDef": {
-            "qLabel": "Doses distributed",
             "qTags": [],
             "qGrouping": "N",
             "qDef": "=pick(match(v_ViewDistribution, 'PER', 'ADM'),\r\n  SUM(DosesDistributed),\n  SUM(DoseTotal_ALLP)\n)",
@@ -136,7 +140,7 @@
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "'Total doses distributed to Member States'",
+            "qLabelExpression": "=pick(match(v_ViewDistribution, 'PER', 'ADM'),\r\n  'Doses distriubuted',\n  'Doses administered'\n)",
             "autoSort": true,
             "cId": "FpHQ",
             "numFormatFromTemplate": true,
@@ -319,9 +323,9 @@
       "description": ""
     },
     "visualization": "barchart",
-    "version": "1.6.0",
     "showMiniChartForContinuousAxis": true,
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

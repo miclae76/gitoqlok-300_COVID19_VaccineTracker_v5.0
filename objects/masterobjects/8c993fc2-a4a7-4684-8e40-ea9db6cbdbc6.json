@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "CONTAINER - N. Doses Distributed",
-      "description": "",
       "tags": []
     },
     "alternatives": [
@@ -157,7 +156,8 @@
       },
       "previewIconURL": "https://nvdqlkse/extensions/grouped_container/grouped.png"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

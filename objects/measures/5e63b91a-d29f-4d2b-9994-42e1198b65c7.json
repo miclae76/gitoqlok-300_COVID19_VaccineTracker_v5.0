@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "5e63b91a-d29f-4d2b-9994-42e1198b65c7",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "TG60 - Third booster",
+    "qDef": "if(round(aggr(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]), [Member State], [Vaccination.YearWeek]))\r\n\t, [Vaccination.YearWeek]), 0.0001) >= 0.0001,\n\ndual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd3_60_Cumul]={\">0\"}>} [UptakeAdd3_60_Cumul]), [Member State], [Vaccination.YearWeek])))  \n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Third booster'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#AE8157",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "TG60 - Third booster",
+    "description": "",
+    "tags": []
+  }
+}

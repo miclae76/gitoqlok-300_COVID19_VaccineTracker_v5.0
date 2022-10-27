@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "ALL - Uptake One Country",
-      "description": "",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -166,7 +165,7 @@
             "qLabel": "ALL - Uptake One country selected",
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND' , '*ADD'),\r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) )),\n     \n     if (round(rangemin( 1, aggr(sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]), [Vaccination.YearWeek]) ), 0.00001) >= 0.00001, \n     dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ))\n     )   \n)\n",
+            "qDef": "pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND' , '*ADD', '*ADD2', '*ADD3'),\r\n\tdual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake1st_$(=SW_ADULTS_POP)_Cumul]) )),\n    dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [Uptake2nd_$(=SW_ADULTS_POP)_Cumul]) )),\n     \n     if (round(rangemin( 1, aggr(sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]), [Vaccination.YearWeek]) ), 0.00001) >= 0.00001, \n     dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd_$(=SW_ADULTS_POP)_Cumul]) ))\n     ),\n      if (round(rangemin( 1, aggr(sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_$(=SW_ADULTS_POP)_Cumul]), [Vaccination.YearWeek]) ), 0.00001) >= 0.00001, \n     dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd2_$(=SW_ADULTS_POP)_Cumul]) ))\n     ),\n      if (round(rangemin( 1, aggr(sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd3_$(=SW_ADULTS_POP)_Cumul]), [Vaccination.YearWeek]) ), 0.00001) >= 0.00001, \n     dual(if([Vaccination.YearWeek]=Maxstring(total {<[_Flag_WeekToReport]={1}>}[Vaccination.YearWeek]), \n    \tnum(rangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd3_$(=SW_ADULTS_POP)_Cumul]) ), '0.0%'), ''),\trangemin( 1, sum({$*<[MemberState_]=-{\"*EU*\"}, [_Flag_WeekToReport]={1}>} [UptakeAdd3_$(=SW_ADULTS_POP)_Cumul]) ))\n     ) \n)\n",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 2,
@@ -341,7 +340,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=pick(match(v_ViewUptake, 'FIRST', 'SECOND', 'ADD', 'NFIRST', 'NSECOND', 'NADD'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of full vaccination '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of an additional vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
+        "qExpr": "=pick(wildmatch(v_ViewUptake, '*FIRST', '*SECOND', '*ADD', '*ADD2', '*ADD3'),\r\n'Cumulative uptake (%) of at least one vaccine dose '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the primary course '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the first booster '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the second booster '& SW_ADULTS_POP_LABEL & ' in ',\n'Cumulative uptake (%) of the third booster '& SW_ADULTS_POP_LABEL & ' in ',\n) \n& [Member State]\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n"
       }
     },
     "subtitle": {
@@ -482,11 +481,9 @@
       "auto": false,
       "spacing": 0
     },
-    "version": "1.5.0",
     "masterVersion": 0.96,
-    "qLayoutExclude": {
-      "quarantine": {}
-    }
+    "qLayoutExclude": {},
+    "metadata": {}
   },
   "qChildren": []
 }

@@ -4,12 +4,12 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "TG - Uptake additional doses (%)",
+    "qLabel": "TG - Uptake booster/additional doses (%)",
     "qDef": "dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\r\n    \tnum(median({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])), '0.0%') , ''),\n    \t\tmedian({<[Member State]=,[MemberState_]={\"*EU*\"}>}aggr( sum({<[Member State]=, [MemberState_]=-{\"*EU*\"}, [UptakeAdd_$(v_ViewTargetGroup)_Cumul]={\">0\"}>} [UptakeAdd_$(v_ViewTargetGroup)_Cumul]), [Member State], [Vaccination.YearWeek])))  ",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
-    "qLabelExpression": "='Uptake additional dose (%)'",
+    "qLabelExpression": "='Uptake of a booster/additional dose (%)'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 2,
@@ -46,7 +46,7 @@
     }
   },
   "qMetaDef": {
-    "title": "TG - Uptake additional doses (%)",
+    "title": "TG - Uptake booster/additional doses (%)",
     "description": "",
     "tags": [
       "TARGET_GROUP"

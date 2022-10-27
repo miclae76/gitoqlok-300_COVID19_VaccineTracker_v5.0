@@ -6,7 +6,6 @@
     },
     "qMetaDef": {
       "title": "TG - N. KPI TEXT",
-      "description": "",
       "tags": []
     },
     "showTitles": false,
@@ -279,7 +278,8 @@
       "libid": "ECDC-Widgets",
       "name": "VaccineTracker - KPI Text"
     },
-    "masterVersion": 0.96
+    "masterVersion": 0.96,
+    "metadata": {}
   },
   "qChildren": []
 }

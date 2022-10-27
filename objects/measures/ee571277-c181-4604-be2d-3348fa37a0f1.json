@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "ee571277-c181-4604-be2d-3348fa37a0f1",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # First dose  CUM",
+    "qDef": "sum({<Vaccine=-{'Janssen'}>}[DoseFirst_$(=SW_ADULTS_POP)_Cumul])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='First doses'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#62bb46",
+        "index": 1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # First dose  CUM",
+    "description": "",
+    "tags": []
+  }
+}

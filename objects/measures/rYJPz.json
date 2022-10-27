@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "rYJPz",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - # Second boosters",
+    "qDef": "sum({<[_Flag_WeekToReport]={1}>} [DoseAdd2_$(=SW_ADULTS_POP)])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second boosters'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e8ad5a",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - # Second boosters",
+    "description": "",
+    "tags": []
+  }
+}

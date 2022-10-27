@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "0bbb9e80-ba40-45da-b8c5-b6678706236b",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALL - Uptake Third booster",
+    "qDef": "   \r\n     dual(if([Vaccination.YearWeek]=MaxString(total [Vaccination.YearWeek]),\n    \tnum(sum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd3)>0\"}>} [Vaccination.DoseAdd3_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]={\"=sum([Vaccination.DoseAdd3])>0\"}>} [Vaccination.Denominator]), '0.0%' ), num(0, '0.0%;-0.0%; ')),\n    \tsum({<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]=, [Member State]={\"=sum(Vaccination.DoseAdd3)>0\"}>} [Vaccination.DoseAdd3_Cumul])\n        \t/sum(distinct{<[Vaccination.TargetGroup]={\"$(=SW_ADULTS_POP_TG)\"}, [Member State]={\"=sum([Vaccination.DoseAdd3])>0\"}>} [Vaccination.Denominator]) \n      )  \n\n    \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Uptake of the third booster'",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#AE8157",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "ALL - Uptake Third booster",
+    "description": "",
+    "tags": []
+  }
+}
