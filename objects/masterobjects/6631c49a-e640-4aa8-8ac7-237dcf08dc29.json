@@ -233,11 +233,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "=match(v_ViewUptake, 'NFIRST', 'NSECOND')>0 and v_WeeklyOrCumul = 'CUM'"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "=match(v_ViewUptake, 'NFIRST', 'NSECOND')>0 and v_WeeklyOrCumul = 'CUM'"
+        },
+        "qMsg": {
+          "qv": "Calculation in progress..."
+        }
       },
       "qColumnOrder": [
         0,
@@ -267,6 +273,9 @@
           "qExpansionState": [],
           "qDynamicScript": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "Calculation in progress..."
       }
     },
     "refLine": {

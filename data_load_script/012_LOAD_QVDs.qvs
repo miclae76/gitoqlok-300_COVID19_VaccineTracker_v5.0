@@ -360,7 +360,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeAdd3)				as UptakeAdd3_60,
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.UptakeTotal)				as UptakeTotal_60, 
     
-    
+    /*
     // Doses adminsitered and Uptake for Target Group = Healthcare Workers
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake1st)					as Uptake1st_HCW,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd)					as Uptake2nd_HCW,
@@ -386,7 +386,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'LTCF', [Vaccination.DoseUnk])					as DoseUnk_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseTotal)					as DoseTotal_LTCF,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.UptakeTotal)					as UptakeTotal_LTCF, 
-    
+    */
     
     // Doses adminsitered and Uptake for Target Group Age
     if ( IsNull([Age Group]) = 0,  IF(Vaccination.VaccineTreatmentDoses = 1, 0, 	Vaccination.DoseFirst))					as Dose1st_AGE,

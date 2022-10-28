@@ -811,11 +811,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "=match(v_ViewUptake, 'ADD', 'ADD2' )>0"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "=match(v_ViewUptake, 'ADD', 'ADD2' )>0"
+        },
+        "qMsg": {
+          "qv": "Calculation in progress..."
+        }
       },
       "qColumnOrder": [],
       "qExpansionState": [],
@@ -841,6 +847,9 @@
           "qExpansionState": [],
           "qDynamicScript": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "Calculation in progress..."
       }
     },
     "refLine": {

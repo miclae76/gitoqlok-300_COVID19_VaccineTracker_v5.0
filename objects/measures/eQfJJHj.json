@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "eQfJJHj",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Country <18 - Second booster",
+    "qDef": "rangemin(1, sum([Vaccination.UptakeAdd2_Cumul]))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Second booster'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#e8683f",
+        "index": 8
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Country <18 - Second booster",
+    "description": "",
+    "tags": []
+  }
+}

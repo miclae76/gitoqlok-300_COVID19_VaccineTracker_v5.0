@@ -5,7 +5,7 @@
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Country Profile - Uptake <18 or LTCF",
+      "title": "Country Profile - Up to 2nd Booster",
       "tags": []
     },
     "qHyperCubeDef": {
@@ -82,6 +82,40 @@
               },
               "qLabel": "Uptake primary course",
               "cId": "LAwqSW",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd_Cumul]))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "Uptake first booster",
+              "cId": "zPxaa",
+              "autoSort": true,
+              "id": "customTooltipExpression",
+              "isCustomFormatted": false
+            },
+            {
+              "qExpression": "rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd2_Cumul]))",
+              "qAttribute": true,
+              "qNumFormat": {
+                "qType": "F",
+                "qnDec": 2,
+                "qUseThou": 0,
+                "qFmt": "0.0%",
+                "qDec": ".",
+                "qThou": ","
+              },
+              "qLabel": "Uptake second booster",
+              "cId": "DdwPPW",
               "autoSort": true,
               "id": "customTooltipExpression",
               "isCustomFormatted": false
@@ -344,13 +378,62 @@
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
           }
+        },
+        {
+          "qLibraryId": "tAbCp",
+          "qDef": {
+            "qTags": [],
+            "qGrouping": "N",
+            "qAccumulate": 0,
+            "qActiveExpression": 0,
+            "qExpressions": [],
+            "autoSort": true,
+            "cId": "zwZPRZ",
+            "numFormatFromTemplate": true,
+            "quarantine": {
+              "qNumFormat": {},
+              "isCustomFormatted": false
+            }
+          },
+          "qSortBy": {
+            "qSortByNumeric": -1,
+            "qSortByLoadOrder": 1,
+            "qExpression": {}
+          },
+          "qAttributeExpressions": [],
+          "qAttributeDimensions": [],
+          "qCalcCond": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qTrendLines": [],
+          "qMiniChartDef": {
+            "qSortBy": {
+              "qExpression": {}
+            },
+            "qOtherTotalSpec": {
+              "qOtherMode": "OTHER_OFF",
+              "qOtherCounted": {},
+              "qOtherLimit": {},
+              "qOtherLimitMode": "OTHER_GT_LIMIT",
+              "qForceBadValueKeeping": true,
+              "qApplyEvenWhenPossiblyWrongResult": true,
+              "qOtherSortMode": "OTHER_SORT_DESCENDING",
+              "qTotalMode": "TOTAL_OFF",
+              "qReferencedExpression": {}
+            },
+            "qMaxNumberPoints": -1,
+            "qAttributeExpressions": []
+          }
         }
       ],
       "qInterColumnSortOrder": [
         0,
         1,
         2,
-        3
+        3,
+        4
       ],
       "qSuppressZero": true,
       "qSuppressMissing": true,

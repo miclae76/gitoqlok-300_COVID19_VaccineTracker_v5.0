@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "WDjKgV",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Country - Third booster",
+    "qDef": "if (aggr(sum([Vaccination.UptakeAdd3_Cumul]), [Vaccination.YearWeek])>0,  rangemin(1, sum([Vaccination.UptakeAdd3_Cumul])))\r\n\n\n//RangeMin(1, SUM({<[Vaccination.DoseTotal]={\"=SUM([Vaccination.DoseTotal])>0\"}, [MemberState_]=-{\"*EU*\"}>} [Vaccination.Uptake2nd_Cumul]) )\n\n\n//dual( if([Vaccination.YearWeek] = MaxString(total [Vaccination.YearWeek]), num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]),  '0.0%'), ''),  num(sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.Uptake2nd_Cumul]), '0.0%'))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Third booster'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qDec": ".",
+      "qThou": ","
+    },
+    "isCustomFormatted": true,
+    "numFormatFromTemplate": true,
+    "coloring": {
+      "baseColor": {
+        "color": "#AE8157",
+        "index": -1
+      }
+    }
+  },
+  "qMetaDef": {
+    "title": "Country - Third booster",
+    "description": "",
+    "tags": []
+  }
+}

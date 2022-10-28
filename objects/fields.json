@@ -52,26 +52,6 @@
     ]
   },
   {
-    "qName": "Denominator_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Denominator_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "Dose1st_60",
     "qTags": [
       "$numeric",
@@ -122,26 +102,6 @@
     ]
   },
   {
-    "qName": "Dose1st_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose1st_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
     "qName": "Dose2nd_60",
     "qTags": [
       "$numeric",
@@ -183,26 +143,6 @@
   },
   {
     "qName": "Dose2nd_ALLP",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Dose2nd_LTCF",
     "qTags": [
       "$numeric",
       "$integer"
@@ -292,46 +232,6 @@
     ]
   },
   {
-    "qName": "DoseAdd2_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd2_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseAdd2_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd2_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "DoseAdd3_60",
     "qTags": [
       "$numeric",
@@ -403,46 +303,6 @@
   },
   {
     "qName": "DoseAdd3_ALL_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseAdd3_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd3_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseAdd3_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd3_LTCF_Cumul",
     "qTags": [
       "$numeric",
       "$integer"
@@ -532,46 +392,6 @@
     ]
   },
   {
-    "qName": "DoseAdd_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseAdd_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseAdd_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "DoseExported",
     "qTags": [],
     "qSrcTables": [
@@ -609,26 +429,6 @@
     ]
   },
   {
-    "qName": "DoseFirst_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseFirst_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "DoseSecond_60_Cumul",
     "qTags": [
       "$numeric",
@@ -650,26 +450,6 @@
   },
   {
     "qName": "DoseSecond_ALL_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseSecond_LTCF_Cumul",
     "qTags": [
       "$numeric",
       "$integer"
@@ -739,46 +519,6 @@
     ]
   },
   {
-    "qName": "DoseTotal_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_HCW_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseTotal_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseTotal_LTCF_Cumul",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "DoseUnk_60",
     "qTags": [
       "$numeric",
@@ -836,26 +576,6 @@
     ],
     "qSrcTables": [
       "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "DoseUnk_HCW",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "DoseUnk_LTCF",
-    "qTags": [
-      "$numeric",
-      "$integer"
-    ],
-    "qSrcTables": [
-      "Vaccination"
     ]
   },
   {
@@ -1191,42 +911,6 @@
     ]
   },
   {
-    "qName": "Uptake1st_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake1st_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake1st_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "Uptake2nd_60",
     "qTags": [
       "$numeric"
@@ -1291,42 +975,6 @@
   },
   {
     "qName": "Uptake2nd_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "Uptake2nd_LTCF_Cumul",
     "qTags": [
       "$numeric"
     ],
@@ -1551,42 +1199,6 @@
     ]
   },
   {
-    "qName": "UptakeAdd_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeAdd_LTCF_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
     "qName": "UptakeTotal_60",
     "qTags": [
       "$numeric"
@@ -1651,42 +1263,6 @@
   },
   {
     "qName": "UptakeTotal_ALL_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_HCW",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_HCW_Cumul",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination_Cumulative"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_LTCF",
-    "qTags": [
-      "$numeric"
-    ],
-    "qSrcTables": [
-      "Vaccination"
-    ]
-  },
-  {
-    "qName": "UptakeTotal_LTCF_Cumul",
     "qTags": [
       "$numeric"
     ],

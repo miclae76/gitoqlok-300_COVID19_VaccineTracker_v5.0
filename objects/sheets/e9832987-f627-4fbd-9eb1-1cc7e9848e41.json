@@ -116,14 +116,14 @@
       {
         "name": "JUwJJns",
         "type": "barchart",
-        "col": 13,
+        "col": 18,
         "row": 8,
-        "colspan": 11,
+        "colspan": 6,
         "rowspan": 4,
         "bounds": {
-          "x": 54.166666666666664,
           "y": 66.66666666666666,
-          "width": 45.83333333333333,
+          "x": 75,
+          "width": 25,
           "height": 33.33333333333333
         }
       },
@@ -216,12 +216,12 @@
         "type": "barchart",
         "col": 5,
         "row": 8,
-        "colspan": 7,
+        "colspan": 13,
         "rowspan": 4,
         "bounds": {
           "y": 66.66666666666666,
           "x": 20.833333333333336,
-          "width": 29.166666666666668,
+          "width": 54.166666666666664,
           "height": 33.33333333333333
         }
       },
@@ -279,7 +279,8 @@
       "extendable": true,
       "sheetMode": "RESPONSIVE"
     },
-    "height": 101
+    "height": 101,
+    "gridMode": "edit"
   },
   "qChildren": [
     {
@@ -1531,7 +1532,7 @@
             "cId": "XnUPaS",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') = 0 and sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])>0"
+                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') = 0 \r\nand sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd3])>0 \nand sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])>0\nand sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd])>0"
               }
             }
           },
@@ -1542,7 +1543,18 @@
             "cId": "HZhR",
             "condition": {
               "qStringExpression": {
-                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') > 0 or sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])=0"
+                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') > 0 \r\nor (sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd3])=0 \n\tand sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])>0)"
+              }
+            }
+          },
+          {
+            "refId": "2c699f7d-ad74-43f0-911f-8a2f1c646c55",
+            "label": "Country Profile - Up to 1st Booster",
+            "isMaster": true,
+            "cId": "UevkHF",
+            "condition": {
+              "qStringExpression": {
+                "qExpr": "=wildmatch([Population Group], 'LTCF*', 'Children*', 'Health*') > 0 \r\nor (sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd2])=0 \n\tand sum({1<[Member State]=P([Member State]),  [Vaccination.TargetGroup]={\"*ALL*\"}>} [Vaccination.DoseAdd])>0)"
               }
             }
           }
@@ -1591,6 +1603,18 @@
               "qType": "linechart"
             },
             "qExtendsId": "a54fb224-8fb8-48e3-b473-a9655de30642",
+            "qMetaDef": {},
+            "visualization": "linechart"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "c670798e-d6e3-4437-a30e-684bc7360ba0",
+              "qType": "linechart"
+            },
+            "qExtendsId": "2c699f7d-ad74-43f0-911f-8a2f1c646c55",
             "qMetaDef": {},
             "visualization": "linechart"
           },
@@ -2056,7 +2080,7 @@
                 "qLabel": "Total doses distributed - by Vaccine",
                 "qTags": [],
                 "qGrouping": "N",
-                "qDef": "SUM({1<[Member State]=P([Member State])>} DosesDistributed)",
+                "qDef": "SUM({1<[Member State]=P([Member State])>} DoseTotal_ALLP)",
                 "qNumFormat": {
                   "qType": "F",
                   "qnDec": 2,
@@ -2174,7 +2198,7 @@
         "showTitles": true,
         "title": {
           "qStringExpression": {
-            "qExpr": "='Total vaccines doses distributed to ' & [Member State] & ' by vaccine product as of '&date(ReloadTime(), 'YYYY-MM-DD')"
+            "qExpr": "='Total vaccines doses administered in ' & [Member State] & ' by vaccine product as of '&date(ReloadTime(), 'YYYY-MM-DD')"
           }
         },
         "subtitle": "",
@@ -2187,7 +2211,7 @@
           "grouping": "grouped"
         },
         "orientation": "horizontal",
-        "scrollbar": "miniChart",
+        "scrollbar": "bar",
         "scrollStartPos": 0,
         "gridLine": {
           "auto": false,
@@ -2206,8 +2230,8 @@
           },
           "useBaseColors": "off",
           "paletteColor": {
-            "index": 3,
-            "color": "#6bbabf"
+            "index": 1,
+            "color": "#62bb46"
           },
           "useDimColVal": true,
           "useMeasureGradient": true,
@@ -2231,7 +2255,7 @@
           "show": "labels",
           "label": "horizontal",
           "dock": "near",
-          "axisDisplayMode": "auto",
+          "axisDisplayMode": "max",
           "maxVisibleItems": 10
         },
         "preferContinuousAxis": true,
@@ -2282,6 +2306,7 @@
                   }
                 ],
                 "qNumberPresentations": [],
+                "qReverseSort": true,
                 "qActiveField": 0,
                 "autoSort": true,
                 "cId": "htcmG",
@@ -2657,7 +2682,7 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "=wildmatch([Population Group], 'LTCF*', 'Children*') = 0 "
+                  "qv": "//=wildmatch([Population Group], 'LTCF*', 'Children*') = 0"
                 },
                 "qMsg": {}
               },
@@ -2772,7 +2797,122 @@
               "qCalcCond": {},
               "qCalcCondition": {
                 "qCond": {
-                  "qv": "=wildmatch([Population Group], 'LTCF*', 'Children*') = 0 "
+                  "qv": "//=wildmatch([Population Group], 'LTCF*', 'Children*') = 0"
+                },
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "Uptake of third booster",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "num(rangemin(1, sum({<[MemberState_]=-{\"EU*\"}>} [Vaccination.UptakeAdd3_Cumul])), '0.0%')",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAggrFunc": "Expr",
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "numFormatFromTemplate": true,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                },
+                "representation": {
+                  "type": "text",
+                  "indicator": {
+                    "showTextValues": true,
+                    "applySegmentColors": false,
+                    "position": "right"
+                  },
+                  "miniChart": {
+                    "type": "sparkline",
+                    "colors": {
+                      "main": {
+                        "index": 1
+                      },
+                      "max": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "min": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "first": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "last": {
+                        "index": 0,
+                        "color": "none"
+                      },
+                      "positive": {
+                        "index": 1
+                      },
+                      "negative": {
+                        "index": 10,
+                        "color": "#f93f17"
+                      }
+                    },
+                    "showDots": true,
+                    "yAxis": {
+                      "scale": "local",
+                      "position": "auto"
+                    }
+                  }
+                },
+                "conditionalColoring": {
+                  "segments": {
+                    "limits": [],
+                    "paletteColors": [
+                      {
+                        "index": 6,
+                        "icon": "dot"
+                      }
+                    ]
+                  }
+                },
+                "isCustomFormatted": true,
+                "cId": "tEPprf"
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {
+                  "qv": "=wildmatch([Population Group], 'LTCF*', 'Children*') = 0"
                 },
                 "qMsg": {}
               },
@@ -2802,7 +2942,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "qSuppressMissing": true,
           "qInitialDataFetch": [
@@ -2836,7 +2977,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "qExpansionState": [],
           "qDynamicScript": [],
@@ -2848,9 +2990,11 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "columnWidths": [
+            -1,
             -1,
             -1
           ],
@@ -3681,15 +3825,15 @@
         },
         "orientation": "vertical",
         "scrollbar": "none",
-        "scrollStartPos": 0,
+        "scrollStartPos": 1,
         "gridLine": {
           "auto": true,
           "spacing": 2
         },
         "dataPoint": {
-          "showLabels": false,
+          "showLabels": true,
           "showSegmentLabels": false,
-          "showTotalLabels": true
+          "showTotalLabels": false
         },
         "color": {
           "auto": false,

@@ -146,7 +146,7 @@
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
-            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd2_AGE), '#,##0;-#,##0;-')\n)",
+            "qDef": "pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2', 'NADD3'),\r\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose1st_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}Dose2nd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd2_AGE), '#,##0;-#,##0;-'),\n    num(sum({<[_Flag_FilterAgeBelow18]={0}>}DoseAdd3_AGE), '#,##0;-#,##0;-')\n)",
             "qNumFormat": {
               "qType": "U",
               "qnDec": 10,
@@ -214,11 +214,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'WEEK'"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'WEEK'"
+        },
+        "qMsg": {
+          "qv": "Calculation in progress..."
+        }
       },
       "qColumnOrder": [
         0,
@@ -248,6 +254,9 @@
           "qExpansionState": [],
           "qDynamicScript": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "Calculation in progress..."
       }
     },
     "refLine": {

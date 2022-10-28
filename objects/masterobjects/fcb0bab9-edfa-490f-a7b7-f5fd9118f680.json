@@ -1,0 +1,203 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "fcb0bab9-edfa-490f-a7b7-f5fd9118f680",
+      "qType": "masterobject"
+    },
+    "qMetaDef": {
+      "title": "CONTAINER- AGE",
+      "description": "",
+      "tags": []
+    },
+    "children": [
+      {
+        "refId": "254866b2-1205-432e-b006-0a6599977406",
+        "label": "AGE - NEW Cumulative Uptake",
+        "isMaster": true,
+        "cId": "pSgjKE",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'FIRST', 'SECOND')>0"
+          }
+        }
+      },
+      {
+        "refId": "945576b5-39de-4777-9068-7c0b082a6b0f",
+        "label": "AGE - Cum. Uptake Add.",
+        "isMaster": true,
+        "cId": "KTXWnU",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'ADD', 'ADD2' )>0"
+          }
+        }
+      },
+      {
+        "refId": "c34ba688-544f-40e0-a5f3-a2938c568217",
+        "label": "AGE - Third Booster cumul uptake",
+        "isMaster": true,
+        "cId": "umwbz",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'ADD3')>0"
+          }
+        }
+      },
+      {
+        "refId": "6eb31137-69fa-43a2-9481-b098c030fe23",
+        "label": "AGE - N. Administered",
+        "isMaster": true,
+        "cId": "DPsDjQT",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'NFIRST', 'NSECOND')>0 and v_WeeklyOrCumul = 'WEEK'\r\n//left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP' and left('$(v_ViewUptake)', 4) <> 'NADD' and '$(v_WeeklyOrCumul)' = 'WEEK'"
+          }
+        }
+      },
+      {
+        "refId": "7820d834-2abf-499b-b79d-249e481ad67f",
+        "label": "AGE - N.  Booster Administered",
+        "isMaster": true,
+        "cId": "LDGsJBe",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'WEEK'"
+          }
+        }
+      },
+      {
+        "refId": "6631c49a-e640-4aa8-8ac7-237dcf08dc29",
+        "label": "AGE - N. Cumulative administered",
+        "isMaster": true,
+        "cId": "tAap",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'NFIRST', 'NSECOND')>0 and v_WeeklyOrCumul = 'CUM'\r\n//left('$(v_ViewUptake)', 1)='N' and '$(v_ViewUptake)' <> 'NPROP'  and '$(v_WeeklyOrCumul)' = 'CUM' and left('$(v_ViewUptake)', 4) <> 'NADD'"
+          }
+        }
+      },
+      {
+        "refId": "b8e6f625-55ac-4c2a-8fd6-62413104590e",
+        "label": "AGE - N.  Booster Cum. administered (1)",
+        "isMaster": true,
+        "cId": "BwWNn",
+        "condition": {
+          "qStringExpression": {
+            "qExpr": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'CUM'"
+          }
+        }
+      }
+    ],
+    "showTitles": false,
+    "title": "",
+    "subtitle": "",
+    "footnote": "",
+    "disableNavMenu": false,
+    "showDetails": false,
+    "borders": "auto",
+    "showTabs": false,
+    "useDropdown": true,
+    "useScrollButton": true,
+    "showIcons": false,
+    "visualization": "container",
+    "qChildListDef": {
+      "qData": {
+        "visualization": "/visualization",
+        "containerChildId": "/containerChildId",
+        "qExtendsId": "/qExtendsId",
+        "title": "/title",
+        "showCondition": "/showCondition"
+      }
+    },
+    "supportRefresh": false,
+    "hasExternalChildren": false,
+    "masterVersion": 0.96
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "3fceb13d-d637-49ae-b6bc-46e8ed901dbb",
+          "qType": "linechart"
+        },
+        "qExtendsId": "254866b2-1205-432e-b006-0a6599977406",
+        "qMetaDef": {},
+        "visualization": "linechart",
+        "containerChildId": "074961b2-144c-4efd-bfb5-e2d6bcc6b61f"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "01dfe312-304b-456a-a9f9-7ccb2c0df092",
+          "qType": "barchart"
+        },
+        "qExtendsId": "6eb31137-69fa-43a2-9481-b098c030fe23",
+        "qMetaDef": {},
+        "visualization": "barchart"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "4360ffea-1ca0-43bc-bc80-372df4b8caf6",
+          "qType": "barchart"
+        },
+        "qExtendsId": "6631c49a-e640-4aa8-8ac7-237dcf08dc29",
+        "qMetaDef": {},
+        "visualization": "barchart"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "73eef3aa-054e-42d1-9305-e9e751414b47",
+          "qType": "linechart"
+        },
+        "qExtendsId": "c34ba688-544f-40e0-a5f3-a2938c568217",
+        "qMetaDef": {},
+        "visualization": "linechart"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "2f70071b-3e5f-43b0-9178-99d937f6c096",
+          "qType": "linechart"
+        },
+        "qExtendsId": "945576b5-39de-4777-9068-7c0b082a6b0f",
+        "qMetaDef": {},
+        "visualization": "linechart"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "798302a4-d0cb-4b21-b712-b4895d73040a",
+          "qType": "barchart"
+        },
+        "qExtendsId": "7820d834-2abf-499b-b79d-249e481ad67f",
+        "qMetaDef": {},
+        "visualization": "barchart"
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "6fe8a05f-2027-4b98-8210-10e0fd879342",
+          "qType": "barchart"
+        },
+        "qExtendsId": "b8e6f625-55ac-4c2a-8fd6-62413104590e",
+        "qMetaDef": {},
+        "visualization": "barchart"
+      },
+      "qChildren": []
+    }
+  ]
+}

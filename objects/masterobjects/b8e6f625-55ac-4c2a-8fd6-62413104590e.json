@@ -233,11 +233,17 @@
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qCalcCond": {
+        "qv": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'CUM'"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "=match(v_ViewUptake, 'NADD', 'NADD2', 'NADD3')>0 and v_WeeklyOrCumul = 'CUM'"
+        },
+        "qMsg": {
+          "qv": "Calculation in progress..."
+        }
       },
       "qColumnOrder": [
         0,
@@ -267,6 +273,9 @@
           "qExpansionState": [],
           "qDynamicScript": []
         }
+      },
+      "customErrorMessage": {
+        "calcCond": "Calculation in progress..."
       }
     },
     "refLine": {
@@ -276,7 +285,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in ',\n'Cumulative number of first boosters administered by age group in ',\n'Cumulative number of second boosters administered by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in ',\n'Cumulative number of first boosters administered by age group in ',\n'Cumulative number of second boosters administered by age group in '\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
+        "qExpr": "=if(GetSelectedCount([Member State])=1, \r\npick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2', 'NADD3'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in ',\n'Cumulative number of first boosters administered by age group in ',\n'Cumulative number of second boosters administered by age group in ',\n'Cumulative number of third boosters administered by age group in ',\n) & [Member State]\n,pick(match(v_ViewUptake, 'NFIRST', 'NSECOND', 'NADD', 'NADD2', 'NADD3'),\n'Cumulative number of first doses administered by age group in ',\n'Cumulative number of primary courses administered by age group in ',\n'Cumulative number of first boosters administered by age group in ',\n'Cumulative number of second boosters administered by age group in ',\n'Cumulative number of third boosters administered by age group in ',\n) \n& v_EU27_EEA_Title\n)\n& ' as of '& date(ReloadTime(), 'YYYY-MM-DD')\n\n"
       }
     },
     "subtitle": {

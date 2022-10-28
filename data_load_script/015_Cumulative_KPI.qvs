@@ -50,7 +50,8 @@ LOAD
     if ( Vaccination.TargetGroup = 'Age60+', Vaccination.DoseAdd3_Cumul)				as DoseAdd3_60_Cumul,   
     
    
-    // Doses adminsitered and Uptake for Target Group = Health Care Workers
+    /* Doses adminsitered and Uptake for Target Group = Health Care Workers
+    
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake1st_Cumul)					as Uptake1st_HCW_Cumul,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.Uptake2nd_Cumul)					as Uptake2nd_HCW_Cumul,
     if ( Vaccination.TargetGroup = 'HCW', Vaccination.UptakeAdd_Cumul)			  		as UptakeAdd_HCW_Cumul,
@@ -75,7 +76,7 @@ LOAD
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseAdd2_Cumul)					as DoseAdd2_LTCF_Cumul,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.DoseAdd3_Cumul)					as DoseAdd3_LTCF_Cumul,
     if ( Vaccination.TargetGroup = 'LTCF', Vaccination.Denominator)					    as Denominator_LTCF,
-    
+    */
     // Doses adminsitered and Uptake for Target Group Age
     if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, [Vaccination.Uptake1st_Cumul])				as Uptake1st_AGE_Cumul,
     if ( IsNull(ApplyMap('Map_Age_Group', [Vaccination.TargetGroup], null() )	) = 0, Vaccination.Uptake2nd_Cumul)					as Uptake2nd_AGE_Cumul,
