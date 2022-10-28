@@ -35,12 +35,12 @@
         "col": 0,
         "row": 1,
         "colspan": 7,
-        "rowspan": 6,
+        "rowspan": 5,
         "bounds": {
           "y": 8.333333333333332,
           "x": 0,
           "width": 29.166666666666668,
-          "height": 50
+          "height": 41.66666666666667
         }
       },
       {
@@ -61,11 +61,11 @@
         "name": "TsWFLGh",
         "type": "table",
         "col": 0,
-        "row": 7,
+        "row": 6,
         "colspan": 7,
         "rowspan": 2,
         "bounds": {
-          "y": 58.333333333333336,
+          "y": 50,
           "x": 0,
           "width": 29.166666666666668,
           "height": 16.666666666666664
@@ -103,14 +103,14 @@
         "name": "JmAkpjs",
         "type": "barchart",
         "col": 0,
-        "row": 9,
+        "row": 8,
         "colspan": 5,
-        "rowspan": 3,
+        "rowspan": 4,
         "bounds": {
-          "y": 75,
+          "y": 66.66666666666666,
           "x": 0,
           "width": 20.833333333333336,
-          "height": 25
+          "height": 33.33333333333333
         }
       },
       {
@@ -192,7 +192,8 @@
     "gridResolution": "small",
     "layoutOptions": {
       "mobileLayout": "LIST"
-    }
+    },
+    "gridMode": "edit"
   },
   "qChildren": [
     {
@@ -4028,7 +4029,7 @@
           "show": "labels",
           "label": "horizontal",
           "dock": "near",
-          "axisDisplayMode": "auto",
+          "axisDisplayMode": "max",
           "maxVisibleItems": 10
         },
         "preferContinuousAxis": true,
