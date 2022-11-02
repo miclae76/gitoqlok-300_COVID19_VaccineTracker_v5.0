@@ -474,26 +474,17 @@
         {
           "qLibraryId": "uMpjvwy",
           "qDef": {
-            "qLabel": "='Second booster'",
             "qTags": [],
             "qGrouping": "N",
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
-            "qLabelExpression": "='Second booster'",
             "autoSort": true,
+            "cId": "psjmYw",
             "numFormatFromTemplate": true,
-            "cId": "UKLPUP",
             "quarantine": {
-              "qNumFormat": {
-                "qType": "U",
-                "qnDec": 2,
-                "qUseThou": 0,
-                "qFmt": "",
-                "qDec": ".",
-                "qThou": ","
-              },
-              "isCustomFormatted": true
+              "qNumFormat": {},
+              "isCustomFormatted": false
             }
           },
           "qSortBy": {
